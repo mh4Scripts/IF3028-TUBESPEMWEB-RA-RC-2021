@@ -1,6 +1,12 @@
 <?php
 
 class Dashboard extends CI_Controller{
+
+	function __construct(){
+		parent::__construct();
+		  $this->load->helper(array('form', 'url'));
+	}
+
 	public function index(){
 		$data['dashboard'] = $this->tampil_laporan->tampil_data()->result();
 
@@ -13,12 +19,10 @@ class Dashboard extends CI_Controller{
 	}
 
 	public function tambah_aksi(){
-		$judul	= $this->input->post('judul');
 		$isi 	= $this->input->post('isi');
 		$aspek 	= $this->input->post('aspek');
  
 		$data = array(
-			'judul' => $judul,
 			'isi' 	=> $isi,
 			'aspek' => $aspek,
 			);
