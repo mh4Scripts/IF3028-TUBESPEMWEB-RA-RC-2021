@@ -8,7 +8,7 @@
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>theme/theme-dashboard/style.css">
 
 	<!-- Fontawesome CSS -->
-    <link rel="stylesheet" href="<?php echo base_url() ?> assets/https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <link rel="stylesheet" href="<?php echo base_url() ?>assets/https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
 </head>
 
 <body>
@@ -28,7 +28,7 @@
 					</form>
 				</div>
 				<div id="create-report">
-					<p>Buat Laporan/Komentar <button id="insert-data"><i class="fas fa-plus-square"></i></button></p>
+					<p>Buat Laporan/Komentar <a href="tambah"><button><i class="fas fa-plus-square"></i></button></a></p>
 				</div>
 			</div>
 
@@ -42,10 +42,6 @@
 				<div id="content" style="margin-bottom: 50px;">
 					<?php
 					foreach($dashboard as $data) : ?>
-						<div id="title-content">
-							<h3><?php echo $data->judul ?></h3>
-						</div>
-
 						<div id="desc-content">
 							<?php echo $data->isi ?>	
 						</div>
@@ -69,10 +65,8 @@
 		</div>
 
 	</div>
-	
-	
 
-	<!-- Fontawesome JS -->
+<!-- Fontawesome JS -->
     <script src="<?php echo base_url() ?> assets/https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"></script>
 
 </body>
