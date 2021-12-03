@@ -40,7 +40,7 @@
         <p>Lampiran : gambar.jpg</p>
     </div>
     <div class="col-4">
-        <p>waktu : 20-11-2019 20:00  Lihat Selengkapnya</p>
+        <p>waktu : 20-11-2019 20:00 <a href="#">Lihat Selengkapnya</a></p>
     </div>
     <div class="col-1"></div>
 </div>

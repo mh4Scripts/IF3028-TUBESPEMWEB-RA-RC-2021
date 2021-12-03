@@ -11,7 +11,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-12 center ">
-                    <h1>SIMPLE LAPOR</h1>
+                    <h1>SIMPLE LAPOR!</h1>
                 </div>
             </div>
 
