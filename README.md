@@ -99,7 +99,17 @@ Validasi **wajib** dilakukan pada *client-side*, dengan menggunakan **javascript
 Pengguna dapat mencari laporan/komentar dengan melakukan search ke `isi laporan/komentar`.
 
 ### Penjelasan Teknis
-`Silakan isi bagian ini dengan penjelasan anda, sesuai Petunjuk Pengerjaan di atas.`
+Framework yang kami gunakan adalah Laravel. Sebelum menginstal laravel, user harus menginstall PHP dan composer terlebih dahulu atau menginstall XAMPP. XAMPP adalah software cross platform yang langsung menyediakan Apache, MariaDB, PHP, dan Perl.
+
+Setelah menginstall XAMPP dan composer, buka cmd dan masuk ke htdocs pada folder XAMPP. Kemudian, ketikkan perintah
+
+composer create-project --prefer-dist laravel/laravel nama_project
+
+Jika perintah berhasil, composer akan melakukan instalasi laravel ke dalam directory yang telah ditentukan. Jika nama directory tidak ada, composer akan membuat directory dengan nama yang dimaksud. Untuk mengecek apakah laravel sudah terinstall dengan baik, masuk kedalam directory proyek melalui cmd. Kemudian, ketikkan perintah:
+
+php artisan serve
+
+Jika tulisan Laravel development server started telah muncul, buka web browser anda dan masih ke dalam alamat server yang diberikan laravel. Secara default, alamat servernya yaitu 127.0.0.1:8000. Jika muncul tampilan homepage laravel, maka instalasi sukses.
 
 ### Knowledge
 Untuk meringankan beban tugas ini, ada berberapa keyword yang bisa anda cari untuk menyelesaikan tugas ini.
