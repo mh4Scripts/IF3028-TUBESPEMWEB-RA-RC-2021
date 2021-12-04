@@ -10,33 +10,36 @@
     <div class="col-1"></div>
 </div>
 
-<div class="row">
-    <div class="col-1"></div>
-    <div class="col-10">
-        <textarea name="" id="" cols="30" rows="10" placeholder="Laporan/Komentar"></textarea> <br>
-        <select name="" id="" class="classic"> 
-            <option value="">Pilih Aspek Pelaporan/Komentar</option>
-            <option value="">Dosen</option>
-            <option value="">Staff</option>
-            <option value="">Mahasiswa</option>
-            <option value="">Infrastruktur</option>
-            <option value="">Pengajar</option>
-        </select> <br>
-        <div class="button-wrap">
-            <label class ="new-button" for="upload"> Choose File
-            <input id="upload" type="file" >
+<form action="{{route('report.store')}}" method="post" id="" enctype="multipart/form-data">
+    @csrf
+    <div class="row">
+        <div class="col-1"></div>
+        <div class="col-10">
+            <textarea name="laporan" id="" cols="30" rows="10" placeholder="Laporan/Komentar"></textarea> <br>
+            <select name="aspek" id="" class="classic"> 
+                <option value="">Pilih Aspek Pelaporan/Komentar</option>
+                <option value="Dosen">Dosen</option>
+                <option value="Staff">Staff</option>
+                <option value="Mahasiswa">Mahasiswa</option>
+                <option value="Infrastruktur">Infrastruktur</option>
+                <option value="Pengajar">Pengajar</option>
+            </select> <br>
+            <div class="button-wrap">
+                <label class ="new-button" for="upload"> Choose File
+                <input name="lampiran" id="upload" type="file" >
+            </div>
         </div>
+        <div class="col-1"></div>
     </div>
-    <div class="col-1"></div>
-</div>
 
-<div class="row">
-    <div class="col-1"></div>
-    <div class="col-10 right">
-        <button type="submit" class="btn-submit">Buat LAPOR!</button>
+    <div class="row">
+        <div class="col-1"></div>
+        <div class="col-10 right">
+            <button type="submit" class="btn-submit">Buat LAPOR!</button>
+        </div>
+        <div class="col-1"></div>
     </div>
-    <div class="col-1"></div>
-</div>
+</form>
 
 <div class="row garis-bawah">
     <div class="col-1"></div>

@@ -83,8 +83,10 @@ body{
 }
 
 hr{
-    border: 1px solid #313131;
+    /* border: 1px solid #313131; */
     color: #313131;
+    background-color: #313131;
+    height: 1px;
 }
 
 .garis{
@@ -113,6 +115,7 @@ input[type="text"]{
 
 textarea{
     width: 100%;
+    height: 300px;
     padding: 10px;
     color: #313131;
     border: 2px solid #313131;
@@ -225,4 +228,8 @@ img{
 
 .sub-head {
     margin-bottom: 30px;
+}
+
+.laporan {
+    text-align: justify;
 }

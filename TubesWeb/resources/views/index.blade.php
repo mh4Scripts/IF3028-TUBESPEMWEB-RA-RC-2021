@@ -11,7 +11,7 @@
 
 <div class="row">
     <div class="col-12 center">
-        <p>Buat Laporan/Komentar</p>
+        <p><a href="{{route('report.create')}}">Buat Laporan/Komentar</a> </p>
     </div>
 </div>
 
@@ -26,21 +26,22 @@
 </div>
 
 {{-- loop laporan --}}
+@foreach ($reports as $report)
 <div class="row">
     <div class="col-1"></div>
     <div class="col-10">
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur provident voluptas eum ducimus, voluptatibus aut quod a iusto laboriosam consectetur atque omnis quibusdam ipsa iure sint iste odio! Harum, placeat?</p>
+        <p class="laporan">{{$report->laporan}}</p>
     </div>
     <div class="col-1"></div>
 </div>
 
 <div class="row">
     <div class="col-1"></div>
-    <div class="col-6">
-        <p>Lampiran : gambar.jpg</p>
+    <div class="col-5">
+        <p>Lampiran : {{$report->lampiran}}</p>
     </div>
-    <div class="col-4">
-        <p>waktu : 20-11-2019 20:00 <a href="#">Lihat Selengkapnya</a></p>
+    <div class="col-5 right">
+        <p>waktu : {{date('d-m-Y H:i', strtotime($report->created_at))}} &ensp; <a href="{{route('report.show', $report->id)}}">Lihat Selengkapnya</a></p>
     </div>
     <div class="col-1"></div>
 </div>
@@ -51,6 +52,7 @@
     </div>
     <div class="col-1"></div>
 </div>
+@endforeach
 {{-- end loop --}}
 <div class="row">
     <div class="col-12 center titik">
