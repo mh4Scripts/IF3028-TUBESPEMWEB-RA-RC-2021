@@ -13,6 +13,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// Route::get('/', function () {
+//     return view('utama');
+// });
+
 Route::get('/', function () {
-    return view('welcome');
+    return view('detail');
 });
+
+// Route::get('/', function () {
+//     return view('buat');
+// });

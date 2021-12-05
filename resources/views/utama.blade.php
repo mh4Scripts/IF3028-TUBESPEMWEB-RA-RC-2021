@@ -15,7 +15,7 @@
                 </div>
             </header>
             <div class="add">
-                <a href="*">Buat Laporan/Komentar</a>
+                <a href="http://127.0.0.1:8000/detail">Buat Laporan/Komentar</a>
             </div>
             <br>
             <div class="laporan">
