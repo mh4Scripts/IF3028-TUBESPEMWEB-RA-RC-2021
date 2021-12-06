@@ -17,7 +17,7 @@
 		
 		<div id="box-content">
 			<div id="title">
-				<h1>SIMPLE LAPOR!</h1>
+				<h1>DASHBOARD</h1>
 			</div>
 
 			<div id="menu-report">
@@ -28,7 +28,7 @@
 					</form>
 				</div>
 				<div id="create-report">
-					<p>Buat Laporan/Komentar <a href="tambah"><button><i class="fas fa-plus-square"></i></button></a></p>
+					<p>Buat Laporan/Komentar <a href="<?php echo site_url('/dashboard/tambah/')?>"><button><i class="fas fa-plus-square"></i></button></a></p>
 				</div>
 			</div>
 
@@ -40,23 +40,18 @@
 				</div>
 
 				<div id="content" style="margin-bottom: 50px;">
-					<?php
-					foreach($dashboard as $data) : ?>
+					<?php foreach($hal_utama as $data) : ?>					
 						<div id="desc-content">
-							<?php echo $data->isi ?>	
+							<?php echo substr($data->isi, 0,450) ;?>	
 						</div>
-
-						<div id="aspect">
-							<?php echo $data->aspek ?>
-						</div>
-
-						<div class="post-date">
-							<?php 
-							echo "Lampiran : file.png";
-							?>
-							<?php 
-							echo " Wakkt : 20-11-2020 20.00";
-							?>
+						<div id="body">
+								<p class="file-name">
+								<?php echo "Lampiran : file.png";?>
+							</p>
+							<p class="post-date">
+								<?php echo " Wakkt : 20-11-2020 20.00";?>
+							</p>		
+							<p id="more"><a href="<?php echo site_url('/dashboard/readmore/'.$data->id) ?>">Baca Selengkapnya ></a></p>
 						</div>
 						<hr>
 					<?php endforeach;?>
