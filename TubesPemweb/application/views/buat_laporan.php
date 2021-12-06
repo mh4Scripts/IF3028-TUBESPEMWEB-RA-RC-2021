@@ -11,11 +11,11 @@
 	<div id="box">
 		<div id="box-content">
 			<div id="title">
-				<h1>SIMPLE LAPOR!</h1>
+				<h1>BUAT LAPORAN</h1>
 			</div>
 
 			<div id="info-content">
-				<p>Laporan/Komentar Terakhir</p>
+				<p>Buat Laporan/Komentar</p>
 				<hr>
 			</div>
 
@@ -24,32 +24,31 @@
 				<?php echo form_open_multipart('dashboard/tambah_aksi'); ?>
 					<table style="margin:20px auto;">
 						<tr>
-							<td><textarea style="padding:15px" cols="110" rows="15" type="text" name="isi" placeholder="Laporan/Komentar"></textarea></td>
+							<td><textarea style="padding:15px" cols="110" rows="13" type="text" name="isi" placeholder="Laporan/Komentar" required=""></textarea></td>
 						</tr>
 						<tr>
 							<td><br>
-								<select name="aspek">
-								   <option value="None">Pilih Aspek Pelaporan/Komentar</option>
-								   <option value="A">A</option>
-								   <option value="B">B</option>
-								   <option value="C">C</option>
-								   <option value="D">D</option>
+								<select name="aspek" required="">
+								   <option value="">Pilih Aspek Pelaporan/Komentar</option>
+								   <option value="Dosen">Dosen</option>
+								   <option value="Staff">Staff</option>
+								   <option value="Mahasiswa">Mahasiswa</option>
+								   <option value="Infrastruktur">Infrastruktur</option>
+								   <option value="Pengajaran">Pengajaran</option>
 								</select>
 							</td>
 						</tr>
 
 						<tr>
 							<td><br>
-								<div id="choose-file" name="input-file">
 									<input type="file" name="file" value="choose-file" required="">
-								</div>
 							</td>
 						</tr>
 						<tr>
-							<td><br><input type="submit" value="Tambah"></td>
+							<td><br><input type="submit" value="Buat LAPOR!"></td>
 						</tr>
 					</table>
-				
+					<hr style="margin-bottom:4%;">
 				<?php echo form_close(); ?>
 			</div>	
 		</div>
