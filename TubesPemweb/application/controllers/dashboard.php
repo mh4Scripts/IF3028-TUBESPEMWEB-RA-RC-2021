@@ -6,9 +6,9 @@ class Dashboard extends CI_Controller{
 		parent::__construct();
 		  $this->load->helper(array('form', 'url'));
 	}
-
+	
 	public function index(){
-		$data['dashboard'] = $this->tampil_laporan->tampil_data()->result();
+		$data['hal_utama'] = $this->tampil_laporan->tampil_data()->result();
 
 		$this->load->view('dashboard', $data);
 
@@ -16,6 +16,11 @@ class Dashboard extends CI_Controller{
 
 	public function tambah(){
 		$this->load->view('buat_laporan');		
+	}
+
+	public function readmore($id){
+		$data['info_detail'] = $this->tampil_laporan->tampil_artikel($id);
+		$this->load->view('detail_laporan', $data);
 	}
 
 	public function tambah_aksi(){
@@ -28,6 +33,12 @@ class Dashboard extends CI_Controller{
 			);
 
 		$this->tampil_laporan->input_data($data,'tb_laporan');
+		redirect('dashboard/index');
+	}
+
+	public function hapus($id){
+		$where = array('id'=> $id);
+		$this->tampil_laporan->hapus_laporan($where, 'tb_laporan');
 		redirect('dashboard/index');
 	}
 }
