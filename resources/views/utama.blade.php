@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" href="utama.css">
+        <link rel="stylesheet" href="/Css/utama.css">
         <title>Lapor</title>
     </head>
 
@@ -15,7 +15,7 @@
                 </div>
             </header>
             <div class="add">
-                <a href="http://127.0.0.1:8000/detail">Buat Laporan/Komentar</a>
+                <a href="/detail">Buat Laporan/Komentar</a>
             </div>
             <br>
             <div class="laporan">
