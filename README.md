@@ -9,7 +9,10 @@ di program studi teknik informatika ITERA.
 **Luangkan waktu untuk membaca spesifikasi ini sampai selesai.** :kissing_heart:
 
 ### Anggota Tim :cyclone:
-Project dikerjakan secara **berkelompok** dengan maksimal jumlah anggota adalah 2-3 orang mahasiswa (maksimal 3 orang mahasiswa!).
+
+A. Aldi Setiawan (119140090) <br>
+Muhammad Aldito Rizki (119140170) <br>
+Dhia Fahmi Ghufron (119140216) <br>
 
 ### Petunjuk Pengerjaan :umbrella:
 1. Fork pada repository ini dengan akun github anda.

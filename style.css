@@ -1,0 +1,155 @@
+* {
+  text-decoration: none;
+  margin: 0px;
+  padding: 0px;
+}
+
+body{
+  margin: 0px;
+  padding: 0px;
+  font-family: 'Open Sans', sans-serif;
+  background: black;
+}
+
+.wrapper{
+  width: 1350px;
+  margin: auto;
+  position: relative;
+}
+
+.logo {
+  padding: 1px 0px 5px 0px; 
+  margin: auto;
+
+}
+
+.menu{
+  float: right;
+}
+
+nav {
+  width: 100%;
+  display: flex;
+  margin: auto;
+  line-height: 55px;
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0;
+  background: #b5181f;
+  z-index: 1;
+  border-bottom:1px solid black;
+}
+
+nav ul{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+nav ul li{
+  float: left;
+}
+
+nav ul li a{
+  font-family: 'Times New Roman' sans-serif;
+  color: white;
+  font-size: 15px;
+  font-weight: lighter;
+  margin: 0px 0px 0px 0px;
+  padding: 0px 16px 0px 10px;
+  text-decoration: underline;
+}
+
+a.tbl-daftar{
+  background: #d6404f;
+  border-radius: 50px;
+  margin-top: 20px;
+  padding: 10px 15px 10px 15px;
+  color: white;
+  cursor: pointer;
+  font-weight: lighter;
+}
+
+a.tbl-daftar:hover {
+  background: white;
+  color: black;
+  text-decoration: none;
+}
+
+.kolom{
+  padding-left: 35px;
+  padding-top: 40px;
+  margin-top: 25px;
+  margin-bottom: 50px;
+}
+
+.kolom .deskripsi {
+  font-family: 'verdana' sans-serif;
+  font-weight: bold;
+  font-size: 40px;
+  text-align: center;
+  margin-bottom: 20px;
+  color: white;
+  width: 100%;
+  line-height: 35px;
+}
+
+.kolom .lanjut {
+  font-family: 'verdana' sans-serif;
+  line-height: 18px;
+  font-size: 16px;
+  margin: 10px 0px 10px 0px;
+  padding: 10px 0px 10px 0px;
+  color: black;
+  font-weight: lighter;
+}
+
+
+h2{
+  font-size: auto px;
+  font-weight: lighter;
+  font-family: 'verdana' sans-serif;
+  text-align: center;
+  padding: 15px 15px 15px 15px;
+  margin: 15px 15px 15px 15px;
+  color: white;
+  line-height: 1px;
+}
+
+h1{
+  font-size: 25px;
+  font-weight: bold;
+  font-family: 'verdana' sans-serif;
+  text-align: center;
+  padding: 15px 15px 15px 15px;
+  margin: 15px 15px 15px 15px;
+  color: white;
+  line-height: 1px; 
+}
+
+p{
+  font-family: 'verdana' sans-serif;
+  line-height: 16px;
+  font-size: 16px;
+  margin: 10px 25px 1px 0px;
+  padding: 0px 0px 10px 0px;
+  color: white;
+  font-weight: lighter;
+}
+
+a.tbl-merah{
+  background: #d6404f;
+  border-radius: 20px;
+  margin: 10px 0px 0px 0px;
+  padding: 10px 50px 10px 50px;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;  
+}
+
+a.tbl-merah:hover {
+  background: #123332;
+  text-decoration: none;
+}
+
