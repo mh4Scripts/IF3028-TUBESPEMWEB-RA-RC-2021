@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\LaporController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,5 +15,21 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
+
+Route::get('/lapor', function () {
+    return view('lapor');
+});
+
+Route::get('/preview', function () {
+    return view('preview');
+});
+
+
+// Route::post('/lapor', 'LaporController@store');
+Route::get('/', [LaporController::class,'index']);
+Route::post('/lapor', [LaporController::class,'store']);
+Route::get('/preview/{id}', [LaporController::class,'show']);
+Route::get('/delete/{id}', [LaporController::class,'destroy']);
+Route::get('/search', [LaporController::class,'search']);
