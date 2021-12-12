@@ -15,6 +15,7 @@ class CreateLaporTable extends Migration
     {
         Schema::create('lapor', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('judul',255);
             $table->string('laporan',2000);
             $table->string('aspek');
             $table->string('lampiran');

@@ -34,25 +34,28 @@
             </div>
             
             <p>Laporan/Komentar Terakhir</p>
+            <br>
             <hr>
         </div>
         <div class="container-body">
             @foreach ($data as $item)
-                <p>{{ $item->laporan }}</p>
-                <p>{{ $item->aspek }}</p>
-                {{-- <img src="{{ URL::to('/') }}/lampiran/{{ $item->lampiran }}" alt="{{ $item->lampiran }}" width="250px"> --}}
+            <div class="item">
+                <p><b>{{ $item->judul }}</b></p>
+                <br>
+                <p>{{ Str::limit($item->laporan, 450) }}</p>
+                <br>
+                <p>Aspek : {{ $item->aspek }}</p>
+                <br>
                 <div class="keterangan">
                     <p>Lampiran : {{ $item->lampiran }}</p>
                     <div class="selengkapnya">
-                    <p>Waktu : {{ $item->created_at }}</p>
-                    <a href="/preview/{{ $item->id }}">Lihat Selengkapnya ></a>
+                        <p>Waktu : {{ $item->created_at }}</p>
+                        <a href="/preview/{{ $item->id }}">Lihat Selengkapnya ></a>
+                    </div>
                 </div>
-                
-                </div>
-                
-                
-                <br>
                 <hr>
+                <br>
+            </div>
             @endforeach
         </div>
         <div class="container-footer">

@@ -10,5 +10,5 @@ class Lapor extends Model
     use HasFactory;
     
     protected $table = 'lapor';
-    protected $fillable = ['laporan', 'aspek', 'lampiran'];
+    protected $fillable = ['judul','laporan', 'aspek', 'lampiran'];
 }

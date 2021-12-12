@@ -39,3 +39,5 @@ Route::post('/lapor', [LaporController::class,'store']);
 Route::get('/preview/{id}', [LaporController::class,'show']);
 Route::get('/delete/{id}', [LaporController::class,'destroy']);
 Route::get('/search', [LaporController::class,'search']);
+Route::get('/edit/{id}', [LaporController::class,'edit']);
+Route::post('/edit/{id}', [LaporController::class,'update']);

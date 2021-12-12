@@ -8,18 +8,23 @@ body,html{
     margin: 0;
     padding: 0;
 }
+
 .nav{
     margin-bottom: 50px;
     justify-content: space-between;
     align-items: center;
     padding: 0px;
-    background-color:#ececec;
+    background-color:#e4e3e3;
     box-shadow: 0 0 10px black;
 }
 
 .logo{
     padding-left: 35px;
     cursor: pointer;
+}
+
+.title h1{
+    font-size: 25px;
 }
 
 .navbar{
@@ -29,8 +34,16 @@ body,html{
     padding-left: 20px;
 }
 
+hr{
+    border: 1px solid rgb(145, 0, 0);
+}
+
+.navbar ul{
+    float: right;
+    
+}
 .link li{
-    display: inline-block
+    display: inline-block;
 }
 
 .link a{
@@ -45,8 +58,8 @@ body,html{
 }
 
 .container{
-    padding-left: 10em;
-    padding-right: 10em;
+    padding-left: 5%;
+    padding-right: 5%;
 }
 .container h1{
     text-align: center;
@@ -82,7 +95,9 @@ body,html{
     text-decoration: none;
 }
 
-
+.item{
+    margin-top: 10px;
+}
 
 .container-footer{
     text-align: center;
@@ -205,4 +220,13 @@ body,html{
     align-items: center;
     padding: 0px 20px;
     transform: translate(50%);
+}
+
+.judul{
+    padding: 15px 13px;
+    margin: 5px 0;
+}
+
+.edit{
+    float: right;
 }

@@ -41,6 +41,7 @@ class LaporController extends Controller
     {
         //
         $request->validate([
+            'judul' => 'required',
             'laporan' => 'required',
             'aspek' => 'required',
             'lampiran' => 'required|max:2000|mimes:jpeg,png,jpg,doc,docx,xls,xlsx,ppt,pptx,pdf',
@@ -50,6 +51,7 @@ class LaporController extends Controller
         $new_lampiran = rand().'.'.$lampiran->getClientOriginalExtension();
 
         $data_laporan = array(
+            'judul' => $request->judul,
             'laporan' => $request->laporan,
             'aspek' => $request->aspek,
             'lampiran' => $new_lampiran,
@@ -84,6 +86,9 @@ class LaporController extends Controller
     public function edit($id)
     {
         //
+        $data = Lapor::find($id);
+        $title = 'Edit';
+        return view('edit', compact('data','title'));
     }
 
     /**
@@ -96,6 +101,38 @@ class LaporController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $lampiran_lama = $request->hidden_lampiran;
+        $lampiran = $request->file('lampiran');
+        if($lampiran != ''){
+            $request->validate([
+                'judul' => 'required',
+                'laporan' => 'required',
+                'aspek' => 'required',
+                'lampiran' => 'required|max:2000|mimes:jpeg,png,jpg,doc,docx,xls,xlsx,ppt,pptx,pdf',
+            ]);
+
+            $new_lampiran = $lampiran_lama;
+            $lampiran->move(public_path('lampiran'), $new_lampiran);
+        }else{
+            $request->validate([
+                'judul' => 'required',
+                'laporan' => 'required',
+                'aspek' => 'required'
+            ]);
+            $new_lampiran = $lampiran_lama;
+        }
+
+        $data_laporan = array(
+            'judul' => $request->judul,
+            'laporan' => $request->laporan,
+            'aspek' => $request->aspek,
+            'lampiran' => $new_lampiran,
+        );
+
+        $data = Lapor::find($id);
+        $data->update($data_laporan);
+
+        return redirect('/preview/'.$id);
     }
 
     /**
@@ -119,8 +156,8 @@ class LaporController extends Controller
     {
 
         $search_text = $_GET['search'];
-        $data = Lapor::where('laporan', 'LIKE','%'.$search_text.'%')->latest()->simplepaginate(5);
-
-        return view('search', compact('data'));
+        $data = Lapor::where('laporan', 'LIKE','%'.$search_text.'%')->orWhere('judul', 'LIKE','%'.$search_text.'%')->latest()->simplepaginate(5);
+        $title = 'search';
+        return view('search', compact('data','title','search_text'));
     }
 }

@@ -5,12 +5,13 @@
 
 <section>
     <div class="container">
-        <h1 class="head">Simple Lapor!</h1>
+        <h1 class="head">SIMPLE LAPOR!</h1>
         <a>Buat Laporan/komentar</a>
         <hr> <br>
     
         <form id="form" action="/lapor" method="POST" enctype="multipart/form-data">
             @csrf
+            <input class="judul" type="text" placeholder="Judul" name="judul">
             <div id="pesan"></div>
             <div class="kalimat">
                 <textarea id="laporan" rows="25" cols="100" placeholder="Laporan/komentar" name="laporan" ></textarea>
