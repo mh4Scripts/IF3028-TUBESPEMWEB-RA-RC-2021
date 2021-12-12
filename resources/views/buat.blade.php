@@ -10,28 +10,34 @@
             <header>
                 <h1 class="title">SIMPLE LAPOR!</h1>
             </header>
-            Buat Laporan/Komentar
+            <div class="buat">
+                Buat Laporan/Komentar<br>
             <hr>
             <br>
             <div class="laporan">
-                Laporan/komentar terakhir<br>
+                <textarea class="komen" rows="20" cols="110" placeholder="Laporan/Komentar"></textarea>
+                <br><br>
+                <div class="custom-select">
+                    <select>
+                        <option value="0">Pilih Aspek Pelaporan/Komentar</option>
+                        <option value="1">Keuangan</option>
+                        <option value="2">Dosen</option>
+                        <option value="3">Tenaga Kependidikan (Tendik)</option>
+                        <option value="4">Mahasiswa/i</option>
+                        <option value="5">Program Studi (Prodi)</option>
+                        <option value="6">Keamanan</option>
+                    </select>
+                </div>
+                <br>
+                <form action="google.com">
+                    <input type="file" multiple><br><br>
+                    <div class="submit"> 
+                        <button type="submit">Buat LAPOR!</button>
+                    </div>
+                </form>
+                <br>
                 <hr>
-                <p>I inadvertently went to See's Candy last week (I was in the mall looking for phone repair), and as it turns out, See's Candy now charges a dollar -- a full dollar -- for even the simplest of their wee confection offerings. I bought two chocolate lollipops and two chocolate-caramel-almond things. The total cost was four-something. I mean, the candies were tasty and all, but let's be real: A Snickers bar is fifty cents. After this dollar-per-candy revelation, I may not find myself wandering dreamily back into a See's Candy any time soon.</p>
-                <div class="lampiran">
-                    lampiran: gambar.jpg
-                </div>
-                <div class="selengkapnya">
-                    Lihat selengkapnya
-                </div>
-                <div class="waktu">
-                    Waktu: 04-01-2021
-                </div>
-                
-                <br><br><hr>
-                
             </div>
-
-
         </div>
     </home>
 </html>
