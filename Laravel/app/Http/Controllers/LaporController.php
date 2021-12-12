@@ -70,8 +70,9 @@ class LaporController extends Controller
     public function show($id)
     {
         //
+        $title = 'preview';
         $data = Lapor::find($id);
-        return view('preview', compact('data'));
+        return view('preview', compact('data','title'));
     }
 
     /**

@@ -41,11 +41,15 @@
                 <p>{{ $item->laporan }}</p>
                 <p>{{ $item->aspek }}</p>
                 {{-- <img src="{{ URL::to('/') }}/lampiran/{{ $item->lampiran }}" alt="{{ $item->lampiran }}" width="250px"> --}}
-                <p>Lampiran : {{ $item->lampiran }}</p>
-                <div class="selengkapnya">
+                <div class="keterangan">
+                    <p>Lampiran : {{ $item->lampiran }}</p>
+                    <div class="selengkapnya">
                     <p>Waktu : {{ $item->created_at }}</p>
                     <a href="/preview/{{ $item->id }}">Lihat Selengkapnya ></a>
                 </div>
+                
+                </div>
+                
                 
                 <br>
                 <hr>
