@@ -11,16 +11,21 @@
     <input id="{{ $data->id }}" type="hidden">
     <p> {{ $data->laporan }}
     </p>
+    
     <p>Lampiran:</p>
     <img src="{{ URL::to('/') }}/lampiran/{{ $data->lampiran }}" alt="{{ $data->lampiran }}" width="400px">
     <br>
     <div class="footer">
-        <p>Waktu: {{ $data->created_at }}      Aspek: {{ $data->aspek }} </p>
-        <form action="{{ url('delete/'.$data->id) }}" onclick="return confirm('beneran mau hapus?')">
+        <div class="keterangan">
+            
+            <p>Waktu: {{ $data->created_at }}      Aspek: {{ $data->aspek }} </p>
+            <form action="{{ url('delete/'.$data->id) }}" onclick="return confirm('beneran mau hapus?')">
             @method('delete')
             @csrf
             <button type="submit">Hapus Laporan/Komentar</button>
         </form>
+
+        </div>
     </div>
     
     <hr>
