@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+body,html{
+    font-family: Montserrat;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+.nav{
+    margin-bottom: 50px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px;
+    background-color:#ececec;
+    box-shadow: 0 0 10px black;
+}
+
+.logo{
+    padding-left: 35px;
+    cursor: pointer;
+}
+
+.navbar{
+    height: 30px;
+    background-color: rgb(145, 0, 0);
+    padding-top: 10px;
+    padding-left: 20px;
+}
+
+.link li{
+    display: inline-block
+}
+
+.link a{
+    padding: 0 20px;
+    text-decoration: none;
+    color: white;
+    font-weight: 1000;
+}
+
+.nav h1{
+    padding-left: 20px;
+}
+
+.container{
+    padding-left: 10em;
+    padding-right: 10em;
+}
+.container h1{
+    text-align: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.head{
+    text-align: center;
+}
+
+.container a{
+    display: flexbox;
+    flex-direction: row;
+}
+
+.lapor{
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.lapor img{
+    height: 20px;
+    padding-left: 5px;
+}
+
+.lapor table{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.lapor table a{
+    text-decoration: none;
+}
+
+
+
+.container-footer{
+    text-align: center;
+}
+
+.search{
+    margin-bottom: 20px;
+}
+
+.field{
+    width: 87%;
+    padding: 15px 13px;
+    margin: 5px 0;
+    background: transparent;
+}
+
+.btn{
+    padding: 3px 30px 20px 20px;
+    cursor: pointer;
+    border: 0;
+    border-radius: 5px;
+    font-weight: 600;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn th{
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.opt{
+    padding: 8px 12px;
+    color: black;
+    background-color: #eeeeee;
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 20px 0;
+}
+
+.laporbtn{
+    margin-top: 20px;
+    padding: 13px 30px 13px 20px;
+    cursor: pointer;
+    border: 0;
+    border-radius: 2px;
+    font-weight: 600;
+}
+
+.container p{
+    padding-top: 10px;
+}
+
+.container a{
+    float: right;
+}

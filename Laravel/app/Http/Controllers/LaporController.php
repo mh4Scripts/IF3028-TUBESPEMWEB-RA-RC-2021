@@ -17,7 +17,8 @@ class LaporController extends Controller
     {
         //
         $data = Lapor::latest()->simplepaginate(5);
-        return view('index', compact('data'));
+        $title="Home";
+        return view('index', compact('data','title'));
     }
 
     /**

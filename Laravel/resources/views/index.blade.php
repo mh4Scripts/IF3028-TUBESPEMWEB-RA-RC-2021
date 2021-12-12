@@ -1,21 +1,38 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="style.css">
-    <title>Lapor</title>
-</head>
-<body>
+@extends('layouts.default')
+@section('content')
+<section>
     <div class="container">
         <div class="container-head">
             <h1>SIMPLE LAPOR!</h1>
             <form class="search" type="get" action="{{ url('/search') }}">
-                <input type="text" placeholder="search..." name="search">
-                <button type="submit">Search</button>
+                <input type="text" placeholder="search..." class="field" name="search">
+                <button class="btn" type="submit">
+                    <table>
+                        <tr>
+                            <th>
+                                <img class="srch" src="assets/search.png" alt="" height="22px" >
+                            </th>
+                            <th>
+                                <p>Search</p>
+                            </th>
+                        </tr>
+                    </table>
+                </button>
             </form>
-            <a href="/lapor">Buat Laporan/Komentar</a>
+            <div class="lapor">
+                <table>
+                    <tr>
+                        <th>
+                            <a href="/lapor">Buat Laporan/Komentar</a>   
+                        </th>
+                        <th>
+                            <a href="/lapor"><img src="assets/add.png" alt=""> </a>
+                        </th>
+                    </tr>
+                </table>
+                
+            </div>
+            
             <p>Laporan/Komentar Terakhir</p>
             <hr>
         </div>
@@ -25,8 +42,11 @@
                 <p>{{ $item->aspek }}</p>
                 {{-- <img src="{{ URL::to('/') }}/lampiran/{{ $item->lampiran }}" alt="{{ $item->lampiran }}" width="250px"> --}}
                 <p>Lampiran : {{ $item->lampiran }}</p>
-                <p>Waktu : {{ $item->created_at }}</p>
-                <a href="/preview/{{ $item->id }}">Lihat Selengkapnya ></a>
+                <div class="selengkapnya">
+                    <p>Waktu : {{ $item->created_at }}</p>
+                    <a href="/preview/{{ $item->id }}">Lihat Selengkapnya ></a>
+                </div>
+                
                 <br>
                 <hr>
             @endforeach
@@ -41,6 +61,5 @@
             </p>
         </div>
     </div>
-    
-</body>
-</html>
+</section>       
+@endsection

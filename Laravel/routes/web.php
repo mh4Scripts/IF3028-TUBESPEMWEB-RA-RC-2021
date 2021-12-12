@@ -19,7 +19,8 @@ Route::get('/', function () {
 });
 
 Route::get('/lapor', function () {
-    return view('lapor');
+    $title="lapor";
+    return view('lapor',compact('title'));
 });
 
 Route::get('/preview', function () {
