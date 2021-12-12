@@ -139,3 +139,60 @@ body,html{
 .container a{
     float: right;
 }
+
+.group{
+    padding-top: 200px;
+    display: flex;
+    text-align: center;
+    width: auto;
+    justify-content: center;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+
+.group .member{
+    background: #fff;
+    margin: 5px;
+    margin-bottom: 50px;
+    width: 400px;
+    padding: 20px;
+    line-height: 20px;
+    position: relative;
+}
+
+.group .member h3{
+    font-size: 26px;
+    margin-top: 50px;
+}
+
+.group .member p.job{
+    font-size: 16px;
+    font-weight: 1000;
+    text-transform: uppercase;
+    margin: 12px 0px;
+}
+
+.group .member .imge{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    position: absolute;
+    top: -100px;
+    left: 50%;
+    transform: translate(-50%);
+    background-color: #fff;
+}
+
+.group .member .imge img{
+    width: 150px;
+    height: 150px;
+    padding: 10px;
+
+}
+
+.group a{
+    float: left;
+    align-items: center;
+    padding: 0px 20px;
+    transform: translate(50%);
+}

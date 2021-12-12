@@ -27,6 +27,11 @@ Route::get('/preview', function () {
     return view('preview');
 });
 
+Route::get('/about', function () {
+    $title="about";
+    return view('about',compact('title'));
+});
+
 
 // Route::post('/lapor', 'LaporController@store');
 Route::get('/', [LaporController::class,'index']);
