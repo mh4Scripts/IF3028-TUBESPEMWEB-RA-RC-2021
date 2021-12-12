@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" href="detail.css">
+        <link rel="stylesheet" href="/Css/detail.css">
         <title>Lapor</title>
     </head>
 

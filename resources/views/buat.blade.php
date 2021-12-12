@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" href="buat.css">
+        <link rel="stylesheet" href="/Css/buat.css">
         <title>Lapor</title>
     </head>
 

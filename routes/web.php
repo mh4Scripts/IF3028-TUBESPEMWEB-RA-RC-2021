@@ -13,14 +13,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+Route::get('/utama', function () {
     return view('utama');
 });
 
-// Route::get('/', function () {
-//     return view('detail');
-// });
+Route::get('/detail', function () {
+    return view('detail');
+});
 
-// Route::get('/', function () {
-//     return view('buat');
-// });
+Route::get('/buat', function () {
+    return view('buat');
+});
