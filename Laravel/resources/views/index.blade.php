@@ -3,7 +3,7 @@
 <section>
     <div class="container">
         <div class="container-head">
-            <h1>SIMPLE LAPOR!</h1>
+            <h1 class="head">SIMPLE LAPOR!</h1>
             <form class="search" type="get" action="{{ url('/search') }}">
                 <input type="text" placeholder="search..." class="field" name="search">
                 <button class="btn" type="submit">
@@ -29,33 +29,34 @@
                             <a href="/lapor"><img src="assets/add.png" alt=""> </a>
                         </th>
                     </tr>
-                </table>
-                
+                </table>    
             </div>
             
-            <p>Laporan/Komentar Terakhir</p>
-            <br>
-            <hr>
         </div>
         <div class="container-body">
             @foreach ($data as $item)
-            <div class="item">
-                <p><b>{{ $item->judul }}</b></p>
-                <br>
-                <p>{{ Str::limit($item->laporan, 450) }}</p>
-                <br>
-                <p>Aspek : {{ $item->aspek }}</p>
-                <br>
-                <div class="keterangan">
-                    <p>Lampiran : {{ $item->lampiran }}</p>
-                    <div class="selengkapnya">
-                        <p>Waktu : {{ $item->created_at }}</p>
-                        <a href="/preview/{{ $item->id }}">Lihat Selengkapnya ></a>
+                @if ($id === $item->id)
+                    <p>Laporan/Komentar Terakhir</p>
+                    <br>
+                    <hr>
+                @endif
+                <div class="item">
+                    <p><b>{{ $item->judul }}</b></p>
+                    <br>
+                    <p>{{ Str::limit($item->laporan, 450) }}</p>
+                    <br>
+                    <p>Aspek : {{ $item->aspek }}</p>
+                    <br>
+                    <div class="keterangan">
+                        <p>Lampiran : {{ $item->lampiran }}</p>
+                        <div class="selengkapnya">
+                            <p>Waktu : {{ $item->created_at->format('d-m-Y H:i:s') }}</p>
+                            <a href="/preview/{{ $item->id }}">Lihat Selengkapnya ></a>
+                        </div>
                     </div>
+                    <hr>
+                    <br>
                 </div>
-                <hr>
-                <br>
-            </div>
             @endforeach
         </div>
         <div class="container-footer">

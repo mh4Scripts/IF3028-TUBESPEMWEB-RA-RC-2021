@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="icon" href="assets/itera.png">
     <title>{{ $title }}</title>
-    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="{{ URL::to('/') }}/CSS/style.css">
 </head>
 <body>
     <nav> 
@@ -14,7 +14,7 @@
             <table>
                 <tr>
                     <th>
-                        <a class="logo" href="/"><img src="assets/itera.png" alt="Logo"
+                        <a class="logo" href="/"><img src="{{ URL::to('/') }}/assets/itera.png" alt="Logo"
                             width="50px">
                         </a>
                     </th>

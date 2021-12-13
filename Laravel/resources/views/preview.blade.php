@@ -1,38 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="icon" href="../assets/itera.png">
-    <title>{{ $title }}</title>
-    <link rel="stylesheet" href="../CSS/style.css">
-</head>
-<body>
-    <nav> 
-        <div class="nav">
-            <table>
-                <tr>
-                    <th>
-                        <a class="logo" href="/"><img src="../assets/itera.png" alt="Logo"
-                            width="50px">
-                        </a>
-                    </th>
-                    <th class="title">
-                        <h1>Lapor!</h1>
-                    </th>
-                </tr>
-            </table>
-            <div class="navbar">
-                <ul class="link">
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/about">About Us</a></li>
-                </ul>
-            </div>  
-        </div>    
-    </nav>
+@extends('layouts.default')
+@section('content')
+<section>
     <div class="container">
-        <h1>SIMPLE LAPOR!</h1> <br>
+        <h1 class="head">SIMPLE LAPOR!</h1>
+        <br>
         <p>Detail Laporan / Komentar</p>
         <hr>
 
@@ -48,15 +19,29 @@
 
         <br>
         <p>Lampiran:</p>
-        <img src="{{ URL::to('/') }}/lampiran/{{ $data->lampiran }}" alt="{{ $data->lampiran }}" width="400px">
+        @if ( $ext == 'docx' )
+            <img src="{{ URL::to('/') }}/assets/word.png" alt="word" width="400px">
+            <p>{{ $data->lampiran }}</p>
+
+        @elseif ($ext == 'xlsx' )
+            <img src="{{ URL::to('/') }}/assets/excel.jpeg" alt="excel" width="400px">
+            <p>{{ $data->lampiran }}</p>
+
+        @elseif ($ext == 'pdf' )
+            <img src="{{ URL::to('/') }}/assets/pdf.png" alt="pdf" width="400px">
+            <p>{{ $data->lampiran }}</p>
+
+        @else
+            <img src="{{ URL::to('/') }}/lampiran/{{ $data->lampiran }}" alt="{{ $data->lampiran }}" width="400px">
+        @endif
         <br>
 
         <br>
         <div class="footer">
             <div class="keterangan">
-                <p>Waktu: {{ $data->created_at }}</p> 
+                <p>Waktu: {{ $data->created_at->format('d-m-Y H:i:s') }}</p> 
                 <p>Aspek: {{ $data->aspek }}</p> 
-                <form action="{{ url('delete/'.$data->id) }}" onclick="return confirm('beneran mau hapus?')">
+                <form action="{{ url('delete/'.$data->id) }}" onclick="return confirm('Yakin ingin menghapus Laporan/Komentar?')">
                     @method('delete')
                     @csrf
                     <button type="submit">Hapus Laporan/Komentar</button>
@@ -84,5 +69,5 @@
         //     }
         // }
     </script>
-</body>
-</html>
+</section>
+@endsection

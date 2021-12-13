@@ -18,7 +18,10 @@ class LaporController extends Controller
         //
         $data = Lapor::latest()->simplepaginate(5);
         $title="Home";
-        return view('index', compact('data','title'));
+        $id_latest = Lapor::latest()->first();
+        $id = $id_latest->id;
+
+        return view('index', compact('data','title','id'));
     }
 
     /**
@@ -74,7 +77,10 @@ class LaporController extends Controller
         //
         $title = 'preview';
         $data = Lapor::find($id);
-        return view('preview', compact('data','title'));
+        $getEx = $data->lampiran;
+        $ext = substr($getEx, strpos($getEx, ".") + 1);
+        
+        return view('preview', compact('data','title','ext'));
     }
 
     /**

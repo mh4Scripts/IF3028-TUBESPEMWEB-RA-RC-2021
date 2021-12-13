@@ -1,38 +1,46 @@
-
+function validasi(){
 
     var form = document.getElementById('form')
-
-    var error = []
-    
+            
     form.addEventListener('submit', function(e){
         e.preventDefault()
-    
+        
+        var judul = document.getElementById('judul')
         var laporan = document.getElementById('laporan')
-        var aspek = document.getElementsByClassName('aspek')
-        var lampiran = document.getElementById('lampiran')
-    
+        var aspek = document.getElementById('aspek')
+        var pesan = document.getElementsByClassName('pesan')
+
+        var err = 0
+
+        if (judul.value == ""){
+            let error = "Judul tidak boleh kosong!"
+            pesan[0].innerText = error
+            err++
+        }else{
+            pesan[0].innerText=''
+        }
+
         if (laporan.value.length < 20 ){
-            error.push("Tolong isi filed laporan ") 
+            let error = "Tidak boleh kurang dari 20 kata!"
+            pesan[1].innerText = error
+            err++
+        }else{
+            pesan[1].innerText=''
         }
-    
+
         if (aspek.value == ""){
-            error.push("Tolong isi filed aspek ") 
+            let error = "Aspek harus dipilih!"
+            pesan[2].innerText = error
+            err++
+        }else{
+            pesan[2].innerText=''
         }
-    
-        if (lampiran.value = ""){
-            error.push("Tolong isi filed lampiran ") 
+
+        if (err == 0){
+            if(confirm("Yakin ingin membuat laporan/komentar?") == true){
+                form.submit();
+            }
         }
-    
-    
-        var pesan = document.getElementById('pesan')
-        pesan.innerText = error
-    
-        if (laporan.value.length > 19 && aspek.value != "" && lampiran.value != "" ){
-            form.submit();
-            alert("Berhasil Submit");
-            
-        }
-    
     })
 
-
+}
