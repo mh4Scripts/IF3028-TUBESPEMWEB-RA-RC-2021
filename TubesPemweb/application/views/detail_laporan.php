@@ -5,13 +5,17 @@
 	<title>Tubes Pemweb</title>
 
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>theme/theme-detail_laporan/style.css">
+
+
+	<!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="<?php echo base_url() ;?>/assets/css/font-awesome.css">
 </head>
 <body>
 
 	<div id="box">
 		<div id="box-content">
 			<div id="title">
-				<h1>SIMPLE LAPOR!</h1>
+				<h1>DETAIL LAPORAN!</h1>
 			</div>
 
 			<div id="detail-content">
@@ -26,20 +30,20 @@
 						<?php echo $data->isi;?>	
 					</div>
 
-					<div id="aspect">
-						<?php echo $data->aspek;?>
+					<div class="file-attachment">
+						<p>Lampiran :</p>
+						<img src="<?= base_url('uploads/'.$data->file) ?>" width="18%"><br><br><br>
+
+
+						<table width="100%">
+							<tr>
+								<td width="25%">Wakkt : <?php echo " 20-11-2020 20.00";?></td>	
+								<td>Aspek : <?php echo $data->aspek;?></td>
+								<td width="25%" align="right"><?php echo anchor('dashboard/hapus/'.$data->id, 'Hapus Laporan/Komentar <i class="fa fa-times"></i>', array('class'=>'delete', 'onclick'=>"return confirmDialog();"));?></td>
+							</tr>
+						</table>
 					</div>
 
-					<div class="post-date">
-						<?php 
-						echo "Lampiran : file.png";
-						?>
-						<?php 
-						echo " Wakkt : 20-11-2020 20.00";
-						?>
-					</div>
-
-					<?php echo anchor('dashboard/hapus/'.$data->id, 'Hapus', array('class'=>'delete', 'onclick'=>"return confirmDialog();"));?>
 					<hr>
 				<?php endforeach;?>
 			</div>
