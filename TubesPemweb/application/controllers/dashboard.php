@@ -26,10 +26,26 @@ class Dashboard extends CI_Controller{
 	public function tambah_aksi(){
 		$isi 	= $this->input->post('isi');
 		$aspek 	= $this->input->post('aspek');
+		$file 	= $_FILES['file'];
+
+		if ($file =''){}else{
+			$config['upload_path']		= './uploads/';
+			$config['allowed_types']	='jpg|png|pdf|doc|docx|ppt';
+
+			$this->load->library('upload', $config);
+
+			if(!$this->upload->do_upload('file')){
+				echo "Upload Gagal";die();
+			}else{
+				$file = $this->upload->data('file_name');
+			}
+
+		}
  
 		$data = array(
 			'isi' 	=> $isi,
 			'aspek' => $aspek,
+			'file' 	=> $file
 			);
 
 		$this->tampil_laporan->input_data($data,'tb_laporan');
