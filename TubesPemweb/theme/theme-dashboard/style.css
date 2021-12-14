@@ -34,14 +34,10 @@ body {
 	width: auto;
 }
 
-.post-date{
-	margin-left: 45%;
-}
-
 #more a{
-	margin-left: 15px;
 	color: black;
-	text-decoration:none
+	text-decoration:none;
+	text-align : center;
 }
 
 
@@ -70,11 +66,7 @@ body {
 	margin-top: 30px;
 }
 
-#content #title-content{
-	margin-top: -10px;
-	margin-bottom: -10px;
-}
-
-#post-date{
-	margin-left: 20px;
+.fa-ellipsis-v {
+	margin-left: 50%;
+	margin-top: -20px;
 }
