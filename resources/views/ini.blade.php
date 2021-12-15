@@ -14,8 +14,9 @@
         <form class="searchbar" action="/action_page.php">
             <input type="text" placeholder="Search.." name="search">
             <button type="submit">Cari</button>
-          </form>
-            <a href="add.php" class="buatlaporan">Buat Laporan/Komentar</a>
+        </form>
+        <div class="buatlaporan">
+            <a href="add.php">Buat Laporan/Komentar</a>
         </div>
     </body>
 
