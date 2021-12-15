@@ -5,7 +5,7 @@
         <title>Lapor</title>
     </head>
 
-    <home>
+    <body>
         <div class="container">
             <header>
                 <h1 class="title">SIMPLE LAPOR!</h1>
@@ -15,7 +15,7 @@
                 </div>
             </header>
             <div class="add">
-                <a href="/detail">Buat Laporan/Komentar</a>
+                <a href="/buat">Buat Laporan/Komentar &emsp;</a>
             </div>
             <br>
             <div class="laporan">
@@ -26,7 +26,7 @@
                     lampiran: gambar.jpg
                 </div>
                 <div class="selengkapnya">
-                    Lihat selengkapnya
+                    <a href="/detail">Lihat Selengkapnya &nbsp;</a>
                 </div>
                 <div class="waktu">
                     Waktu: 04-01-2021
@@ -38,5 +38,5 @@
 
 
         </div>
-    </home>
+</body>
 </html>
