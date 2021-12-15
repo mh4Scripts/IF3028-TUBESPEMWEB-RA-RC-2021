@@ -14,5 +14,25 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
+    return view('templates/index');
+})->name('home');
+
+Route::get('/sudahmasuk', function () {
+    return view('templates/home');
+})->name('LoggedInhome');
+
+Route::get('/about', function () {
+    return view('templates/about');
+})->name('about');
+
+Route::get('/daftar', function () {
+    return view('templates/register');
+})->name('register');
+
+Route::get('/c', function () {
+    return view('templates/canvas');
+})->name('canvas');
+
+// Route::get('/masuk', function () {
+//     return view('templates/login');
+// })->name('login');
