@@ -5,8 +5,8 @@ h1{
 
 .container{
     margin:auto;
-    width:95%;
-    /* border: 2px solid black; */
+    width:80%;
+    background-color: #F7F8F2;
     padding:5px;
 }
 .title{
@@ -16,13 +16,13 @@ h1{
  .detail{
     text-align: justify;
     margin:auto;
-    width:73%
+    width:83%
 }
 
  .isilaporan{
      text-align: justify;
      margin:auto;
-     width:73%
+     width:83%
  }
 
  .hapus img {
@@ -52,6 +52,6 @@ h1{
  }
 
  body{
-     background-color: #798E78;
+     background-color: #798e78c9;
      /* background-color: #F7F8F2; */
  }

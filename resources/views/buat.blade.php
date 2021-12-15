@@ -5,7 +5,7 @@
         <title>Lapor</title>
     </head>
 
-    <home>
+    <body>
         <div class="container">
             <header>
                 <h1 class="title">SIMPLE LAPOR!</h1>
@@ -19,7 +19,7 @@
                 <br><br>
                 <div class="custom-select">
                     <select>
-                        <option value="0">Pilih Aspek Pelaporan/Komentar</option>
+                        <option hidden>Pilih Aspek Pelaporan/Komentar</option>
                         <option value="1">Keuangan</option>
                         <option value="2">Dosen</option>
                         <option value="3">Tenaga Kependidikan (Tendik)</option>
@@ -31,13 +31,10 @@
                 <br>
                 <form action="google.com">
                     <input type="file" multiple><br><br>
-                    <div class="submit"> 
-                        <button type="submit">Buat LAPOR!</button>
-                    </div>
+                    <button type="submit" class="submit">Buat LAPOR!</button>
                 </form>
-                <br>
-                <hr>
+                <br><br><br><br><hr>
             </div>
         </div>
-    </home>
+</body>
 </html>
