@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" href="/Css/utama.css">
+        <link rel="stylesheet" href="/Css/fix.css">
         <title>Lapor</title>
     </head>
 
@@ -15,7 +15,7 @@
                 </div>
             </header>
             <div class="add">
-                <a href="/buat">Buat Laporan/Komentar &emsp;</a>
+                <a href="/buat">Buat Laporan/Komentar &nbsp;</a>
             </div>
             <br>
             <div class="laporan">
@@ -28,7 +28,7 @@
                 <div class="selengkapnya">
                     <a href="/detail">Lihat Selengkapnya &nbsp;</a>
                 </div>
-                <div class="waktu">
+                <div class="waktu-utm">
                     Waktu: 04-01-2021
                 </div>
                 
