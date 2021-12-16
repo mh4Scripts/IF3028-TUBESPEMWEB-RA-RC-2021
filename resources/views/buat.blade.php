@@ -34,6 +34,17 @@
                     <button type="submit" class="submit">Buat LAPOR!</button>
                 </form>
                 <br><br><br><br><hr>
+            </div>
         </div>
-</body>
+    </body>
+
+    <footer>
+        <div class="about">
+            <a href="#">About Us</a>
+            <a href="/utama">Home</a>
+        </div>
+        <p class="copyright">
+            © Copyright 2021 Tubes. Penweb.
+        </p>
+    </footer>
 </html>
