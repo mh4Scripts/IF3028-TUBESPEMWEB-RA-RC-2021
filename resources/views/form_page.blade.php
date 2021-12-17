@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="form.css">
+        <link rel="stylesheet" href="form_page.css">
         <title>
             SIMPLE LAPOR!
         </title>
@@ -11,7 +11,7 @@
 
     <body>
         <h1>SIMPLE LAPOR!</h1>
-        <form method="POST" id="formAdd" action="/action_page.php">
+        <form method="POST" id="formAdd" action="/add_page.php">
             <p>Buat Laporan/Komentar</p>
             <hr>
             <textarea name="laporan" placeholder="Laporan/Komentar" id="laporan" rows="18" cols="151" required></textarea>

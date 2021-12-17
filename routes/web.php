@@ -12,5 +12,5 @@
 */
 
 Route::get('/', function () {
-    return view('ini');
+    return view('form_page');
 });
