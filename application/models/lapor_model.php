@@ -2,94 +2,62 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class lapor_model extends CI_Model{
-    
-    public function getlapor(){
-        return $this->db->get('laporan')->result_array(); 
-    }
+    private $_table = "laporan";
 
-    public function tambah(){
+    public $id;
+    public $isi;
+    public $aspek;
+    public $lampiran;
+    public $waktu;
 
-        date_default_timezone_set('Asia/Jakarta');
-		$waktu = date("Y-m-d H:i:s");
+    public function rules(){
+        return [
+            ['field' => 'isi',
+            'label' => 'Isi',
+            'rules' => 'required'],
 
-        $lampiran = $_FILES['file'];
-		if($lampiran = ''){}else{
-			$config['upload_path'] = './assets/img';
-			$config['allowed_types'] = 'jpeg|jpg|png|gif|pdf';
+            ['field' => 'aspek',
+            'label' => 'Aspek',
+            'rules' => 'required'],
 
-			$this->load->library('upload',$config);
-			if(!$this->upload->do_upload('file')){
-				echo "gagal";
-			}else{
-				$file = $this->upload->data('file_name');
-			}
-		}
-
-        $data = [
-			"isi" => $this->input->post('isi'),
-			"aspek" => $this->input->post('aspek'),
-			"waktu" => $waktu,
-			"lampiran" => $file
+            ['field' => 'lampiran',
+            'label' => 'Lampiran',
+            'rules' => 'required']
         ];
-
-        if($file == "" && $aspek==""){
-			return false;
-		}else{
-            $this->db->insert('lapor', $data);
-            return true;
-		}
     }
 
-    public function cari($cari){
-        $this->db->like('isi', $cari);
-        $this->db->or_like('waktu', $cari);
-        $this->db->or_like('aspek', $cari);
+    public function getAll(){
+        $this->db->order_by('waktu', 'DESC');
+        return $this->db->get($this->_table)->result();
+    }
 
-        return $this->db->get('laporan')->result_array();
+    public function getById($id){
+        return $this->db->get_where($this->_table, ["id" => $id])->row();
+    }
+
+    public function save(){
+        $post = $this->input->post();
+        $this->isi = $post["isi"];
+        $this->aspek = $post["aspek"];
+        $this->lampiran = $post["lampiran"];
+        date_default_timezone_set('Asia/Jakarta');
+        $this->waktu = date("Y-m-d H:m:s");
+        return $this->db->insert($this->_table, $this);
+    }
+
+    public function update(){
+        $post = $this->input->post();
+        $this->id = $post["id"];
+        $this->isi = $post["isi"];
+        $this->aspek = $post["aspek"];
+        $this->lampiran = $post["lampiran"];
+        date_default_timezone_set('Asia/Jakarta');
+        $this->waktu = date("Y-m-d H:m:s");
+        return $this->db->update($this->_table, $this, array('id' => $post["id"]));
     }
 
     public function delete($id){
-        $this->db->where('id', $id);
-        $this->db->delete('laporan');
+        return $this->db->delete($this->_table, array("id" => $id));
     }
-
-    public function detail($id){
-        return $this->db->get_where('laporan', array('id'=>$id))->row_array();
-    }	
-
-    public function ubah($id){
-
-		date_default_timezone_set('Asia/Jakarta');
-		$tanggal = date("Y-m-d H:i:s");
-
-		$file = $_FILES['file'];
-		if($file = ''){}else{
-			$config['upload_path'] = './asset/file';
-			$config['allowed_types'] = 'jpeg|jpg|png|gif|pdf';
-
-			$this->load->library('upload',$config);
-			if(!$this->upload->do_upload('file')){
-				echo "gagal";		
-			}else{
-				$file = $this->upload->data('file_name');
-			}
-		}
-
-		$isi = $this->input->post('isi');
-		$aspek = $this->input->post('aspek');
-
-		if($file == ""){
-			return false;
-		}else{
-            $this->db->set('isi', $isi);
-            $this->db->set('aspek', $aspek);
-            $this->db->set('waktu', $waktu);
-            $this->db->set('file', $file);
-            $this->db->where('id', $id);
-            $this->db->update('laporan');
-            return true;
-		}
-	}
-
 }
-
+?>
