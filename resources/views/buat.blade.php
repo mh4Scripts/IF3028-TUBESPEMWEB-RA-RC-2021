@@ -33,18 +33,18 @@
                     <input type="file" multiple><br><br>
                     <button type="submit" class="submit">Buat LAPOR!</button>
                 </form>
-                <br><br><br><br><hr>
+                <br><br><br><br><hr><br>
             </div>
         </div>
     </body>
 
     <footer>
         <div class="about">
-            <a href="#">About Us</a>
+            <a href="/AboutUs">About Us</a> | 
             <a href="/utama">Home</a>
         </div>
         <p class="copyright">
-            © Copyright 2021 Tubes. Penweb.
+            © Copyright 2021 Tubes. Pengweb.
         </p>
     </footer>
 </html>

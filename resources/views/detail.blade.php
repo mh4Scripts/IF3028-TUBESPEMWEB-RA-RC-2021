@@ -34,7 +34,7 @@
                 </div>
                 <button class="hapus">Hapus Laporan/Komentar</button>
                 
-                <br><br><hr>
+                <br><br><hr><br>
                 
             </div>
 
@@ -44,11 +44,11 @@
     
     <footer>
         <div class="about">
-            <a href="#">About Us</a>
+            <a href="/AboutUs">About Us</a> | 
             <a href="/utama">Home</a>
         </div>
         <p class="copyright">
-            © Copyright 2021 Tubes. Penweb.
+            © Copyright 2021 Tubes. Pengweb.
         </p>
     </footer>
 </html>

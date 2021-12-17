@@ -8,6 +8,7 @@ h1{
     width:80%;
     background-color: #F7F8F2;
     padding:5px;
+    box-shadow: -5px 5px 10px #888;
 }
 .title{
     padding:40px;
@@ -138,7 +139,7 @@ a{
    text-decoration: none;
 }
 .selengkapnya a:hover{
-   color: #0000ff;
+   color: #6d7e6c;
 }
 
 .komen{
@@ -209,11 +210,47 @@ option {
     height: 15px;
     background-color: black;
 }
+
+.about{
+    color: white;
+}
 .about a{
     color: white;
     text-decoration: none;
+    padding: 5px;
 }
 
 .about a:hover{
-    font-weight: 900;
+    color:#798e78c9;
+}
+
+.row{
+    margin: auto;
+    /* margin-left: 150px; */
+}
+
+.kolom{
+    float:left;
+    padding: 10px 10px;
+}
+.profil{
+    text-align: center;
+}
+
+figure img{
+    height:216px;
+    width:216px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.container::after, .row::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+
+h2{
+    padding:0;
+    margin: 0;
 }
