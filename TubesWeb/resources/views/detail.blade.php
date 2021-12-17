@@ -28,11 +28,15 @@
 
 <div class="row">
     <div class="col-1"></div>
-    <div class="col-7">
+    <div class="col-4">
         <p>waktu : {{date('d-m-Y H:i', strtotime($report->created_at))}} &ensp; Aspek: {{$report->aspek}}</p>
     </div>
     <div class="col-3 right">
-        <p><a href="#">Hapus Laporan/Komentar</a></p>
+        <p><a href="{{route('report.edit', $report->id)}}">Edit Laporan</a></p>
+    </div>
+    <div class="col-3 right">
+        <p><a href="#" onclick="document.getElementById('id01').style.display='block'">Hapus Laporan/Komentar</a></p>
+
     </div>
     <div class="col-1"></div>
 </div>
@@ -45,4 +49,26 @@
     </div>
     <div class="col-1"></div>
 </div>
+
+{{-- modal delete --}}
+
+<div id="id01" class="modal">
+    <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">×</span>
+    <form class="modal-content"  action="{{route('report.destroy', $report->id)}}" method="POST" enctype="multipart/form-data">
+        @METHOD('DELETE')
+        @csrf
+        <div class="container">
+        <h1>Hapus Laporan</h1>
+        <p>Apakah anda yakin ingin menghapus laporan?</p>
+      
+        <div class="clearfix">
+            <button type="button" class="btn-submit" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+                
+                <button type="submit" class="btn-submit" onclick="document.getElementById('id01').style.display='none'" class="deletebtn" value="Delete" >Delete</button>
+            </form>
+        </div>
+      </div>
+    </form>
+  </div>
+@endsection
 @endsection
