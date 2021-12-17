@@ -72,6 +72,8 @@ class reportController extends Controller
     public function edit($id)
     {
         //
+        $report = Report::where('id', $id)->first();
+        return view('edit', compact('report'));
     }
 
     /**
@@ -84,6 +86,15 @@ class reportController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $request->file('lampiran')->move('assets/images', $request->file('lampiran')->getClientOriginalName());
+        Report::where('id', $id)
+                ->update([
+                    'laporan'   => $request->laporan,
+                    'aspek'     => $request->aspek,
+                    'lampiran'  => $request->file('lampiran')->getClientOriginalName()
+        ]);
+
+        return redirect()->route('report.index');
     }
 
     /**
