@@ -95,5 +95,7 @@ class reportController extends Controller
     public function destroy($id)
     {
         //
+        Report::destroy($id);
+        return redirect()->route('report.index');
     }
 }

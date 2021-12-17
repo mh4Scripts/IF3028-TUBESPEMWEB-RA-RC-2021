@@ -20,4 +20,5 @@
         </div>
     </section>
 </body>
+<script src="{{asset('assets')}}/js/layout.js"></script>
 </html>
