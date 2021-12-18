@@ -8,18 +8,21 @@
                 Buat Laporan/Komentar<br>
             <hr>
             <br>
-                <textarea class="komen" rows="20" cols="110" placeholder="Laporan/Komentar"></textarea>
-                <br><br>
+                <!-- <div class="teks"> -->
+                    <input type="text" name="nama" class="teks" placeholder="Nama Pelapor"><br><br>
+                    <input type="text" name="judul" class="teks" placeholder="Judul Laporan/Komentar"><br><br>
+                    <textarea class="komen" rows="20" cols="110" placeholder="Laporan/Komentar"></textarea>
+                    <br><br>
+                <!-- </div> -->
+                
                 <div class="custom-select">
                     <select>
                         <option hidden>Pilih Aspek Pelaporan/Komentar</option>
-                        <option value="1">Keuangan</option>
-                        <option value="2">Dosen</option>
-                        <option value="3">Tenaga Kependidikan</option>
-                        <option value="4">Mahasiswa/i</option>
-                        <option value="5">Program Studi</option>
-                        <option value="6">Keamanan</option>
-                        <option value="7">Infrastruktur</option>
+                        <option value="Dosen">Dosen</option>
+                        <option value="Staff">Staff</option>
+                        <option value="Mahasiswa">Mahasiswa</option>
+                        <option value="Infrastruktur">Infrastruktur</option>
+                        <option value="Pengajaran">Pengajaran</option> 
                     </select>
                 </div>
                 <br>

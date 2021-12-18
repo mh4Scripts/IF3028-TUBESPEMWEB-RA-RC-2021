@@ -27,6 +27,8 @@
                     Waktu: 20-11-2019 20:00
                 </div>
                 <button class="hapus">Hapus Laporan/Komentar</button>
+                <button class="edit">Edit Laporan</button>
+                
                 
                 <br><br><hr><br>
                 
