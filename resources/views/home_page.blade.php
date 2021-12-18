@@ -37,8 +37,10 @@
                     </div>
 
                     <div class="selengkapnya">
+                        <a href="detail_page">
                         Lihat Selengkapnya
                         <img src="arrow_forward_ios.png">
+                        </a>
                     </div>
              </div>
         </div>

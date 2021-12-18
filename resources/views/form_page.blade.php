@@ -7,19 +7,31 @@
         <title>
             SIMPLE LAPOR!
         </title>
+        <script>
+            function validateForm() {
+            var x = document.forms["formlaporan"]["laporan"]["aspek"]["fileupload"].value;
+            if (x == "" || x == null) {
+                alert("Setiap field pada form tidak boleh kosong");
+                return false;
+                }
+            }
+</script>
     </head>
 
     <body>
         <h1>SIMPLE LAPOR!</h1>
-        <form method="POST" id="formAdd" action="/add_page.php">
+        <form method="POST" id="formlaporan" action="/add_page.php" onsubmit="return validateForm()" required>
             <p>Buat Laporan/Komentar</p>
             <hr>
             <textarea name="laporan" placeholder="Laporan/Komentar" id="laporan" rows="18" cols="151" required></textarea>
 
-            <select name="division">
+            <select name="aspek">
                 <option value="">Pilih Aspek Pelaporan/Komentar</option>
-                <option value="Laporan">Laporan</option>
-                <option value="Komentar">Komentar</option>
+                <option value="dosen">Dosen</option>
+                <option value="staff">Staff</option>
+                <option value="mahasiswa">Mahasiswa</option>
+                <option value="infrastruktur">Infrastruktur</option>
+                <option value="pengajaran">Pengajaran</option>
             </select>
             <br>
             <input type="file" id="fileupload" name="fileupload" class="fileupload">
