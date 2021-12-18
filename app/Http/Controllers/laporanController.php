@@ -15,7 +15,8 @@ class laporanController extends Controller
     public function index()
     {
         $data = laporan::latest()->paginate (5);
-        return view('utama', compact('data'));
+        $title = "utama";
+        return view('utama', compact('data','title'));
     }
 
     /**
