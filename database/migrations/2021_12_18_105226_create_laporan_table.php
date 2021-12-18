@@ -19,7 +19,7 @@ class CreateLaporanTable extends Migration
             $table->string ('judul',50);
             $table->string('pesan',1000);
             $table->string('aspek',20);
-            $table->text('file');
+            $table->string('file');
             $table->timestamps();    
         });
     }

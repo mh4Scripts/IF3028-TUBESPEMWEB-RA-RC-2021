@@ -15,20 +15,23 @@
             <div class="laporan">
                 Laporan/komentar terakhir<br>
                 <hr>
-                @foreach ($data as $item)
+                @foreach($data as $item)
                 <p>{{$item->pesan}}</p>
                 <div class="lampiran">
-                    lampiran: {{ $item -> file }} 
+                    <p>
+                        lampiran: {{ $item -> file }} 
+                    </p>
                 </div>
                 <div class="selengkapnya">
                     <a href="/detail">Lihat Selengkapnya &nbsp;</a>
                 </div>
                 <div class="waktu-utm">
-                    Waktu: {{ $item->create_at->format('d-m-Y H:i:s') }}
+                    <p>
+                        Waktu: {{ $item->create_at->format('d-m-Y H:i:s') }}
+                    </p>
                 </div>
-                
                 <br><br><hr><br>
-                
+                @endforeach
             </div>
         </div>
 @endsection 

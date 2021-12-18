@@ -26,8 +26,8 @@
                     </select>
                 </div>
                 <br>
-                <form action="google.com">
-                    <input type="file" multiple><br><br>
+                <form action="/utama" method="POST">
+                    <input id="file" name="file" type="file" multiple><br><br>
                     <button type="submit" class="submit">Buat LAPOR!</button>
                 </form>
                 <br><br><br><br><hr><br>
