@@ -14,6 +14,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::get('/utama',[laporancontroller::class,'index']);
+Route::post('/utama',[laporancontroller::class,'store']);
+
 // Route::get('/utama', function () {
 //     return view('utama',[
 //         "title" => "Utama"

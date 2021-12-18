@@ -8,13 +8,14 @@
                 Buat Laporan/Komentar<br>
             <hr>
             <br>
-                <!-- <div class="teks"> -->
+            <form action="/utama" method="POST" enctype="multipart/form-data">
+                @csrf
+                <div class="teks">
                     <input type="text" name="nama" class="teks" placeholder="Nama Pelapor"><br><br>
                     <input type="text" name="judul" class="teks" placeholder="Judul Laporan/Komentar"><br><br>
                     <textarea id = "pesan" name = "pesan" class="komen" rows="20" cols="110" placeholder="Laporan/Komentar"></textarea>
                     <br><br>
-                <!-- </div> -->
-                
+                </div>
                 <div class="custom-select">
                     <select id = 'aspek' name = 'aspek'>
                         <option hidden>Pilih Aspek Pelaporan/Komentar</option>
@@ -26,7 +27,6 @@
                     </select>
                 </div>
                 <br>
-                <form action="/utama" method="POST">
                     <input id="file" name="file" type="file" multiple><br><br>
                     <button type="submit" class="submit">Buat LAPOR!</button>
                 </form>

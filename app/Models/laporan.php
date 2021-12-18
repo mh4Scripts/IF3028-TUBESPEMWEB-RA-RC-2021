@@ -10,5 +10,5 @@ class laporan extends Model
     use HasFactory;
 
     protected $table = 'laporan';
-    
+    protected $fillable = ['nama','judul','pesan','aspek','file'];
 }

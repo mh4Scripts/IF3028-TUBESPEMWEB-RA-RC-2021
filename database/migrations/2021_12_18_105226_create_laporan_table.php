@@ -17,7 +17,7 @@ class CreateLaporanTable extends Migration
             $table->bigIncrements('id');
             $table->string('nama',25);
             $table->string ('judul',50);
-            $table->string('pesan',1000);
+            $table->varchar('pesan',40);
             $table->string('aspek',20);
             $table->string('file');
             $table->timestamps();    
