@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('utama','laporanController@index');
+Route::get('/utama',[laporancontroller::class,'index']);
 // Route::get('/utama', function () {
 //     return view('utama',[
 //         "title" => "Utama"
