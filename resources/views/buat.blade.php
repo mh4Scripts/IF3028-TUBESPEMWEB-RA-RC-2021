@@ -8,10 +8,10 @@
                 Buat Laporan/Komentar<br>
             <hr>
             <br>
-                <textarea class="komen" rows="20" cols="110" placeholder="Laporan/Komentar"></textarea>
+                <textarea id = "pesan" name = "pesan" class="komen" rows="20" cols="110" placeholder="Laporan/Komentar"></textarea>
                 <br><br>
                 <div class="custom-select">
-                    <select>
+                    <select id = 'aspek' name = 'aspek'>
                         <option hidden>Pilih Aspek Pelaporan/Komentar</option>
                         <option value="1">Keuangan</option>
                         <option value="2">Dosen</option>
