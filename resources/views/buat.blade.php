@@ -11,12 +11,12 @@
                 <!-- <div class="teks"> -->
                     <input type="text" name="nama" class="teks" placeholder="Nama Pelapor"><br><br>
                     <input type="text" name="judul" class="teks" placeholder="Judul Laporan/Komentar"><br><br>
-                    <textarea class="komen" rows="20" cols="110" placeholder="Laporan/Komentar"></textarea>
+                    <textarea id = "pesan" name = "pesan" class="komen" rows="20" cols="110" placeholder="Laporan/Komentar"></textarea>
                     <br><br>
                 <!-- </div> -->
                 
                 <div class="custom-select">
-                    <select>
+                    <select id = 'aspek' name = 'aspek'>
                         <option hidden>Pilih Aspek Pelaporan/Komentar</option>
                         <option value="Dosen">Dosen</option>
                         <option value="Staff">Staff</option>
