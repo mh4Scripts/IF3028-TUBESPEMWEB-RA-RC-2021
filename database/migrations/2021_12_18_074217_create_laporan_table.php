@@ -14,7 +14,13 @@ class CreateLaporanTable extends Migration
     public function up()
     {
         Schema::create('laporan', function (Blueprint $table) {
-                
+            $table->bigIncrements('id');
+            $table->string('nama',25);
+            $table->string ('judul',50);
+            $table->string('pesan',1000);
+            $table->string('aspek',20);
+            $table->text('file');
+            $table->timestamps();    
         });
     }
 
