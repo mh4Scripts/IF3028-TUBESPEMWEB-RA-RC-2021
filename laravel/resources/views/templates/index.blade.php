@@ -2,7 +2,7 @@
 
 @section('profile')
     <div class="userAuth">
-        <a class="userLog" id="clickLogin"><h3>Masuk</h3></a>
+        <a class="userLog" id="clickLogin" onclick="showLoginModal()"><h3>Masuk</h3></a>
         <a href="{{ route('register') }}" class="userReg"><h3>Daftar</h3></a>
     </div>
 @endsection
@@ -104,7 +104,7 @@
                     </div>
                     {{-- LEVEL 3 --}}
                     <div class="data-footer">
-                        <h4 class="data-attachment" id="dataAtt">Lihat lampiran</h4>
+                        <h4 class="data-attachment" id="dataAtt"  onclick="showAttModal()">Lihat lampiran</h4>
                         <h5 class="data-aspect"><span class="createinfo">Aspek Laporan :</span> Program Studi</h5>
                         <h5 class="data-create-time"><span class="createinfo">Dibuat pada :</span> 12 Desember 2021</h5>
                         <h5 class="data-creator"><span class="createinfo">Oleh :</span> Rivaldi Sinaga</h5>
@@ -119,23 +119,63 @@
     </section>
 
     {{-- INFORMATIONS --}}
+    <section class="information-section">
+        <div class="info-top-container">
+            <div class="counter-card">
+                <h2>SEMUA LAPORAN<br><span class="counts">120</span></h2>
+            </div>
+        </div>
+        <div class="info-bottom-container">
+            <div class="info-bottom-header">
+                <h2>LAPORAN BERDASARKAN ASPEK</h2>
+            </div>
+            <div class="info-bottom-content">
+                <div class="counter-card">
+                    <h3>Mahasiswa<br><span class="counts">12</span></h3>
+                </div>
+                <div class="counter-card">
+                    <h3>Dosen<br><span class="counts">24</span></h3>
+                </div>
+                <div class="counter-card">
+                    <h3>Mata Kuliah<br><span class="counts">36</span></h3>
+                </div>
+                <div class="counter-card">
+                    <h3>Program Studi<br><span class="counts">48</span></h3>
+                </div>
+            </div>
+        </div>
+    </section>
+@endsection
+
+@section('additional-element')
+    {{-- SHOW ATTACHMENT MODAL --}}
     <div class="AttModalBG" id="AttModal">
         <div class="AttModalContainer">
             <div class="AttModalHeader">
-                <span class="closeAttModal">&times;</span>
+                <span class="closeAttModal" onclick="closeAttModal()">&times;</span>
                 <h4>Lampiran terkait</h4>
             </div>
             <div class="AttModalContent">
-                <div class="LRBtnContainer">
-                    <div class="LRBtn"><img src="media/icons/Bleft.png" alt=""></div>
+                <div class="imagesContainer fade">
+                    <div class="imageNumber">1 / 3</div>
+                    <img src="media/images/3.png" alt="">
                 </div>
-                <div class="imagesContainer">
-                    <img src="media/icons/silolo.png" alt="">
+                <div class="imagesContainer fade">
+                    <div class="imageNumber">2 / 3</div>
+                    <img src="media/images/4.png" alt="">
                 </div>
-                <div class="LRBtnContainer">
-                    <div class="LRBtn"><img src="media/icons/Bright.png" alt=""></div>
+                <div class="imagesContainer fade">
+                    <div class="imageNumber">3 / 3</div>
+                    <img src="media/images/5.png" alt="">
                 </div>
             </div>
-        </div>        
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+        <div class="imageDot-container">
+            <span class="imageDot" onclick="currentSlide(1)"></span> 
+            <span class="imageDot" onclick="currentSlide(2)"></span> 
+            <span class="imageDot" onclick="currentSlide(3)"></span> 
+        </div>
     </div>
 @endsection

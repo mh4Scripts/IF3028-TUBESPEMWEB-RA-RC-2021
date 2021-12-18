@@ -53,16 +53,67 @@
         <h3>Bersama ciptakan lingkungan ITERA yang berintegritas</h3>
     </div>
 
-    {{-- CONTENT --}}
-    @yield('content')
+    <div class="page-content">
 
-    <footer>
+        {{-- CONTENT --}}
+        @yield('content')
+    
+        <footer class="footer">
+            <div class="footer-contents">
+                <div class="footer-content">
+                    <h4>Tim pengembang</h4>
+                    <div class="content-footer-content">
+                        <a href="" target="_blank" data-title="Markus Togi">
+                            <img class="PP" src="media/images/Pasfoto_Togi.jpg" alt="">
+                        </a>
+                        <a href="" target="_blank" data-title="Markus Togi">
+                            <img class="PP" src="media/images/Pasfoto_Togi.jpg" alt="">
+                        </a>
+                        <a href="" target="_blank" data-title="Markus Togi">
+                            <img class="PP" src="media/images/Pasfoto_Togi.jpg" alt="">
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-content">
+                    <h4>Dinaungi oleh</h4>
+                    <div class="content-footer-content">
+                        <a href="https://www.itera.ac.id" target="_blank" data-title="Institut Teknologi Sumatera">
+                            <img src="media/images/Logo_ITERA.png" alt="" >
+                        </a>
+                        <a href="http://if.itera.ac.id" target="_blank" data-title="Teknik Informatika ITERA">
+                            <img src="media/images/IF_ITERA.png" alt="">
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-content">
+                    <h4>Alat dan teknologi digunakan</h4>
+                    <div class="content-footer-content">
+                        <a href="https://laravel.com" target="_blank" data-title="Laravel">
+                            <img src="media/images/Laravel_Logo.png" alt="">
+                        </a>
+                        <a href="https://www.apachefriends.org/index.html" target="_blank" data-title="XAMPP">
+                            <img src="media/images/Xampp_Logo.png" alt="">
+                        </a>
+                        <a href="https://www.flaticon.com" target="_blank" data-title="Flaticon">
+                            <img src="media/images/Flaticon_Logo.jpg" alt="">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-links">
+                <a href="">BERANDA</a>
+                <a href="">TENTANG KAMI</a>
+                <a href="">HUBUNGI KAMI</a>
+            </div>
+            <h4>Copyright 2021. <span><a class="copyright" href="http://if.itera.ac.id" target="_blank">Teknik Informatika ITERA.</a></span>  Hak cipta dilindungi Undang-Undang.</h4>
+        </footer>
+    </div>
 
-    </footer>
+    {{-- LOGIN MODAL --}}
     <div class="LoginModalBG" id="LoginModal">
         <div class="LoginModalContainer">
             <div class="LoginModalHeader">
-                <span class="closeLoginModal">&times;</span>
+                <span class="closeLoginModal" onclick="closeLoginModal()">&times;</span>
                 <h2>Masuk</h2>
             </div>
             <div class="LoginModalContent">
@@ -89,6 +140,8 @@
             </div>
         </div>        
     </div>
+
+    @yield('additional-element')
 
     <script src="js/script.js"></script>
 </body>

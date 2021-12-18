@@ -22,10 +22,6 @@ h4, p { font-size : 20px;}
 h5    { font-size : 14px;}
 h6    { font-size :  8px;}
 
-body{
-    min-height: 2000px;
-}
-
 /* ------------------------------------ */
 /* ------------ LAYOUTING ------------- */
 /* ------------------------------------ */
@@ -36,9 +32,6 @@ body{
     justify-content     : space-between;
     padding             : 0;
 }
-
-
-
 
 /* ------------------------------------ */
 /* ----------- FORMY FORMS ------------ */
@@ -197,8 +190,9 @@ header{
 .userAuth{
     width                   : 240px;
     margin-left             : 150px;
-    display                 : flex   ;
+    display                 : flex;
     justify-content         : space-between;
+    flex-wrap               : nowrap;
 }
 .userAuth a{
     width                   : 40%;
@@ -253,7 +247,6 @@ header{
     border-bottom           : solid 2px #ff0000;
 }
 
-
 /* ------------------------------------ */
 /* ----------- WEBSITE HERO ----------- */
 /* ------------------------------------ */
@@ -267,13 +260,99 @@ header{
 }
 
 /* ------------------------------------ */
-/* ------------ SEARCH BAR ------------ */
+/* ----------- PAGE CONTENT ----------- */
 /* ------------------------------------ */
-.search-bar{
+.page-content{
     position                : absolute;
     top                     : 305px;
     width                   : 100%;
-    /* border                  : solid 1px black; */
+}
+/* ------------------------------------ */
+/* -------------- FOOTER -------------- */
+/* ------------------------------------ */
+footer{
+    width                   : 100%;
+    background-color        : #FDFDFD;
+    margin-top              : 75px;
+    padding                 : 25px 25px 30px 25px;
+    text-align              : center;
+}
+.footer-contents,
+.footer-links{
+    width               : 100%;
+    display             : flex;
+    flex-direction      : row;
+    justify-content     : space-evenly;
+}
+.footer-content{
+    text-align          : center;
+}
+.footer h4{
+    font-weight         : 400;
+    margin-bottom       : 10px;
+}
+.content-footer-content{
+    display             : flex;
+    flex-direction      : row;
+    justify-content     : space-evenly;
+}
+.content-footer-content img{
+    height              : 60px;
+    margin              : 5px 10px;
+}
+.content-footer-content .PP{
+    border-radius       : 50%;
+}
+.content-footer-content a{
+    position            : relative;
+    display             : inline-block;
+}
+[data-title]::after{
+    content             : attr(data-title);
+    color               : #F5F5F5;
+    background-color    : #b41e1eb2;
+    font-family         : "Abel";
+    font-size           : 12px;
+    padding             : 2px 5px;
+    border-radius       : 0.125rem;
+    position            : absolute;
+    top                 : 105%;
+    left                : 5px;
+    z-index             : 1;
+    visibility          : hidden;
+}
+[data-title]:hover::after{
+    visibility          : visible;
+}
+.footer-links{
+    width               : 35%;
+    margin              : auto;
+    margin-top          : 55px;
+    margin-bottom       : 10px;
+}
+.footer-links a{
+    font-family         : "Archivo-Black";
+    text-decoration     : none;
+    font-size           : 15px;
+    font-weight         : 700;
+    color               : #757575;
+}
+.footer-links a:hover{
+    text-decoration     : underline;
+}
+.copyright{
+    color               : #B41E1E;
+    text-decoration     : none;
+}
+.copyright:hover{
+    text-decoration     : underline;
+}
+/* ------------------------------------ */
+/* ------------ SEARCH BAR ------------ */
+/* ------------------------------------ */
+.search-bar{
+    width                   : 100%;
+    margin-bottom           : 25px;
 }
 .search-bar .search-input{
     width                   : 80%;
@@ -296,11 +375,8 @@ header{
 /* -------- CREATE NEW REPORT --------- */
 /* ------------------------------------ */
 .create-new{
-    position                : absolute;
-    top                     : 380px;
     width                   : 100%;
-    min-height              : 50px;
-    /* border                  : solid 1px black; */
+    margin-bottom           : 75px;
 }
 .create-new-btn{
     display                 : flex;
@@ -332,22 +408,18 @@ header{
 /* ------------------------------------ */
 
 .show-section{
-    position                : absolute;
-    top                     : 500px;
     width                   : 100%;
-    min-height              : 700px;
-    /* border                  : solid 1px black; */
+    margin-bottom           : 75px;
 }
 /* LEVEL 0 */
 .show-data-container{
     position                : relative;
     display                 : flex;
     flex-direction          : column;
-    width                   : 75%;
+    width                   : 950px;
     margin                  : auto;
-    min-height              : 500px;
     background-color        : #FFFFFF;
-    box-shadow              : 0px 0px 30px 0.5px rgba(0, 0, 0, 0.075);
+    box-shadow              : 0px 0px 30px 2px rgba(0, 0, 0, 0.1);
     padding                 : 20px;
 }
 .show-data-container-bg{
@@ -368,13 +440,11 @@ header{
 }
 /* LEVEL 1 */
 .show-data-content{ 
-    position: relative;
+    position                : relative;
     padding                 : 0 25px;
     max-height              : 750px;
-    overflow-y: scroll;
-    color: #333333;
-
-    /* border                  : solid 1px black; */
+    overflow-y              : scroll;
+    color                   : #333333;
 }
 /* LEVEL 2 */
 .data-container{
@@ -445,11 +515,59 @@ header{
 }
 
 /* ------------------------------------ */
+/* ------- INFORMATION SECTION -------- */
+/* ------------------------------------ */
+.information-section{
+    width                   : 100%;
+    background-image        : url(../media/images/PatternBG.png);
+    cursor                  : default;
+}
+.counter-card{
+    width                   : 15%;
+    background-color        : #FFFFFF;
+    border-radius           : 0.5rem;
+    padding                 : 10px;
+    box-shadow              : 0px 0px 15px 2px rgba(0, 0, 0, 0.1);
+    text-align              : center;
+}
+.counts{
+    font-family             : "Archivo-Black";
+    font-weight             : 700;
+    color                   : #B41E1E;
+}
+.info-top-container,
+.info-bottom-container{
+    width                   : 100%;
+    padding                 : 25px;
+}
+.info-top-container .counter-card{
+    width                   : 20%;
+    margin                  : auto;
+    background-color        : #B41E1E;
+}
+.info-top-container .counts{
+    color                   : #F5F5F5;
+}
+.info-bottom-header{
+    text-align              : center;
+}
+.info-bottom-content{
+    display                 : flex;
+    flex-direction          : row;
+    justify-content         : space-evenly;
+}
+.info-bottom-header h2{
+    padding                 : 25px;
+    color                   : #B41E1E;
+    border-top              : solid 5px #B41E1E85;
+}
+
+/* ------------------------------------ */
 /* ------ DATA ATTACHMENT MODAL ------- */
 /* ------------------------------------ */
 .AttModalBG, .LoginModalBG{
     position                : fixed; 
-    z-index                 : 5; 
+    z-index                 : 6; 
     left                    : 0;
     top                     : 0;
     width                   : 100%;
@@ -460,10 +578,10 @@ header{
 }
 .AttModalBG {
     display                 : none;
-    padding-top             : 35px; 
+    padding-top             : 20px; 
 }
 .AttModalContainer, .LoginModalContainer{
-    width                   : 45%;
+    width                   : 574px;
     margin                  : auto;
     background-color        : #FFFFFF;
 }
@@ -490,36 +608,87 @@ header{
     padding                 : 20px 10px;
 }
 .imagesContainer{
-    width                   : 500px;
-    margin                  : auto;
+    width                   : 554px;
     height                  : 500px;
-    border                  : solid 1px black;
-    background-color        : #F5F5F5;
-    display                 : flex;
+    background-color        : #acacac;
+    display                 : none;
     flex-direction          : column;
     justify-content         : space-around;
 }
 .imagesContainer img{
-    width                   : 496px;
-    border                  : solid 1px #8B8B8B;
+    object-fit              : contain;
+    max-width               : 552px;
+    max-height              : 500px;
 }
-.LRBtnContainer,
-.LRBtn{
-    width                   : 34px;
-    display                 : flex;
-    flex-direction          : column;
-    justify-content         : space-around;
+.prev,
+.next {
+    cursor              : pointer;
+    position            : absolute;
+    top                 : 53%;
+    width               : auto;
+    padding             : 16px;
+    margin-top          : -22px;
+    color               : #FFFFFF;
+    font-weight         : bold;
+    font-size           : 18px;
+    transition          : 0.6s ease;
+    border-radius       : 3px;
+    user-select         : none;
 }
-.LRBtn{
-    width                   : 32px;
-    height                  : 32px;
-    margin                  : auto;
-    border                  : solid 1px black;
+.next {
+    right               : 29%;
 }
-.LRBtn img{
-    width                   : 28px;
-    margin                  : auto;
+.prev{
+    left                : 29%;
 }
+.prev:hover, .next:hover {
+    background-color    : #b41e1e91;
+}
+.imageNumber{
+    color               : #ffffff;
+    background-color    : #00000079;
+    font-size           : 15px;
+    font-weight         : 700;
+    font-family         : "Abel";
+    padding             : 5px 10px;
+    position            : absolute;
+    top                 : 100px;
+}
+.imageDot-container{
+    position            : absolute;
+    top                 : 590px;
+    width               : 100%;
+    text-align          : center;
+    cursor              : default;
+}
+.imageDot {
+    cursor              : pointer;
+    height              : 10px;
+    width               : 10px;
+    margin              : 0 2px;
+    background-color    : #ACACAC;
+    border-radius       : 50%;
+    display             : inline-block;
+    transition          : background-color 0.6s ease;
+}
+.activeDot, .imageDot:hover {
+    background-color    : #B41E1E;
+  }
+.fade {
+    -webkit-animation-name      : fade;
+    -webkit-animation-duration  : 1.5s;
+    animation-name              : fade;
+    animation-duration          : 1.5s;
+}
+@-webkit-keyframes fade {
+    from {opacity : .4} 
+    to   {opacity :  1}
+}
+@keyframes fade {
+    from {opacity : .4} 
+    to   {opacity :  1}
+}
+
 /* ------------------------------------ */
 /* -------- REGISTRATION PAGE --------- */
 /* ------------------------------------ */
@@ -632,7 +801,7 @@ header{
 /* ------------------------------------ */
 .LoginModalBG{
     display                 : none;
-    padding-top             : 45px;
+    padding-top             : 25px;
 }
 .LoginModalContainer{
     width                   : 40% !important;
@@ -685,6 +854,7 @@ header{
 .LoginModalFooter a h3:hover{
     font-weight: 700;
 }
+
 /* ------------------------------------ */
 /* --------- MICRO CLEAR FIX ---------- */
 /* ------------------------------------ */

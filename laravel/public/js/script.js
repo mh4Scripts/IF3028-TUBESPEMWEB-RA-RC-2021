@@ -1,6 +1,5 @@
 const body              = document.body;
 
-
 // ----------------------------------------
 // --------- AUTO HIDE HEADER -------------
 // ----------------------------------------
@@ -14,7 +13,7 @@ window.addEventListener("scroll", () => {
     const currentScroll = window.pageYOffset;
     if (currentScroll <= 0) {
         body.classList.remove(scrollUp);
-        NotifButton.innerHTML= "<img src=\"media/icons/white_bell.png\" alt=\"\">";
+        // NotifButton.innerHTML= "<img src=\"media/icons/white_bell.png\" alt=\"\">";
         return;
     }
     if (currentScroll > lastScroll && !body.classList.contains(scrollDown)) {
@@ -25,58 +24,156 @@ window.addEventListener("scroll", () => {
         // SCROLL UP
         body.classList.remove(scrollDown);
         body.classList.add(scrollUp);
-        NotifButton.innerHTML= "<img src=\"media/icons/grey_bell.png\" alt=\"\">";
+        // NotifButton.innerHTML= "<img src=\"media/icons/grey_bell.png\" alt=\"\">";
     }
-    console.log(lastScroll);
     lastScroll = currentScroll;
 });
 if (window.pageYOffset > 0){
     body.classList.add(scrollUp);
     NotifButton.innerHTML= "<img src=\"media/icons/grey_bell.png\" alt=\"\">";
 }
+
 // ----------------------------------------
 // ------------ LOGIN MODAL ---------------
 // ----------------------------------------
-const clickLoginButton  = document.getElementById("clickLogin");
-const LoginModal        = document.getElementById("LoginModal");
-const closeLoginModal   = document.getElementsByClassName("closeLoginModal")[0];
-
-clickLoginButton.addEventListener("click", function(){
-    LoginModal.style.display = "block";
-});
-
-closeLoginModal.addEventListener("click", function(){
-    LoginModal.style.display = "none";
-});
-
-window.addEventListener("click", function(event){
-    if (event.target == LoginModal) {
-        LoginModal.style.display = "none";
+function showLoginModal(){
+    document.getElementById("LoginModal").style.display = "block";
+}
+function closeLoginModal(){
+    document.getElementById("LoginModal").style.display = "none";
+}
+window.addEventListener("click", (e)=>{
+    if (e.target == LoginModal) {
+        return closeLoginModal();
     }
 });
-
 
 // ----------------------------------------
 // ---------- SHOW ATTACHMENT -------------
 // ----------------------------------------
-
-const dataAtt           = document.getElementById("dataAtt");
-const AttModal          = document.getElementById("AttModal");
-const closeAttModal     = document.getElementsByClassName("closeAttModal")[0];
-
-dataAtt.addEventListener("click", function(){
-    AttModal.style.display = "block";
-});
-
-closeAttModal.addEventListener("click", function(){
-    AttModal.style.display = "none";
-});
-
-window.addEventListener("click", function(event){
-    if (event.target == AttModal) {
-        AttModal.style.display = "none";
+var imageIndex = 0;
+function showAttModal (){
+    imageIndex = 1;
+    showSlides(imageIndex);
+    document.getElementById("AttModal").style.display = "block";
+}
+function closeAttModal (){
+    document.getElementById("AttModal").style.display = "none";
+}
+window.addEventListener("click", function(e){
+    if (e.target == AttModal) {
+        return closeAttModal();
     }
 });
+// --------- IMAGES SLIDE SHOW ------------
+function plusSlides(showNowIndex) {
+    showSlides(imageIndex += showNowIndex);
+}
+function currentSlide(showNowIndex) {
+    showSlides(imageIndex = showNowIndex);
+}
+function showSlides(showNowIndex) {
+    var images      = document.getElementsByClassName("imagesContainer");
+    var dots        = document.getElementsByClassName("imageDot");
+    if (showNowIndex > images.length) {
+        imageIndex = 1;
+    }    
+    if (showNowIndex < 1) {
+        imageIndex = images.length;
+    }
+    for (let i=0; i<images.length; i++) {
+        images[i].style.display = "none";  
+    }
+    for (let i=0; i<dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" activeDot", "");
+    }
+    images[imageIndex-1].style.display = "flex";
+    dots[imageIndex-1].className += " activeDot";
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // let DataAttachments     = [];
 // let DataAttachment      = document.getElementsByClassName("data-attachment");
@@ -97,7 +194,7 @@ window.addEventListener("click", function(event){
 
 
 
-NotifButton.addEventListener("click", function(){
-    let Notifications = document.getElementById("Notifications");
-    Notifications.innerHTML = "<h1>HELLO WORLD</h1>";
-});
+// NotifButton.addEventListener("click", function(){
+//     let Notifications = document.getElementById("Notifications");
+//     Notifications.innerHTML = "<h1>HELLO WORLD</h1>";
+// });
