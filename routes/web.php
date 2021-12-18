@@ -35,6 +35,6 @@ Route::get('/detail', function () {
 
 Route::get('/buat', function () {
     return view('buat',[
-        "title" => "buat"
+        "title" => "Buat"
     ]);
 });
