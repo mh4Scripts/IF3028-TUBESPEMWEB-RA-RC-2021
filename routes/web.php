@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\laporanController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -12,22 +13,28 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', function () {
-    return view('utama');
-});
-
-Route::get('/utama', function () {
-    return view('utama');
-});
+Route::get('utama','laporanController@index');
+// Route::get('/utama', function () {
+//     return view('utama',[
+//         "title" => "Utama"
+//     ]);
+// });
 
 Route::get('/AboutUs', function () {
-    return view('AboutUs');
+    return view('AboutUs',[
+        "title" => "About"
+    ]    
+    );
 });
 
 Route::get('/detail', function () {
-    return view('detail');
+    return view('detail',[
+        "title" => "Detail"
+    ]);
 });
 
 Route::get('/buat', function () {
-    return view('buat');
+    return view('buat',[
+        "title" => "buat"
+    ]);
 });
