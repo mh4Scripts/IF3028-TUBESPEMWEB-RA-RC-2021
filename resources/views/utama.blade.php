@@ -35,7 +35,7 @@
                 </div>
                 <div class="waktu-utm">
                     <p>
-                        Waktu: {{ $item->created_at->format('d/m/Y') }}
+                        Waktu: {{ $item->created_at->format('d/m/Y': H:i:s) }}
                     </p>
                 </div>
                 </div>
