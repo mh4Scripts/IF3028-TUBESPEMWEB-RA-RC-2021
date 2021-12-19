@@ -20,9 +20,12 @@
 
     <body>
         <h1>SIMPLE LAPOR!</h1>
-        <form method="POST" id="formlaporan" action="/add_page.php" onsubmit="return validateForm()" required>
+        <form method="POST" id="formlaporan" action="/add_page.php" onsubmit="return validateForm()" enctype="multipart/form-data">
             <p>Buat Laporan/Komentar</p>
             <hr>
+            <input type="text" class="judullaporan" name="judullaporan" placeholder="Judul Laporan" required/>
+            <br>
+            <input type="text" class="namapelapor" name="namapelapor" placeholder="Nama Pelapor" required/>
             <textarea name="laporan" placeholder="Laporan/Komentar" id="laporan" rows="18" cols="151" required></textarea>
 
             <select name="aspek">

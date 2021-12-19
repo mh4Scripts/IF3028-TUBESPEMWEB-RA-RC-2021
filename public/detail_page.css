@@ -30,17 +30,29 @@ hr {
 }
 .waktu {
     display: table-cell;
-    width: 285px;
+    width: 440px;
 }
 .aspek {
     display: table-cell;
     width: 285px;
 }
+a {
+    text-decoration: none;
+    color: black;
+}
 .hapuslaporan {
     display: table-cell;
-    float: right;
 }
 .hapuslaporan::after{
     content:'\2716';
     font-weight: bold;
+}
+.editlaporan {
+    display: table-cell;
+    width: 225px;
+}
+.editlaporan img {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
 }
