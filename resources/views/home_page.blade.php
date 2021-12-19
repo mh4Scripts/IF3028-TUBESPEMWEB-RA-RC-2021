@@ -24,16 +24,22 @@
 
         <div class="daftarlaporan" >
             Laporan/Komentar Terakhir
+            
+            @foreach ($posts as $p)
             <hr>
-            <p> contoh <br> contoh <br> contoh </p>
+
+            <!--p> contoh <br> contoh <br> contoh </p-->
+            {{ $p->judul }} oleh {{ $p->pelapor }}
+            <br><br>
+            {{ $p->laporan }}
             <div class="keterangan1">
                 <div class="keterangan2">
                     <div class="lampiran">
-                        Lampiran :
+                        Lampiran : {{ $p->fileupload }}
                     </div>
 
                     <div class="waktu">
-                        Waktu :
+                        Waktu : Waktu : {{ $p->created_time }}
                     </div>
 
                     <div class="selengkapnya">

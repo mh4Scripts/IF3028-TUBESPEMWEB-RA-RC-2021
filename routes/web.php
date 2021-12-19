@@ -1,5 +1,9 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PostController;
+use App\Models\post;
+use Illuminate\Routing\Route as RoutingRoute;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -22,3 +26,7 @@ Route::get('/form_page', function () {
 Route::get('/detail_page', function () {
     return view('detail_page');
 });
+
+Route::get('/', 'PostController@index');
+
+Route::resource('post', PostController::class);
