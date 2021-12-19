@@ -20,7 +20,6 @@
 			</div>
 
 			<div id="form-insert">
-				
 				<?php echo form_open_multipart('dashboard/tambah_aksi'); ?>
 					<table style="margin:20px auto;">
 						<tr>
