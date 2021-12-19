@@ -20,5 +20,15 @@ class Tampil_laporan extends CI_Model{
 		$this->db->delete($table);
 	} 
 
+	public function get_keyword($keyword){
+		$this->db->select('*');
+		$this->db->from('tb_laporan');
+		$this->db->like('isi', $keyword);
+		$this->db->or_like('aspek', $keyword);
+
+		return $this->db->get()->result();
+
+	}
 }
+
 ?>
