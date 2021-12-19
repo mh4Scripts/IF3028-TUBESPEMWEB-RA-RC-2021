@@ -10,7 +10,7 @@
     <div class="col-1"></div>
 </div>
 
-<form action="{{route('report.store')}}" method="post" id="" enctype="multipart/form-data">
+<form action="{{route('report.store')}}" method="post" id="form" name="form" enctype="multipart/form-data">
     @csrf
     <div class="row">
         <div class="col-1"></div>
@@ -35,7 +35,7 @@
     <div class="row">
         <div class="col-1"></div>
         <div class="col-10 right">
-            <button type="submit" class="btn-submit">Buat LAPOR!</button>
+            <button type="button" onclick="validateForm()" class="btn-submit">Buat LAPOR!</button>
         </div>
         <div class="col-1"></div>
     </div>
