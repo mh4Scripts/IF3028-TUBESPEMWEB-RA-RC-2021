@@ -30,7 +30,7 @@ class Dashboard extends CI_Controller{
 
 		if ($file =''){}else{
 			$config['upload_path']		= './uploads/';
-			$config['allowed_types']	='jpg|png|pdf|doc|docx|ppt';
+			$config['allowed_types']	='jpg|png|doc|docx|xls|xlsx|ppt|pptx|pdf|';
 
 			$this->load->library('upload', $config);
 
@@ -56,6 +56,14 @@ class Dashboard extends CI_Controller{
 		$where = array('id'=> $id);
 		$this->tampil_laporan->hapus_laporan($where, 'tb_laporan');
 		redirect('dashboard/index');
+	}
+
+
+	public function search(){
+		$keyword = $this->input->post('keyword');
+		$data['hal_utama'] = $this->tampil_laporan->get_keyword($keyword);
+
+		$this->load->view('dashboard', $data);
 	}
 }
 ?>
