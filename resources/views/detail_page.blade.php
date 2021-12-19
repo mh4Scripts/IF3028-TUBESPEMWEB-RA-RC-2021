@@ -33,9 +33,16 @@
                         Aspek :
                     </div>
 
-                    <div class="hapuslaporan">
-                        Hapus Laporan/Komentar
+                    <div class="editlaporan">
+                        <a href="">
+                        Edit Laporan/Komentar
+                        <img src="edit.png">
                     </div>
+
+                    <div class="hapuslaporan">
+                        <a href="">
+                        Hapus Laporan/Komentar
+                    </div>     
              </div>
         </div>
         <hr>
