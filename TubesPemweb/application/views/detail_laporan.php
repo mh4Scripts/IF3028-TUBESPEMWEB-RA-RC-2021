@@ -37,7 +37,7 @@
 
 						<table width="100%">
 							<tr>
-								<td width="25%">Wakkt : <?php echo " 20-11-2020 20.00";?></td>	
+								<td width="25%">Wakkt : <?php echo $data->waktu;?></td>	
 								<td>Aspek : <?php echo $data->aspek;?></td>
 								<td width="25%" align="right"><?php echo anchor('dashboard/hapus/'.$data->id, 'Hapus Laporan/Komentar <i class="fa fa-times"></i>', array('class'=>'delete', 'onclick'=>"return confirmDialog();"));?></td>
 							</tr>
