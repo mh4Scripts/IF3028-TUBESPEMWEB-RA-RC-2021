@@ -8,26 +8,32 @@
                 Detail laporan/komentar<br>
                 <hr>
             </div>
+
             <div class="laporan">
                 <br>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ornare turpis purus, quis dapibus mi commodo eget. Sed ut tincidunt enim. Nunc erat metus, dictum non venenatis eu, aliquam id nibh. Suspendisse tortor odio, porta eu ultrices at, tincidunt vel risus. Vestibulum vitae nisi porttitor, pulvinar nulla quis, dictum mauris. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. In iaculis dui ut velit tempus tempus. Etiam sit amet tellus et dui iaculis egestas.</p>
-                <p>Proin sed nisl tortor. Mauris eleifend dui nec elit porta, non iaculis lorem pellentesque. Nunc nec porttitor mauris. Maecenas dolor risus, egestas ut tortor ut, luctus sodales nibh. Etiam id urna enim. Sed odio mauris, tincidunt nec dui ac, sollicitudin pellentesque ex. Etiam at blandit eros. Suspendisse gravida orci a neque auctor, sit amet consectetur arcu aliquam. Maecenas non faucibus dolor, sed placerat ligula. Nullam suscipit pulvinar tortor, nec bibendum lacus imperdiet et. Etiam non risus odio. Sed mauris ligula, commodo sed blandit a, tempus in massa. In hac habitasse platea dictumst. Duis tincidunt ultricies hendrerit. Ut suscipit elit id augue lacinia porta. Suspendisse quis metus bibendum, sagittis enim vitae, aliquam dui.</p>
+                    {{ $data->pesan }}
                 <div class="tmpllampiran">
-                    lampiran: 
+                    <p>
+                        lampiran: {{ $data->file }}
+                    </p>
                 <br>
+                    <img src= "{{ URL::to ('/') }}/file/{{ $data -> file  }}"> 
                     <div class="gambar">
-                        <img src="a.png">
                         <br><br><br>
                     </div>
                 </div>
                 <div class="aspek">
-                    Aspek: Infrastruktur
+                    Aspek: {{  $data -> aspek }}
                 </div>
                 <div class="waktu-dtl">
-                    Waktu: 20-11-2019 20:00
+                <p>
+                    Waktu: {{ $data->created_at->format('d/m/Y H:i:s') }}
+                </p>
                 </div>
                 <button class="hapus">Hapus Laporan/Komentar</button>
-                <button class="edit">Edit Laporan</button>
+                <button class="edit">
+                    <a>Edit Laporan</a>
+                </button>
                 
                 
                 <br><br><hr><br>

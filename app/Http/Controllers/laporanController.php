@@ -75,7 +75,10 @@ class laporanController extends Controller
      */
     public function show($id)
     {
-        //
+        $title = 'Detail';
+        $data = laporan::find($id);
+
+        return view('detail',compact ('data','title'));
     }
 
     /**
@@ -86,7 +89,7 @@ class laporanController extends Controller
      */
     public function edit($id)
     {
-        //
+        
     }
 
     /**

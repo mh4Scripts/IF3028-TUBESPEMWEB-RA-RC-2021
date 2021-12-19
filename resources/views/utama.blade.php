@@ -23,7 +23,7 @@
                     </p>
                 </div>
                 <div class="selengkapnya">
-                    <a href="/detail">Lihat Selengkapnya &nbsp;</a>
+                    <a href="/detail/{{ $item -> id }}">Lihat Selengkapnya &nbsp;</a>
                 </div>
                 <div class="waktu-utm">
                     <p>
