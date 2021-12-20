@@ -1,67 +1,63 @@
-<?php
-    defined("BASEPATH") OR exit("No direct script access allowed");
+<?php 
+defined('BASEPATH') OR exit('No direct script access allowed');
 
-    class lapor_controller extends CI_Controller{
-        
-        public function __construct(){
-            parent::__construct();
-            $this->load->model("lapor_model");
-            $this->load->library('form_validation');
-        }
-        
-        public function index(){
-            $data["laporan"] = $this->lapor_model->getAll();
-            $this->load->view("home", $data); 
-        }
+class lapor_model extends CI_Model{
+    private $_table = "laporan";
 
-        public function tambah(){
-            $laporan = $this->lapor_model;
-            $validation = $this->form_validation;
-            $validation->set_rules($laporan->rules());
+    public $id;
+    public $isi;
+    public $aspek;
+    public $lampiran;
+    public $waktu;
 
-            if ($validation->run()) {
-                $laporan->save();
-                $this->session->set_flashdata('success', 'Berhasil ditambah');
-                redirect('');
-            }
+    public function rules(){
+        return [
+            ['field' => 'isi',
+            'label' => 'Isi',
+            'rules' => 'required'],
 
-            $this->load->view("tambah");
-        }
+            ['field' => 'aspek',
+            'label' => 'Aspek',
+            'rules' => 'required'],
 
-        public function edit($id = null){
-            if (!isset($id)) redirect('home');
-        
-            $laporan = $this->lapor_model;
-            $validation = $this->form_validation;
-            $validation->set_rules($laporan->rules());
-
-            if ($validation->run()) {
-                $laporan->update();
-                $this->session->set_flashdata('success', 'Berhasil diubah');
-                redirect('');
-            }
-
-            $data["laporan"] = $laporan->getById($id);
-            if (!$data["laporan"]) show_404();
-            
-            $this->load->view("edit", $data);
-        }
-
-        public function detail($id = null){
-            if (!isset($id)) redirect('home');
-            $laporan = $this->lapor_model;
-            $data["laporan"] = $laporan->getById($id);
-            $this->load->view("detail", $data);
-        }
-
-        public function delete($id=null){
-            if (!isset($id)) show_404();
-            
-            if ($this->lapor_model->delete($id)) {
-                $data["laporan"] = $this->lapor_model->getAll();
-                $this->load->view("home", $data);
-            }
-        }
-
+            ['field' => 'lampiran',
+            'label' => 'Lampiran',
+            'rules' => 'required']
+        ];
     }
+
+    public function getAll(){
+        $this->db->order_by('waktu', 'DESC');
+        return $this->db->get($this->_table)->result();
+    }
+
+    public function getById($id){
+        return $this->db->get_where($this->_table, ["id" => $id])->row();
+    }
+
+    public function save(){
+        $post = $this->input->post();
+        $this->isi = $post["isi"];
+        $this->aspek = $post["aspek"];
+        $this->lampiran = $post["lampiran"];
+        date_default_timezone_set('Asia/Jakarta');
+        $this->waktu = date("Y-m-d H:m:s");
+        return $this->db->insert($this->_table, $this);
+    }
+
+    public function update(){
+        $post = $this->input->post();
+        $this->id = $post["id"];
+        $this->isi = $post["isi"];
+        $this->aspek = $post["aspek"];
+        $this->lampiran = $post["lampiran"];
+        date_default_timezone_set('Asia/Jakarta');
+        $this->waktu = date("Y-m-d H:m:s");
+        return $this->db->update($this->_table, $this, array('id' => $post["id"]));
+    }
+
+    public function delete($id){
+        return $this->db->delete($this->_table, array("id" => $id));
+    }
+}
 ?>
