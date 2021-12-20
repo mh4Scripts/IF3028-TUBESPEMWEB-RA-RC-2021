@@ -34,9 +34,7 @@
                     <a href="/detail/{{ $item -> id }}">Lihat Selengkapnya &nbsp;</a>
                 </div>
                 <div class="waktu-utm">
-                    <p>
-                        Waktu: {{ $item->created_at->format('d/m/Y': H:i:s) }}
-                    </p>
+                    <p>Waktu: {{ $item->created_at->format('d/m/Y H:i') }}</p>
                 </div>
                 </div>
                 <hr><br>

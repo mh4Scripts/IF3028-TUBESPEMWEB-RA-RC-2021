@@ -34,15 +34,14 @@
                         Aspek: {{  $data -> aspek }}
                     </div>
                     <div class="waktu-dtl">
-                        <p>Waktu: {{ $data->created_at->format('d/m/Y H:i:s') }}</p>
+                        <p>Waktu: {{ $data->created_at->format('d/m/Y H:i') }}</p>
                     </div>
-                    <button class="hapus">Hapus Laporan/Komentar</button>
-                    <button class="edit">Edit Laporan</button>
+                    <button class="hapus" onclick="konfirmasi()">Hapus Laporan/Komentar</button>
+                    <button class="edit" >Edit Laporan</button>
                 </div>
-
-                
                 <hr><br>
                 
             </div>
         </div>
+        
 @endsection 
