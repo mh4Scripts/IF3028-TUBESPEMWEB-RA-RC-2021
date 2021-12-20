@@ -14,7 +14,6 @@ class post extends Model
         'pelapor',
         'laporan',
         'aspek',
-        'fileupload',
-        'created_time'
+        'fileupload'
     ];
 }

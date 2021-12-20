@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 use App\Models\post;
 use Illuminate\Routing\Route as RoutingRoute;
+use Illuminate\Session\Store;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,19 +16,16 @@ use Illuminate\Routing\Route as RoutingRoute;
 | contains the "web" middleware group. Now create something great!
 |
 */
+#route untuk tampil di home
+Route::get('/', [PostController::class, 'index'])->name('home_page');
 
-Route::get('/', function () {
-    return view('home_page');
-});
+#route untuk tambah laporan
+Route::get('/create', [PostController::class, 'create'])->name('create');
 
-Route::get('/form_page', function () {
-    return view('form_page');
-});
+#route memasukkan data ke db
+Route::post('/store', [PostController::class, 'store'])->name('store');
 
-Route::get('/detail_page', function () {
+#route ke halaman detail page
+Route::get('/detail', function () {
     return view('detail_page');
 });
-
-Route::get('/', 'PostController@index');
-
-Route::resource('post', PostController::class);

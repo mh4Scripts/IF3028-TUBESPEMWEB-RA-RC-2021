@@ -20,13 +20,15 @@
 
     <body>
         <h1>SIMPLE LAPOR!</h1>
-        <form method="POST" id="formlaporan" action="/add_page.php" onsubmit="return validateForm()" enctype="multipart/form-data">
+        <form method="POST" id="formlaporan" action="{{ route('store') }}" onsubmit="return validateForm()" enctype="multipart/form-data">
+            @csrf
+
             <p>Buat Laporan/Komentar</p>
             <hr>
-            <input type="text" class="judullaporan" name="judullaporan" placeholder="Judul Laporan" required/>
+            <input type="text" class="judul" name="judul" placeholder="Judul Laporan" required/>
             <br>
-            <input type="text" class="namapelapor" name="namapelapor" placeholder="Nama Pelapor" required/>
-            <textarea name="laporan" placeholder="Laporan/Komentar" id="laporan" rows="18" cols="151" required></textarea>
+            <input type="text" class="pelapor" name="pelapor" placeholder="Nama Pelapor" required/>
+            <textarea name="laporan" placeholder="Laporan/Komentar" id="laporan" rows="18" cols="151" required minlength="20"></textarea>
 
             <select name="aspek">
                 <option value="">Pilih Aspek Pelaporan/Komentar</option>

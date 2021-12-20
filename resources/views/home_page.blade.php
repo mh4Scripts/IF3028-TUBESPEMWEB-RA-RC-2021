@@ -19,15 +19,15 @@
             </button>
         </form>
         <div class="buatlaporan">
-            <a href="form_page">Buat Laporan/Komentar</a>
+            <a href="{{ route('create') }}">Buat Laporan/Komentar</a>
         </div>
 
         <div class="daftarlaporan" >
             Laporan/Komentar Terakhir
-            
-            @foreach ($posts as $p)
-            <hr>
 
+            <hr>
+            @foreach ($posts as $p)
+            
             <!--p> contoh <br> contoh <br> contoh </p-->
             {{ $p->judul }} oleh {{ $p->pelapor }}
             <br><br>
@@ -39,11 +39,11 @@
                     </div>
 
                     <div class="waktu">
-                        Waktu : Waktu : {{ $p->created_time }}
+                        Waktu : {{ $p->created_at->format('d-m-Y H:i') }}
                     </div>
 
                     <div class="selengkapnya">
-                        <a href="detail_page">
+                        <a href="detail_page.blade.php">
                         Lihat Selengkapnya
                         <img src="arrow_forward_ios.png">
                         </a>
@@ -52,6 +52,7 @@
         </div>
         <hr>
         @endforeach
+        
 </div>
     </body>
 
