@@ -20,47 +20,41 @@
 			</div>
 
 			<form action="" method="POST">
-				
-					<input type="text" name="cari" id="cari" placeholder="Cari laporan/komentar yang ingin dicari..." class="cari">
-					<button class="btn" type="submit" name="btncari" >Cari</button>
-			
+				<input type="text" name="cari" id="cari" placeholder="Cari laporan/komentar yang ingin dicari..." class="cari">
+				<button class="btn" type="submit" name="btncari" >Cari</button>
 			</form>
 
-			<br>
+			<br><br><br>
 			<center>
-				<a href="<?php echo site_url('Laporan_controller/tambah') ?>">Buat Laporan/Komentar 
-				<div style="margin-top: -18px; margin-left: 195px;">
-					<a href="<?php echo site_url('Laporan_controller/tambah') ?>">
+				<a href="<?php echo site_url('lapor_controller/tambah') ?>">Buat Laporan/Komentar 
+				<div class="tambah">
+					<a href="<?php echo site_url('lapor_controller/tambah') ?>">
 						<img src="<?php  echo base_url('img/plus.png') ?>" width="20px" height="20px">
 					</a>	
 				</div>
 			</center>
+				
+			<br><p>Laporan/Komentar Terakhir</p><hr>
 			
-			<br>	
-				<p>Laporan/Komentar Terakhir</p>
-			<hr>
-
 			<?php foreach ($laporan as $value): ?>
 				<?php  echo "<p>$value->isi</p><br>"; ?>
 				<p><img src="<?php  echo base_url('img/file.png') ?>" width="20px" height="20px"></p>
-				<div style="margin-top: -40px; margin-bottom: 17px; margin-left: 25px; width: 290px;">
-				Lampiran: <?= $value->lampiran ?>
+				<div class="lampir">
+					Lampiran: <?= $value->lampiran ?>
 				</div>
-			<?php echo "<p style='width: auto; height: auto; margin-top:-35.9px; margin-left: 325px;'>Waktu: $value->waktu</p>"; ?>
+			<?php echo "<p class='waktu'>Waktu: $value->waktu</p>"; ?>
 			
-			<p style="margin-top: -33.7px; margin-left: 535px;">
-				<a href="<?php echo site_url('Laporan_controller/detail/'.$value->id) ?>">Lihat Selengkapnya
-			</p>
-
-			<div style="margin-top: -34px; margin-left: 678px;">
-						<img src="<?php  echo base_url('img/next-button.png') ?>" width="20px" height="20px">
-					</a>		
+			<p class="lihat"><a href="<?php echo site_url('lapor_controller/detail/'.$value->id) ?>">Lihat Selengkapnya</p>
+				
+			<div class="next">
+				<img src="<?php  echo base_url('img/next-button.png') ?>" width="20px" height="20px"></a>	
 			</div>
 			
 			<hr>
 			<?php endforeach; ?>
-		</div>
-		<br><br>
+		</div><br><br><br>
+
 	</div>
 </body>
+
 </html>
