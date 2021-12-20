@@ -18,12 +18,12 @@
                 @foreach($data as $item)
                 <div class="clear">
                     <div class="judulnnama">
-                        <h3>{{$item->judul}}</h3>
-                        <h4>Diposting oleh {{$item->nama}}</h4>
+                        <h3>{{ $item->judul }}</h3>
+                        <h4>Diposting oleh {{ $item->nama }}</h4>
                     </div>
                 </div>
                 
-                <p>{{$item->pesan}}</p>
+                <p>{{ $item->pesan }}</p>
                 <div class="clear">
                 <div class="lampiran">
                     <p>
