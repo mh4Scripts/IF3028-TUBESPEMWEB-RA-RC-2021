@@ -2,21 +2,12 @@
     font-family: 'Poppins', sans-serif;
     }
 
-
 .container {
-/*
-    margin: 0 auto;
-    margin-top: 100px;
-    margin-bottom: 100px;
-    width: 907px;
-    height: auto;
-    border: 1px solid rgba(252,250,249,1);
-    */
     position: absolute;
-    width: 907px;
-    left: 266px;
-    top: 119px;
-    
+    width: 1470px;
+    height: auto;
+    left: 30px;
+    top: 30px;
     background: #FCFAF9;
     box-shadow: 6px 6px 23px rgba(0, 0, 0, 0.25);
     border-radius: 10px;
@@ -34,7 +25,7 @@ h1{
 
 .cari{
     position: absolute;
-    width: 573px;
+    width: 888px;
     height: 52px;
     border: 2px solid #DBDFE3;
     box-sizing: border-box;
@@ -45,40 +36,55 @@ h1{
     position: absolute;
     width: 110px;
     height: 52px;
-    left: 687px;
-    
+    left: 1125px;
     background: #FAAA8C;
     border-radius: 10px;
 }
+
 a {
-
     text-decoration: none;
-
 }
 
 p {
-
     text-align: justify;
-
 }
 
-.content {
+.content {   
     
-    margin: 0 auto;
+    margin: auto;
     margin-top: 50px;
-    width: 700px;
-
+    width: 1000px;
 }
 
 .detail {
-
     float: right;
     margin-top: -35px;
-
 }
 
+.tambah{
+    margin-top: -22px; 
+    margin-left: 215px;
+}
 
+.lampir{
+    margin-top: -45px; 
+    margin-bottom: 17px; 
+    margin-left: 25px; 
+    width: 290px;
+}
+.waktu{
+    width: auto; 
+    height: auto; 
+    margin-top:-40px; 
+    margin-left: 600px;
+}
 
+.lihat{
+    margin-top: -40px; 
+    margin-left: 825px;
+}
 
-
-
+.next{
+    margin-top: -38px; 
+    margin-left: 985px;
+}
