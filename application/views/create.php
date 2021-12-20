@@ -14,7 +14,7 @@
     <body>
         <div class="container">
             <div class="content">
-                <h1>Platform pengaduan untuk seluruh civitas akademika ITERA</h1>
+                <h1>BUAT LAPORAN</h1>
                 <br>
                 <form name="tambah_form" method="POST" onsubmit="return validasi()">
                     <p>Buat Laporan/Komentar</p>
