@@ -1,0 +1,63 @@
+* {
+    font-family: 'Poppins', sans-serif;
+}
+
+.container {
+    width: auto;
+    padding-left: 10%;
+    padding-right: 10%;
+    background: #FCFAF9;
+    
+}
+
+header{
+    text-align: center;			
+    margin: auto;
+    padding: 40px;
+    font-size: 30px;
+}
+
+body{
+    width: auto;
+    border: 1px solid black;
+}
+
+.content {  
+    margin: auto;
+    margin-top: 50px;
+    width: 1000px;
+}
+
+.detail {
+    float: right;
+    margin-top: -35px;
+}
+
+input{
+    width: 92.5%; height: 30px;
+}
+
+.textarea{
+    width: 100%; 
+    height: 100px;
+}
+
+button{
+    height: 36px;
+    background-color: #FAAA8C;
+}
+
+.select{
+    width: max-content;
+    height: 25px;
+}
+
+.btn_edit{
+    float: right;
+    margin-top: -50px;
+}
+
+.file{
+    width: fit-content;
+}
+

@@ -1,0 +1,77 @@
+* {
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    width: auto;
+    border: 1px solid black;
+}
+
+
+.container {
+    width: auto;
+    padding-left: 10%;
+    padding-right: 10%;
+    background: #FCFAF9;
+    
+}
+
+header{
+    text-align: center;			
+    margin: auto;
+    padding: 40px;
+    font-size: 30px;
+}
+
+a {
+
+    text-decoration: none;
+
+}
+
+p {
+
+    text-align: justify;
+
+}
+
+.content {
+    
+    margin: 0 auto;
+    margin-top: 50px;
+    width: 700px;
+
+}
+
+.detail {
+
+    float: right;
+    margin-top: -34px;
+
+}
+
+input{
+
+    width: 92.5%; height: 30px;
+
+}
+
+button{
+
+    height: 36px;
+
+}
+
+
+.file{
+    width: 200px;
+    height: 180px;
+    border: 1px solid ;
+}
+
+.edit {
+
+    margin-left: 300px;
+
+}
+
