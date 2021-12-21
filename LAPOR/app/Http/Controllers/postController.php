@@ -15,7 +15,7 @@ class postController extends Controller
     public function index()
     {
         //
-        $posts = Post::get();
+        $posts = Post::all();
         return view("index", compact('posts'));
     }
 
@@ -50,6 +50,8 @@ class postController extends Controller
     public function show($id)
     {
         //
+        $post = Post::where('id', $id)->firstOrFail();
+        return view("show", compact("post"));
     
     }
 
