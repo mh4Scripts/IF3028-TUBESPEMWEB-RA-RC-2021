@@ -99,7 +99,10 @@ Validasi **wajib** dilakukan pada *client-side*, dengan menggunakan **javascript
 Pengguna dapat mencari laporan/komentar dengan melakukan search ke `isi laporan/komentar`.
 
 ### Penjelasan Teknis
-`Silakan isi bagian ini dengan penjelasan anda, sesuai Petunjuk Pengerjaan di atas.`
+1. Instalasi framework codeigniter version 4 menggunakan composer dengan cara command pada git bash "composer create-project codeigniter4/appstarter --no-dev"
+2. untuk kondektivitas database menggunakan file .env. database akan langsung terkoneksi.
+3. Validasi Client ketika menambahkan laporan, sistem akan melakukan validasi pada isi dan file yang akan diinput. Isi laporan harus terisi minimal 20 kata atau 100 karakter. file sistem dapat menerima lampiran berupa gambar dan file dengan ekstensi doc, docx, xlx, xlsx, ppt, pptx, dan pdf. selain itu laporan tetap terkirim walaupun file tidak akan muncul di hasil laporan.
+4.  AJAX Pada menu pencarian kami gunakan AJAX dimana data yang di input di filed cari. Pada saat memasukkan kata pencarian bagian konten akan berubah untuk menampilkan data hasil pencarian, dimana pencarian dilakukan dengan menggunakan fungsi LIKE pada bagian isi dan nama yang pelapor.
 
 ### Knowledge
 Untuk meringankan beban tugas ini, ada berberapa keyword yang bisa anda cari untuk menyelesaikan tugas ini.
