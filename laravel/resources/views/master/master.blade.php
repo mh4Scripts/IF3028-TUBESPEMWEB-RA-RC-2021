@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {{-- <meta name="csrf-token" content="{{ csrf_token() }}"> --}}
 
     {{-- JUDUL HALAMAN WEBSITE --}}
     <title>LAPOR! - Layanan Aspirasi dan Pengaduan Sivitas Akademika ITERA</title>
@@ -21,9 +22,7 @@
 </head>
 
 <body>
-    {{-- BACKGROUND --}}
-    <img src="media/images/top-background.jpg"    alt="home-cover" class="top-background"> 
-    <img src="media/images/bottom-background.svg" alt="home-cover" class="bottom-background">
+    @yield('additional-BG')
 
     {{-- NAV HEADER --}}
     <header>
@@ -32,10 +31,10 @@
                 <span><img src="media/logos/speaker_logo.png" alt="Website Logo"></span>
                 <h2>LAPOR!!</h2>
             </a>
-            <a href="{{ route('about') }}" class="nav-header-links">
+            <a href="{{ route('create') }}" class="nav-header-links">
                 <h3>Buat Laporan</h3>
             </a>
-            <a href="{{ route('about') }}" class="nav-header-links">
+            <a href="{{ route('show') }}" class="nav-header-links">
                 <h3>Semua Laporan</h3>
             </a>
             <a href="{{ route('about') }}" class="nav-header-links">
@@ -44,14 +43,9 @@
 
             {{-- PROFILE --}}
             @yield('profile')
-
+            
         </div>
     </header>
-
-    <div class="web-hero">
-        <h2>Layanan Aspirasi dan Pengaduan Sivitas Akademika ITERA</h2><br>
-        <h3>Bersama ciptakan lingkungan ITERA yang berintegritas</h3>
-    </div>
 
     <div class="page-content">
 
@@ -101,8 +95,8 @@
                 </div>
             </div>
             <div class="footer-links">
-                <a href="">BERANDA</a>
-                <a href="">TENTANG KAMI</a>
+                <a href="{{ route('home') }}">BERANDA</a>
+                <a href="{{ route('about') }}">TENTANG KAMI</a>
                 <a href="">HUBUNGI KAMI</a>
             </div>
             <h4>Copyright 2021. <span><a class="copyright" href="http://if.itera.ac.id" target="_blank">Teknik Informatika ITERA.</a></span>  Hak cipta dilindungi Undang-Undang.</h4>
@@ -144,5 +138,6 @@
     @yield('additional-element')
 
     <script src="js/script.js"></script>
+    @yield('additional-script')
 </body>
 </html>

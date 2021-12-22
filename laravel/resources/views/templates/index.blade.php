@@ -7,7 +7,19 @@
     </div>
 @endsection
 
+@section('additional-BG')
+    {{-- BACKGROUND --}}
+    <img src="media/images/top-background.jpg" alt="home-cover" class="top-background" id="RED_BG"> 
+    <img src="media/images/bottom-background.svg" alt="home-cover" class="bottom-background">
+@endsection
+
 @section('content')
+    {{-- WEB HERO --}}
+    <div class="web-hero">
+        <h2>Layanan Aspirasi dan Pengaduan Sivitas Akademika ITERA</h2><br>
+        <h3>Bersama ciptakan lingkungan ITERA yang berintegritas</h3>
+    </div>
+
     {{-- SEARCH BAR --}}
     <section class="search-bar">
         <form class="search-input" action="" method="post">
@@ -20,7 +32,7 @@
 
     {{-- CREATE BUTTON --}}
     <section class="create-new">
-        <a href="" class="create-new-btn">
+        <a href="{{ route('create') }}" class="create-new-btn">
             <h3>Buat Laporan</h3>
             <img src="media/icons/plus.png" alt="">
         </a>
@@ -38,78 +50,65 @@
             </div>
             {{-- LEVEL 1 --}}
             <div class="show-data-content">
-                {{-- LEVEL 2 --}}
-                <div class="data-container">
-                    {{-- LEVEL 3 --}}
-                    <div class="data-header">
-                        <h3 class="data-title" >Polusi Asap (Dugaan Dari Pabrik Kertas Terdekat) Hampir Setiap Hari</h3>
+                
+                @foreach ($reports as $report)
+
+                    {{-- LEVEL 2 --}}
+                    <div class="data-container">
+                        {{-- LEVEL 3 --}}
+                        <div class="data-header">
+                            <a href="{{ route('detail') }}" class="data-title">
+                                <h3>{{ $report->title }}</h3>
+                            </a>
+                        </div>
+                        {{-- LEVEL 3 --}}
+                        <div class="data-content">
+                            {{-- {!! nl2br(e()) !!} --}}
+                            <p>{{ $report->exmpl }}.... 
+                                <span>
+                                    <a href="{{ route('detail') }}" class="data-detail">
+                                        Baca Lebih Lanjut
+                                    </a>
+                                </span>
+                            </p>
+                        </div>
+                        {{-- LEVEL 3 --}}
+                        <div class="data-footer">
+                            <div class="left-data-footer">
+                                @if (($report->attachment->count()) <= 0)
+                                    <h4 class="no-data-attachment">
+                                        Tidak Ada Lampiran
+                                    </h4>
+                                @else
+                                    <h4 class="data-attachment" onclick="Send_Att_Data({{ $report->attachment }})">
+                                        Lihat lampiran 
+                                    </h4>
+                                @endif
+                            </div>
+                            <div class="right-data-footer">
+                                <h5 class="data-aspect">
+                                    <span class="createinfo">
+                                        Aspek Laporan :
+                                    </span> 
+                                    {{ $report->aspct }}
+                                </h5>
+                                <h5 class="data-create-time">
+                                    <span class="createinfo">
+                                        Dibuat pada :
+                                    </span>
+                                    {{ $report->created_at }}
+                                </h5>
+                                <h5 class="data-creator">
+                                    <span class="createinfo">
+                                        Oleh :
+                                    </span>
+                                    {{ $report->user->name }}
+                                </h5>
+                            </div>
+                        </div>
                     </div>
-                    {{-- LEVEL 3 --}}
-                    <div class="data-content">
-                        <p>Polusi asap yang saat ini hampir meliputi setiap waktu pagi siang sore dan malam daerah sekitar the orchard, summarecon bekasi, harapan baru. sekitar akhir tahun 2020 pol.... <span><a href="" class="data-detail">Baca Lebih Lanjut</a></span></p>
-                    </div>
-                    {{-- LEVEL 3 --}}
-                    <div class="data-footer">
-                        <h4 class="data-attachment">Lihat lampiran</h4>
-                        <h5 class="data-aspect"><span class="createinfo">Aspek Laporan :</span> Dosen</h5>
-                        <h5 class="data-create-time"><span class="createinfo">Dibuat pada :</span> 12 Desember 2021</h5>
-                        <h5 class="data-creator"><span class="createinfo">Oleh :</span> Markus Togi</h5>
-                    </div>
-                </div>
-                {{-- LEVEL 2 --}}
-                <div class="data-container">
-                    {{-- LEVEL 3 --}}
-                    <div class="data-header">
-                        <h3 class="data-title">Banjir di Perumahan Star Perdana Residance Cikarang</h3>
-                    </div>
-                    {{-- LEVEL 3 --}}
-                    <div class="data-content">
-                        <p>Perumahan subsidi di cikarang, selalu banjir jika ujan datang, Genangan air bisa mencapai 20-30cm bahkan lebih. sudah banyak warga yang jatuh akibat genangan yang tidak s.... <span><a href="" class="data-detail">Baca Lebih Lanjut</a></span></p>
-                    </div>
-                    {{-- LEVEL 3 --}}
-                    <div class="data-footer">
-                        <h4 class="data-attachment">Lihat lampiran</h4>
-                        <h5 class="data-aspect"><span class="createinfo">Aspek Laporan :</span> Mata Kuliah</h5>
-                        <h5 class="data-create-time"><span class="createinfo">Dibuat pada :</span> 12 Desember 2021</h5>
-                        <h5 class="data-creator"><span class="createinfo">Oleh :</span> Togi Fedrian</h5>
-                    </div>
-                </div>
-                {{-- LEVEL 2 --}}
-                <div class="data-container">
-                    {{-- LEVEL 3 --}}
-                    <div class="data-header">
-                        <h3 class="data-title">Kebijakan Amburadul Manager Pln Up3 Pematangsiantar Buang Anggaran Investasi Negara</h3>
-                    </div>
-                    {{-- LEVEL 3 --}}
-                    <div class="data-content">
-                        <p>Manager plnt up3 kota ini pematangsiantar di provinsi sumatera utara saudara joy mart sihaloho melalui kebijakannya membangun jaringan listrik tegangan menegah 20 kv sep.... <span><a href="" class="data-detail">Baca Lebih Lanjut</a></span></p>
-                    </div>
-                    {{-- LEVEL 3 --}}
-                    <div class="data-footer">
-                        <h4 class="data-attachment">Lihat lampiran</h4>
-                        <h5 class="data-aspect"><span class="createinfo">Aspek Laporan :</span> Mahasiswa</h5>
-                        <h5 class="data-create-time"><span class="createinfo">Dibuat pada :</span> 12 Desember 2021</h5>
-                        <h5 class="data-creator"><span class="createinfo">Oleh :</span> Fedrian Rivaldi</h5>
-                    </div>
-                </div>
-                {{-- LEVEL 2 --}}
-                <div class="data-container">
-                    {{-- LEVEL 3 --}}
-                    <div class="data-header">
-                        <h3 class="data-title">Penimbunan/penampungan Bbm Subsidin Oleh Pelaku Atau Oknum</h3>
-                    </div>
-                    {{-- LEVEL 3 --}}
-                    <div class="data-content">
-                        <p>Di kota manado sering sekali terjadi penimbunan/penampungan oleh pelaku/oknum spbu bekerja sama dengan pelaku lain yang bertindak sebagai konsumen. karena ada jenis mobil.... <span><a href="" class="data-detail">Baca Lebih Lanjut</a></span></p>
-                    </div>
-                    {{-- LEVEL 3 --}}
-                    <div class="data-footer">
-                        <h4 class="data-attachment" id="dataAtt"  onclick="showAttModal()">Lihat lampiran</h4>
-                        <h5 class="data-aspect"><span class="createinfo">Aspek Laporan :</span> Program Studi</h5>
-                        <h5 class="data-create-time"><span class="createinfo">Dibuat pada :</span> 12 Desember 2021</h5>
-                        <h5 class="data-creator"><span class="createinfo">Oleh :</span> Rivaldi Sinaga</h5>
-                    </div>
-                </div>
+                @endforeach
+
             </div>
             {{-- LEVEL 1 --}}
             <div class="show-data-footer">
@@ -122,7 +121,7 @@
     <section class="information-section">
         <div class="info-top-container">
             <div class="counter-card">
-                <h2>SEMUA LAPORAN<br><span class="counts">120</span></h2>
+                <h2>SEMUA LAPORAN<br><span class="counts">{{ $reports->count() }}</span></h2>
             </div>
         </div>
         <div class="info-bottom-container">
@@ -131,16 +130,37 @@
             </div>
             <div class="info-bottom-content">
                 <div class="counter-card">
-                    <h3>Mahasiswa<br><span class="counts">12</span></h3>
+                    <h3>Mahasiswa
+                        <br>
+                        <span class="counts">
+                            {{ $mhs_report->count() }}
+                        </span>
+                    </h3>
                 </div>
                 <div class="counter-card">
-                    <h3>Dosen<br><span class="counts">24</span></h3>
+                    <h3>
+                        Dosen
+                        <br>
+                        <span class="counts">
+                            {{ $dsn_report->count() }}
+                        </span>
+                    </h3>
                 </div>
                 <div class="counter-card">
-                    <h3>Mata Kuliah<br><span class="counts">36</span></h3>
+                    <h3>Mata Kuliah
+                        <br>
+                        <span class="counts">
+                            {{ $mkl_report->count() }}
+                        </span>
+                    </h3>
                 </div>
                 <div class="counter-card">
-                    <h3>Program Studi<br><span class="counts">48</span></h3>
+                    <h3>Program Studi
+                        <br>
+                        <span class="counts">
+                            {{ $prd_report->count() }}
+                        </span>
+                    </h3>
                 </div>
             </div>
         </div>
@@ -155,27 +175,12 @@
                 <span class="closeAttModal" onclick="closeAttModal()">&times;</span>
                 <h4>Lampiran terkait</h4>
             </div>
-            <div class="AttModalContent">
-                <div class="imagesContainer fade">
-                    <div class="imageNumber">1 / 3</div>
-                    <img src="media/images/3.png" alt="">
-                </div>
-                <div class="imagesContainer fade">
-                    <div class="imageNumber">2 / 3</div>
-                    <img src="media/images/4.png" alt="">
-                </div>
-                <div class="imagesContainer fade">
-                    <div class="imageNumber">3 / 3</div>
-                    <img src="media/images/5.png" alt="">
-                </div>
+            <div class="AttModalContent" id="AttModalContent">
             </div>
             <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
             <a class="next" onclick="plusSlides(1)">&#10095;</a>
         </div>
-        <div class="imageDot-container">
-            <span class="imageDot" onclick="currentSlide(1)"></span> 
-            <span class="imageDot" onclick="currentSlide(2)"></span> 
-            <span class="imageDot" onclick="currentSlide(3)"></span> 
+        <div class="imageDot-container" id="imageDotContainer">
         </div>
     </div>
 @endsection

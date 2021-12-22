@@ -12,22 +12,38 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', function () {
-    return view('templates/index');
-})->name('home');
-
-Route::get('/sudahmasuk', function () {
-    return view('templates/home');
-})->name('LoggedInhome');
+// Route::get('/',                     [LaporController::class, 'home'])->name('home');
+Route::get('/',                     'App\Http\Controllers\LaporController@home')->name('home');
 
 Route::get('/about', function () {
     return view('templates/about');
 })->name('about');
 
+
+Route::get('/sudahmasuk', function () {
+    return view('templates/home');
+})->name('LoggedInhome');
+
+
 Route::get('/daftar', function () {
     return view('templates/register');
 })->name('register');
+
+Route::get('/detail', function () {
+    return view('templates/detail');
+})->name('detail');
+
+Route::get('/laporan-baru', function () {
+    return view('templates/create');
+})->name('create');
+
+Route::get('/semua-laporan', function () {
+    return view('templates/show');
+})->name('show');
+
+Route::get('/update-laporan', function () {
+    return view('templates/update');
+})->name('update');
 
 Route::get('/c', function () {
     return view('templates/canvas');
