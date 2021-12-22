@@ -2,16 +2,17 @@
 <html>
     <head>
         <meta charset="UTF-8">
-
-        
         <title>Edit Laporan</title>
         <link rel="stylesheet" href="<?php echo base_url('style/edit_style.css') ?>">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+    	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    	<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
         <script type="text/javascript" src="<?php echo base_url('asset/script.js') ?>"></script>
     </head>
     <body>
         <div class="container">
             <div class="content">
-                <header>EDIT LAPORAN</header>
+                <h1>EDIT LAPORAN</h1>
                 <form name="tambah_form" method="POST" onsubmit="return validasi()">
                     <p>Edit Laporan/Komentar</p>
                     <hr><br>
