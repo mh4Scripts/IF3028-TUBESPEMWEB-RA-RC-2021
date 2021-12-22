@@ -2,6 +2,10 @@
     font-family: 'Poppins', sans-serif;
     }
 
+body{
+    background-image: linear-gradient(to right, #f9957f, #f2f5d0);
+}
+
 .container {
     position: absolute;
     width: 1470px;
