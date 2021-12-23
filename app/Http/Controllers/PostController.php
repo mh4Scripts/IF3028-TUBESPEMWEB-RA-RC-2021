@@ -52,4 +52,10 @@ class PostController extends Controller
                 ]);
         }
     }
+
+    public function show($id)
+    {
+        $posts = Post::findOrFail($id);
+        return view('detail_page', compact('posts'));
+    }
 }

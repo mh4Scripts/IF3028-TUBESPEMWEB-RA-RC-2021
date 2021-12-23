@@ -43,7 +43,7 @@
                     </div>
 
                     <div class="selengkapnya">
-                        <a href="detail_page.blade.php">
+                        <a href="{{ route('show', $p->id) }}">
                         Lihat Selengkapnya
                         <img src="arrow_forward_ios.png">
                         </a>

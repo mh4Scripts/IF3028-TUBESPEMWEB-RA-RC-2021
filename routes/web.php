@@ -26,6 +26,4 @@ Route::get('/create', [PostController::class, 'create'])->name('create');
 Route::post('/store', [PostController::class, 'store'])->name('store');
 
 #route ke halaman detail page
-Route::get('/detail', function () {
-    return view('detail_page');
-});
+Route::get('/show/{id}', [PostController::class, 'show'])->name('show');

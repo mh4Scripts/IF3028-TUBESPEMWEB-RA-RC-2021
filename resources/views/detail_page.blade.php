@@ -13,28 +13,26 @@
         <h1>SIMPLE LAPOR!</h1>
         <p>Detail Laporan/Komentar</p>
         <hr>
-        <p>contoh</p>
-        <p>contoh</p>
-        <br>
-        <p>contoh</p>
-        <p>contoh</p>
+        <p>
+            {{ $posts->laporan }}
+        </p>
         <div class="lampiran">
             Lampiran :
-            <p>contoh</p>
+            {{ $posts->fileupload}}
         </div>
         <div class="keterangan1">
                 <div class="keterangan2">
 
                     <div class="waktu">
-                        Waktu :
+                        Waktu : {{ $posts->created_at->format('d-m-Y H:i') }}
                     </div>
 
                     <div class="aspek">
-                        Aspek :
+                        Aspek : {{  $posts->aspek }}
                     </div>
 
                     <div class="editlaporan">
-                        <a href="">
+                        <a href="{{ route('edit',$posts->$id) }}">
                         Edit Laporan/Komentar
                         <img src="edit.png">
                     </div>
