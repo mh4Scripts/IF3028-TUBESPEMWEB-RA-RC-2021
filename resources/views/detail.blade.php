@@ -12,8 +12,8 @@
             <div class="laporan">
                 <div class="clear">
                     <div class="judulnnama">
-                    <h3>{{$data->judul}}</h3>
-                    <h4>Diposting oleh {{$data->nama}}</h4>
+                    <h3>{{ $data->judul }}</h3>
+                    <h4>Diposting oleh {{ $data->nama }}</h4>
                     </div>
                 </div>
                 
@@ -37,7 +37,7 @@
                         <p>Waktu: {{ $data->created_at->format('d/m/Y H:i') }}</p>
                     </div>
                     <button class="hapus" onclick="konfirmasi()">Hapus Laporan/Komentar</button>
-                    <button class="edit" >Edit Laporan</button>
+                    <a class="edit" href="/ubah/{{ $data -> id }}">Edit Laporan</a>
                 </div>
                 <hr><br>
                 

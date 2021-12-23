@@ -89,7 +89,10 @@ class laporanController extends Controller
      */
     public function edit($id)
     {
-        
+        $title = 'Ubah';
+        $data = laporan::find($id);
+
+        return view('ubah',compact ('data','title'));
     }
 
     /**
@@ -101,7 +104,41 @@ class laporanController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $old_file_name = $request->hidden_file;
+        $file = $request->file('file');
+
+        if($file != '')
+        {
+            $request->validate([
+                'nama' => 'required',
+                'judul' => 'required',
+                'pesan' => 'required',
+                'aspek' => 'required',
+                'file' => 'required',
+            ]);
+            $file_name = $old_file_name;
+            $file->move(public_path('file'),$file_name);
+        }else{
+            $request->validate([
+                'nama' => 'required',
+                'judul' => 'required',
+                'pesan' => 'required',
+                'aspek' => 'required',
+            ]);
+            $file_name = $old_file_name;
+        }
+        $data_lapor = array(
+            'nama' => $request-> nama,
+            'judul' => $request -> judul,
+            'pesan' => $request -> pesan,
+            'aspek' => $request -> aspek,
+            'file' => $file_name
+        );
+        $title = 'utama';
+        $data = laporan::find($id);
+        $data->update($data_lapor);
+
+        return redirect('utama')->with('sukses','data berhasil diubah');
     }
 
     /**
@@ -112,6 +149,6 @@ class laporanController extends Controller
      */
     public function destroy($id)
     {
-        //
+        
     }
 }
