@@ -1,7 +1,7 @@
 </div>
 <section id="footer" class="footer">
         <footer>
-            <p>Copyright &copy 2020 | Daniel Sipangkar (118140080) | Cita S M Siadari (118140172) | Laila N I (118140008).</p>
+            <p>Copyright &copy 2020 | Hizkia H J Naibaho (118140036) | Yohannes F Silaen (118140064).</p>
         </footer>
     </section>
 </body>
