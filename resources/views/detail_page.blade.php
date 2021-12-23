@@ -32,7 +32,7 @@
                     </div>
 
                     <div class="editlaporan">
-                        <a href="{{ route('edit',$posts->$id) }}">
+                        <a href="{{ route('edit',$posts->id) }}">
                         Edit Laporan/Komentar
                         <img src="edit.png">
                     </div>

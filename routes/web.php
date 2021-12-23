@@ -25,5 +25,11 @@ Route::get('/create', [PostController::class, 'create'])->name('create');
 #route memasukkan data ke db
 Route::post('/store', [PostController::class, 'store'])->name('store');
 
-#route ke halaman detail page
+#route ke halaman detail_page
 Route::get('/show/{id}', [PostController::class, 'show'])->name('show');
+
+#route ke halaman edit
+Route::get('/edit/{id}', [PostController::class, 'edit'])->name('edit');
+
+#route untuk mengupdate perubahan data
+Route::put('/update/{id}', [PostController::class,'update'])->name('update');

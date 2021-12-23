@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Post;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Str;
 
 class PostController extends Controller
 {
@@ -57,5 +58,47 @@ class PostController extends Controller
     {
         $posts = Post::findOrFail($id);
         return view('detail_page', compact('posts'));
+    }
+
+    public function edit($id)
+    {
+        $posts = Post::findOrFail($id);
+        return view('edit_page',  compact('posts'));
+    }
+
+    public function update(Request $request, $id)
+    {
+        $this->validate($request,[
+            'judul' => 'required',
+            'pelapor' => 'required',
+            'laporan' => 'required',
+            'aspek' => 'required',
+            'fileupload' => 'required'
+        ]);
+
+        $posts = Post::findOrFail($id);
+
+        $posts->update([
+            'judul' => $request->judul,
+            'pelapor' => $request->pelapor,
+            'laporan' => $request->laporan,
+            'aspek' => $request->aspek,
+            'fileupload' => $request->fileupload
+        ]);
+
+        if ($posts) {
+            return redirect()
+                ->route('home_page')
+                ->with([
+                    'success' => 'Laporan anda telah terkirim dengan sukses'
+                ]);
+        } else {
+            return redirect()
+                ->back()
+                ->withInput()
+                ->with([
+                    'error' => 'Terjadi suatu masalah, silakan coba kembali'
+                ]);
+        }
     }
 }
