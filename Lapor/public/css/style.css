@@ -5,8 +5,9 @@ body {
     font-family: Poppins,Arial, Helvetica, sans-serif;
 }
 .nav {
+    position: relative;
     overflow: hidden;
-    background-color: rgb(119, 16, 16);
+    background-color: #C4143B;
     
 }
 
@@ -47,4 +48,15 @@ nav ul li a{
     width: 50%;
     padding: 64px;
     text-align: justify;
+}
+
+.aboutdesc{
+    width: 50%;
+    justify-content: center;
+    margin: 64px auto 64px auto;
+    text-align: justify;
+}
+
+.listarticle{
+    
 }

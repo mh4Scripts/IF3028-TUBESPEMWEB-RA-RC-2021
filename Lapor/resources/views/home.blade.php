@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" 
         href="css/style.css">
-    <title>Document</title>
+    <title>Lapor</title>
 </head>
 <body>
     
@@ -13,10 +13,10 @@
         <div class="nav"> 
             <nav>
                 <ul>
-                    <li><img width="50" height="50" src="https://images.unsplash.com/photo-1549924231-f129b911e442?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"></li>
-                    <li><a href="#">tentang lapor!</a> </li>
-                    <li><a href="#">Laporan</a> </li>
-                    <li><a href="#">Cari Aduan</a></li>
+                    <li><a href="{{url('/')}}"></a><img height="50" src="images/logo.png"></li>
+                    <li><a href="{{url('about')}}">tentang lapor!</a> </li>
+                    <li><a href="{{url('/')}}">Laporan</a> </li>
+                    <li><a href="{{url('cari')}}">Cari Aduan</a></li>
                 </ul>
             </nav>
         </div>
