@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\laporan;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\File;
+use File;
 
 class laporanController extends Controller
 {
@@ -149,6 +149,11 @@ class laporanController extends Controller
      */
     public function destroy($id)
     {
-        
+        $data = laporan::find($id);
+        File::delete('file/'.$data->file);
+
+        $data->delete($data);
+
+        return redirect('utama');
     }
 }

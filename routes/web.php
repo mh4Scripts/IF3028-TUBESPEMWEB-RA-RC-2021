@@ -18,6 +18,7 @@ Route::post('/utama',[laporancontroller::class,'store']);
 Route::get('/detail/{id}', [laporancontroller::class,'show']);
 Route::get('/ubah/{id}', [laporancontroller::class,'edit']);
 Route::post('/ubah/{id}', [laporancontroller::class,'update']);
+Route::get('/utama/{id}/delete', [laporancontroller::class,'destroy']);
 // Route::get('/utama', function () {
 //     return view('utama',[
 //         "title" => "Utama"
