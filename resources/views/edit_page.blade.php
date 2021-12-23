@@ -26,7 +26,7 @@
 
             <p>Buat Laporan/Komentar</p>
             <hr>
-            <input type="text" class="judul" name="judul" placeholder="Judul Laporan" required value="{{ $posts->laporan }}"/>
+            <input type="text" class="judul" name="judul" placeholder="Judul Laporan" required value="{{ $posts->judul }}"/>
             <br>
             <input type="text" class="pelapor" name="pelapor" placeholder="Nama Pelapor" required value="{{ $posts->pelapor }}"/>
             <textarea name="laporan" placeholder="Laporan/Komentar" id="laporan" rows="18" cols="151" required minlength="20">{{ old('laporan', $posts->laporan) }}</textarea>
