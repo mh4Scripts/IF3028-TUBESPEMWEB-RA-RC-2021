@@ -17,7 +17,7 @@
 
 
         <div class="content-create">
-            <form action="{{ route('posts') }}" method="POST" enctype="multipart/form-data">
+            <form action="{{ route('posts') }}" method="POST" enctype="multipart/form-data" onsubmit="return validasi_input(this);">
                 @csrf
                 <textarea id="post-article" name="postIsi"></textarea>
                 <div class="select-container">
