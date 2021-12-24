@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\laporan;
 use Illuminate\Http\Request;
+use App\Rules\MaxWordsRule;
 use File;
 
 class laporanController extends Controller
@@ -37,13 +38,20 @@ class laporanController extends Controller
      */
     public function store(Request $request)
     {   
-        $request->validate([
+        $validateData = $request->validate([
             'nama' => 'required',
             'judul' => 'required',
-            'pesan' => 'required',
-            'aspek' => 'required',
-            'file' => 'required|file|mimes:jpg,jpeg,png,doc, docx, xls, xlsx, ppt, pptx, pdf|max:204800'
-        ]);
+            'pesan' => ['required', new MaxWordsRule(20)],
+            'aspek' => 'required|not_in:0',
+            'file' => 'required|file|mimes:jpg,jpeg,png,doc, docx, xls, xlsx, ppt, pptx, pdf|max:204800'],
+            [ 
+            'pesan.required' => 'Laporan/Komentar tidak boleh kosong',
+            'nama.required' => 'Nama pelapor tidak boleh kosong',
+            'judul.required' => 'Judul tidak boleh kosong',
+            'aspek.required' => 'Pilih salah satu aspek',
+            'file.required' => 'Masukkan file'
+            ]);
+        return request() ->pesan;
 
         $file = $request-> file('file');
         $new_file = rand().'.'.$file->getClientOriginalExtension();
