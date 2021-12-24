@@ -1,4 +1,4 @@
-## A Little Bit More Than Simple `LAPOR` :heavy_exclamation_mark:
+# A Little Bit More Than Simple `LAPOR` :heavy_exclamation_mark:
 
 Berikut adalah penjelasan tentang Tugas Besar kami,
 **berisi langkah instalasi dan penjelasan singkat fitur.**
