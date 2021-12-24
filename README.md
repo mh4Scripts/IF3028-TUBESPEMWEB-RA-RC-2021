@@ -4,12 +4,13 @@ http://lapor.go.id, maka anda akan mendapatkan laman seperti gambar di bawah
 
 ![](tampilan/lapor.png)
 
-Kali ini kita akan membuat aplikasi web seperti `lapor` untuk mengumpulkan laporan/komentar terkait layanan
-di program studi teknik informatika ITERA.
-**Luangkan waktu untuk membaca spesifikasi ini sampai selesai.** :kissing_heart:
+Berikut adalah penjelasan tentang Tugas Besar kami.
+**berisi langkah instalasi dan penjelasan singkat fitur.**
 
-### Anggota Tim :cyclone:
-Project dikerjakan secara **berkelompok** dengan maksimal jumlah anggota adalah 2-3 orang mahasiswa (maksimal 3 orang mahasiswa!).
+### Anggota Tim :raising_hand_man:
+1. 118140037 - Markus Togi Fedrian Rivaldi Sinaga
+2. 119140086 - Gusti Hafizah Nurrahmah
+3. 119140109 - Muhammad Farhan Andani
 
 ### Petunjuk Pengerjaan :umbrella:
 1. Fork pada repository ini dengan akun github anda.
