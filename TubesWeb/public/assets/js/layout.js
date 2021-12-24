@@ -13,7 +13,10 @@ function validateForm(){
   let aspek = document.forms["form"]["aspek"].value;
   let lampiran = document.forms["form"]["lampiran"].value;
   if (laporan=="" || aspek=="" || lampiran=="" ){
-    alert("Tidak boleh ada data yang kosong!!!")
+    alert("Tidak boleh ada data yang kosong!!!");
+  }
+  else if(laporan.split(" ").length<20){
+    alert("Laporan tidak boleh kurang dari 20 kata");
   }
   else{
     document.getElementById("form").submit();

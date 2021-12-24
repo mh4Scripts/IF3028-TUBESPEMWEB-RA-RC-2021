@@ -22,7 +22,7 @@
     <div class="col-1"></div>
     <div class="col-4">
         <p>Lampiran :</p><br>
-        <img src="{{asset('assets/images/'.$report->lampiran) ?? asset('assets/images/file.png')}}" alt="">
+        <img id="lampiran" src="{{asset('assets/images/'.$report->lampiran) ?? asset('assets/images/file.png')}}" onError="this.onerror=null;this.src='../public/assets/images/file.png'" alt="">
     </div>
 </div>
 
