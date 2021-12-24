@@ -2,8 +2,6 @@
 
 use Illuminate\Support\Facades\Route;
 
-
-
 // |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 // -------------------------------------------------------------------------------------------------------------------------------
 // ------------------------------------------------------------ HOME -------------------------------------------------------------
@@ -38,14 +36,30 @@ Route::post('/daftar-akun',                 'App\Http\Controllers\RegisterContro
 // ----------------------------------- TAMPIL SEMUA DATA, BERDASARKAN ASPEK, DAN TAMPIL DETAIL -----------------------------------
 // -------------------------------------------------------------------------------------------------------------------------------
 // |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
-Route::get('/semua-laporan',                'App\Http\Controllers\LaporController@show'             )->middleware('auth') ->name('show');
-Route::get('/semua-laporan/{aspect}',       'App\Http\Controllers\LaporController@showAspect'       )->middleware('auth');
-Route::get('/detail-laporan/{slugy}',       'App\Http\Controllers\LaporController@detail'           )->middleware('auth') ->name('detail');
+Route::get('/semua-laporan',                'App\Http\Controllers\LaporController@show'             ) ->name('show');
+Route::get('/semua-laporan/{aspect}',       'App\Http\Controllers\LaporController@showAspect'       );
+Route::get('/detail-laporan/{slugy}',       'App\Http\Controllers\LaporController@detail'           ) ->name('detail');
+
+
+
+// |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+// -------------------------------------------------------------------------------------------------------------------------------
+// --------------------------------------------------------- BUAT LAPORAN --------------------------------------------------------
+// -------------------------------------------------------------------------------------------------------------------------------
+// |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+Route::get ('/laporan-baru',                'App\Http\Controllers\LaporController@create'           )->middleware('auth')->name('create');
+Route::post('/laporan-baru',                'App\Http\Controllers\LaporController@store'            )->middleware('auth');
+Route::get ('/laporan-baru/{slugy}',        'App\Http\Controllers\LaporController@checkslug'        )->middleware('auth');
 
 
 
 
 
+// |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+// -------------------------------------------------------------------------------------------------------------------------------
+// ------------------------------------------------------------ ABOUT ------------------------------------------------------------
+// -------------------------------------------------------------------------------------------------------------------------------
+// |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 Route::get ('/about-lapor',                 'App\Http\Controllers\LaporController@about'            )->name('about');
 
 
@@ -72,11 +86,7 @@ Route::get ('/about-lapor',                 'App\Http\Controllers\LaporControlle
 
 
 
-Route::get('/laporan-baru', function () {
-    return view('templates/create',[
-        'title' => 'Laporan Baru'
-    ]);
-})->middleware('auth')->name('create');
+
 
 
 Route::get('/update-laporan', function () {

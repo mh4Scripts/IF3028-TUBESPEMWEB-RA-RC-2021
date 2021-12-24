@@ -77,7 +77,7 @@ h6    { font-size :  8px;}
     min-height              : 400px;
   }
 .textarea[contenteditable]:empty::before {
-    content                 : "Ketikkan isi laporan anda";
+    content                 : "Ketikkan isi laporan anda (coba isikan paragraf yang melebihi ukuran kotak)";
     color                   : #333333cc;
 }
 .input-text:hover,

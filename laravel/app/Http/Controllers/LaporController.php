@@ -36,43 +36,31 @@ class LaporController extends Controller
             "prd_report"    => $prd_report
         ]);
     }
-    public function canvas(){
-        $all_report = Report::with(['user' , 'attachment'    ])->latest()->get();
-        $shw_report = Report::with(['user' , 'attachment'    ])->latest()->take(10)->get();
-        $mhs_report = Report::where('aspct', 'Mahasiswa'     );
-        $dsn_report = Report::where('aspct', 'Dosen'         );
-        $mkl_report = Report::where('aspct', 'Mata Kuliah'   );
-        $prd_report = Report::where('aspct', 'Program Studi' );
 
-        return view('templates.canvas',[
-            "title"         => "CANVAS",
-            "reports"       => $shw_report,
-            "all_report"    => $all_report,
-            "mhs_report"    => $mhs_report,
-            "dsn_report"    => $dsn_report,
-            "mkl_report"    => $mkl_report,
-            "prd_report"    => $prd_report
+
+    public function show(){
+        $all_report = Report::with(['user' , 'attachment'    ])->latest()->get();
+        return view('templates/show',[
+            "title"         => "Semua Laporan",
+            "reports"       => $all_report
         ]);
     }
 
-    public function loggedIn(){
-        $all_report = Report::with(['user' , 'attachment'    ])->latest()->get();
-        $shw_report = Report::with(['user' , 'attachment'    ])->latest()->take(10)->get();
-        $mhs_report = Report::where('aspct', 'Mahasiswa'     );
-        $dsn_report = Report::where('aspct', 'Dosen'         );
-        $mkl_report = Report::where('aspct', 'Mata Kuliah'   );
-        $prd_report = Report::where('aspct', 'Program Studi' );
 
-        return view('templates.home',[
-            "title"         => "LAPOR!! - Layanan Aspirasi dan Pengaduan Sivitas Akademika ITERA",
-            "reports"       => $shw_report,
-            "all_report"    => $all_report,
-            "mhs_report"    => $mhs_report,
-            "dsn_report"    => $dsn_report,
-            "mkl_report"    => $mkl_report,
-            "prd_report"    => $prd_report
-        ]);
+    public function showAspect($aspect){
+        if ($aspect == "semua"){
+            $reports = Report::with(['user' , 'attachment'    ])->latest()->get();
+        }else{
+            //UBAH SLUG MENJADI STRING BIASA AGAR DIKENALI KETIKA MEMBANDINGKAN DENGAN ASPEK DI DATABASE
+            $aspect = str_replace('-', ' ', $aspect);
+            $reports = Report::with(['user', 'attachment'])->where('aspct' , $aspect)->get();
+        }
+        
+        if ($reports != NULL){
+            return Response::json($reports);
+        }
     }
+
 
     public function detail($slugy)
     {
@@ -86,31 +74,26 @@ class LaporController extends Controller
             return redirect()->route('home');
         }
     }
-
-    public function show(){
-        $all_report = Report::with(['user' , 'attachment'    ])->latest()->get();
-        return view('templates/show',[
-            "title"         => "Semua Laporan",
-            "reports"       => $all_report
+    
+    public function create(){
+        return view('templates.create',[
+            "title"     => "Buat Laporan"
         ]);
     }
-    public function showAspect($aspect){
-        if ($aspect == "semua"){
-            $reports = Report::with(['user' , 'attachment'    ])->latest()->get();
-        }else{
-            //UBAH SLUG MENJADI STRING BIASA AGAR DIKENALI KETIKA MEMBANDINGKAN DENGAN ASPEK DI DATABASE
-            $aspect = str_replace('-', ' ', $aspect);
-            $reports = Report::with(['user', 'attachment'])->where('aspct' , $aspect)->get();
-        }
 
-        if ($reports != NULL){
-            // return view('templates.show' ,[
-            //     "title"         => "Laporan - Aspek Dosen",
-            //     "reports"       => $reports
-            // ]);
-            return Response::json($reports);
-        }
+    public function store(Request $request){
+        dd($request);
+        // dd($request['report_as']);
     }
+
+
+
+
+
+
+
+
+
 
     public function about(){
         return view('templates/about',[

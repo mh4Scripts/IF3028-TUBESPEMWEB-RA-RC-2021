@@ -50,8 +50,24 @@
                 </div>
             </div>
             <div class="report-action">
-                <a href="{{ route('update') }}" target="_blank" class="editBtn"><h4>UBAH</h4></a>
-                <a href="" target="_blank" class="deleteBtn"><h4>HAPUS</h4></a>
+                @auth
+                    @if (auth()->user()->uname == $report->user->uname)
+                        <a href="{{ route('update') }}" target="_blank" class="editBtn"><h4>UBAH</h4></a>
+                        <a href="" target="_blank" class="deleteBtn"><h4>HAPUS</h4></a>
+                    @else
+                        {{-- <h4>Anda bukan pembuat laporan ini</h4> --}}
+                        <h1>
+                            ERROR
+                        </h1>
+                    @endif
+                @else
+                    {{-- <h4>Masukkan kode</h4> --}}
+                    <h1>
+                        ERROR
+                    </h1>
+                @endauth
+                    
+                {{-- @endauth --}}
             </div>
         </div>
     </div>
