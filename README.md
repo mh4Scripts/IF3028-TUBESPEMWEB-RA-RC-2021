@@ -1,10 +1,6 @@
-## Simple `LAPOR` :heavy_exclamation_mark:
-Anda mengetahui aplikasi `lapor` yang dibuat oleh pemerintah republik indonesia? jika tidak silahkan kunjungi 
-http://lapor.go.id, maka anda akan mendapatkan laman seperti gambar di bawah
+## A Little Bit More Than Simple `LAPOR` :heavy_exclamation_mark:
 
-![](tampilan/lapor.png)
-
-Berikut adalah penjelasan tentang Tugas Besar kami.
+Berikut adalah penjelasan tentang Tugas Besar kami,
 **berisi langkah instalasi dan penjelasan singkat fitur.**
 
 ### Anggota Tim :raising_hand_man:
