@@ -2,61 +2,52 @@
 
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-
-Route::get('/c', 'App\Http\Controllers\LaporController@canvas')->name('canvas');
-Route::get('c/mahasiswa', function () {
-    return view('templates.canvas');
-    
-});
-
-Route::get('/',                         'App\Http\Controllers\LaporController@home')->name('home');
-
-Route::post('/',                        'App\Http\Controllers\LoginController@authenticate');
-
-Route::get('/logged-in', 'App\Http\Controllers\LaporController@loggedIn')->name('LoggedInhome');
 
 
+// |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+// -------------------------------------------------------------------------------------------------------------------------------
+// ------------------------------------------------------------ HOME -------------------------------------------------------------
+// -------------------------------------------------------------------------------------------------------------------------------
+// |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+Route::get('/',                             'App\Http\Controllers\LaporController@home'             )->name('home');
 
 
-//FIX TAMPIL SEMUA LAPORAN DAN BERDASARKAN AASPEK
-Route::get('/semua-laporan',              'App\Http\Controllers\LaporController@show')->name('show');
-Route::get('/semua-laporan/{aspect}',       'App\Http\Controllers\LaporController@showAspect');
-
-Route::get('/detail-laporan/{slugy}',    'App\Http\Controllers\LaporController@detail')->name('detail');
-
-Route::get('check-email/{emailAddress}', 'App\Http\Controllers\RegisterController@isStoredEmail');
-Route::get('check-uname/{userName}', 'App\Http\Controllers\RegisterController@isStoredUname');
-
-
-
-Route::get('/profil-akun-lapor',              'App\Http\Controllers\LaporController@about')->name('profile');
+// |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+// -------------------------------------------------------------------------------------------------------------------------------
+// ------------------------------------------------------------ LOGIN ------------------------------------------------------------
+// -------------------------------------------------------------------------------------------------------------------------------
+// |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+Route::post('/',                            'App\Http\Controllers\LoginController@authenticate'     )->middleware('guest');
+Route::post('/logout',                      'App\Http\Controllers\LoginController@logout'           )->middleware('auth') ->name('logout');
+Route::get ('/loginRequired',               'App\Http\Controllers\LoginController@loginRequired'    )                     ->name('loginRequired');
 
 
+// |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+// -------------------------------------------------------------------------------------------------------------------------------
+// ---------------------------------------------------------- REGISTRASI ---------------------------------------------------------
+// -------------------------------------------------------------------------------------------------------------------------------
+// |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+Route::get ('/daftar-akun',                 'App\Http\Controllers\RegisterController@register'      )->middleware('guest')->name('register');
+Route::get ('check-email/{emailAddress}',   'App\Http\Controllers\RegisterController@isStoredEmail' )->middleware('guest');
+Route::get ('check-uname/{userName}',       'App\Http\Controllers\RegisterController@isStoredUname' )->middleware('guest');
+Route::post('/daftar-akun',                 'App\Http\Controllers\RegisterController@store'         )->middleware('guest');
 
 
-Route::get('/daftar-akun',               'App\Http\Controllers\RegisterController@register')->name('register');
-Route::post('/daftar-akun',               'App\Http\Controllers\RegisterController@store');
+// |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+// -------------------------------------------------------------------------------------------------------------------------------
+// ----------------------------------- TAMPIL SEMUA DATA, BERDASARKAN ASPEK, DAN TAMPIL DETAIL -----------------------------------
+// -------------------------------------------------------------------------------------------------------------------------------
+// |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+Route::get('/semua-laporan',                'App\Http\Controllers\LaporController@show'             )->middleware('auth') ->name('show');
+Route::get('/semua-laporan/{aspect}',       'App\Http\Controllers\LaporController@showAspect'       )->middleware('auth');
+Route::get('/detail-laporan/{slugy}',       'App\Http\Controllers\LaporController@detail'           )->middleware('auth') ->name('detail');
 
 
 
 
 
+Route::get ('/about-lapor',                 'App\Http\Controllers\LaporController@about'            )->name('about');
 
-
-Route::get('/about-lapor',              'App\Http\Controllers\LaporController@about')->name('about');
-
-Route::get('/users', 'AjaxController@index')->name('get');
-Route::get('/getData/{id}','AjaxController@getData')->name('getbyID');
 
 
 
@@ -85,7 +76,7 @@ Route::get('/laporan-baru', function () {
     return view('templates/create',[
         'title' => 'Laporan Baru'
     ]);
-})->name('create');
+})->middleware('auth')->name('create');
 
 
 Route::get('/update-laporan', function () {

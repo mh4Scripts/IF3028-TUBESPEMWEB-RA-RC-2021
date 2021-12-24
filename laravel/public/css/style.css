@@ -158,6 +158,7 @@ h6    { font-size :  8px;}
 }
 
 .rt-error-message,
+.login-rt-error-message,
 .rt-right-error-message,
 .error-message,
 .right-error-message,
@@ -180,6 +181,7 @@ h6    { font-size :  8px;}
 .rt-right-error-message{
     visibility              : hidden;
 }
+.login-rt-error-message,
 .login-error-message{
     max-width               : 100%;
 }
@@ -287,7 +289,8 @@ header{
     border-top              : none;
     border-radius           : 0 0 0.2rem 0.2rem;
 }
-.profile-menu-content a {
+.profile-menu-content a,
+.profile-menu-content button {
     display                 : block;
     text-decoration         : none;
     margin                  : 5px 0;
@@ -296,9 +299,20 @@ header{
     font-weight             : 500;
     text-align              : center;
     color                   : #8B8B8B;
+    font-size               : 15px;
 }
-.profile-menu a:hover {
+.profile-menu-content button{
+    background-color        : #8B8B8B00;
+    border                  : none;
+    width                   : 100%;
+}
+.profile-menu a:hover,
+.profile-menu button:hover {
     background-color        : #B41E1E;
+    color                   : #FFFFFF;
+}
+.scroll-up .profile-menu-content button:hover{
+    background-color        : #8B8B8B;
     color                   : #FFFFFF;
 }
 .show {
@@ -355,15 +369,19 @@ header{
 .scroll-up .web-logo,
 .scroll-up .userReg,
 .scroll-up .userLog,
-.scroll-up .profile-uname h4{
+.scroll-up .profile-menu-btn,
+.scroll-up .profile-menu-content a{
     color                   : #8B8B8B;
 }
-.scroll-up .profile-uname h4{
-    border-bottom           : solid 3px #8B8B8B;
+
+.scroll-up .profile-menu-btn{
+    border-bottom           : solid 2px #8B8B8B;
 }
 .scroll-up .userReg{
     border                  : solid 1px #8B8B8B;
 }
+.scroll-up .profile-menu-btn:hover,
+.scroll-up .profile-menu-content a:hover,
 .scroll-up .userReg:hover{
     background-color        : #8B8B8B;
     color                   : #FFFFFF;
@@ -374,10 +392,6 @@ header{
 }
 .scroll-up .profile-menu-option{
     box-shadow              : 0px 2px 2px 2px rgba(0,0,0,0.1);
-}
-.scroll-up .profile-menu-option a:hover{
-    background-color        : #8B8B8B;
-    color                   : #FFFFFF;
 }
 /* ------------------------------------ */
 /* ----------- PAGE CONTENT ----------- */
@@ -1511,6 +1525,10 @@ footer{
     display                 : flex;
     flex-direction          : row;
     justify-content         : space-between;
+}
+.Warning-Alert{
+    background-color        : #881c1c;
+    margin-top              : 50px;
 }
 .AlertContainer h4{
     text-align              : center;

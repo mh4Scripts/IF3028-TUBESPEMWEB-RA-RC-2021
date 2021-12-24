@@ -1,23 +1,5 @@
 @extends('master.master')
 
-@section('profile')
-    <div class="profile-menu">
-        <div onclick="myFunction()" class="profile-menu-btn">Markus Togi Fedrian</div>
-        <div id="profileMenu" class="profile-menu-content">
-            <a target="_blank" href="">Profil</a>
-            <a href="{{ route('home') }}">Logout</a>
-        </div>
-    </div>
-    <div class="user-profile-picture">
-        <img src="{{ asset('media/images/Pasfoto_Togi.jpg') }}" alt="">
-    </div>
-@endsection
-
-{{-- @section('profile')
-    <a class="userLog" id="clickLogin" onclick="showLoginModal()"><h3>Masuk</h3></a>
-    <a href="{{ route('register') }}" class="userReg"><h3>Daftar</h3></a>
-@endsection --}}
-
 @section('additional-BG')
     {{-- BACKGROUND --}}
     <img src="media/images/top-background.jpg" alt="home-cover" class="top-background" id="RED_BG"> 
@@ -194,26 +176,4 @@
         <div class="imageDot-container" id="imageDotContainer">
         </div>
     </div>
-@endsection
-
-@section('additional-script')
-    <script type="text/javascript">
-
-        function myFunction() {
-            document.getElementById("profileMenu").classList.toggle("show");
-        }  
-        window.onclick = function(event) {
-            if (!event.target.matches('.profile-menu-btn')) {
-                var menus = document.getElementsByClassName("profile-menu-content");
-                var i;
-                for (i = 0; i < menus.length; i++) {
-                    var menu = menus[i];
-                    if (menu.classList.contains('show')) {
-                        menu.classList.remove('show');
-                    }
-                }
-            }
-        }
-
-    </script>
 @endsection

@@ -13,25 +13,25 @@ document.ge
 
 if (document.body.contains(document.getElementById("RED_BG"))){
     window.addEventListener("scroll", () => {
-            const currentScroll = window.pageYOffset;
+        const currentScroll = window.pageYOffset;
 
-            if (currentScroll <= 0 ) {
-                body.classList.remove(scrollUp);
-                return;
-            }
+        if (currentScroll <= 0 ) {
+            body.classList.remove(scrollUp);
+            return;
+        }
 
-            if (currentScroll > lastScroll && !body.classList.contains(scrollDown)) {
-                // SCROLL DOWN
-                body.classList.remove(scrollUp);
-                body.classList.add(scrollDown);
-            }
-            
-            else if (currentScroll < lastScroll && body.classList.contains(scrollDown)) {
-                // SCROLL UP
-                body.classList.remove(scrollDown);
-                body.classList.add(scrollUp);
-            }
-            lastScroll = currentScroll;
+        if (currentScroll > lastScroll && !body.classList.contains(scrollDown)) {
+            // SCROLL DOWN
+            body.classList.remove(scrollUp);
+            body.classList.add(scrollDown);
+        }
+        
+        else if (currentScroll < lastScroll && body.classList.contains(scrollDown)) {
+            // SCROLL UP
+            body.classList.remove(scrollDown);
+            body.classList.add(scrollUp);
+        }
+        lastScroll = currentScroll;
     });
     if (window.pageYOffset > 0){
         body.classList.add(scrollUp);
@@ -61,6 +61,9 @@ function showLoginModal(){
 if (document.getElementsByClassName("login-error-message").length > 0){
     showLoginModal();
 }
+if (document.getElementsByClassName("AlertContainer Warning-Alert").length > 0){
+    showLoginModal();
+}
 function closeLoginModal(){
     document.getElementById("LoginModal").style.display = "none";
 }
@@ -69,6 +72,28 @@ window.addEventListener("click", (e)=>{
         return closeLoginModal();
     }
 });
+
+
+// ----------------------------------------
+// ------------ PROFILE MENU --------------
+// ----------------------------------------
+function ProfileFunction() {
+    document.getElementById("profileMenu").classList.toggle("show");
+}  
+window.onclick = function(event) {
+    if (!event.target.matches('.profile-menu-btn')) {
+        var menus = document.getElementsByClassName("profile-menu-content");
+        var i;
+        for (i = 0; i < menus.length; i++) {
+            var menu = menus[i];
+            if (menu.classList.contains('show')) {
+                menu.classList.remove('show');
+            }
+        }
+    }
+}
+
+
 
 // ----------------------------------------
 // ---------- SHOW ATTACHMENT -------------

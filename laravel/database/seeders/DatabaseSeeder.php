@@ -32,7 +32,7 @@ class DatabaseSeeder extends Seeder
 
         User::create([
             'name'              => 'Canra Aguslan Siregar',
-            'uname'             => 'CanraGusti',
+            'uname'             => 'CanraGuslan',
             'email'             => 'candrasiregar1512@gmail.com',
             'password'          =>  bcrypt('1234567890'),
             'prof_pic'          => 'media/images/Pasfoto_Canra.jpg'
@@ -49,15 +49,15 @@ class DatabaseSeeder extends Seeder
         User::create([
             'name'              => 'Muhammad Farhan Andani',
             'uname'             => 'M_Farhan',
-            'email'             => 'muhammad.119140000@student.itera.ac.id',
+            'email'             => 'muhammad.119140109@student.itera.ac.id',
             'password'          =>  bcrypt('1234567890'),
-            'prof_pic'          => 'media/images/Pasfoto_Farhan.jpg'
+            'prof_pic'          => 'media/images/Anonim.jpg'
         ]);
 
         User::create([
             'name'              => 'Gusti Hafizah',
-            'uname'             => 'Gusti_2021',
-            'email'             => 'gusti.119140001@student.itera.ac.id',
+            'uname'             => 'Gusti_HN',
+            'email'             => 'gusti.119140086@student.itera.ac.id',
             'password'          =>  bcrypt('1234567890'),
             'prof_pic'          => 'media/images/Pasfoto_Gusti.jpg'
         ]);

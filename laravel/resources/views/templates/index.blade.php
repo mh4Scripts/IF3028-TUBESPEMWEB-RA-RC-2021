@@ -1,21 +1,5 @@
 @extends('master.master')
 
-@section('profile')
-    <a class="userLog" id="clickLogin" onclick="showLoginModal()"><h3>Masuk</h3></a>
-    <a href="{{ route('register') }}" class="userReg"><h3>Daftar</h3></a>
-@endsection
-
-@section('message')
-    @if(session()->has('successReg'))
-        <div class="AlertBG" id="Alert">
-            <div class="AlertContainer">
-                <h4>{{ session('successReg') }}</h4>
-                <span class="closeAlert" onclick="closeAlert()">&times;</span>
-            </div>        
-        </div>    
-    @endif
-@endsection
-
 @section('additional-BG')
     {{-- BACKGROUND --}}
     <img src="media/images/top-background.jpg" alt="home-cover" class="top-background" id="RED_BG"> 
@@ -192,11 +176,4 @@
         <div class="imageDot-container" id="imageDotContainer">
         </div>
     </div>
-
-    {{-- <div class="AlertBG" id="Alert">
-        <div class="AlertContainer">
-            <h4>Anda telah berhasil masuk</h4>
-            <span class="closeAlert" onclick="closeAlert()">&times;</span>
-        </div>        
-    </div> --}}
 @endsection

@@ -19,13 +19,58 @@
     {{-- STYLE --}}
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     
-
 </head>
 
 <body>
     @yield('additional-BG')
 
-    @yield('message')
+    
+    @if(session()->has('successReg'))
+        <div class="AlertBG" id="Alert">
+            <div class="AlertContainer">
+                <h4>{{ session('successReg') }}</h4>
+                <span class="closeAlert" onclick="closeAlert()">&times;</span>
+            </div>        
+        </div>    
+    @endif
+
+    @if(session()->has('LoginError'))
+        <div class="AlertBG" id="Alert">
+            <div class="AlertContainer Warning-Alert">
+                <h4>{{ session('LoginError') }}</h4>
+                <span class="closeAlert" onclick="closeAlert()">&times;</span>
+            </div>        
+        </div>    
+    @endif
+
+    @if(session()->has('loginRequired'))
+        <div class="AlertBG" id="Alert">
+            <div class="AlertContainer Warning-Alert">
+                <h4>{{ session('loginRequired') }}</h4>
+                <span class="closeAlert" onclick="closeAlert()">&times;</span>
+            </div>        
+        </div>    
+    @endif
+
+    @if(session()->has('LoginSuccess'))
+        <div class="AlertBG" id="Alert">
+            <div class="AlertContainer">
+                <h4>{{ session('LoginSuccess') }}</h4>
+                <span class="closeAlert" onclick="closeAlert()">&times;</span>
+            </div>        
+        </div>    
+    @endif
+
+    @if(session()->has('logoutSuccess'))
+        <div class="AlertBG" id="Alert">
+            <div class="AlertContainer">
+                <h4>{{ session('logoutSuccess') }}</h4>
+                <span class="closeAlert" onclick="closeAlert()">&times;</span>
+            </div>        
+        </div>    
+    @endif
+
+    
     {{-- NAV HEADER --}}
     <header>
         <div class="nav-header">
@@ -47,6 +92,25 @@
             <div class="nav-header-profile-container">
                 {{-- PROFILE --}}
                 @yield('profile')
+                @auth
+                    <div class="profile-menu">
+                        <div onclick="ProfileFunction()" class="profile-menu-btn">{{ auth()->user()->uname }}</div>
+                        <div id="profileMenu" class="profile-menu-content">
+                            <a target="_blank" href="">Profil</a>
+                            <form action="{{ route('logout') }}" method="POST">
+                                @csrf
+                                <button type="submit">Logout</button>
+                            </form>
+                            {{-- <a href="{{ route('home') }}">Logout</a> --}}
+                        </div>
+                    </div>
+                    <div class="user-profile-picture">
+                        <img src="{{ auth()->user()->prof_pic }}" alt="">
+                    </div>
+                @else
+                    <a class="userLog" id="clickLogin" onclick="showLoginModal()"><h3>Masuk</h3></a>
+                    <a href="{{ route('register') }}" class="userReg"><h3>Daftar</h3></a>
+                @endauth
             </div>
         </div>
     </header>
@@ -120,13 +184,15 @@
                     <form action="/" class="input-form" method="post">
                         @csrf
                         <div class="row">
-                            <input  class="input-email @error('email') invalid @enderror" type="email" name="email" id="email" placeholder="Alamat e-mail" autocomplete="off" value="{{ old('email') }}">
+                            <input  class="input-email @error('email') invalid @enderror" type="email" name="email" id="email" placeholder="Alamat e-mail" onkeyup="validateEmail()" autocomplete="off" value="{{ old('email') }}">
                             @error('email')
-                                <span class="error-warning">!</span>
-                                <div class="login-error-message">
+                                <span class="error-warning"      id="SEMEW">!</span>
+                                <div class="login-error-message" id="SEMEM">
                                     {{ $message }}
                                 </div>
                             @enderror
+                            <span class="error-warning"    id="EMEW">X</span>
+                            <div  class="login-rt-error-message" id="EMEM"></div>
                         </div>
                         <div class="row">
                             <input  class="input-password @error('password') invalid @enderror" type="password" name="password" id="password" placeholder="Kata sandi">
@@ -156,6 +222,31 @@
 
     
     <script type="text/javascript" src="{{ asset('js/script.js') }}"></script>
+    <script type="text/javascript"> // Real Time Login Form Validation
+        function validateEmail(){
+            let Email = document.getElementById("email");
+            let pattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+            
+            let errorMessage   = document.getElementById("EMEM");
+            let errorWarning   = document.getElementById("EMEW");
+
+            if (document.body.contains(document.getElementById("SEMEM"))){
+                document.getElementById("SEMEM").style.visibility="hidden";
+                document.getElementById("SEMEW").style.visibility="hidden";
+            }
+
+            if(!(Email.value.match(pattern))){
+                errorMessage.innerHTML          = "Gunakan format email yang benar";
+                errorMessage.style.visibility   = "visible";
+                errorWarning.style.visibility   = "visible";
+            }else{
+                errorMessage.style.visibility   = "hidden";
+                errorWarning.style.visibility   = "hidden";
+            }
+        }
+    </script>
+
     @yield('additional-script')
+
 </body>
 </html>

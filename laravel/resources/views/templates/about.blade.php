@@ -1,11 +1,5 @@
 @extends('master.master')
 
-
-@section('profile')
-        <a class="userLog" id="clickLogin" onclick="showLoginModal()"><h3>Masuk</h3></a>
-        <a href="{{ route('register') }}" class="userReg"><h3>Daftar</h3></a>
-@endsection
-
 @section('additional-BG')
     {{-- BACKGROUND --}}
     <img src="{{ asset('media/images/top-background.jpg') }}" alt="home-cover" class="top-background" id="RED_BG"> 
