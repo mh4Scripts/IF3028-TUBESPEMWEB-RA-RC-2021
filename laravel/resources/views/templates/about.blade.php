@@ -2,16 +2,14 @@
 
 
 @section('profile')
-    <div class="userAuth">
         <a class="userLog" id="clickLogin" onclick="showLoginModal()"><h3>Masuk</h3></a>
         <a href="{{ route('register') }}" class="userReg"><h3>Daftar</h3></a>
-    </div>
 @endsection
 
 @section('additional-BG')
     {{-- BACKGROUND --}}
-    <img src="media/images/top-background.jpg" alt="home-cover" class="top-background" id="RED_BG"> 
-    <img src="media/images/bottom-background.svg" alt="home-cover" class="bottom-background">
+    <img src="{{ asset('media/images/top-background.jpg') }}" alt="home-cover" class="top-background" id="RED_BG"> 
+    <img src="{{ asset('media/images/bottom-background.svg') }}" alt="home-cover" class="bottom-background">
 @endsection
 
 @section('content')
@@ -30,29 +28,29 @@
         </div>
         <div class="crew-title"><h2>Tim Pengembang</h2></div>
         <div class="form-card-content about-content">
-            <div class="show-crew-btn" id="show_crew_btn" onclick="ShowCrew()"><img src="media/icons/down-arrow.jpg" alt=""></div>
-            <div class="hide-crew-btn" id="hide_crew_btn" onclick="HideCrew()"><img src="media/icons/up-arrow.jpg" alt=""></div>
+            <div class="show-crew-btn" id="show_crew_btn" onclick="ShowCrew()"><img src="{{ asset('media/icons/down-arrow.jpg') }}" alt=""></div>
+            <div class="hide-crew-btn" id="hide_crew_btn" onclick="HideCrew()"><img src="{{ asset('media/icons/up-arrow.jpg') }}" alt=""></div>
             <div class="show-crew-area">
                 <div class="all-crew" id="show_crew">
                     <div class="crew-card">
-                        <img class="crew-photo" src="media/images/Pasfoto_Togi.jpg">
+                        <img class="crew-photo" src="{{ asset('media/images/Pasfoto_Togi.jpg') }}">
                         <div class="crew-info">
                             <h5>Markus Togi Fedrian Rivaldi Sinaga</h5>
                             <h4>118140037</h4>
                         </div>
                     </div>
                     <div class="crew-card">
-                        <img class="crew-photo" src="media/images/Pasfoto_Togi.jpg">
+                        <img class="crew-photo" src="{{ asset('media/images/Pasfoto_Gusti.jpg') }}">
                         <div class="crew-info">
-                            <h5>Markus Togi Fedrian Rivaldi Sinaga</h5>
-                            <h4>118140037</h4>
+                            <h5>Gusti Hafizah Nurrahmah</h5>
+                            <h4>119140086</h4>
                         </div>
                     </div>
                     <div class="crew-card">
-                        <img class="crew-photo" src="media/images/Pasfoto_Togi.jpg">
+                        <img class="crew-photo" src="{{ asset('media/images/Anonim.jpg') }}">
                         <div class="crew-info">
-                            <h5>Markus Togi Fedrian Rivaldi Sinaga</h5>
-                            <h4>118140037</h4>
+                            <h5>Muhammad Farhan Andani</h5>
+                            <h4>119140109</h4>
                         </div>
                     </div>
                 </div>

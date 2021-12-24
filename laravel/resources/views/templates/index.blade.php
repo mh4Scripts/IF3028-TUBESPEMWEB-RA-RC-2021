@@ -1,10 +1,19 @@
 @extends('master.master')
 
 @section('profile')
-    <div class="userAuth">
-        <a class="userLog" id="clickLogin" onclick="showLoginModal()"><h3>Masuk</h3></a>
-        <a href="{{ route('register') }}" class="userReg"><h3>Daftar</h3></a>
-    </div>
+    <a class="userLog" id="clickLogin" onclick="showLoginModal()"><h3>Masuk</h3></a>
+    <a href="{{ route('register') }}" class="userReg"><h3>Daftar</h3></a>
+@endsection
+
+@section('message')
+    @if(session()->has('successReg'))
+        <div class="AlertBG" id="Alert">
+            <div class="AlertContainer">
+                <h4>{{ session('successReg') }}</h4>
+                <span class="closeAlert" onclick="closeAlert()">&times;</span>
+            </div>        
+        </div>    
+    @endif
 @endsection
 
 @section('additional-BG')
@@ -57,7 +66,7 @@
                     <div class="data-container">
                         {{-- LEVEL 3 --}}
                         <div class="data-header">
-                            <a href="{{ route('detail') }}" class="data-title">
+                            <a href="{{ route ('detail', $report->slugy ) }}" class="data-title">
                                 <h3>{{ $report->title }}</h3>
                             </a>
                         </div>
@@ -66,7 +75,7 @@
                             {{-- {!! nl2br(e()) !!} --}}
                             <p>{{ $report->exmpl }}.... 
                                 <span>
-                                    <a href="{{ route('detail') }}" class="data-detail">
+                                    <a href="{{ route ('detail', $report->slugy ) }}" class="data-detail">
                                         Baca Lebih Lanjut
                                     </a>
                                 </span>
@@ -96,7 +105,7 @@
                                     <span class="createinfo">
                                         Dibuat pada :
                                     </span>
-                                    {{ $report->created_at }}
+                                    {{ $report->created_at->diffForHumans() }}
                                 </h5>
                                 <h5 class="data-creator">
                                     <span class="createinfo">
@@ -104,7 +113,7 @@
                                     </span>
                                     {{ $report->user->name }}
                                 </h5>
-                            </div>
+                            </div> 
                         </div>
                     </div>
                 @endforeach
@@ -112,7 +121,7 @@
             </div>
             {{-- LEVEL 1 --}}
             <div class="show-data-footer">
-                <a href=""><h3>Lihat semua laporan</h3></a>
+                <a href="{{ route('show') }}"><h3>Lihat semua laporan</h3></a>
             </div>
         </div>
     </section>
@@ -121,7 +130,7 @@
     <section class="information-section">
         <div class="info-top-container">
             <div class="counter-card">
-                <h2>SEMUA LAPORAN<br><span class="counts">{{ $reports->count() }}</span></h2>
+                <h2>SEMUA LAPORAN<br><span class="counts">{{ $all_report->count() }}</span></h2>
             </div>
         </div>
         <div class="info-bottom-container">
@@ -183,4 +192,11 @@
         <div class="imageDot-container" id="imageDotContainer">
         </div>
     </div>
+
+    {{-- <div class="AlertBG" id="Alert">
+        <div class="AlertContainer">
+            <h4>Anda telah berhasil masuk</h4>
+            <span class="closeAlert" onclick="closeAlert()">&times;</span>
+        </div>        
+    </div> --}}
 @endsection

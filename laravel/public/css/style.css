@@ -28,6 +28,7 @@ h6    { font-size :  8px;}
 .row{
     width               : 100%;
     display             : flex;
+    position: relative;
     flex-direction      : row;
     justify-content     : space-between;
 }
@@ -62,6 +63,7 @@ h6    { font-size :  8px;}
     border                  : solid 0.5px rgb(255, 255, 255);
     outline                 : none;
 }
+
 .input-text-area{
     position                : absolute;
     z-index                 : -2;
@@ -109,7 +111,78 @@ h6    { font-size :  8px;}
     font-size               : 1rem;
     cursor                  : pointer;
 }
+.valid,
+.valid:hover,
+.valid:focus{
+    border                  : solid 2.5px green;
+}
+.invalid,
+.invalid:hover,
+.invalid:focus{
+    border                  : solid 2.5px red;
+}
+.valid-indicator,
+.left-valid-indicator,
+.left-error-warning,
+.error-warning{
+    position                : absolute;
+    right                   : 10px;
+    top                     : 25px;
+    width                   : 27px;
+    height                  : 27px;
+    font-family             : "Archivo-Black";
+    font-size               : 12px;
+    line-height             : 25px;
+    font-weight             : 700;
+    border-radius           : 50%;
+    margin                  : 8px;
+}
+.left-error-warning,
+.error-warning{
+    visibility              : hidden;
+    color                   : red;
+    border                  : solid 2px red;
+    background-color        : #eebcbc;
+}
 
+.valid-indicator,
+.left-valid-indicator{
+    visibility              : hidden;
+    color                   : green;
+    border                  : solid 2px green;
+    background-color        : #bceebe;
+}
+.left-valid-indicator,
+.left-error-warning{
+    right: 51%;
+}
+
+.rt-error-message,
+.rt-right-error-message,
+.error-message,
+.right-error-message,
+.login-error-message{
+    position                : absolute;
+    left                    : 10px;
+    top                     : 70px;
+    max-width               : 40%;
+    padding                 : 2 px;
+    background-color        : #F7801E40;
+    text-align              : left;
+    font-family             : "Abel";
+    color                   : red;
+}
+.rt-right-error-message,
+.right-error-message{
+    left                    : 51.5%;
+}
+.rt-error-message,
+.rt-right-error-message{
+    visibility              : hidden;
+}
+.login-error-message{
+    max-width               : 100%;
+}
 /* ------------------------------------ */
 /* -------- UPPER BACKGROUND ---------- */
 /* ------------------------------------ */
@@ -138,14 +211,15 @@ header{
     z-index                 : 2;
 }
 .nav-header{
-    width                   : 86%;
+    width                   : 88%;
     margin                  : auto;
     height                  : 84px;
-    box-sizing              : border-box;
-    -webkit-box-sizing      : border-box;
+    /* box-sizing              : border-box;
+    -webkit-box-sizing      : border-box; */
     display                 : flex;
     flex-direction          : row;
     flex-wrap               : nowrap;
+    justify-content         : space-between;
 }
 .web-logo, .nav-header-links{
     text-decoration         : none;
@@ -165,65 +239,83 @@ header{
     font-family             : "Archivo-Black";
     padding                 : 24px 2px 16px 6px;
 }
+.nav-header-links-container,
+.nav-header-profile-container{
+    display                 : flex;
+    flex-direction          : row;
+    flex-wrap               : nowrap;
+}
 .nav-header-links h3{
     padding                 : 24px 6px;
 }
-.nav-header-profile, .nav-header-notif{
-    height                  : 60px;
-    margin                  : 12px 0 0 32px;
+.nav-header-profile-container{
+    width                   : 25%;
+    justify-content         : space-evenly;
 }
-.nav-header-profile{
-    width                   : 80px;
-    border-radius           : 50% 50% 0 0;
-    cursor                  : pointer;
-}
-.nav-header-profile img{
-    width                   : 48px;
-    margin                  : 6px 16px;
-    border-radius           : 50%;
-}
+
+/* NOT LOGGED IN */
+
 .profile-menu{
-    display                 : none;
-    width                   : 80px;
+    position                : relative;
+    display                 : flex;
+    flex-direction          : column;
+    justify-content         : space-around;
+    width                   : 150px;
     border-radius           : 0 0 0.25rem 0.25rem;
     padding                 : 10px 0;
 }
-.profile-menu a{
+.profile-uname{
+    border                  : solid 1px black;
+    height                  : 100%;
+}
+.profile-uname h4{
+    border-bottom           : solid 2px #FFFFFF;
+    font-weight             : 500;
+    color                   : #F5F5F5;
+    text-align              : center;
+}
+
+.profile-menu-option{
+    display                 : flex;
+    visibility              : hidden;
+    flex-direction          : column;
+    justify-content         : space-evenly;
+    position                : absolute;
+    top                     : 70%;
+    right                   : 10%;
+    height                  : 75px;
+    width                   : 80%;
+    background-color        : #FFFFFF;
+    border-top              : none;
+    border-radius           : 0 0 0.2rem 0.2rem;
+}
+.profile-menu-option a{
     display                 : block;
     text-decoration         : none;
     width                   : 100%;
     text-align              : center;
-    color                   : #ffffff;
+    color                   : #8B8B8B;
 }
-.profile-menu a:hover{
-    background-color        : #eeeeee;
-    color                   : #8d8d8d;
+.profile-menu-option a:hover{
+    background-color        : #B41E1E;
+    color                   : #FFFFFF;
 }
-.nav-header-profile:hover img{
-    width                   : 50px;
-    margin                  : 5px 15px;
-    border                  : solid 2px white;
-}
-.nav-header-profile:hover .profile-menu{
-    display                 : block;
-}
-.nav-header-notif{
-    width                   : 240px;
-}
-.nav-header-notif img{
-    width                   : 32px;
-    margin                  : 14px 104px;
-    border-radius           : 50%;
-    cursor                  : pointer;
-}
-.userAuth{
-    width                   : 240px;
-    margin-left             : 150px;
+
+.user-profile-picture{
+    width                   : 30%;
     display                 : flex;
-    justify-content         : space-between;
-    flex-wrap               : nowrap;
+    flex-direction          : column;
+    justify-content         : space-around;
 }
-.userAuth a{
+.user-profile-picture img{
+    width                   : 50px;
+    margin                  : auto;
+    border-radius           : 50%;
+
+}
+
+/* NOT LOGGED IN */
+.userLog, .userReg{
     width                   : 40%;
     text-decoration         : none;
     margin                  : 14px 0 !important;
@@ -232,14 +324,14 @@ header{
     line-height             : 48px;
     color                   : white;
 }
-.userAuth .userLog{
+.userLog{
     cursor                  : pointer;
 }
-.userAuth .userReg{
+.userReg{
     border                  : solid 1px #FFFFFF;
     border-radius           : 0.25rem;
 }
-.userAuth .userReg:hover{
+.userReg:hover{
     background-color        : #FFFFFF;
     color                   : rgb(180, 30, 30);
 }
@@ -258,28 +350,32 @@ header{
 .scroll-up .nav-header-links,
 .scroll-up .profile-menu a,
 .scroll-up .web-logo,
-.scroll-up .userAuth a{
+.scroll-up .userReg,
+.scroll-up .userLog,
+.scroll-up .profile-uname h4{
     color                   : #8B8B8B;
 }
-.scroll-up .userAuth .userReg{
+.scroll-up .profile-uname h4{
+    border-bottom           : solid 3px #8B8B8B;
+}
+.scroll-up .userReg{
     border                  : solid 1px #8B8B8B;
 }
-.scroll-up .userAuth .userReg:hover{
+.scroll-up .userReg:hover{
     background-color        : #8B8B8B;
     color                   : #FFFFFF;
 }   
-.scroll-up .nav-header-profile:hover,
-.scroll-up .profile-menu{
+.scroll-up .nav-header-profile:hover{
     background-color        : #ffffff;
     box-shadow              : -1px 5px 25px -10px rgba(0,0,0,0.39);
 }
-.scroll-up .profile-menu{
-    border-top              : solid 2px #ff0000;
+.scroll-up .profile-menu-option{
+    box-shadow              : 0px 2px 2px 2px rgba(0,0,0,0.1);
 }
-.scroll-up .nav-header-profile:hover{
-    border-bottom           : solid 2px #ff0000;
+.scroll-up .profile-menu-option a:hover{
+    background-color        : #8B8B8B;
+    color                   : #FFFFFF;
 }
-
 /* ------------------------------------ */
 /* ----------- PAGE CONTENT ----------- */
 /* ------------------------------------ */
@@ -482,22 +578,28 @@ footer{
 }
 .data-filter{
     width                   : 15%;
+    font-family             : "Abel";
+    font-size               : 20px;
     min-height              : 20px;
-    background-color        : #FFFFFF;
-    color                   : #757575;
+    background-color        : #ACACAC;
+    color                   : #FFFFFF;
     padding                 : 5px 0;
     text-align              : center;
+    border                  : none;
     border-bottom           : solid 5px #FFFFFF;
     cursor                  : pointer;
 }
 .data-filter:hover{
-    background-color        : #FAFAFA;
+    background-color        : #fDD7D7;
     color                   : #B41E1E;
 }
 .active-filter{
     background-color        : #B41E1E85;
     color                   : #FFFFFF;
     border-bottom           : solid 5px #B41E1E;
+}
+.active-filter:hover{
+    background-color        : #b41e1e90;
 }
 /* LEVEL 1 */
 .show-data-content{ 
@@ -523,6 +625,9 @@ footer{
 .data-title{
     text-decoration         : none;
     color                   : #757575;
+}
+.data-title:hover{
+    color                   : #333333;
 }
 /* LEVEL 3 */
 .data-content{
@@ -700,7 +805,6 @@ footer{
 /* LEVEL 1 (2) */
 .detail-body{
     width                   : 100%;
-    min-height              : 600px;
     margin                  : 20px 0;
 }
 /* LEVEL 2 (2.1) */
@@ -721,7 +825,8 @@ footer{
 }
 .report-attachment-content{
     padding                 : 15px 0;
-    width                   : 100%;
+    max-width                   : 50%;
+    overflow-x:auto ;
     display                 : flex;
     flex-direction          : row;
     justify-content         : flex-start;
@@ -734,6 +839,9 @@ footer{
     max-width               : 80px;
     max-height              : 80px;
     margin-right            : 15px;
+    
+    background-color        : #F5F5F5;
+    cursor                  : pointer;
 }
 /* LEVEL 1 (3) */
 .detail-footer{
@@ -1012,16 +1120,25 @@ footer{
 /* ------------------------------------ */
 /* ------ DATA ATTACHMENT MODAL ------- */
 /* ------------------------------------ */
-.AttModalBG, .LoginModalBG{
-    position                : fixed; 
-    z-index                 : 6; 
+.AlertBG, .AttModalBG, .LoginModalBG{
+    position                : fixed;
     left                    : 0;
     top                     : 0;
     width                   : 100%;
     height                  : 100%;
-    overflow                : auto; 
+}
+.AttModalBG, .LoginModalBG{
+    z-index                 : 6; 
     background-color        : rgb(0,0,0);
-    background-color        : rgba(0,0,0,0.4);
+    background-color        : rgba(0,0,0,0.4); 
+    overflow                : auto; 
+}
+.AlertBG{
+    z-index                 : 7; 
+    background-color        : rgb(0,0,0);
+    background-color        : rgba(0,0,0,0.001); 
+    display                 : block;
+    overflow                : hidden; 
 }
 .AttModalBG {
     display                 : none;
@@ -1352,6 +1469,7 @@ footer{
     background-color        : #FFFFFF;
     border-radius           : 50%;
     left                    : 46.4%;
+    cursor                  : pointer;
 }
 .show-crew-btn img,
 .hide-crew-btn img{
@@ -1380,6 +1498,39 @@ footer{
     margin                  : 5px auto;
     color                   : #424242;
 }
+
+.AlertContainer{
+    width                   : 40% !important;
+    margin                  : auto;
+    background-color        : #49A154;
+    padding                 : 5px;
+    margin-top              : 20px;
+    display                 : flex;
+    flex-direction          : row;
+    justify-content         : space-between;
+}
+.AlertContainer h4{
+    text-align              : center;
+    line-height             : 30px;
+    width                   : 500px;
+    color                   : #FFFFFF;
+    font-weight             : 400;
+}
+.closeAlert{
+    display                 : block;
+    font-weight             : 700;
+    line-height             : 30px;
+    text-align              : center;
+    width                   : 30px;
+    height                  : 30px;
+    font-size               : 28px;
+    color                   : #ACACAC;
+    cursor                  : pointer;
+}
+.closeAlert:hover{
+    color                   : #FFFFFF;
+}
+
 /* ------------------------------------ */
 /* --------- MICRO CLEAR FIX ---------- */
 /* ------------------------------------ */

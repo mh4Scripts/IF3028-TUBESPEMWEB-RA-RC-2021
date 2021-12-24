@@ -9,13 +9,14 @@ const scrollDown        = "scroll-down";
 const NotifButton       = document.getElementById("NotifButton");
 let lastScroll          = 0;
 
+document.ge
+
 if (document.body.contains(document.getElementById("RED_BG"))){
     window.addEventListener("scroll", () => {
             const currentScroll = window.pageYOffset;
 
             if (currentScroll <= 0 ) {
                 body.classList.remove(scrollUp);
-                // NotifButton.innerHTML= "<img src=\"media/icons/white_bell.png\" alt=\"\">";
                 return;
             }
 
@@ -29,13 +30,11 @@ if (document.body.contains(document.getElementById("RED_BG"))){
                 // SCROLL UP
                 body.classList.remove(scrollDown);
                 body.classList.add(scrollUp);
-                // NotifButton.innerHTML= "<img src=\"media/icons/grey_bell.png\" alt=\"\">";
             }
             lastScroll = currentScroll;
     });
     if (window.pageYOffset > 0){
         body.classList.add(scrollUp);
-        NotifButton.innerHTML= "<img src=\"media/icons/grey_bell.png\" alt=\"\">";
     }
 }else{
     body.style.backgroundColor = "#F0F0F0";
@@ -58,6 +57,9 @@ if (document.body.contains(document.getElementById("RED_BG"))){
 // ----------------------------------------
 function showLoginModal(){
     document.getElementById("LoginModal").style.display = "block";
+}
+if (document.getElementsByClassName("login-error-message").length > 0){
+    showLoginModal();
 }
 function closeLoginModal(){
     document.getElementById("LoginModal").style.display = "none";
@@ -112,7 +114,6 @@ function showSlides(showNowIndex) {
     dots[imageIndex-1].className += " activeDot";
 }
 
-
 function Send_Att_Data(Att_Data){
     let Attachment_Data = [];
 
@@ -162,7 +163,19 @@ function Send_Att_Data(Att_Data){
     showAttModal(1);
 
 }
+function closeAlert(){
+    document.getElementById("Alert").style.display = "none";
+}
+window.addEventListener("click", function(e){
+    if (e.target == document.getElementById("Alert")) {
+        return closeAlert();
+    }
+});
 
+
+// ----------------------------------------
+// ---------- SHOW CREW TEAM --------------
+// ----------------------------------------
 
 function ShowCrew(){
     let ShowCrewArea            = document.getElementById("show_crew");
@@ -181,128 +194,3 @@ function HideCrew(){
     ShowCrewArea.style.display  = "none";
 }
 
-function load_data(){
-    let URL = "coba.blade.php";
-    console.log(URL);
-}
-// function loadAllData(){
-//     // let URL = "coba.blade.php";
-//     // try{
-//     //     let data = await fetch(URL);
-//     //     return await data.text();
-//     // }catch (error){
-//         console.log(error);
-//     // }
-// }
-
-
-// function loadInputForm(id){
-    
-//     fetch('inputform.php')
-//     .then(data => data.text())
-//     .then(html => OperationField.innerHTML = html);
-// }
-
-//Select token with getAttribute
-// let token = document.querySelector(‘meta[name=”csrf-token”]’).getAttribute(‘content’);
-// //Select input values with the data you want to send
-// let name = document.querySelector(‘input[name=”name”]’).value;
-// let number = document.querySelector(‘input[name=”number”]’).value;
-// //Define your post url
-// let url = '/admin/part/store';
-// //Define redirect if needed
-// let redirect = '/admin/part/list';
-// //Select your form to clear data after sucessful post
-// let form = document.querySelector('#addPart');
-
-
-
-// let options={ 
-//     method      : "POST", 
-//     body        : JSON.stringify(data), 
-//     headers     : {
-//         'X-CSRF-TOKEN': document.querySelector('input[name="_token"]').value, 
-//         'Content-Type': 'application/json'
-//     }
-// }
-
-// fetch('url', options).
-// then(res=>res.json())
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// NotifButton.addEventListener("click", function(){
-//     let Notifications = document.getElementById("Notifications");
-//     Notifications.innerHTML = "<h1>HELLO WORLD</h1>";
-// });

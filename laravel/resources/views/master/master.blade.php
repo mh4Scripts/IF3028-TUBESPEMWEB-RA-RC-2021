@@ -7,43 +7,47 @@
     {{-- <meta name="csrf-token" content="{{ csrf_token() }}"> --}}
 
     {{-- JUDUL HALAMAN WEBSITE --}}
-    <title>LAPOR! - Layanan Aspirasi dan Pengaduan Sivitas Akademika ITERA</title>
+    <title>  {{ $title }} </title>
     <meta name="description" content="Layanan Aspirasi dan Pengaduan Sivitas Akademika ITERA adalah sarana interaktif Sivitas akademika ITERA berbasis media sosial pertama untuk pengawasan dan...">
 
     {{-- WEBSITE ICON --}}
-    <link rel="icon" type="image/png" href="media/icons/speaker.png" sizes="32x32">
-    <link rel="icon" type="image/png" href="media/icons/speaker.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="{{ asset('media/icons/speaker.png') }}" sizes="32x32">
+    <link rel="icon" type="image/png" href="{{ asset('media/icons/speaker.png') }}" sizes="16x16">
     <meta name="application-name" content="LAPOR!">
     <meta name="theme-color" content="#ffffff">
 
     {{-- STYLE --}}
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    
 
 </head>
 
 <body>
     @yield('additional-BG')
 
+    @yield('message')
     {{-- NAV HEADER --}}
     <header>
         <div class="nav-header">
-            <a href="{{ route('home') }}" class="web-logo">
-                <span><img src="media/logos/speaker_logo.png" alt="Website Logo"></span>
-                <h2>LAPOR!!</h2>
-            </a>
-            <a href="{{ route('create') }}" class="nav-header-links">
-                <h3>Buat Laporan</h3>
-            </a>
-            <a href="{{ route('show') }}" class="nav-header-links">
-                <h3>Semua Laporan</h3>
-            </a>
-            <a href="{{ route('about') }}" class="nav-header-links">
-                <h3>Tentang LAPOR!!</h3>
-            </a>
-
-            {{-- PROFILE --}}
-            @yield('profile')
-            
+            <div class="nav-header-links-container">
+                <a href="{{ route('home') }}" class="web-logo">
+                    <span><img src="{{ asset('media/logos/speaker_logo.png') }}" alt="Website Logo"></span>
+                    <h2>LAPOR!!</h2>
+                </a>
+                <a href="{{ route('create') }}" class="nav-header-links">
+                    <h3>Buat Laporan</h3>
+                </a>
+                <a href="{{ route('show') }}" class="nav-header-links">
+                    <h3>Semua Laporan</h3>
+                </a>
+                <a href="{{ route('about') }}" class="nav-header-links">
+                    <h3>Tentang LAPOR!!</h3>
+                </a>
+            </div>
+            <div class="nav-header-profile-container">
+                {{-- PROFILE --}}
+                @yield('profile')
+            </div>
         </div>
     </header>
 
@@ -58,13 +62,13 @@
                     <h4>Tim pengembang</h4>
                     <div class="content-footer-content">
                         <a href="" target="_blank" data-title="Markus Togi">
-                            <img class="PP" src="media/images/Pasfoto_Togi.jpg" alt="">
+                            <img class="PP" src="{{ asset('media/images/Pasfoto_Togi.jpg') }}" alt="">
                         </a>
-                        <a href="" target="_blank" data-title="Markus Togi">
-                            <img class="PP" src="media/images/Pasfoto_Togi.jpg" alt="">
+                        <a href="" target="_blank" data-title="Gusti Hafizah">
+                            <img class="PP" src="{{ asset('media/images/Pasfoto_Gusti.jpg') }}" alt="">
                         </a>
-                        <a href="" target="_blank" data-title="Markus Togi">
-                            <img class="PP" src="media/images/Pasfoto_Togi.jpg" alt="">
+                        <a href="" target="_blank" data-title="Muhammad Farhan">
+                            <img class="PP" src="{{ asset('media/images/Anonim.jpg') }}" alt="">
                         </a>
                     </div>
                 </div>
@@ -72,10 +76,10 @@
                     <h4>Dinaungi oleh</h4>
                     <div class="content-footer-content">
                         <a href="https://www.itera.ac.id" target="_blank" data-title="Institut Teknologi Sumatera">
-                            <img src="media/images/Logo_ITERA.png" alt="" >
+                            <img src="{{ asset('media/images/Logo_ITERA.png') }}" alt="" >
                         </a>
                         <a href="http://if.itera.ac.id" target="_blank" data-title="Teknik Informatika ITERA">
-                            <img src="media/images/IF_ITERA.png" alt="">
+                            <img src="{{ asset('media/images/IF_ITERA.png') }}" alt="">
                         </a>
                     </div>
                 </div>
@@ -83,13 +87,13 @@
                     <h4>Alat dan teknologi digunakan</h4>
                     <div class="content-footer-content">
                         <a href="https://laravel.com" target="_blank" data-title="Laravel">
-                            <img src="media/images/Laravel_Logo.png" alt="">
+                            <img src="{{ asset('media/images/Laravel_Logo.png') }}" alt="">
                         </a>
                         <a href="https://www.apachefriends.org/index.html" target="_blank" data-title="XAMPP">
-                            <img src="media/images/Xampp_Logo.png" alt="">
+                            <img src="{{ asset('media/images/Xampp_Logo.png') }}" alt="">
                         </a>
                         <a href="https://www.flaticon.com" target="_blank" data-title="Flaticon">
-                            <img src="media/images/Flaticon_Logo.jpg" alt="">
+                            <img src="{{ asset('media/images/Flaticon_Logo.jpg') }}" alt="">
                         </a>
                     </div>
                 </div>
@@ -113,15 +117,28 @@
             <div class="LoginModalContent">
                 <div class="form-card-content">
                     <h4>Silakan masukkan informasi login anda</h4>
-                    <form action="" class="input-form" method="post">
+                    <form action="/" class="input-form" method="post">
+                        @csrf
                         <div class="row">
-                            <input  class="input-email" type="email" name="email" id="email"    placeholder="Alamat e-mail" autocomplete="off">
+                            <input  class="input-email @error('email') invalid @enderror" type="email" name="email" id="email" placeholder="Alamat e-mail" autocomplete="off" value="{{ old('email') }}">
+                            @error('email')
+                                <span class="error-warning">!</span>
+                                <div class="login-error-message">
+                                    {{ $message }}
+                                </div>
+                            @enderror
                         </div>
                         <div class="row">
-                            <input  class="input-password" type="password" name="password" id="password" placeholder="Kata sandi">
+                            <input  class="input-password @error('password') invalid @enderror" type="password" name="password" id="password" placeholder="Kata sandi">
+                            @error('password')
+                                <span class="error-warning">!</span>
+                                <div class="login-error-message">
+                                    {{ $message }}
+                                </div>
+                            @enderror
                         </div>
                         <div class="row">
-                            <button class="submit-btn" type="submit" name="regist">
+                            <button class="submit-btn" type="submit" name="login">
                                 MASUK
                             </button>
                         </div>
@@ -137,7 +154,8 @@
 
     @yield('additional-element')
 
-    <script src="js/script.js"></script>
+    
+    <script type="text/javascript" src="{{ asset('js/script.js') }}"></script>
     @yield('additional-script')
 </body>
 </html>

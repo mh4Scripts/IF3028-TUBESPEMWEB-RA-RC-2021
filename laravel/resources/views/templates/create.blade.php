@@ -1,10 +1,8 @@
 @extends('master.master')
 
 @section('profile')
-    <div class="userAuth">
-        <a class="userLog" id="clickLogin" onclick="showLoginModal()"><h3>Masuk</h3></a>
-        <a href="{{ route('register') }}" class="userReg"><h3>Daftar</h3></a>
-    </div>
+    <a class="userLog" id="clickLogin" onclick="showLoginModal()"><h3>Masuk</h3></a>
+    <a href="{{ route('register') }}" class="userReg"><h3>Daftar</h3></a>
 @endsection
 
 
@@ -71,5 +69,5 @@
 @endsection
 
 @section('additional-script')
-    <script src="js/input_files_preview.js"></script>
+    <script type="text/javascript" src="{{ asset('js/input_files_preview.js') }}"></script>
 @endsection

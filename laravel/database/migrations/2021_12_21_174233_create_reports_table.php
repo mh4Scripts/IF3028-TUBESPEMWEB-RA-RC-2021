@@ -17,6 +17,7 @@ class CreateReportsTable extends Migration
             
             $table->id();
             $table->string      ('title');
+            $table->string      ('slugy');
             $table->text        ('exmpl');
             $table->longText    ('cntnt');
             $table->string      ('aspct');

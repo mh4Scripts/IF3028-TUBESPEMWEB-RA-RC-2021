@@ -1,10 +1,8 @@
 @extends('master.master')
 
 @section('profile')
-    <div class="userAuth">
-        <a class="userLog" id="clickLogin" onclick="showLoginModal()"><h3>Masuk</h3></a>
-        <a href="{{ route('register') }}" class="userReg"><h3>Daftar</h3></a>
-    </div>
+    <a class="userLog" id="clickLogin" onclick="showLoginModal()"><h3>Masuk</h3></a>
+    <a href="{{ route('register') }}" class="userReg"><h3>Daftar</h3></a>
 @endsection
 
 

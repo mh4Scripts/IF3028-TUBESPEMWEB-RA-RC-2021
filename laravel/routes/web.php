@@ -12,42 +12,88 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-// Route::get('/',                     [LaporController::class, 'home'])->name('home');
-Route::get('/',                     'App\Http\Controllers\LaporController@home')->name('home');
 
-Route::get('/about', function () {
-    return view('templates/about');
-})->name('about');
+Route::get('/c', 'App\Http\Controllers\LaporController@canvas')->name('canvas');
+Route::get('c/mahasiswa', function () {
+    return view('templates.canvas');
+    
+});
+
+Route::get('/',                         'App\Http\Controllers\LaporController@home')->name('home');
+
+Route::post('/',                        'App\Http\Controllers\LoginController@authenticate');
+
+Route::get('/logged-in', 'App\Http\Controllers\LaporController@loggedIn')->name('LoggedInhome');
 
 
-Route::get('/sudahmasuk', function () {
-    return view('templates/home');
-})->name('LoggedInhome');
 
 
-Route::get('/daftar', function () {
-    return view('templates/register');
-})->name('register');
+//FIX TAMPIL SEMUA LAPORAN DAN BERDASARKAN AASPEK
+Route::get('/semua-laporan',              'App\Http\Controllers\LaporController@show')->name('show');
+Route::get('/semua-laporan/{aspect}',       'App\Http\Controllers\LaporController@showAspect');
 
-Route::get('/detail', function () {
-    return view('templates/detail');
-})->name('detail');
+Route::get('/detail-laporan/{slugy}',    'App\Http\Controllers\LaporController@detail')->name('detail');
+
+Route::get('check-email/{emailAddress}', 'App\Http\Controllers\RegisterController@isStoredEmail');
+Route::get('check-uname/{userName}', 'App\Http\Controllers\RegisterController@isStoredUname');
+
+
+
+Route::get('/profil-akun-lapor',              'App\Http\Controllers\LaporController@about')->name('profile');
+
+
+
+
+Route::get('/daftar-akun',               'App\Http\Controllers\RegisterController@register')->name('register');
+Route::post('/daftar-akun',               'App\Http\Controllers\RegisterController@store');
+
+
+
+
+
+
+
+Route::get('/about-lapor',              'App\Http\Controllers\LaporController@about')->name('about');
+
+Route::get('/users', 'AjaxController@index')->name('get');
+Route::get('/getData/{id}','AjaxController@getData')->name('getbyID');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 Route::get('/laporan-baru', function () {
-    return view('templates/create');
+    return view('templates/create',[
+        'title' => 'Laporan Baru'
+    ]);
 })->name('create');
 
-Route::get('/semua-laporan', function () {
-    return view('templates/show');
-})->name('show');
 
 Route::get('/update-laporan', function () {
-    return view('templates/update');
+    return view('templates/update', [
+        'title' => 'Ubah Laporan'
+    ]);
 })->name('update');
 
-Route::get('/c', function () {
-    return view('templates/canvas');
-})->name('canvas');
 
 // Route::get('/masuk', function () {
 //     return view('templates/login');

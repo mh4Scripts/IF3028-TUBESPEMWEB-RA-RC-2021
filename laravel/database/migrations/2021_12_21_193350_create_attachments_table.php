@@ -6,11 +6,6 @@ use Illuminate\Support\Facades\Schema;
 
 class CreateAttachmentsTable extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
     public function up()
     {
         Schema::create('attachments', function (Blueprint $table) {
@@ -24,11 +19,6 @@ class CreateAttachmentsTable extends Migration
         });
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
     public function down()
     {
         Schema::dropIfExists('attachments');
