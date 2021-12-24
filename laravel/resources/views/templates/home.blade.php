@@ -1,24 +1,22 @@
 @extends('master.master')
 
-{{-- @section('profile')
+@section('profile')
     <div class="profile-menu">
-        <div class="profile-uname">
-            <h4>MuhammadAliBaba</h4>
-        </div>
-        <div class="profile-menu-option">
-            <a target="_blank" href=""><h4>Profil</h4></a>
-            <a href="{{ route('home') }}"><h4>Logout</h4></a>
+        <div onclick="myFunction()" class="profile-menu-btn">Markus Togi Fedrian</div>
+        <div id="profileMenu" class="profile-menu-content">
+            <a target="_blank" href="">Profil</a>
+            <a href="{{ route('home') }}">Logout</a>
         </div>
     </div>
     <div class="user-profile-picture">
-        <img class="" src="{{ asset('media/images/Pasfoto_Togi.jpg') }}" alt="">
+        <img src="{{ asset('media/images/Pasfoto_Togi.jpg') }}" alt="">
     </div>
-@endsection --}}
+@endsection
 
-@section('profile')
+{{-- @section('profile')
     <a class="userLog" id="clickLogin" onclick="showLoginModal()"><h3>Masuk</h3></a>
     <a href="{{ route('register') }}" class="userReg"><h3>Daftar</h3></a>
-@endsection
+@endsection --}}
 
 @section('additional-BG')
     {{-- BACKGROUND --}}
@@ -196,4 +194,26 @@
         <div class="imageDot-container" id="imageDotContainer">
         </div>
     </div>
+@endsection
+
+@section('additional-script')
+    <script type="text/javascript">
+
+        function myFunction() {
+            document.getElementById("profileMenu").classList.toggle("show");
+        }  
+        window.onclick = function(event) {
+            if (!event.target.matches('.profile-menu-btn')) {
+                var menus = document.getElementsByClassName("profile-menu-content");
+                var i;
+                for (i = 0; i < menus.length; i++) {
+                    var menu = menus[i];
+                    if (menu.classList.contains('show')) {
+                        menu.classList.remove('show');
+                    }
+                }
+            }
+        }
+
+    </script>
 @endsection
