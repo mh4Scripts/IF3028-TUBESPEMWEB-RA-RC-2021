@@ -4,7 +4,10 @@
 <div class="row">
     <div class="col-1"></div>
     <div class="col-10 center">
-        <input type="text"> <button class="cari">Cari</button>
+        <form action="{{route('search')}}" method="get" id="form" name="form" enctype="multipart/form-data">
+            @csrf
+            <input name="laporan" type="text"> <button class="cari">Cari</button>
+        </form>
     </div>
     <div class="col-1"></div>
 </div>

@@ -16,4 +16,5 @@ use App\Http\Controllers\reportController;
 
 Route::get('/', [reportController::class, 'index']);
 
+Route::get('report/search', [reportController::class, 'search'])->name('search');
 Route::resource('report', reportController::class);

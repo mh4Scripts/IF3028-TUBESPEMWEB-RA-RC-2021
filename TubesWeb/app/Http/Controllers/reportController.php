@@ -109,4 +109,14 @@ class reportController extends Controller
         Report::destroy($id);
         return redirect()->route('report.index');
     }
+
+    public function search(Request $request)
+    {
+        $laporan = $request->laporan;
+        $laporan = '%'.$laporan.'%';
+        $reports = Report::where('laporan', 'like', $laporan)->orderByDesc('created_at')->get();
+
+        return view("index", compact("reports"));
+    }
 }
+
