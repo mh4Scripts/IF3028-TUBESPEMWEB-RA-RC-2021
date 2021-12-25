@@ -18,6 +18,7 @@ body
 {
     margin:50px 100px 100px 100px;
     font-size: medium;
+    background-image: linear-gradient(#dc3b3b, #FFE2E2);
 }
 
 hr {

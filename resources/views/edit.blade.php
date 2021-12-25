@@ -26,7 +26,8 @@
                 font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
             }
 
-            h1{
+            h1
+            {
                 font-style: normal;
                 font-weight: normal;
                 font-size: 60px;
@@ -39,6 +40,7 @@
             {
                 margin:50px 100px 100px 100px;
                 font-size: medium;
+                background-image: linear-gradient(#dc3b3b, #FFE2E2);
             }
 
             hr 
@@ -118,7 +120,7 @@
             @csrf
             @method('PUT')
 
-            <p>Buat Laporan/Komentar</p>
+            <p><b>Buat Laporan/Komentar</b></p>
             <hr>
 
             <input type="text" class="judul" name="judul" placeholder="Judul Laporan" required value="{{ $posts->judul }}"/><br><br>

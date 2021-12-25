@@ -30,13 +30,13 @@
 
         <div class="daftarlaporan">
 
-            Laporan/Komentar Terakhir
+            <b>Laporan/Komentar Terakhir</b>
 
             <hr>
 
                 @foreach ($posts as $p)
                 <!--p> contoh <br> contoh <br> contoh </p-->
-                {{ $p->judul }} oleh {{ $p->pelapor }}
+                <b>{{ $p->judul }} oleh {{ $p->pelapor }}</b>
                 <br><br>
                 {{ $p->laporan }}
             

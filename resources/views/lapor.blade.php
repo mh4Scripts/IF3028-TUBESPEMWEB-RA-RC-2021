@@ -32,7 +32,7 @@
            
             @csrf
 
-            <p>Buat Laporan/Komentar</p>
+            <p><b>Buat Laporan/Komentar</b></p>
             <hr>
 
             <input type="text" class="judul" name="judul" placeholder="Judul Laporan" required/><br>
