@@ -32,7 +32,8 @@ class PostController extends Controller
             "lampiran" => $request->lampiran
         ]);
         // Alihkan ke laporan bila berhasil
-        if ($status) $this->show($status->id);
+        dump($status->id);
+        if ($status) return redirect()->route('laporan',$status->id);
         // Return false bila gagal
         else return false;
     }
@@ -47,7 +48,7 @@ class PostController extends Controller
             "lampiran" => $request->lampiran
         ]);
         // Alihkan ke laporan bila berhasil
-        if ($status) $this->show($status->id);
+        if ($status) return redirect()->route('laporan',$status->id);
         // Return false bila gagal
         else return false;
     }
@@ -56,8 +57,8 @@ class PostController extends Controller
     // TODO: Hapus lampiran
     public function delete(Request $request) {
         $status = Post::where('id', $request->id)->first()->delete();
-        // Alihkan ke laporan bila berhasil
-        if ($status) $this->index();
+        // Alihkan ke halaman utama bila berhasil
+        if ($status) return redirect()->route('/',Post::all());
         // Return false bila gagal
         else return false;
     }
