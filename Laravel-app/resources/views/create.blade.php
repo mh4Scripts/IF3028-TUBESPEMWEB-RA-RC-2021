@@ -11,7 +11,7 @@
 
 @section('content')
     <div class="judul">
-        <h1>SIMPLE LAPOR</h1>
+        <h1 onclick="location.href='/'">SIMPLE LAPOR</h1>
     </div>
 
 <form id="form" action="/create" method="POST" enctype="multipart/form-data">
@@ -47,15 +47,14 @@
            
             <span id="file-chosen">No file chosen</span>
 
+            
+            <div class="pesan"></div>
+
           </div>
-        
-          <br>
-          <div class="pesan"></div>
 
-
-            <div class="btn-box">
-                <button type="submit" class="fill">Lapor</button>
-            </div>   
+        <div class="btn-box">
+            <button type="submit" class="fill">Lapor</button>
+        </div>   
     </form>
     </div>
     

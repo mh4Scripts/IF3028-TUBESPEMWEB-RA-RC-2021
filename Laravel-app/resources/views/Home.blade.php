@@ -12,37 +12,43 @@
 @section('content')
 <div id="javas">
     <div class="judul">
-        <h1>SIMPLE LAPOR !</h1>
+        <h1 onclick="location.href='/'">SIMPLE LAPOR !</h1>
     </div>
 
    
     <div class="search-container">
-        <form action="">
-            <input type="text" placeholder="Search..." name="search">
+        <form type="get" action="{{ url('/search') }}">
+            <input type="text" placeholder="Search..." name="keyword">
             <button type="submit"><i class="fa fa-search"></i></button>
         </form>
         <a href="#" onclick="create()"><p>Buat Laporan/komentar</p></a>
     </div>
 
-    @foreach ($data as $item)
-    <div class="main-content">
-        <div class="isi">
-            <p>{{ $item->laporan }}</p>
-        
-                <div class="detail">
-                <p> Lampiran : {{ $item->lampiran }}</p>   
-                    
-                <p class="date"> Waktu : {{ $item->created_at->format('d/m/Y H:i:s') }}</p> 
-                <a href="/detail/{{ $item->id }}"> Lihat selengkapnya</a>
-                </div>
+    @if (count($data) != 0)
+        @foreach ($data as $item)
+        <div class="main-content">
+            <div class="isi">
+                <p>{{ $item->laporan }}</p>
+            
+                    <div class="detail">
+                    <p> Lampiran : {{ $item->lampiran }}</p>   
+                        
+                    <p class="date"> Waktu : {{ $item->created_at->format('d/m/Y H:i:s') }}</p> 
+                    <a href="/detail/{{ $item->id }}"> Lihat selengkapnya</a>
+                    </div>
+            </div>
+        <hr>
         </div>
-    <hr>
-    </div>
     @endforeach
-
-    <div class="pagination">
-        {{ $data->links() }}
-    </div>
+    
+        <div class="pagination">
+            {{ $data->links() }}
+        </div>
+    @else
+        <div class="main-content">
+            <p>Tidak ada data yang ditemukan</p>
+        </div>
+    @endif
 
 
 </div>
