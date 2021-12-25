@@ -14,12 +14,13 @@
     <div class="list">
 
         <div class="header">
-            <p>Detail Laporan/Komentar </p>
-            <hr>
+            <p>Detail Laporan {{ $posts->id }} </p>
+            <a href="/">Kembali ke homepage</a>
         </div>
-            <div class="list-item">
-                @yield("list-content")
-            </div>
+        <hr>
+        <div class="list-item">
+            @yield("list-content")
+        </div>
     </div>
 </div>
 </body>

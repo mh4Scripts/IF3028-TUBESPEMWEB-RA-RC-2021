@@ -109,13 +109,14 @@ hr {
 }
 
 .laporan-header{
+    color: #6d1a36 !important;
     font-size: 1.5rem;
     font-weight: 700;
     margin-bottom: 3px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    max-lines: 2;
+    max-lines: 2 !important;
     text-decoration: none;
     color: inherit;
 }
