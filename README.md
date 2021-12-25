@@ -106,7 +106,15 @@ Pengguna dapat mencari laporan/komentar dengan melakukan search ke `isi laporan/
 
 ### Penjelasan Teknis
 
-Penjelasan:
+Penjelasan Untuk instalasi Framework laravel, kami menggunakan composer :
+- Pertama, download dulu composer di internet
+- Kedua, cek apakah composer sudah terinstall dengan mengetikan "composer" pada command prompt
+- Ketiga, Buat folder tempat project laravel ingin dibuat
+- Keempat, Pada command prompt cd/masuk ke direktori project laravel yang tadi sudah dibuat
+- Kelima, Ketikan command "composer create-project laravel/(nama_file)"
+- Keenam, Setelah laravel berhasil terinstall, masuk ke dalam direktori tempat file laravel terinstal di cmd
+- Ketujuh, Setelah masuk ke tempat file laravel terisntall, jalakan laravel dengan mengetikan command "php artisan serve" pada cmd
+- Kedelapan, Copt link yang diberikan di command prompt untuk mengakses server
 
 
 ### Knowledge
