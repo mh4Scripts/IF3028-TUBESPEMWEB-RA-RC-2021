@@ -117,10 +117,12 @@ hr {
     text-overflow: ellipsis;
     max-lines: 2;
     text-decoration: none;
+    color: inherit;
 }
 
 .laporan-body{
     font-size: 1rem;
+    margin-top: 3px;
     margin-bottom: 3px;
     display: -webkit-box;
     max-width: 100%;
