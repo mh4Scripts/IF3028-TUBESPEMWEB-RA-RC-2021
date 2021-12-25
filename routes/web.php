@@ -28,6 +28,6 @@ Route::post('/tambah', [PostController::class, 'create'])->name('tambah');
 
 Route::post('/perbarui', [PostController::class, 'renew'])->name('perbarui');
 
-Route::post('/ubah', [PostController::class, 'update'])->name('ubah');
+Route::post('/ubah/{id}', [PostController::class, 'update'])->name('ubah');
 
 Route::post('/hapus', [PostController::class, 'delete'])->name('delete');
