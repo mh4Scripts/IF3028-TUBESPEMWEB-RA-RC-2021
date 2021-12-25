@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="form_page.css">
+        <link rel="stylesheet" href="/form_page.css">
         <title>
             SIMPLE LAPOR!
         </title>
@@ -42,7 +42,7 @@
             <br>
             <input type="file" id="fileupload" name="fileupload" class="fileupload" value="{{ $posts->fileupload }}">
             <br>
-            <input type="submit" class=submit-btn value="Buat LAPOR!">
+            <input type="submit" class=submit-btn value="Simpan LAPOR!">
             <br><br><br>
             <hr>
         </form>

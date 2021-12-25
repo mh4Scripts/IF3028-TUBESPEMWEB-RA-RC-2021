@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="form_page.css">
+        <link rel="stylesheet" href="/form_page.css">
         <title>
             SIMPLE LAPOR!
         </title>
