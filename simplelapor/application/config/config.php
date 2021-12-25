@@ -35,7 +35,7 @@ $config['base_url'] = 'http://localhost/IF3028-TUBESPEMWEB-RA-RC-2021/simplelapo
 | variable so that it is blank.
 |
 */
-$config['index_page'] = 'index.php';
+$config['index_page'] = '';
 
 /*
 |--------------------------------------------------------------------------
