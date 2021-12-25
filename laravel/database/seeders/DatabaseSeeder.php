@@ -71,6 +71,17 @@ class DatabaseSeeder extends Seeder
         ]);
 
         //REPORTS SEEDS
+        
+        Report::create([
+            'title'             => 'Biaya Operasi untuk Pasien Tidak Mampu',
+            'slugy'             => 'biaya-operasi-untuk-pasien-tidak-ampu',
+            'exmpl'             => 'Menkes RI yang terhormat, tolong inspeksi ke RSUD WZ. Yohanis, Kupang. Jika pasien tidak mampu, operasi penyakit dalam diminta bayar sekitar 10 juta, meskipun ada keteran',
+            'cntnt'             => 'Menkes RI yang terhormat, tolong inspeksi ke RSUD WZ. Yohanis, Kupang. Jika pasien tidak mampu, operasi penyakit dalam diminta bayar sekitar 10 juta, meskipun ada keterangan tidak mampu. Apakah ini benar?',
+            'aspct'             => 'Mahasiswa',
+            'unqid'             => Str::random(12),
+            'rprtr'             => mt_rand(1,7)
+        ]);
+        
         Report::create([
             'title'             => 'Polusi Asap (Dugaan Dari Pabrik Kertas Terdekat) Hampir Setiap Hari',
             'slugy'             => 'polusi-asap-dugaan-dari-pabrik-kertas-terdekat-hampir-setiap-hari',
@@ -82,43 +93,31 @@ class DatabaseSeeder extends Seeder
         ]);
         
         Report::create([
+            'title'             => 'Dana Sertifikasi Guru di Tanjungbalai, Sumatera Utara Belum Dibayar',
+            'slugy'             => 'dana-sertifikasi-guru-di-tanjungbalai-sumatera-utara-belum-dibayar',
+            'exmpl'             => 'Kepada Yth. Menteri Pendidikan dan Kebudayaan,
+
+            Kenapa dana sertifikasi di Tanjungbalai, Sumatera Utara untuk bulan November-Desember 2012 tidak dicairkan? Dana yang tida
+            ',
+            'cntnt'             => 'Kepada Yth. Menteri Pendidikan dan Kebudayaan,
+
+            Kenapa dana sertifikasi di Tanjungbalai, Sumatera Utara untuk bulan November-Desember 2012 tidak dicairkan? Dana yang tidak dibayar adalah untuk guru PNS di semua tingkatan (SD/SMP/SMA/SMK). Contoh beberapa NUPTK:
+            ElSA SIAGIAN NUPTK 2659733635300002 dan Desy Anggraeni NUPTK 6538 7566583000 23 guru SMK, beserta ratusan guru lainnya.
+            
+            Mohon perhatiannya. Terima kasih.
+            
+            
+            Dari Saut Sitorus, Ketua Asosiasi Guru Bersatu Tanjungbalai.',
+            'aspct'             => 'Program Studi',
+            'unqid'             => Str::random(12),
+            'rprtr'             => mt_rand(1,7)
+        ]);
+        
+        Report::create([
             'title'             => 'Banjir di Perumahan Star Perdana Residance Cikarang',
             'slugy'             => 'banjir-di-perumahan-star-perdana-residance-cikarang',
             'exmpl'             => 'Perumahan subsidi di cikarang, selalu banjir jika ujan datang, Genangan air bisa mencapai 20-30cm bahkan lebih. sudah banyak warga yang jatuh akibat genangan yang tidak s',
             'cntnt'             => 'Perumahan subsidi di cikarang, selalu banjir jika ujan datang, Genangan air bisa mencapai 20-30cm bahkan lebih. sudah banyak warga yang jatuh akibat genangan yang tidak surut. di musim kemaraupun genangan masih terjadi. Warga sudah berdialog dengan pengembang namun tidak ada hasilnya sampai saat ini. surat, pertemuan warga selalu menemukan jalan buntu. bahkan pihak desa pun telah diminta untuk membantu hal ini.',
-            'aspct'             => 'Dosen',
-            'unqid'             => Str::random(12),
-            'rprtr'             => mt_rand(1,7)
-        ]);
-        
-        Report::create([
-            'title'             => 'Pengaduan Tindak Lanjut Pemidanaan Kasus Perdata',
-            'slugy'             => 'pengaduan-tindak-lanjut-pemidanaan-kasus-perdata',
-            'exmpl'             => 'Mohon tindak lanjut dan perhatian mengetai kasus mempidanakan perkara perdata a.n ida fandayani yang dilakukan oleh penyidik jatanum polrestabes surabaya. sesuai koordina',
-            'cntnt'             => 'Mohon tindak lanjut dan perhatian mengetai kasus mempidanakan perkara perdata a.n ida fandayani yang dilakukan oleh penyidik jatanum polrestabes surabaya.
-            sesuai koordinasi dengan spripim kapolri untuk upaya penyelesaian kepada kasat reskrim polrestabes surabaya, maka kami pada tanggal 20 januari menemui kasat reskrim polrestabes surabaya di kantornya. menurut kasat reskrim polrestabes surabaya kasus ini memang sudah putus perdatanya dan segera gelar perkara bersama penyidik. hasil dari gelar perkara ini akan dilaporkan kepada spripim kapolri menurut kasat reskrim polrestabes surabaya.
-            kejaksaan negeri surabaya pun sudah mengembalikan berkas kepada penyidik berdasarkan surat no.b-14/o.5.10.3/epp.1/072016 tanggal 6 juli 2016. menurut kepala kejaksaan negeri surabaya, surat pemberitahuan dimulainya penyidikan telah dikembalikan kepada penyidik polrestabes surabaya.
-            oleh karena itu, polisi/penyidik semestinya menghentikan perkara tersebut',
-            'aspct'             => 'Dosen',
-            'unqid'             => Str::random(12),
-            'rprtr'             => mt_rand(1,7)
-        ]);
-        
-        Report::create([
-            'title'             => 'Kebijakan Amburadul Manager Pln Up3 Pematangsiantar Buang Anggaran Investasi Negara',
-            'slugy'             => 'kebijakan-amburadul-manager-pln-up3-pematangsiantar-buang-anggaran-investasi-negara',
-            'exmpl'             => 'Manager pln up3 pematangsiantar di provinsi sumatera utara sdr. joy mart sihaloho melalui kebijakannya membangun jaringan listrik tegangan menegah 20kv sepanjang kurangle',
-            'cntnt'             => 'Manager pln up3 pematangsiantar di provinsi sumatera utara sdr. joy mart sihaloho melalui kebijakannya membangun jaringan listrik tegangan menegah 20kv sepanjang kuranglebih 100km ludes disikat maling. lokasi jaringan listrik di sepanjang jln. siantar - tebing tinggi dan jln. siantar - perdagangan.
-            kebijakan amburadul ini bermula dari tertangkapnya pelaku pencurian kabel listrik jenis mvtic khusus tegangan 20kv pada bulan september 2021 oleh polsek serbelawan.
-            ternyata aksi pelaku pencurian berhasil memotong kabel yg tergolong mahal ini dalam keadaan tidak bertegangan yg memang sejak selesai proyek pembangunan jaringan kabel tidak pernah dialiri tegangan listrik.
-            bagaimana mungkin hal ini tidak diantisipasi seorang manager pln pematangsiantar bahwa asset yg dibangun dengan anggaran negara sepele dengan keamanan asset di wilayah kerjanya.
-            semula kabel disikat maling hanya beberapa tiang, namun sampai saat ini dalam beberapa bulan hampir 90% jaringan kabel sudah hilang ditaksir bernilai puluhan milyar rupiah dan tersisa hanya tiang beton. seharusnya ketika ada bagian kabel yg hilang, maka segera disambung kembali dan dialiri tegangan atau menggulung yg terpasang agar tidak dicuri maling. namun pln pematangsiantar malah membiarkan berbulan bulan sehingga hampir ludes semuanya.
-            sungguh sangat amburadul seorang manager yg tidak mengerti tentang konsekwensi kebijakan proyek yg diambilnya. peristiwa ini termasuk kejadian luar biasa dan mungkin dalam sejarah kehilangan material kabel yg terbesar.
-            
-            mohon kemen bumn mendalami persoalan ini dan mengusut tuntas pejabat2 penghambur uang negara melalui kegiatan proyek proyek infrastruktur.
-            jangan hny melihat dari sudut pandang pelaku pencurian, tp yg lebih penting bagaimana kebijakan seorang pejabat bumn itu berkualitas. harus ada yg bertanggung jawab secara hukum kerugian negara ini selain tindakan kriminal pencurian.
-            
-            demikian laporan ini disampaikan sebagai pintu masuk untuk menginvestigasi kerugian negara di instansi pln pematangsiantar milik bumn.',
             'aspct'             => 'Dosen',
             'unqid'             => Str::random(12),
             'rprtr'             => mt_rand(1,7)
@@ -156,11 +155,11 @@ class DatabaseSeeder extends Seeder
         ]);
         
         Report::create([
-            'title'             => 'Biaya Operasi untuk Pasien Tidak Mampu',
-            'slugy'             => 'biaya-operasi-untuk-pasien-tidak-ampu',
-            'exmpl'             => 'Menkes RI yang terhormat, tolong inspeksi ke RSUD WZ. Yohanis, Kupang. Jika pasien tidak mampu, operasi penyakit dalam diminta bayar sekitar 10 juta, meskipun ada keteran',
-            'cntnt'             => 'Menkes RI yang terhormat, tolong inspeksi ke RSUD WZ. Yohanis, Kupang. Jika pasien tidak mampu, operasi penyakit dalam diminta bayar sekitar 10 juta, meskipun ada keterangan tidak mampu. Apakah ini benar?',
-            'aspct'             => 'Mahasiswa',
+            'title'             => 'Layanan Balik Nama Sertifikat Tanah BPN Tangerang Lambat',
+            'slugy'             => 'layanan-balik-nama-sertifikat-tanah-bpn-tangerang-lambat',
+            'exmpl'             => 'Saya mengeluhkan lambatnya proses pengurusan untuk balik nama sertifikat tanah di Badan Pertanahan Nasional Tigaraksa, Tangerang. Sejak masuknya dokumen-dokumen pada bula',
+            'cntnt'             => 'Saya mengeluhkan lambatnya proses pengurusan untuk balik nama sertifikat tanah di Badan Pertanahan Nasional Tigaraksa, Tangerang. Sejak masuknya dokumen-dokumen pada bulan Oktober 2012 lalu (No. Berkas Permohonan: 73710/2012), sampai sekarang statusnya masih dalam proses. Padahal, sesuai informasi di situs resmi BPN, prosesnya hanya 5 hari. Mohon agar diberikan penjelasan dan ditindaklanjuti',
+            'aspct'             => 'Mata Kuliah',
             'unqid'             => Str::random(12),
             'rprtr'             => mt_rand(1,7)
         ]);
@@ -198,31 +197,16 @@ class DatabaseSeeder extends Seeder
             'unqid'             => Str::random(12),
             'rprtr'             => mt_rand(1,7)
         ]);
-        
+
         Report::create([
-            'title'             => 'Pencairan Dana Sertifikasi Guru Tidak Pernah Tuntas',
-            'slugy'             => 'pencairan-dana-sertifikasi-guru-tidak-pernah-tuntas',
-            'exmpl'             => 'Dana guru tersertifikasi di Kota Samarinda, Kalimantan Timur yang belum dibayar adalah:
-                1. tahun 2010 satu bulan,
-                2. tahun 2011 dua bulan, dan
-                3. tahun 2012 akan dua bula
-                ',
-            'cntnt'             => 'Dana guru tersertifikasi di Kota Samarinda, Kalimantan Timur yang belum dibayar adalah:
-                1. tahun 2010 satu bulan,
-                2. tahun 2011 dua bulan, dan
-                3. tahun 2012 akan dua bulan yang tidak dibayar.
-                Informasi ini menurut Dinas Pendidikan Kota Samarinda. Mengapa pembayaran guru tersertifikasi tidak pernah tuntas?',
-            'aspct'             => 'Mata Kuliah',
-            'unqid'             => Str::random(12),
-            'rprtr'             => mt_rand(1,7)
-        ]);
-        
-        Report::create([
-            'title'             => 'Layanan Balik Nama Sertifikat Tanah BPN Tangerang Lambat',
-            'slugy'             => 'layanan-balik-nama-sertifikat-tanah-bpn-tangerang-lambat',
-            'exmpl'             => 'Saya mengeluhkan lambatnya proses pengurusan untuk balik nama sertifikat tanah di Badan Pertanahan Nasional Tigaraksa, Tangerang. Sejak masuknya dokumen-dokumen pada bula',
-            'cntnt'             => 'Saya mengeluhkan lambatnya proses pengurusan untuk balik nama sertifikat tanah di Badan Pertanahan Nasional Tigaraksa, Tangerang. Sejak masuknya dokumen-dokumen pada bulan Oktober 2012 lalu (No. Berkas Permohonan: 73710/2012), sampai sekarang statusnya masih dalam proses. Padahal, sesuai informasi di situs resmi BPN, prosesnya hanya 5 hari. Mohon agar diberikan penjelasan dan ditindaklanjuti',
-            'aspct'             => 'Mata Kuliah',
+            'title'             => 'Pengaduan Tindak Lanjut Pemidanaan Kasus Perdata',
+            'slugy'             => 'pengaduan-tindak-lanjut-pemidanaan-kasus-perdata',
+            'exmpl'             => 'Mohon tindak lanjut dan perhatian mengetai kasus mempidanakan perkara perdata a.n ida fandayani yang dilakukan oleh penyidik jatanum polrestabes surabaya. sesuai koordina',
+            'cntnt'             => 'Mohon tindak lanjut dan perhatian mengetai kasus mempidanakan perkara perdata a.n ida fandayani yang dilakukan oleh penyidik jatanum polrestabes surabaya.
+            sesuai koordinasi dengan spripim kapolri untuk upaya penyelesaian kepada kasat reskrim polrestabes surabaya, maka kami pada tanggal 20 januari menemui kasat reskrim polrestabes surabaya di kantornya. menurut kasat reskrim polrestabes surabaya kasus ini memang sudah putus perdatanya dan segera gelar perkara bersama penyidik. hasil dari gelar perkara ini akan dilaporkan kepada spripim kapolri menurut kasat reskrim polrestabes surabaya.
+            kejaksaan negeri surabaya pun sudah mengembalikan berkas kepada penyidik berdasarkan surat no.b-14/o.5.10.3/epp.1/072016 tanggal 6 juli 2016. menurut kepala kejaksaan negeri surabaya, surat pemberitahuan dimulainya penyidikan telah dikembalikan kepada penyidik polrestabes surabaya.
+            oleh karena itu, polisi/penyidik semestinya menghentikan perkara tersebut',
+            'aspct'             => 'Dosen',
             'unqid'             => Str::random(12),
             'rprtr'             => mt_rand(1,7)
         ]);
@@ -237,6 +221,27 @@ class DatabaseSeeder extends Seeder
             'rprtr'             => mt_rand(1,7)
         ]);
         
+        
+        Report::create([
+            'title'             => 'Kebijakan Amburadul Manager Pln Up3 Pematangsiantar Buang Anggaran Investasi Negara',
+            'slugy'             => 'kebijakan-amburadul-manager-pln-up3-pematangsiantar-buang-anggaran-investasi-negara',
+            'exmpl'             => 'Manager pln up3 pematangsiantar di provinsi sumatera utara sdr. joy mart sihaloho melalui kebijakannya membangun jaringan listrik tegangan menegah 20kv sepanjang kurangle',
+            'cntnt'             => 'Manager pln up3 pematangsiantar di provinsi sumatera utara sdr. joy mart sihaloho melalui kebijakannya membangun jaringan listrik tegangan menegah 20kv sepanjang kuranglebih 100km ludes disikat maling. lokasi jaringan listrik di sepanjang jln. siantar - tebing tinggi dan jln. siantar - perdagangan.
+            kebijakan amburadul ini bermula dari tertangkapnya pelaku pencurian kabel listrik jenis mvtic khusus tegangan 20kv pada bulan september 2021 oleh polsek serbelawan.
+            ternyata aksi pelaku pencurian berhasil memotong kabel yg tergolong mahal ini dalam keadaan tidak bertegangan yg memang sejak selesai proyek pembangunan jaringan kabel tidak pernah dialiri tegangan listrik.
+            bagaimana mungkin hal ini tidak diantisipasi seorang manager pln pematangsiantar bahwa asset yg dibangun dengan anggaran negara sepele dengan keamanan asset di wilayah kerjanya.
+            semula kabel disikat maling hanya beberapa tiang, namun sampai saat ini dalam beberapa bulan hampir 90% jaringan kabel sudah hilang ditaksir bernilai puluhan milyar rupiah dan tersisa hanya tiang beton. seharusnya ketika ada bagian kabel yg hilang, maka segera disambung kembali dan dialiri tegangan atau menggulung yg terpasang agar tidak dicuri maling. namun pln pematangsiantar malah membiarkan berbulan bulan sehingga hampir ludes semuanya.
+            sungguh sangat amburadul seorang manager yg tidak mengerti tentang konsekwensi kebijakan proyek yg diambilnya. peristiwa ini termasuk kejadian luar biasa dan mungkin dalam sejarah kehilangan material kabel yg terbesar.
+            
+            mohon kemen bumn mendalami persoalan ini dan mengusut tuntas pejabat2 penghambur uang negara melalui kegiatan proyek proyek infrastruktur.
+            jangan hny melihat dari sudut pandang pelaku pencurian, tp yg lebih penting bagaimana kebijakan seorang pejabat bumn itu berkualitas. harus ada yg bertanggung jawab secara hukum kerugian negara ini selain tindakan kriminal pencurian.
+            
+            demikian laporan ini disampaikan sebagai pintu masuk untuk menginvestigasi kerugian negara di instansi pln pematangsiantar milik bumn.',
+            'aspct'             => 'Dosen',
+            'unqid'             => Str::random(12),
+            'rprtr'             => mt_rand(1,7)
+        ]);
+        
         Report::create([
             'title'             => 'Jalan Berlubang di Jalan Raya Jakarta-Bogor',
             'slugy'             => 'jalan-berlubang-di-jalan-raya-jakarta-bogor',
@@ -245,6 +250,16 @@ class DatabaseSeeder extends Seeder
             'aspct'             => 'Mata Kuliah',
             'unqid'             => Str::random(12),
             'rprtr'             => mt_rand(1,7)
+        ]);
+        
+        Report::create([
+            'title'             => 'Sering Padam Lampu di Kebun Jeruk, Jakarta',
+            'slugy'             => 'sering-padam-lampu-di-kebun-jeruk-jakarta',
+            'exmpl'             => 'Saya Canra. Ingin melaporkan bahwa sering terjadi pemadam listrik Kebun Jeruk 17, Kelurahan Maphar, Kecamatan Tamansari, Jakarta Barat. Tolong ditinjau.',
+            'cntnt'             => 'Saya Canra. Ingin melaporkan bahwa sering terjadi pemadam listrik Kebun Jeruk 17, Kelurahan Maphar, Kecamatan Tamansari, Jakarta Barat. Tolong ditinjau.',
+            'aspct'             => 'Program Studi',
+            'unqid'             => Str::random(12),
+            'rprtr'             => 3
         ]);
         
         Report::create([
@@ -273,22 +288,19 @@ class DatabaseSeeder extends Seeder
         ]);
         
         Report::create([
-            'title'             => 'Dana Sertifikasi Guru di Tanjungbalai, Sumatera Utara Belum Dibayar',
-            'slugy'             => 'dana-sertifikasi-guru-di-tanjungbalai-sumatera-utara-belum-dibayar',
-            'exmpl'             => 'Kepada Yth. Menteri Pendidikan dan Kebudayaan,
-
-            Kenapa dana sertifikasi di Tanjungbalai, Sumatera Utara untuk bulan November-Desember 2012 tidak dicairkan? Dana yang tida
-            ',
-            'cntnt'             => 'Kepada Yth. Menteri Pendidikan dan Kebudayaan,
-
-            Kenapa dana sertifikasi di Tanjungbalai, Sumatera Utara untuk bulan November-Desember 2012 tidak dicairkan? Dana yang tidak dibayar adalah untuk guru PNS di semua tingkatan (SD/SMP/SMA/SMK). Contoh beberapa NUPTK:
-            ElSA SIAGIAN NUPTK 2659733635300002 dan Desy Anggraeni NUPTK 6538 7566583000 23 guru SMK, beserta ratusan guru lainnya.
-            
-            Mohon perhatiannya. Terima kasih.
-            
-            
-            Dari Saut Sitorus, Ketua Asosiasi Guru Bersatu Tanjungbalai.',
-            'aspct'             => 'Program Studi',
+            'title'             => 'Pencairan Dana Sertifikasi Guru Tidak Pernah Tuntas',
+            'slugy'             => 'pencairan-dana-sertifikasi-guru-tidak-pernah-tuntas',
+            'exmpl'             => 'Dana guru tersertifikasi di Kota Samarinda, Kalimantan Timur yang belum dibayar adalah:
+                1. tahun 2010 satu bulan,
+                2. tahun 2011 dua bulan, dan
+                3. tahun 2012 akan dua bula
+                ',
+            'cntnt'             => 'Dana guru tersertifikasi di Kota Samarinda, Kalimantan Timur yang belum dibayar adalah:
+                1. tahun 2010 satu bulan,
+                2. tahun 2011 dua bulan, dan
+                3. tahun 2012 akan dua bulan yang tidak dibayar.
+                Informasi ini menurut Dinas Pendidikan Kota Samarinda. Mengapa pembayaran guru tersertifikasi tidak pernah tuntas?',
+            'aspct'             => 'Mata Kuliah',
             'unqid'             => Str::random(12),
             'rprtr'             => mt_rand(1,7)
         ]);
@@ -314,16 +326,6 @@ class DatabaseSeeder extends Seeder
             'aspct'             => 'Program Studi',
             'unqid'             => Str::random(12),
             'rprtr'             => mt_rand(1,7)
-        ]);
-        
-        Report::create([
-            'title'             => 'Sering Padam Lampu di Kebun Jeruk, Jakarta',
-            'slugy'             => 'sering-padam-lampu-di-kebun-jeruk-jakarta',
-            'exmpl'             => 'Saya Canra. Ingin melaporkan bahwa sering terjadi pemadam listrik Kebun Jeruk 17, Kelurahan Maphar, Kecamatan Tamansari, Jakarta Barat. Tolong ditinjau.',
-            'cntnt'             => 'Saya Canra. Ingin melaporkan bahwa sering terjadi pemadam listrik Kebun Jeruk 17, Kelurahan Maphar, Kecamatan Tamansari, Jakarta Barat. Tolong ditinjau.',
-            'aspct'             => 'Program Studi',
-            'unqid'             => Str::random(12),
-            'rprtr'             => 3
         ]);
 
         //ATTACHMENTS SEED

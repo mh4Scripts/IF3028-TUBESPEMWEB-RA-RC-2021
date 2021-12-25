@@ -141,7 +141,15 @@ class LaporController extends Controller
     }
 
     public function storeUpdate(Request $request, $id){
-        dd($request);
+        $updated_data = $request->validate([
+            "title"     => 'required|max:255',
+            "cntnt"     => 'required',
+            "aspct"     => 'required'
+        ]);
+
+        Report::where('id' , $id)->update($updated_data);
+
+        return redirect('/')->with('successUpdate', 'Laporan berhasil diubah!');
     }
 
     public function delete($id){
@@ -154,14 +162,6 @@ class LaporController extends Controller
         Report::destroy($report->id);
         return redirect('/')->with('successDelete', 'Laporan berhasil dihapus!');
     }
-
-
-
-
-
-
-
-
 
     public function about(){
         return view('templates/about',[

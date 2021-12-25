@@ -74,7 +74,7 @@
                 @auth
                     @if (auth()->user()->uname === $report->user->uname)
                         <div class="report-action">
-                            <a href="{{ route('update', $report->slugy) }}" target="_blank" class="editBtn"><h4>UBAH</h4></a>
+                            <a href="{{ route('update', $report->slugy) }}" class="editBtn"><h4>UBAH</h4></a>
                             <a class="deleteBtn" onclick="showDeleteModal()"><h4>HAPUS</h4></a>
                         </div>
                     @elseif($report->user->uname == "Anonim")

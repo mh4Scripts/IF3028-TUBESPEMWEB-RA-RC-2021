@@ -78,6 +78,15 @@
         </div>    
     @endif
 
+    @if(session()->has('successUpdate'))
+        <div class="AlertBG" id="Alert">
+            <div class="AlertContainer">
+                <h4>{{ session('successUpdate') }}</h4>
+                <span class="closeAlert" onclick="closeAlert()">&times;</span>
+            </div>        
+        </div>    
+    @endif
+
     @if(session()->has('successDelete'))
         <div class="AlertBG" id="Alert">
             <div class="AlertContainer">
