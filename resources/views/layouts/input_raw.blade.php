@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="/css/detail.css">
-    <title>SIMPLE LAPOR! | Detail Laporan </title>
+    <link rel="stylesheet" href="/css/input.css">
+
+    <title>SIMPLE LAPOR! | Buat Laporan</title>
 </head>
 <body>
 <div class="container">
@@ -12,12 +13,12 @@
     <div class="list">
 
         <div class="header">
-            <p>Detail Laporan {{ $posts->id }} </p>
+            <p>Buat Laporan Baru! </p>
             <a href="/">Kembali ke homepage</a>
         </div>
         <hr>
-        <div class="list-item">
-            @yield("list-content")
+        <div class="main">
+            @yield("main")
         </div>
     </div>
 </div>

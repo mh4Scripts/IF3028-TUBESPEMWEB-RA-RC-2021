@@ -2,7 +2,7 @@
 <html>
 <head>
     <link rel="stylesheet" href="/css/home.css">
-    <title>Utama Page</title>
+    <title>SIMPLE LAPOR! - A wishtle Blower Information System</title>
 </head>
 <body>
 <div class="container">
