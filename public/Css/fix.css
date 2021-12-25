@@ -175,7 +175,8 @@ option {
     float:right;
     background-color:#798e78;
     border: none;
-    padding: 16px 20px;
+    height: 50px;
+    width: 80px;
     color: white;
     cursor: pointer;
 }
@@ -280,6 +281,7 @@ h2{
     float:right;
     text-align: right;
     padding-right: 40px;
+
 }
 .edit:hover{
     color:#798e78c9;
@@ -305,5 +307,36 @@ h4{
 }
 
 .error{
-    font-size:12px;
+    color:red;
+    /* border: 2px solid red; */
+}
+
+.batal{
+    background-color:#d62d2d;
+    border: none;
+    height: 50px;
+    width: 80px;
+    color: white;
+    cursor: pointer;
+}
+
+.batal:hover{
+    background-color: #bb2626;
+}
+
+.lapor{
+    float:right;
+    background-color:#798e78;
+    border: none;
+    padding: 16px 20px;
+    color: white;
+    cursor: pointer;
+}
+
+.lapor:hover{
+    background-color: #6d7e6c;
+}
+
+a{
+    text-decoration:none;
 }

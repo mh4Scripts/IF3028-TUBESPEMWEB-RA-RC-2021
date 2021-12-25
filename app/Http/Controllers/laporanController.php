@@ -42,7 +42,8 @@ class laporanController extends Controller
             'judul' => 'required',
             'pesan' => 'required',
             'aspek' => 'required',
-            'file' => 'required|file|mimes:jpg,jpeg,png,doc, docx, xls, xlsx, ppt, pptx, pdf|max:204800'
+            'file' => 'required|file|max:4096'
+            // 'file' => 'required|file|mimes:xls, xlsx, ppt, pptx, pdf,doc, docx, jpg,jpeg,png|max:4096'
         ]);
 
         $file = $request-> file('file');
