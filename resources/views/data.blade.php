@@ -7,8 +7,15 @@
 
     <div class="list-lampiran">
         <p class="laporan-lampiran">Lampiran : <a href="{{ $posts->lampiran }}">{{ $posts->lampiran }}</a> </p>
-
-        <img src="{{ $posts->lampiran }}" width="300px" height="300px">
+        @if(str_contains($posts->lampiran, '.jpg'))         
+            <img  src="{{ $posts->lampiran }}" width="300px" height="300px">
+        @elseif(str_contains($posts->lampiran, '.pdf'))
+            <embed src="{{ $posts->lampiran }}" width="300px" height="300px">
+        @elseif(str_contains($posts->lampiran, '.doc'))
+            <embed src="{{ $posts->lampiran }}" width="300px" height="300px">
+        @else
+            <p>format tidak didukung</p>
+        @endif
     </div>
 
     <div class="laporan-footer">
