@@ -120,18 +120,30 @@ class PostController extends Controller
                 ]);
         }
     }
-    public function search()
+
+    public function search(Request $request)
     {
-        $post = Post::Latest();
+        $keyword = $request->search;
+        $posts = Post::where('judul', 'like', "%" . $keyword . "%")->paginate(5);
 
-        if (request('search')) {
-            $post->where('judul', 'like', '%' . request('search') . '%')
-                ->orWhere('pelapor', 'like', '%' . request('search') . '%')
-                ->orWhere('laporan', 'like', '%' . request('search') . '%');
-        }
-
-        return view('home_page', [
-            "posts" => Post::latest()->get()
-        ]);
+        return view('home_page', compact('posts'))->with('i', (request()->input('page', 1) - 1) * 5);
     }
+    // public function search()
+    // {
+    //     $posts = Post::Latest();
+
+    //     if (request('search')) {
+    //         $posts->where('judul', 'like', '%' . request('search') . '%')
+    //             ->orWhere('pelapor', 'like', '%' . request('search') . '%')
+    //             ->orWhere('laporan', 'like', '%' . request('search') . '%');
+    //     }
+
+    //     return view('home_page', [
+    //         'judul' => 'All posts',
+    //         'pelapor' => 'All posts',
+    //         'laporan' => 'All posts',
+    //         'aspek' => 'All posts',
+    //         'fileupload' => 'All posts'
+    //     ]);
+    // }
 }
