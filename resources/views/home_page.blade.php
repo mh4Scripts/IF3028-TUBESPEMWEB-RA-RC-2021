@@ -12,7 +12,7 @@
 
 <body>
     <h1>SIMPLE LAPOR!</h1>
-    <form class="search" action="/search">
+    <form class="searchbar" action="/search">
         <input type="text" placeholder="Search.." name="search" value=" {{request('search')}} ">
         <button type="submit" class=searchbutton>
             <img src="search.png">

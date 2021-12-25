@@ -39,7 +39,7 @@
             </div>
 
             <div class="hapuslaporan">
-                <a href="{{ route('hapus', $posts->id) }}">
+                <a href="{{ route('destroy', $posts->id) }}">
                     Hapus Laporan/Komentar
             </div>
         </div>

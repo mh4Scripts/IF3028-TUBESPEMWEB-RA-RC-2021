@@ -38,4 +38,4 @@ Route::put('/update/{id}', [PostController::class, 'update'])->name('update');
 Route::get('/search', [PostController::class, 'search'])->name('search');
 
 #route untuk hapus laporan
-Route::get('/hapus/{id}', [PostController::class, 'hapus'])->name('hapus');
+Route::get('/destroy/{id}', [PostController::class, 'destroy'])->name('destroy');

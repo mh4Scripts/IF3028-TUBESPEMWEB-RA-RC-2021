@@ -12,10 +12,6 @@ class PostController extends Controller
     public function index()
     {
         $posts = Post::latest()->get();
-        if (request('search')) {
-            $posts->where('judul', 'like', '%' . request('search') . '%')
-                ->orWhere('pelapor', 'like', '%' . request('search') . '%');
-        }
         return view('home_page', compact('posts'));
     }
 
@@ -105,25 +101,37 @@ class PostController extends Controller
         }
     }
 
-    public function hapus($id)
+    public function destroy($id)
     {
-        Post::hapus($post->id)->firstorFail();
+        $post = Post::findOrFail($id);
+        $post->delete();
 
-
-        return redirect()->route('index')->with('success', 'Laporan Telah Dihapus');
+        if ($post) {
+            return redirect()
+                ->route('home_page')
+                ->with([
+                    'success' => 'Post has been deleted successfully'
+                ]);
+        } else {
+            return redirect()
+                ->route('home_page')
+                ->with([
+                    'error' => 'Some problem has occurred, please try again'
+                ]);
+        }
     }
+    public function search()
+    {
+        $post = Post::Latest();
 
-    // public function search_bar()
-    // {
-    //     $post = Post::Latest();
+        if (request('search')) {
+            $post->where('judul', 'like', '%' . request('search') . '%')
+                ->orWhere('pelapor', 'like', '%' . request('search') . '%')
+                ->orWhere('laporan', 'like', '%' . request('search') . '%');
+        }
 
-    //     if (request('search')) {
-    //         $posts->where('judul', 'like', '%' . request('search') . '%')
-    //             ->orWhere('pelapor', 'like', '%' . request('search') . '%');
-    //     }
-
-    //     return view('home_page', [
-    //         "posts" => Post::latest()->get()
-    //     ]);
-    // }
+        return view('home_page', [
+            "posts" => Post::latest()->get()
+        ]);
+    }
 }
