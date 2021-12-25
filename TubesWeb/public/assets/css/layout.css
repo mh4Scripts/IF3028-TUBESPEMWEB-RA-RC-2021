@@ -281,3 +281,8 @@ img{
 
   /* end modal delete */
   
+.magnify{
+    width: 20px;
+    height : 20px;
+    align-items: center;
+}

@@ -6,7 +6,7 @@
     <div class="col-10 center">
         <form action="{{route('search')}}" method="get" id="form" name="form" enctype="multipart/form-data">
             @csrf
-            <input name="laporan" type="text"> <button class="cari">Cari</button>
+            <input name="laporan" type="text"> <button class="cari">Cari <img class="magnify" src="{{asset('assets/images/search.png')}}" alt=""></button>
         </form>
     </div>
     <div class="col-1"></div>
@@ -14,7 +14,7 @@
 
 <div class="row">
     <div class="col-12 center">
-        <p><a href="{{route('report.create')}}">Buat Laporan/Komentar</a> </p>
+        <p><a href="{{route('report.create')}}">Buat Laporan/Komentar <b>+</b></a> </p>
     </div>
 </div>
 
@@ -44,7 +44,7 @@
         <p>Lampiran : {{$report->lampiran}}</p>
     </div>
     <div class="col-5 right">
-        <p>waktu : {{date('d-m-Y H:i', strtotime($report->created_at))}} &ensp; <a href="{{route('report.show', $report->id)}}">Lihat Selengkapnya</a></p>
+        <p>waktu : {{date('d-m-Y H:i', strtotime($report->created_at))}} &ensp; <a href="{{route('report.show', $report->id)}}"><b>Lihat Selengkapnya ></b></a></p>
     </div>
     <div class="col-1"></div>
 </div>
