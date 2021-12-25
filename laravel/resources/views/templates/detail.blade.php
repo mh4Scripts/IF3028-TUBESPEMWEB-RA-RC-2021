@@ -1,6 +1,24 @@
 @extends('master.master')
 
 @section('content')
+    @if(session()->has('actionAccess'))
+        <div class="AlertBG" id="Alert">
+            <div class="AlertContainer">
+                <h4>{{ session('actionAccess') }}</h4>
+                <span class="closeAlert" onclick="closeAlert()">&times;</span>
+            </div>        
+        </div>
+    @endif
+    
+    @if(session()->has('falseCode'))
+        <div class="AlertBG" id="SizeAlert">
+            <div class="AlertContainer Size-Warning-Alert">
+                <h4>{{ session('falseCode') }}</h4>
+                <span class="closeAlert" onclick="closeSizeAlert()">&times;</span>
+            </div>        
+        </div>
+    @endif
+
     <div class="show-report-detail">
         <div class="detail-header">
             <div class="report-title">
@@ -47,31 +65,64 @@
                     <div class="jalan-ninjaKu"><h4>{{ $report->aspct }}</h4></div>
                 </div>
             </div>
-            <div class="report-action">
-                <a href="{{ route('update') }}" target="_blank" class="editBtn"><h4>UBAH</h4></a>
-                <a href="" target="_blank" class="deleteBtn"><h4>HAPUS</h4></a>
-                {{-- @auth
-                    @if (auth()->user()->uname == $report->user->uname)
+            @if(session()->has('actionAccess'))
+                <div class="report-action">
+                    <a href="{{ route('update', $report->slugy) }}" class="editBtn"><h4>UBAH</h4></a>
+                    <a class="deleteBtn" onclick="showDeleteModal()"><h4>HAPUS</h4></a>
+                </div>
+            @else
+                @auth
+                    @if (auth()->user()->uname === $report->user->uname)
+                        <div class="report-action">
+                            <a href="{{ route('update', $report->slugy) }}" target="_blank" class="editBtn"><h4>UBAH</h4></a>
+                            <a class="deleteBtn" onclick="showDeleteModal()"><h4>HAPUS</h4></a>
+                        </div>
+                    @elseif($report->user->uname == "Anonim")
+                        <div class="request-code">
+                            <h5 class="action-description">Masukkan kode untuk ubah atau hapus</h5>
+                            <form class="mini-form" action="{{ route('cekkode', $report->id ) }}" method="post">
+                                @csrf
+                                <input class="mini-form-input" type="text" name="uniqID" id="uniqID">
+                                <button class="mini-form-btn" type="submit">Proses</button>
+                            </form>    
+                        </div>
                     @else
-                        <h4>Anda bukan pembuat laporan ini</h4>
-                        <h1>
-                            ERROR
-                        </h1>
+                        <h4>Anda Bukan Pembuat Laporan ini</h4>
                     @endif
                 @else
-                    <h4>Masukkan kode</h4>
-                    <h1>
-                        ERROR
-                    </h1>
-                @endauth --}}
+                    <div class="request-code">
+                        <h5 class="action-description">Masukkan kode untuk ubah atau hapus</h5>
+                        <form class="mini-form" action="{{ route('cekkode', $report->id ) }}" method="post">
+                            @csrf
+                            <input class="mini-form-input" type="text" name="uniqID" id="uniqID">
+                            <button class="mini-form-btn" type="submit">Proses</button>
+                        </form>    
+                    </div>
+                @endauth
+            @endif
+            
                     
-            </div>
         </div>
     </div>
 @endsection
 
-@if ($report->attachment->count() > 0)
-    @section('additional-element')
+@section('additional-element')
+    <div class="DeleteModalBG" id="DeleteModal">
+        <div class="DeleteModalContainer">
+            <div class="DeleteModalHeader">
+                <span class="closeDeleteModal" onclick="closeDeleteModal()">&times;</span>
+                <h2>Konfirmasi Penghapusan</h2>
+            </div>
+            <div class="DeleteModalContent">
+                <h3>Anda yakin akan menghapus laporan ini?</h3>
+            </div>
+            <div class="DeleteModalFooter">
+                <a class="canceldeleteButton" onclick="closeDeleteModal()">Batal</a>
+                <a class="deleteButton"  href="{{ route('delete', $report->id ) }}">Hapus</a>
+            </div>
+        </div>
+    </div>
+    @if ($report->attachment->count() > 0)
         {{-- SHOW ATTACHMENT MODAL --}}
         <div class="AttModalBG" id="AttModal">
             <div class="AttModalContainer">
@@ -96,8 +147,8 @@
                 @endfor
             </div>
         </div>
-    @endsection
-@endif
+    @endif
+@endsection
 
 
 @section('main-script')

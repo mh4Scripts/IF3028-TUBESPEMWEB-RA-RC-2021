@@ -78,6 +78,14 @@
         </div>    
     @endif
 
+    @if(session()->has('successDelete'))
+        <div class="AlertBG" id="Alert">
+            <div class="AlertContainer">
+                <h4>{{ session('successDelete') }}</h4>
+                <span class="closeAlert" onclick="closeAlert()">&times;</span>
+            </div>        
+        </div>    
+    @endif
     
     {{-- NAV HEADER --}}
     <header>

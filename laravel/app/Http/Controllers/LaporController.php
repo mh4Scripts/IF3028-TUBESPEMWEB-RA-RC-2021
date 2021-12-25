@@ -71,13 +71,15 @@ class LaporController extends Controller
         }
     }
     
-    public function create(){
+    public function create()
+    {
         return view('templates.create',[
             "title"     => "Buat Laporan"
         ]);
     }
 
-    public function store(Request $request){
+    public function store(Request $request)
+    {
         $validated_data = $request->validate([
             "title"     => 'required|max:255',
             "slugy"     => 'required|unique:reports',
@@ -113,6 +115,45 @@ class LaporController extends Controller
         }
     }
 
+    public function CekKode(Request $request, $report_id)
+    {
+        $report = Report::firstWhere('id', $report_id);
+
+        if ($request['uniqID'] == $report['unqid'])
+        {
+            // return redirect('/')->with('successReg', 'Akun ada berhasil dibuat.');
+            return redirect()->route('detail', $report->slugy)->with('actionAccess', 'Silakan melakukan perubahan.');
+        }
+
+        else
+        {
+            return back()->with('falseCode', 'Kode yang anda masukkan salah!');
+        }
+    }
+
+    public function update($slugy)
+    {
+        $report = Report::firstWhere('slugy', $slugy);
+        return view('templates/update',[
+            "title"         => "Ubah Laporan",
+            "report"        => $report
+        ]);
+    }
+
+    public function storeUpdate(Request $request, $id){
+        dd($request);
+    }
+
+    public function delete($id){
+        $report = Report::firstWhere('id', $id);
+        $attachments = Attachment::where('rp_id' , $report->id)->get();
+        foreach($attachments as $attachment)
+        {
+            Attachment::destroy($attachment->id);
+        }
+        Report::destroy($report->id);
+        return redirect('/')->with('successDelete', 'Laporan berhasil dihapus!');
+    }
 
 
 

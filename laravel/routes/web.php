@@ -36,9 +36,28 @@ Route::post('/daftar-akun',                 'App\Http\Controllers\RegisterContro
 // ----------------------------------- TAMPIL SEMUA DATA, BERDASARKAN ASPEK, DAN TAMPIL DETAIL -----------------------------------
 // -------------------------------------------------------------------------------------------------------------------------------
 // |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
-Route::get('/semua-laporan',                'App\Http\Controllers\LaporController@show'             ) ->name('show');
-Route::get('/semua-laporan/{aspect}',       'App\Http\Controllers\LaporController@showAspect'       );
-Route::get('/detail-laporan/{slugy}',       'App\Http\Controllers\LaporController@detail'           ) ->name('detail');
+Route:: get('/semua-laporan',               'App\Http\Controllers\LaporController@show'             ) ->name('show');
+Route:: get('/semua-laporan/{aspect}',      'App\Http\Controllers\LaporController@showAspect'       );
+Route:: get('/detail-laporan/{slugy}',      'App\Http\Controllers\LaporController@detail'           ) ->name('detail');
+Route::post('/detail-laporan/{id}',         'App\Http\Controllers\LaporController@CekKode'          ) ->name('cekkode');
+
+
+
+// |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+// -------------------------------------------------------------------------------------------------------------------------------
+// -------------------------------------------------------- UPDATE LAPORAN -------------------------------------------------------
+// -------------------------------------------------------------------------------------------------------------------------------
+// |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+Route::get ('/update-laporan/{slugy}',      'App\Http\Controllers\LaporController@update'           ) ->name('update');
+Route::post('/update-laporan/{id}',         'App\Http\Controllers\LaporController@storeUpdate'      ) ->name('storeUpdate');
+
+
+// |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+// -------------------------------------------------------------------------------------------------------------------------------
+// -------------------------------------------------------- DELETE LAPORAN -------------------------------------------------------
+// -------------------------------------------------------------------------------------------------------------------------------
+// |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+Route::get ('/hapus-laporan/{id}',          'App\Http\Controllers\LaporController@delete'           ) ->name('delete');
 
 
 
@@ -89,11 +108,6 @@ Route::get ('/about-lapor',                 'App\Http\Controllers\LaporControlle
 
 
 
-Route::get('/update-laporan', function () {
-    return view('templates/update', [
-        'title' => 'Ubah Laporan'
-    ]);
-})->name('update');
 
 
 // Route::get('/masuk', function () {

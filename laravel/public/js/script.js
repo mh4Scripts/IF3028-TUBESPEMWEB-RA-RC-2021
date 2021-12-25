@@ -93,8 +93,6 @@ window.onclick = function(event) {
     }
 }
 
-
-
 // ----------------------------------------
 // ---------- SHOW ATTACHMENT -------------
 // ----------------------------------------
@@ -188,6 +186,13 @@ function Send_Att_Data(Att_Data){
     showAttModal(1);
 
 }
+
+
+
+// ----------------------------------------
+// ----------- CLOSE ALERT ----------------
+// ----------------------------------------
+
 function closeAlert(){
     document.getElementById("Alert").style.display = "none";
 }
@@ -196,6 +201,26 @@ window.addEventListener("click", function(e){
         return closeAlert();
     }
 });
+
+function closeSizeAlert(){
+    document.getElementById("SizeAlert").style.display = "none";
+}
+window.addEventListener("click", function(e){
+    if (e.target == document.getElementById("SizeAlert")) {
+        return closeSizeAlert();
+    }
+});
+
+// ----------------------------------------
+// ---------- SHOW ATTACHMENT -------------
+// ----------------------------------------
+function showDeleteModal(){
+    document.getElementById("DeleteModal").style.display = "block";
+}
+function closeDeleteModal(){
+    document.getElementById("DeleteModal").style.display = "none";
+}
+
 
 
 // ----------------------------------------

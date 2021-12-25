@@ -1,6 +1,13 @@
 @extends('master.master')
 
 @section('content')
+    <div class="AlertBG" id="SizeAlert">
+        <div class="AlertContainer Size-Warning-Alert" style="display: none">
+            <h4>File sudah melebihi batas ukuran, mohon hapus beberapa file</h4>
+            <span class="closeAlert" onclick="closeSizeAlert()">&times;</span>
+        </div>        
+    </div>
+
     <div class="create-report">
         <div class="form-card-header">
             <h1>Laporan Baru</h1>
@@ -30,13 +37,15 @@
                 </div>
                 <div class="row">
                     {{-- onkeyup="validateTitle()" --}}
-                    <input  class="input-text" type="text" name="title" id="title"  onfocusout="createSlug()" placeholder="Ketikkan judul laporan anda" autocomplete="off">
+                    <input  class="input-text invalid" type="text" name="title" id="title"  onfocusout="createSlug()" placeholder="Ketikkan judul laporan anda" autocomplete="off">
+                    
                     <input type="hidden" name="slugy" id="slugy">
                 </div>
                 <div class="row pos-relative">
                     <textarea class="input-text-area" name="cntnt"   id="cntnt"></textarea>
                     <span     class="textarea"        role="textbox" id="Report_Content" onfocusout="inputReportContent()" contenteditable></span>
                     <input type="hidden" name="exmpl" id="exmpl">
+                    <div  class="rt-error-message rc" id="ContentErrorMessage"></div>
                 </div>
                 <div class="row">
                     <select class="input-select-option" name="aspct" id="aspct">
@@ -48,7 +57,7 @@
                 </div>
                 <div class="input-file-container" id="Input_File_Container">
                     <input class="inputFile" type="file" name="attachments[]" id="attach" multiple>
-                    <label class="input-file" for="attach">UNGGAH LAMPIRAN (MAX 1 MB)</label>                                    
+                    <label class="input-file" for="attach">UNGGAH LAMPIRAN (MAX 2 MB) <span><h5>Coba Pilih Satu File Beberapa Kali</h5></span> </label>                                    
                     <div class="files-Preview-Area" id="files_Area"></div>
                 </div>
                 <div class="row">

@@ -75,6 +75,7 @@ h6    { font-size :  8px;}
     overflow                : hidden;
     resize                  : none;
     min-height              : 400px;
+    padding-bottom          : 50px;
   }
 .textarea[contenteditable]:empty::before {
     content                 : "Ketikkan isi laporan anda (coba isikan paragraf yang melebihi ukuran kotak)";
@@ -184,6 +185,14 @@ h6    { font-size :  8px;}
 .login-rt-error-message,
 .login-error-message{
     max-width               : 100%;
+}
+.rc{
+    right                   : 20px;
+    left                    : auto;
+    bottom                  : 25px  !important;
+    top                     : auto;
+    max-width               : 100%;
+    padding                 : 3px 5px;
 }
 /* ------------------------------------ */
 /* -------- UPPER BACKGROUND ---------- */
@@ -781,8 +790,6 @@ footer{
     background-color        : #FFFFFF;
     padding                 : 20px;
     box-shadow              : 0px 0px 30px 2px rgba(0, 0, 0, 0.1);
-
-    min-height              : 600px;
 }
 /* LEVEL 1 (1) */
 .detail-header{
@@ -902,6 +909,7 @@ footer{
 .editBtn{
     margin                  : 10px;
     padding                 : 10px 20px;
+    cursor                  : pointer;
 }
 .deleteBtn{
     background-color        : #E91111;
@@ -916,6 +924,55 @@ footer{
 .editBtn:hover{
     background-color        : #F7801EBE;
     transform               : translateY(1px);
+}
+.action-description{
+    font-size               : 16px;
+}
+.request-code{
+    display                 : flex;
+    flex-direction          : column;
+    justify-content         : space-evenly;
+}
+.mini-form{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.mini-form-input{
+    font-family             : "Abel";
+    display                 : block;
+    padding                 : 0.375rem 0.75rem;
+    font-size               : 14px;
+    font-weight             : 500;
+    color                   : #333333;
+    background-color        : #F5F5F5;
+    background-clip         : padding-box;
+    border                  : solid 0.5px rgb(255, 255, 255);
+    outline                 : none;
+}
+.mini-form-input:hover{
+    border                  : solid 0.5px #B41E1E88;
+}
+.mini-form-input:focus{
+    box-shadow              : 0px 0px 1px 1px rgba(255, 0, 0, 0.4);
+    border                  : solid 0.5px #B41E1E;
+}
+.mini-form-btn{
+    display                 : inline-block;
+    background-color        : #B41E1E;
+    color                   : #FFFFFF;
+    width                   : 80px;
+    font-family             : "Archivo-Black";
+    font-weight             : 400;
+    padding                 : 0.25rem 0.75rem;
+    text-align              : center;
+    vertical-align          : middle;
+    border                  : none;
+    font-size               : 14px;
+    cursor                  : pointer;
+}
+.mini-form-btn:hover{
+    background-color        : #B41E1E95;
 }
 
 
@@ -1137,7 +1194,7 @@ footer{
 /* ------------------------------------ */
 /* ------ DATA ATTACHMENT MODAL ------- */
 /* ------------------------------------ */
-.AlertBG, .AttModalBG, .LoginModalBG{
+.AlertBG, .AttModalBG, .LoginModalBG, .DeleteModalBG{
     position                : fixed;
     left                    : 0;
     top                     : 0;
@@ -1150,6 +1207,13 @@ footer{
     background-color        : rgba(0,0,0,0.4); 
     overflow                : auto; 
 }
+.DeleteModalBG{
+    z-index                 : 7; 
+    background-color        : rgb(0,0,0);
+    background-color        : rgba(0,0,0,0.1); 
+    display                 : none;
+    overflow                : hidden; 
+}
 .AlertBG{
     z-index                 : 7; 
     background-color        : rgb(0,0,0);
@@ -1161,33 +1225,81 @@ footer{
     display                 : none;
     padding-top             : 20px; 
 }
-.AttModalContainer, .LoginModalContainer{
+.DeleteModalContainer, .AttModalContainer, .LoginModalContainer{
     position                : relative;
     width                   : 574px;
     margin                  : auto;
     background-color        : #FFFFFF;
 }
-.AttModalHeader{
+.DeleteModalContainer{
+    margin-top              : 200px;
+    background-color        : #FFFFFF;
+    width                   : 400px;
+    box-shadow              : 0px 0px 5px 1px rgba(0, 0, 0, 0.4);
+    font-weight             : 400;
+    color                   : #585858;
+}
+.DeleteModalHeader, .AttModalHeader{
     text-align              : left;
     padding                 : 10px;
     color                   : #333333;
     border-bottom           : solid 3px #B41E1E;
 }
-.closeAttModal {
+.closeDeleteModal, .closeAttModal {
     float                   : right;
     font-size               : 24px;
     font-weight             : 700;
 }
+.closeDeleteModal{
+    font-size               : 42px;
+}
+.closeDeleteModal:hover,
 .closeAttModal:hover,
 .closeAttModal:focus {
     color                   : rgb(180, 30, 30);
     text-decoration         : none;
     cursor                  : pointer;
 }
-.AttModalContent{
+.DeleteModalContent, .AttModalContent{
     display                 : flex;
     flex-direction          : row;
     padding                 : 20px 10px;
+}
+.DeleteModalContent{
+    padding                 : 40px 10px !important;
+}
+.DeleteModalFooter{
+    display                 : flex;
+    flex-direction          : row;
+    justify-content         : space-between;
+    padding                 : 20px 10px;
+    border-top              : solid 3px #B41E1E;
+}
+.canceldeleteButton, .deleteButton{
+    text-decoration         : none;
+    font-family             : "Abel";
+    font-weight             : 400;
+    cursor                  : pointer;
+    width                   : auto;
+    color                   : #FFFFFF;
+    font-size               : 24px;
+    padding                 : 5px 0;
+    transition              : 0.3s ease;
+    user-select             : none;
+    width                   : 100px;
+    text-align              : center;
+} 
+.canceldeleteButton{
+    background-color        : rgb(45, 53, 45);
+} 
+.canceldeleteButton:hover{
+    background-color        : rgb(62, 77, 62);
+}
+.deleteButton{
+    background-color        : rgb(201, 52, 52);
+}
+.deleteButton:hover{
+    background-color        : #B41E1E;
 }
 .imagesContainer{
     width                   : 554px;
@@ -1254,7 +1366,7 @@ footer{
     transition          : background-color 0.6s ease;
 }
 .activeDot, .imageDot:hover {
-    background-color    : #B41E1E;
+    background-color            : #B41E1E;
   }
 .fade {
     -webkit-animation-name      : fade;
@@ -1526,6 +1638,7 @@ footer{
     flex-direction          : row;
     justify-content         : space-between;
 }
+.Size-Warning-Alert,
 .Warning-Alert{
     background-color        : #881c1c;
     margin-top              : 50px;

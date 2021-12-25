@@ -95,7 +95,7 @@
                                     <span class="createinfo">
                                         Oleh :
                                     </span>
-                                    {{ $report->user->name }}
+                                    {{ $report->user->uname }}
                                 </h5>
                             </div> 
                         </div>
