@@ -111,7 +111,7 @@ instalasi framework laravel
 
 Koneksi database
 pada laravel koneksi database dikonfigurasi pada file ".env" dengan menyesuaikan nama database, nama host, password serta jenis database yang digunakan
-untuk pembuatan table pada databasenya sendiri dapat menggunakan artisan migration
+untuk pembuatan table pada databasenya sendiri dapat menggunakan artisan migration. Database yang digunakan adalah SQL.
 
 cara menjalankan
 1. git clone "https://github.com/mbagas/IF3028-TUBESPEMWEB-RA-RC-2021.git"
@@ -130,6 +130,11 @@ cara menjalankan
 - untuk melihat model dapat dilakukan pada app/models
 - untuk melihat images, css dan js dapat dilakukan pada public/assets
 - untuk melihat halaman dapat dilakukan pada resource/views
+
+Validasi dengan JS
+- memastikan tidak ada field yang kosong
+- memastikan laporan lebih dari 20 kata
+- jika terdapat field kosong atau laporan kurang dari 20 kata maka akan menampilkan alert beserta pesan
 
 ### Knowledge
 Untuk meringankan beban tugas ini, ada berberapa keyword yang bisa anda cari untuk menyelesaikan tugas ini.
