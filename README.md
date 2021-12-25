@@ -109,7 +109,7 @@ A. instalasi framework :
 1. install composer php
 2. bukan CMD/terminal dan arahkan folder yang ingin dijadikan project laravel nya 
 3. ketik command 
-      composer create-project --prefer-dist laravel/laravel nama_projectmu
+   composer create-project --prefer-dist laravel/laravel nama_projectmu
 pada cmd
 4. Tunggu instalasi sampai selesai
 5. ketik command 
@@ -118,6 +118,7 @@ pada CMD, jika sudah muncul ip address maka framework bisa digunakan
 <br>
 
 Untuk menggunakannya pada framework, file .env disetting terlebih dahulu seperti berikut:
+
       DB_CONNECTION=sqlite
       DB_FOREIGN_KEYS=true
       # DB_CONNECTION=mysql
@@ -126,9 +127,11 @@ Untuk menggunakannya pada framework, file .env disetting terlebih dahulu seperti
       # DB_DATABASE=laravel
       # DB_USERNAME=root
       # DB_PASSWORD=
+          
 hanya memakai yang tidak di comment
 
 migrasi ke database dengan perintah
+
       php artisan migrate
 
 B. Melakukan validasi pada client-side Validasi menggunakan javascript dengan cara embedded    pada file create dan editLaporan pada folder views. Pada embedded script menggunakan Document Object Model (DOM) untuk mengambil class dan id. Kemudian menggunakan fungsi addEventListener yang akan mentrigger ketika button submit pada form diklik. Javascript akan mengecek value yang terdapat pada tag input dan akan menampilkan pesan error menggunakan innerHTML jika tidak sesuai.
