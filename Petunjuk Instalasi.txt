@@ -1,0 +1,11 @@
+cara menjalankan
+
+- git clone "https://github.com/mbagas/IF3028-TUBESPEMWEB-RA-RC-2021.git"
+- buat database dengan nama "tubes_pemweb"
+- buka git bash pada folder tubesweb
+- ketik pada git bash "composer update"
+- ketik pada git bash "git checkout main"
+- ketik pada git bash "php artisan key:generate"
+- ketik pada git bash "php artisan migrate" untuk memasukan table pada database atau dengan mengimpor file sql yang bernama "tubes_pemweb" yang tertera
+- ketik pada git bash "php artisan serve" untuk menjalankan server laravel
+- buka browser dengan url http://127.0.0.1:8000
