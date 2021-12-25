@@ -9,7 +9,9 @@ di program studi teknik informatika ITERA.
 **Luangkan waktu untuk membaca spesifikasi ini sampai selesai.** :kissing_heart:
 
 ### Anggota Tim :cyclone:
-Project dikerjakan secara **berkelompok** dengan maksimal jumlah anggota adalah 2-3 orang mahasiswa (maksimal 3 orang mahasiswa!).
+Muhammad Aldito Rizki 119140170 <br>
+Dhia Fahmi Ghufron 119140216  <br>
+Ahmad Aldi Setiawan 119140090 <br>
 
 ### Petunjuk Pengerjaan :umbrella:
 1. Fork pada repository ini dengan akun github anda.
@@ -99,18 +101,28 @@ Validasi **wajib** dilakukan pada *client-side*, dengan menggunakan **javascript
 Pengguna dapat mencari laporan/komentar dengan melakukan search ke `isi laporan/komentar`.
 
 ### Penjelasan Teknis
-`Silakan isi bagian ini dengan penjelasan anda, sesuai Petunjuk Pengerjaan di atas.`
+A. Instalasi Framework
+1. Instal composer menggunakan command "composer create-project codeigniter4/appstarter --no-dev" di terminal
+2. Instal CI menggunakan composer dengan command "create-project codeigniter4/appstarter  namaproject --no-dev" di terminal
+3. Lakukan file zip diekstrak di htdocs pada folder xamppp di Data(C:\).
+4. Setelah itu, lakukan konfigurasi CI dengan membuat tampilan sesuai dengan spesifikasi tugas besar.
+
+B. Koneksi Basis Data
+1. Menggunakan file .env dengan menghilangkan tanda pagar di line 52 - 56 (
+database.default.hostname, database.default.database, dst.)
+2. Ketika sudah dihilangkan tanda pagarnya, maka isikan value berdasarkan database yang digunakan. Pada kasus ini, kami menggunakan hostname = localhost, database = lapor, username = root, password ="", DBDriver = MySQLi
 
 ### Knowledge
 Untuk meringankan beban tugas ini, ada berberapa keyword yang bisa anda cari untuk menyelesaikan tugas ini.
 - CSS: margin, padding, header tag, font-size, text-align, float, clear, border, color, div, span, placeholder, 
 anchor tag.
 - Javascript : XMLHTTPRequest.
-- PHP OOP
+- PHP Framework : [Codeigniter](https://codeigniter.com/en/docs), [Laravel](https://laravel.com/docs/6.x) dll.
 - SQL query: SELECT, INSERT, UPDATE, DELETE, WHERE, operator LIKE.
 
 :telephone: Jika ada pertanyaan silakan tanyakan lewat `Asisten`.
 
 ### About :honeybee:
 
-Dosen       : Andre Febrianto, S.Kom., M.Eng., Amirul Iqbal, S.Kom., M.Eng., Muhammad Habib Algifari, S.Kom., M.T.I.
+Dosen       : Dicky Prima Satya, M.T., Andre Febrianto, S.Kom., M.Eng., Amirul Iqbal, S.Kom., M.Eng.
+
