@@ -58,7 +58,7 @@ class Home extends CI_Controller
 	public function ubah($id){
 		
 		//validasi form
-		$this->form_validation->set_rules('isi', 'Isi', 'required|min_length[250]');
+		$this->form_validation->set_rules('isi', 'Isi', 'required|min_length[20]');
 		if($this->form_validation->run() == FALSE){
 			$data['aspek'] = ['Dosen','Staff','Mahasiswa','Infrastruktur','Pengajaran'];
 			$data['lapor'] = $this->Lapor_model->detail($id);
@@ -69,7 +69,7 @@ class Home extends CI_Controller
 			$this->Lapor_model->ubah($id);
 			echo "
 				<script>
-					alert('berhasil update data');
+					alert('Berhasil Update Data');
 					document.location.href='../';
 				</script>
 				";
