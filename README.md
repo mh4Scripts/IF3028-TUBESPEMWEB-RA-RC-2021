@@ -3,19 +3,21 @@
 Berikut adalah penjelasan tentang Tugas Besar kami,
 **berisi langkah instalasi dan penjelasan singkat fitur.**
 
-### Anggota Tim :raising_hand_man:
+### Anggota Tim :raising_hand_man: :raising_hand_man:
 1. 118140037 - Markus Togi Fedrian Rivaldi Sinaga
 2. 119140086 - Gusti Hafizah Nurrahmah
 3. 119140109 - Muhammad Farhan Andani
 
-### Petunjuk Pengerjaan :umbrella:
-1. Fork pada repository ini dengan akun github anda.
-2. Silakan commit pada repository anda (hasil fork). Lakukan berberapa commit dengan pesan yang bermakna,
+### Petunjuk Instalasi
+1. Disarankan Menggunakan Visual Studio Code
+2. Install terlebih dahulu composer di komputer anda
+   - Dapat diunduh dari : https://getcomposer.org/
+3. Silakan commit pada repository anda (hasil fork). Lakukan berberapa commit dengan pesan yang bermakna,
 contoh: fix css, membuat post done, jangan seperti final, benerin dikit, oke deh, update deh dll. 
 Disarankan untuk tidak melakukan commit dengan perubahan yang besar karena akan mempengaruhi 
 penilaian (contoh: hanya melakukan satu commit kemudian dikumpulkan).
-3. Minimal commit sebanyak personil anggota tim dengan masing-masing personil tim melakukan commit sesuai dengan kesepakatan tim, penilaian individu akan dilihat.
-4. Ubah **Penjelasan Teknis** pada bagian bawah readme.md ini dengan menjelaskan bagaimana cara anda:
+4. Minimal commit sebanyak personil anggota tim dengan masing-masing personil tim melakukan commit sesuai dengan kesepakatan tim, penilaian individu akan dilihat.
+5. Ubah **Penjelasan Teknis** pada bagian bawah readme.md ini dengan menjelaskan bagaimana cara anda:
    - Instalasi Framework, Koneksi basis data 
    - Melakukan validasi pada client-side
    - Melakukan AJAX (mulai dari pengguna melakukan klik pada tombol LAPOR! sampai laporan/komentar terkirim).
