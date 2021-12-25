@@ -24,14 +24,13 @@
 <body>
     @yield('additional-BG')
 
-    
     @if(session()->has('successReg'))
         <div class="AlertBG" id="Alert">
             <div class="AlertContainer">
                 <h4>{{ session('successReg') }}</h4>
                 <span class="closeAlert" onclick="closeAlert()">&times;</span>
             </div>        
-        </div>    
+        </div>
     @endif
 
     @if(session()->has('LoginError'))
@@ -65,6 +64,15 @@
         <div class="AlertBG" id="Alert">
             <div class="AlertContainer">
                 <h4>{{ session('logoutSuccess') }}</h4>
+                <span class="closeAlert" onclick="closeAlert()">&times;</span>
+            </div>        
+        </div>    
+    @endif
+
+    @if(session()->has('successReport'))
+        <div class="AlertBG" id="Alert">
+            <div class="AlertContainer">
+                <h4>{{ session('successReport') }}</h4>
                 <span class="closeAlert" onclick="closeAlert()">&times;</span>
             </div>        
         </div>    
@@ -105,7 +113,8 @@
                         </div>
                     </div>
                     <div class="user-profile-picture">
-                        <img src="{{ auth()->user()->prof_pic }}" alt="">
+                        {{-- {{ asset('media/icons/speaker.png') }} --}}
+                        <img src="{{ asset('/'. auth()->user()->prof_pic) }}" alt="">
                     </div>
                 @else
                     <a class="userLog" id="clickLogin" onclick="showLoginModal()"><h3>Masuk</h3></a>
@@ -125,14 +134,14 @@
                 <div class="footer-content">
                     <h4>Tim pengembang</h4>
                     <div class="content-footer-content">
-                        <a href="" target="_blank" data-title="Markus Togi">
-                            <img class="PP" src="{{ asset('media/images/Pasfoto_Togi.jpg') }}" alt="">
+                        <a href="https://github.com/Gusti119140086" target="_blank" data-title="Gusti Hafizah">
+                            <img class="PP" src="{{ asset('media/profile_pictures/Pasfoto_Gusti.jpg') }}" alt="">
                         </a>
-                        <a href="" target="_blank" data-title="Gusti Hafizah">
-                            <img class="PP" src="{{ asset('media/images/Pasfoto_Gusti.jpg') }}" alt="">
+                        <a href="https://github.com/MarkusTogi24" target="_blank" data-title="Markus Togi">
+                            <img class="PP" src="{{ asset('media/profile_pictures/Pasfoto_Togi.jpg') }}" alt="">
                         </a>
-                        <a href="" target="_blank" data-title="Muhammad Farhan">
-                            <img class="PP" src="{{ asset('media/images/Anonim.jpg') }}" alt="">
+                        <a href="https://github.com/farhanandani" target="_blank" data-title="Muhammad Farhan">
+                            <img class="PP" src="{{ asset('media/profile_pictures/Pasfoto_Farhan.jpg') }}" alt="">
                         </a>
                     </div>
                 </div>

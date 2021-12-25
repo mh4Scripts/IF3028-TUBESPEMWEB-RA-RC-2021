@@ -2,18 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Attachment;
 use App\Models\Report;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
+use Illuminate\Auth\Events\Validated;
 use Illuminate\Support\Facades\Response;
 
-
-// use Illuminate\Support\Facades\DB;
-// use Illuminate\Validation\Rule;
-// use Exception;
-// use Carbon\Carbon;
-// use Illuminate\Support\Facades\Mail;
-// use App\Mail\MailLapor;
-// use Illuminate\Support\Facades\Storage;
 
 class LaporController extends Controller
 {
@@ -82,8 +78,39 @@ class LaporController extends Controller
     }
 
     public function store(Request $request){
-        dd($request);
-        // dd($request['report_as']);
+        $validated_data = $request->validate([
+            "title"     => 'required|max:255',
+            "slugy"     => 'required|unique:reports',
+            "cntnt"     => 'required',
+            "aspct"     => 'required'
+        ]);
+
+        $validated_data['exmpl']      = Str::limit($validated_data['cntnt'], 170, '');
+        
+        if($request['rprtr'] == null){
+            $validated_data['rprtr']  = 1;
+        }else{
+            $validated_data['rprtr']  = $request['rprtr'];
+        }
+
+        $validated_data['unqid']      = Str::random(12);
+
+        $report = Report::create($validated_data);
+
+        if($request->hasfile('attachments'))
+        {
+            foreach($request->file('attachments') as $file)
+            {
+                $attachment['lcate'] = $file->store('public/files');
+                $attachment['rp_id'] = $report->id;
+                Attachment::create($attachment);
+            }
+            return redirect('/')->with('successReport', 'Laporan berhasil dikirim!');
+        }
+        else
+        {
+            return redirect('/')->with('successReport', 'Laporan berhasil dikirim!');
+        }
     }
 
 

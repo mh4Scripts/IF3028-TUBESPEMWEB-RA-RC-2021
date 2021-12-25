@@ -17,10 +17,8 @@
         </div>
         <div class="detail-body">
             <div class="report-content">
-                {{-- {!! nl2br(e($lapor->content)) !!} --}}
                 <p id="ReportContent">
                     {!! nl2br(e($report->cntnt)) !!}
-                    {{-- {{ $report->cntnt }} --}}
                 </p>
             </div>
             <div class="report-attachment">
@@ -30,7 +28,7 @@
                 <div class="report-attachment-content">
                     @if ($report->attachment->count() > 0)
                         @for ($i = 0; $i<$report->attachment->count(); $i++)
-                            <img src="{{ asset($report->attachment[$i]->lcate) }}" alt="" onclick="currentSlide({{ $i+1 }})">
+                            <img src="{{ asset('storage/' . $report->attachment[$i]->lcate) }}" alt="" onclick="currentSlide({{ $i+1 }})">
                         @endfor
                     @else
                         <h4>Tidak ada lampiran</h4>
@@ -50,24 +48,23 @@
                 </div>
             </div>
             <div class="report-action">
-                @auth
+                <a href="{{ route('update') }}" target="_blank" class="editBtn"><h4>UBAH</h4></a>
+                <a href="" target="_blank" class="deleteBtn"><h4>HAPUS</h4></a>
+                {{-- @auth
                     @if (auth()->user()->uname == $report->user->uname)
-                        <a href="{{ route('update') }}" target="_blank" class="editBtn"><h4>UBAH</h4></a>
-                        <a href="" target="_blank" class="deleteBtn"><h4>HAPUS</h4></a>
                     @else
-                        {{-- <h4>Anda bukan pembuat laporan ini</h4> --}}
+                        <h4>Anda bukan pembuat laporan ini</h4>
                         <h1>
                             ERROR
                         </h1>
                     @endif
                 @else
-                    {{-- <h4>Masukkan kode</h4> --}}
+                    <h4>Masukkan kode</h4>
                     <h1>
                         ERROR
                     </h1>
-                @endauth
+                @endauth --}}
                     
-                {{-- @endauth --}}
             </div>
         </div>
     </div>
@@ -86,7 +83,7 @@
                     @for ($i = 0; $i < $report->attachment->count(); $i++)
                         <div class="imagesContainer fade">
                             <div class="imageNumber">{{ $i+1 }} / {{ $report->attachment->count() }}</div>
-                            <img src="{{ asset($report->attachment[$i]->lcate) }}" alt="">
+                            <img src="{{ asset('storage/' . $report->attachment[$i]->lcate) }}" alt="">
                         </div>
                     @endfor
                 </div>

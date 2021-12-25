@@ -36,7 +36,7 @@ class LoginController extends Controller
         
         $request->session()->regenerateToken();
 
-        return redirect('/')->with('logoutSuccess', 'Anda sudah berhasil keluar!');
+        return back()->with('logoutSuccess', 'Anda sudah berhasil keluar!');
 
     }
     public function loginRequired(){

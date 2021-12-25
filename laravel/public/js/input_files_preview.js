@@ -7,7 +7,7 @@
 // ----------------------------------------
 
 function inputReportContent(){
-    let content = document.getElementById("content");
+    let content = document.getElementById("cntnt");
     let text = document.getElementById("Report_Content").innerText;
     content.value=text;
 }

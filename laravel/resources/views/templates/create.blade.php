@@ -13,14 +13,14 @@
                 <div class="row">
                     <div class="radio-selections-container">
                         <div class="radio-selections">
-                            <input type="radio" name="report_as" id="UseName" value="{{ auth()->user()->id }}">
+                            <input type="radio" name="rprtr" id="UseName" value="{{ auth()->user()->id }}">
                             <label for="UseName"> GUNAKAN NAMA SAYA
                                 <div class="select-area"></div>
                                 <div class="selected">&#9745;</div>
                             </label>
                         </div>
                         <div class="radio-selections">
-                            <input type="radio" name="report_as" id="Anonym" value="1">
+                            <input type="radio" name="rprtr" id="Anonym" value="1">
                             <label for="Anonym"> LAPOR SEBAGAI ANONIM
                                 <div class="select-area"></div>
                                 <div class="selected">&#9745;</div>
@@ -29,15 +29,17 @@
                     </div>
                 </div>
                 <div class="row">
-                    <input  class="input-text" type="text" name="title" id="title" onfocusout="createSlug()" placeholder="Ketikkan judul laporan anda" autocomplete="off">
-                    <input type="hidden" name="slug" id="slug">
+                    {{-- onkeyup="validateTitle()" --}}
+                    <input  class="input-text" type="text" name="title" id="title"  onfocusout="createSlug()" placeholder="Ketikkan judul laporan anda" autocomplete="off">
+                    <input type="hidden" name="slugy" id="slugy">
                 </div>
                 <div class="row pos-relative">
-                    <textarea class="input-text-area" name="content" id="content"></textarea>
-                    <span class="textarea" role="textbox" id="Report_Content" onfocusout="inputReportContent()" contenteditable></span>
+                    <textarea class="input-text-area" name="cntnt"   id="cntnt"></textarea>
+                    <span     class="textarea"        role="textbox" id="Report_Content" onfocusout="inputReportContent()" contenteditable></span>
+                    <input type="hidden" name="exmpl" id="exmpl">
                 </div>
                 <div class="row">
-                    <select class="input-select-option" name="aspect" id="aspect">
+                    <select class="input-select-option" name="aspct" id="aspct">
                         <option value="Mahasiswa">      Aspek Laporan : Mahasiswa       </option>
                         <option value="Dosen">          Aspek Laporan : Dosen           </option>
                         <option value="Mata Kuliah">    Aspek Laporan : Mata Kuliah     </option>
@@ -45,7 +47,7 @@
                     </select>
                 </div>
                 <div class="input-file-container" id="Input_File_Container">
-                    <input class="inputFile" type="file" name="attach[]" id="attach" multiple>
+                    <input class="inputFile" type="file" name="attachments[]" id="attach" multiple>
                     <label class="input-file" for="attach">UNGGAH LAMPIRAN (MAX 1 MB)</label>                                    
                     <div class="files-Preview-Area" id="files_Area"></div>
                 </div>
@@ -67,10 +69,18 @@
 @section('additional-script')
     <script type="text/javascript" src="{{ asset('js/input_files_preview.js') }}"></script>
     <script type="text/javascript">
+    
         function createSlug(){
-            let Title = document.getElementById("title");
-            let Slug  = 
-            console.log(Title.value);
+            let Title           = document.getElementById("title");
+            let Slug            = document.getElementById("slugy");
+            let SlugCandidate   = Title.value.toLowerCase().replace(/\W+/g, '-');
+            
+            let suffix      = '';
+            let characters  = 'abcdefghijklmnopqrstuvwxyz0123456789';
+            for (let i=0; i<24; i++) {
+                suffix += characters.charAt(Math.floor(Math.random() * characters.length));
+            }
+            Slug.value = SlugCandidate + '-' + suffix;
         }
     </script>
 @endsection

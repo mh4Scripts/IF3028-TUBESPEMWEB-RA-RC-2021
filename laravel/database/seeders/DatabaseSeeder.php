@@ -19,47 +19,55 @@ class DatabaseSeeder extends Seeder
             'uname'             => 'Anonim',
             'email'             => '',
             'password'          => '',
-            'prof_pic'          => 'media/images/Anonim.jpg'
+            'prof_pic'          => 'media/profile_pictures/Anonim.jpg'
         ]);
 
         User::create([
             'name'              => 'Markus Togi Fedrian Rivaldi Sinaga',
             'uname'             => 'MarkusTogi24',
             'email'             => 'markus.togi@gmail.com',
-            'password'          =>  bcrypt('1234567890'),
-            'prof_pic'          => 'media/images/Pasfoto_Togi.jpg'
+            'password'          =>  bcrypt('111111'),
+            'prof_pic'          => 'media/profile_pictures/Pasfoto_Togi.jpg'
         ]);
-
-        User::create([
-            'name'              => 'Canra Aguslan Siregar',
-            'uname'             => 'CanraGuslan',
-            'email'             => 'candrasiregar1512@gmail.com',
-            'password'          =>  bcrypt('1234567890'),
-            'prof_pic'          => 'media/images/Pasfoto_Canra.jpg'
-        ]);
-
-        User::create([
-            'name'              => 'Josua Jeremy Gultom',
-            'uname'             => 'Jerry_G',
-            'email'             => 'josuajeremy24@gmail.com',
-            'password'          =>  bcrypt('1234567890'),
-            'prof_pic'          => 'media/images/Pasfoto_Josua.jpg'
-        ]);
-
+        
         User::create([
             'name'              => 'Muhammad Farhan Andani',
             'uname'             => 'M_Farhan',
             'email'             => 'muhammad.119140109@student.itera.ac.id',
-            'password'          =>  bcrypt('1234567890'),
-            'prof_pic'          => 'media/images/Anonim.jpg'
+            'password'          =>  bcrypt('111111'),
+            'prof_pic'          => 'media/profile_pictures/Pasfoto_Farhan.jpg'
         ]);
 
         User::create([
             'name'              => 'Gusti Hafizah',
             'uname'             => 'Gusti_HN',
             'email'             => 'gusti.119140086@student.itera.ac.id',
-            'password'          =>  bcrypt('1234567890'),
-            'prof_pic'          => 'media/images/Pasfoto_Gusti.jpg'
+            'password'          =>  bcrypt('111111'),
+            'prof_pic'          => 'media/profile_pictures/Pasfoto_Gusti.jpg'
+        ]);
+
+        User::create([
+            'name'              => 'Cindy Natalia',
+            'uname'             => 'CindyNS',
+            'email'             => 'cindy@mail.com',
+            'password'          =>  bcrypt('111111'),
+            'prof_pic'          => 'media/profile_pictures/Pasfoto_Cindy.jpg'
+        ]);
+
+        User::create([
+            'name'              => 'Josua Jeremy Gultom',
+            'uname'             => 'Jerry_G',
+            'email'             => 'josua@mail.com',
+            'password'          =>  bcrypt('111111'),
+            'prof_pic'          => 'media/profile_pictures/Pasfoto_Josua.jpg'
+        ]);
+
+        User::create([
+            'name'              => 'Canra Aguslan Siregar',
+            'uname'             => 'CanraGuslan',
+            'email'             => 'canra@mail.com',
+            'password'          =>  bcrypt('111111'),
+            'prof_pic'          => 'media/profile_pictures/Pasfoto_Canra.jpg'
         ]);
 
         //REPORTS SEEDS
@@ -70,7 +78,7 @@ class DatabaseSeeder extends Seeder
             'cntnt'             => 'Polusi asap yang saat ini hampir meliputi setiap waktu pagi siang sore dan malam daerah sekitar the orchard, summarecon bekasi, harapan baru. sekitar akhir tahun 2020 polusi ini sudah bermunculan meski frekuensinya tidak sesering saat ini dan biasanya di subuh dan malam hari. saat ini hampir di setiap pagi, siang, malam udara luar tercemar dan masuk ke rumah yang dapat menyebabkan gangguan pernafasan orang dewasa dan anak2.',
             'aspct'             => 'Dosen',
             'unqid'             => Str::random(12),
-            'rprtr'             => mt_rand(1,6)
+            'rprtr'             => mt_rand(1,7)
         ]);
         
         Report::create([
@@ -80,7 +88,7 @@ class DatabaseSeeder extends Seeder
             'cntnt'             => 'Perumahan subsidi di cikarang, selalu banjir jika ujan datang, Genangan air bisa mencapai 20-30cm bahkan lebih. sudah banyak warga yang jatuh akibat genangan yang tidak surut. di musim kemaraupun genangan masih terjadi. Warga sudah berdialog dengan pengembang namun tidak ada hasilnya sampai saat ini. surat, pertemuan warga selalu menemukan jalan buntu. bahkan pihak desa pun telah diminta untuk membantu hal ini.',
             'aspct'             => 'Dosen',
             'unqid'             => Str::random(12),
-            'rprtr'             => mt_rand(1,6)
+            'rprtr'             => mt_rand(1,7)
         ]);
         
         Report::create([
@@ -93,7 +101,7 @@ class DatabaseSeeder extends Seeder
             oleh karena itu, polisi/penyidik semestinya menghentikan perkara tersebut',
             'aspct'             => 'Dosen',
             'unqid'             => Str::random(12),
-            'rprtr'             => mt_rand(1,6)
+            'rprtr'             => mt_rand(1,7)
         ]);
         
         Report::create([
@@ -113,7 +121,7 @@ class DatabaseSeeder extends Seeder
             demikian laporan ini disampaikan sebagai pintu masuk untuk menginvestigasi kerugian negara di instansi pln pematangsiantar milik bumn.',
             'aspct'             => 'Dosen',
             'unqid'             => Str::random(12),
-            'rprtr'             => mt_rand(1,6)
+            'rprtr'             => mt_rand(1,7)
         ]);
         
         Report::create([
@@ -124,7 +132,7 @@ class DatabaseSeeder extends Seeder
             mohon agar ada pengawasan dari aparat/pemerintah untuk hal-hal seperti ini. untuk menunjang pemerataan, keadilan dan kelancaran aktivitas masyarakat.',
             'aspct'             => 'Dosen',
             'unqid'             => Str::random(12),
-            'rprtr'             => mt_rand(1,6)
+            'rprtr'             => mt_rand(1,7)
         ]);
         
         Report::create([
@@ -134,7 +142,7 @@ class DatabaseSeeder extends Seeder
             'cntnt'             => 'Selamat siang, mau tanya tentang kelanjutan proyek jalan tol Pejagan-Pemalang seksi 3 di Kabupaten Tegal. Kapan sosialisasinya? Terima kasih.',
             'aspct'             => 'Mahasiswa',
             'unqid'             => Str::random(12),
-            'rprtr'             => mt_rand(1,6)
+            'rprtr'             => mt_rand(1,7)
         ]);
         
         Report::create([
@@ -144,7 +152,7 @@ class DatabaseSeeder extends Seeder
             'cntnt'             => 'Pak Menteri Kesehatan. Tolong perhatikan kami RSU di daerah NTT, tenaga Dokter kurang & pelayanan tidak maksimal, tapi bisa melayani 3 s/d 4 tempat. Sangat berbahaya... Trims.',
             'aspct'             => 'Mahasiswa',
             'unqid'             => Str::random(12),
-            'rprtr'             => mt_rand(1,6)
+            'rprtr'             => mt_rand(1,7)
         ]);
         
         Report::create([
@@ -154,7 +162,7 @@ class DatabaseSeeder extends Seeder
             'cntnt'             => 'Menkes RI yang terhormat, tolong inspeksi ke RSUD WZ. Yohanis, Kupang. Jika pasien tidak mampu, operasi penyakit dalam diminta bayar sekitar 10 juta, meskipun ada keterangan tidak mampu. Apakah ini benar?',
             'aspct'             => 'Mahasiswa',
             'unqid'             => Str::random(12),
-            'rprtr'             => mt_rand(1,6)
+            'rprtr'             => mt_rand(1,7)
         ]);
         
         Report::create([
@@ -164,7 +172,7 @@ class DatabaseSeeder extends Seeder
             'cntnt'             => 'Selamat pagi, saya Andrianto, dokter PTT di pedalaman Maluku Utara. Saya ingin komplain mengenai kinerja kemenkes tentang pemberian gaji kami pegawai PTT, yang tidak manusiawi. Gaji selalu telat, alasan bermacam-macam. Contoh terbaru, gaji saya bulan April 2012, sampai hari ini 30 Mei 2012 belum turun juga. Kami para dokter PTT dituntut bekerja profesional di daerah minim fasilitas. Tapi hak kami diabaikan. Mohon feedback-nya. Best regards, dr. Andrianto.',
             'aspct'             => 'Mahasiswa',
             'unqid'             => Str::random(12),
-            'rprtr'             => mt_rand(1,6)
+            'rprtr'             => mt_rand(1,7)
         ]);
         
         Report::create([
@@ -174,7 +182,7 @@ class DatabaseSeeder extends Seeder
             'cntnt'             => 'Yth. Bpk. Kapolda Kalimantan Tengah. Penegak hukum kalteng selalu memanjakan mafia kayu, hingga mereka tidak bisa jera. Ilegal logging yang ada di Kabupaten Barito Selatan yang sudah dipasang garis polisi malah dibebaskan. Kini sudah ada lagi ilegal logging di Barito Utara yang ingin di bawa/diluncurkan. Thanks',
             'aspct'             => 'Mahasiswa',
             'unqid'             => Str::random(12),
-            'rprtr'             => mt_rand(1,6)
+            'rprtr'             => mt_rand(1,7)
         ]);
         
         Report::create([
@@ -188,7 +196,7 @@ class DatabaseSeeder extends Seeder
             Tolong ditinjau. Terimakasih atas perhatiannya.',
             'aspct'             => 'Mata Kuliah',
             'unqid'             => Str::random(12),
-            'rprtr'             => mt_rand(1,6)
+            'rprtr'             => mt_rand(1,7)
         ]);
         
         Report::create([
@@ -206,7 +214,7 @@ class DatabaseSeeder extends Seeder
                 Informasi ini menurut Dinas Pendidikan Kota Samarinda. Mengapa pembayaran guru tersertifikasi tidak pernah tuntas?',
             'aspct'             => 'Mata Kuliah',
             'unqid'             => Str::random(12),
-            'rprtr'             => mt_rand(1,6)
+            'rprtr'             => mt_rand(1,7)
         ]);
         
         Report::create([
@@ -216,7 +224,7 @@ class DatabaseSeeder extends Seeder
             'cntnt'             => 'Saya mengeluhkan lambatnya proses pengurusan untuk balik nama sertifikat tanah di Badan Pertanahan Nasional Tigaraksa, Tangerang. Sejak masuknya dokumen-dokumen pada bulan Oktober 2012 lalu (No. Berkas Permohonan: 73710/2012), sampai sekarang statusnya masih dalam proses. Padahal, sesuai informasi di situs resmi BPN, prosesnya hanya 5 hari. Mohon agar diberikan penjelasan dan ditindaklanjuti',
             'aspct'             => 'Mata Kuliah',
             'unqid'             => Str::random(12),
-            'rprtr'             => mt_rand(1,6)
+            'rprtr'             => mt_rand(1,7)
         ]);
         
         Report::create([
@@ -226,7 +234,7 @@ class DatabaseSeeder extends Seeder
             'cntnt'             => 'Proyek Normalisasi Sungai Juwana di Kabupaten Pati Provinsi Jawa Tengah sejak 2010-2012 sudah menelan biaya lebih dari 60 miliar rupiah. Akan tetapi setelah kami telusuri, uang sebesar itu baru digunakan untuk melakukan pengerukan sungai sepanjang 25,42 kilometer. Sedangkan panjang alur Sungai Juwana adalah 62,50 kilometer. Saya melihat proyek ini terlalu mahal; karena berarti setiap 1 kilometer menelan biaya lebih dari 2 miliar. Sedangkan berbagai persoalan baik teknis maupun sosial masih melingkupi proyek ini. mohon disidan atau disidik. Sepertinya kok ada mark up! Anggota DPR RI seperti Marwan Jakfar, Imam Suroso (keduanya berasal dari Kabupaten Pati) mengaku aktif memperjuangkan proyek ini.',
             'aspct'             => 'Mata Kuliah',
             'unqid'             => Str::random(12),
-            'rprtr'             => mt_rand(1,6)
+            'rprtr'             => mt_rand(1,7)
         ]);
         
         Report::create([
@@ -236,7 +244,7 @@ class DatabaseSeeder extends Seeder
             'cntnt'             => 'Banyak jalan berlubang sepanjang Jalan Raya Jakarta-Bogor. Jalur yang saya lewati dari KM 32 s.d. KM 47, dimana jalan berlubang ada di dua sisi jalan (dari dan ke arah Bogor). Mohon segera diperbaiki.',
             'aspct'             => 'Mata Kuliah',
             'unqid'             => Str::random(12),
-            'rprtr'             => mt_rand(1,6)
+            'rprtr'             => mt_rand(1,7)
         ]);
         
         Report::create([
@@ -261,7 +269,7 @@ class DatabaseSeeder extends Seeder
             Jumlah perangkat desa: 8 orang terdiri 1 Kepala Desa; 2 Sekretaris Desa; 4 Kepala Seksi; 2 Kepala Urusan; Badan Permusyawaratan Desa (BPD) 5 orang; Lembaga Ketahanan Masyarakat Desa 10 orang.',
             'aspct'             => 'Program Studi',
             'unqid'             => Str::random(12),
-            'rprtr'             => mt_rand(1,6)
+            'rprtr'             => mt_rand(1,7)
         ]);
         
         Report::create([
@@ -282,7 +290,7 @@ class DatabaseSeeder extends Seeder
             Dari Saut Sitorus, Ketua Asosiasi Guru Bersatu Tanjungbalai.',
             'aspct'             => 'Program Studi',
             'unqid'             => Str::random(12),
-            'rprtr'             => mt_rand(1,6)
+            'rprtr'             => mt_rand(1,7)
         ]);
         
         Report::create([
@@ -294,7 +302,7 @@ class DatabaseSeeder extends Seeder
             Apakah pemerintah memiliki rencana untuk memberi bantuan atau pinjaman dana kepada petani tebu?',
             'aspct'             => 'Program Studi',
             'unqid'             => Str::random(12),
-            'rprtr'             => mt_rand(1,6)
+            'rprtr'             => mt_rand(1,7)
         ]);
         
         Report::create([
@@ -305,7 +313,7 @@ class DatabaseSeeder extends Seeder
             Seperti apa aturan yang sebenarnya? Dan jika memang aturan sebenarnya tidak dikenakan biaya, kami meminta uang kami dikembalikan beserta permintaan maaf dari aparat.',
             'aspct'             => 'Program Studi',
             'unqid'             => Str::random(12),
-            'rprtr'             => mt_rand(1,6)
+            'rprtr'             => mt_rand(1,7)
         ]);
         
         Report::create([
@@ -324,7 +332,7 @@ class DatabaseSeeder extends Seeder
             for ($j=0; $j<5; $j++)
             {
                 Attachment::create([
-                    'lcate'             => 'media/seed_images/seed('.$i.').jpeg',
+                    'lcate'             => 'public/files/seed('.$i.').jpeg',
                     'rp_id'             => mt_rand(1,20)
                 ]);
             }

@@ -167,7 +167,7 @@ function Send_Att_Data(Att_Data){
 
         let Attachment_Image        = document.createElement("img");
 
-        Attachment_Image.setAttribute("src", Attachment_Data[i]);
+        Attachment_Image.setAttribute("src", "storage/"+Attachment_Data[i]);
 
         ImagesContainer.appendChild(imageNumber);
         ImagesContainer.appendChild(Attachment_Image);

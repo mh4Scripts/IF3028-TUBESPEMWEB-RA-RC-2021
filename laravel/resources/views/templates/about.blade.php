@@ -27,21 +27,21 @@
             <div class="show-crew-area">
                 <div class="all-crew" id="show_crew">
                     <div class="crew-card">
-                        <img class="crew-photo" src="{{ asset('media/images/Pasfoto_Togi.jpg') }}">
-                        <div class="crew-info">
-                            <h5>Markus Togi Fedrian Rivaldi Sinaga</h5>
-                            <h4>118140037</h4>
-                        </div>
-                    </div>
-                    <div class="crew-card">
-                        <img class="crew-photo" src="{{ asset('media/images/Pasfoto_Gusti.jpg') }}">
+                        <img class="crew-photo" src="{{ asset('media/profile_pictures/Pasfoto_Gusti.jpg') }}">
                         <div class="crew-info">
                             <h5>Gusti Hafizah Nurrahmah</h5>
                             <h4>119140086</h4>
                         </div>
                     </div>
                     <div class="crew-card">
-                        <img class="crew-photo" src="{{ asset('media/images/Anonim.jpg') }}">
+                        <img class="crew-photo" src="{{ asset('media/profile_pictures/Pasfoto_Togi.jpg') }}">
+                        <div class="crew-info">
+                            <h5>Markus Togi Fedrian Rivaldi Sinaga</h5>
+                            <h4>118140037</h4>
+                        </div>
+                    </div>
+                    <div class="crew-card">
+                        <img class="crew-photo" src="{{ asset('media/profile_pictures/Pasfoto_Farhan.jpg') }}">
                         <div class="crew-info">
                             <h5>Muhammad Farhan Andani</h5>
                             <h4>119140109</h4>
