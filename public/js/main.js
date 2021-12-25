@@ -26,17 +26,41 @@ function coba(){
 };
 
 function validasi(){
-    if (document.form.nama.value==""){
-        alert("Nama tidak boleh kosong");
-        document.form.nama.value.focus();
+    var nama = document.getElementById("nama").value;
+    var judul = document.getElementById("judul").value;
+    var pesab = document.getElementById("pesan").value;
+    if (nama === ""){
+        document.getElementById("info1").innerHTML="Nama tidak boleh kosong";
+        document.getElementById("info1").style.color="Red";
+        document.getElementById("nama").style.border = "2px solid red";
         return false;
-    }
-    if (document.form.judul.value==""){
-        alert("Nama tidak boleh kosong");
-        document.form.judul.value.focus();
+    } if (judul === ""){
+        document.getElementById("info2").innerHTML="Judul tidak boleh kosong";
+        document.getElementById("info2").style.color="Red";
+        document.getElementById("judul").style.border = "2px solid red";
+        return false;
+    } if (pesan === ""){
+        document.getElementById("info3").innerHTML="Pesan tidak boleh kosong";
+        document.getElementById("info3").style.color="Red";
+        document.getElementById("pesan").style.border = "2px solid red";
         return false;
     }
 }
+//     var minpesan = 20;
+//     if (
+//         document.form.nama.value == "" ||
+//         document.form.judul.value == "" ||
+//         document.form.pesan.value == "" ||
+//         document.form.aspek.value == "" 
+//     ){
+//         alert("data tidak boleh kosong");
+//         return false;
+//     } 
+//     if (document.form.pesan.value.length < minpesan){
+//         alert("Laporan/Komentar minimal 20 kata");
+//         return false;
+//     }
+// }
 
 // form.addEventListener("submit", (e)=>{
 //     e.preventDefault();
