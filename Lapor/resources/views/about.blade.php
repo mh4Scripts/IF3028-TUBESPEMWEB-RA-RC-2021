@@ -4,7 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" 
-        href="css/style.css">
+        href="home.css">
     <title></title>
 </head>
 <body>
@@ -13,21 +13,14 @@
         <div class="nav"> 
             <nav>
                 <ul>
-                    <li><a href="{{url('/')}}"></a><img height="50" src="images/logo.png"></li>
-                    <li><a href="{{url('about')}}">tentang lapor!</a> </li>
+                 <li><a href="{{url('about')}}">tentang lapor!</a> </li>
                     <li><a href="{{url('/')}}">Laporan</a> </li>
-                    <li><a href="{{url('cari')}}">Cari Aduan</a></li>
                 </ul>
             </nav>
         </div>
-        <div class="bg">
-            <img src="images/bg.png" alt="background">
-        </div>
         <div class="header">
             <h1>Apa Itu LAPOR!?</h1><br>
-            <iframe width="750" height="422" 
-                src="https://www.youtube.com/embed/pVJlNv0Zgd0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-            </iframe>
+            
         </div>
         <div class="aboutdesc">
            <p>

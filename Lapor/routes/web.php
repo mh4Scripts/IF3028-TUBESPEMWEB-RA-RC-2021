@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\LaporanController;
+use App\Models\Laporan;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,14 +15,22 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
+Route::get('/', [LaporanController::class, 'index']);
+Route::post('edit', [LaporanController::class, 'edit']);
+Route::post('update', [LaporanController::class, 'update']);
+Route::post('create', [LaporanController::class, 'store']);
+Route::post('index', [LaporanController::class, 'index']);
+Route::post('show', [LaporanController::class, 'show']);
+Route::post('delete', [LaporanController::class, 'destroy']);
+Route::post('cari', [LaporanController::class, 'cari']);
+Route::get('form', function () {
+    return view("form");
 });
-
-Route::get('/cari', function () {
-    return view('cari');
+Route::get('home', function () {
+    $data = Laporan::orderByDesc('created_at', )->get();
+    return view('bodyhome', ["data" => $data]);
 });
-
-Route::get('/about', function () {
-    return view('about');
+Route::get('detail/{id}', [LaporanController::class, 'detail']);
+Route::get('about', function () {
+    return view("about");
 });
