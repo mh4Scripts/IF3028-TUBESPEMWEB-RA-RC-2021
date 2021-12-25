@@ -103,7 +103,7 @@ Pengguna dapat mencari laporan/komentar dengan melakukan search ke `isi laporan/
 ### Penjelasan Teknis
 Berikut ini cara instalasi program yang telah kami buat :
 1. Download folder tugas, kemudian untuk folder TubesPemweb silahkan disimpan di folder C:/xampp/htdocs/.
-2. Import file database (tubespemweb.sql) ke mysql dengan nama folder "tubespemweb".
+2. Import file database (tubespemweb.sql) ke mysql dengan nama "tubespemweb".
 3. Untuk base_url pada folder application/config/config.php silahkan disesuaikan dengan localhost yang digunakan (untuk localhost yang saya gunakan yaitu http://localhost:8080/TubesPemweb/). Pada base_url biasanya menggunakan "http://localhost/TubesPemweb/" saja.
 
 ### Knowledge
