@@ -3,13 +3,13 @@
 
 <head>
     <title>SIMPLE LAPOR!</title>
-    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
 </head>
 
 <body>
     <ul>
         <li><a href="/tentang lapor">Tentang Lapor</a></li>
-        <li><a href="/cari aduan">Cari Aduan</a></li>
+        <li><a href="/search">Cari Aduan</a></li>
         <li><a href="/kontak">Kontak</a></li>
     </ul>
     <center>
