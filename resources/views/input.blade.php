@@ -43,6 +43,7 @@
         }
         if(error > 0) {
             alert('Komentar Minimal 20 Kata!');
+            event.preventDefault();
     }
 }
 </script>
