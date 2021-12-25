@@ -5,25 +5,19 @@
                 <h1 class="title">SIMPLE LAPOR!</h1>
             </header>
             <div class="laporan">
-                Buat Laporan/Komentar<br>
+                Edit Laporan/Komentar<br>
             <hr>
             <br>
-            <form id="form" name="forme" onsubmit="return validasi()" action="/utama" method="POST" enctype="multipart/form-data">
+            <form id="form" action="/ubah/{{ $data->id }}" onsubmit="return validasi()" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="teks">
-                    <div id="name_div">
-                        <input type="text" id="nama" name="nama" class="teks" placeholder="Nama Pelapor">
-                    </div>
+                    <input type="text" id="nama" name="nama" class="teks" placeholder="Nama Pelapor" value = "{{ $data -> nama }}">
                     <div id="info1" class="error"></div>
                     <br><br>
-                    <div id="judul_div">
-                        <input type="text" id="judul" name="judul" class="teks" placeholder="Judul Laporan/Komentar">
-                    </div>
+                    <input type="text" id="judul" name="judul" class="teks" placeholder="Judul Laporan/Komentar" value ="{{ $data -> judul }}">
                     <div id="info2" class="error"></div>
                     <br><br>
-                    <div id="pesan_div">
-                        <textarea id = "pesan" name = "pesan" class="komen" rows="20" cols="110" placeholder="Laporan/Komentar"></textarea>
-                    </div>
+                    <textarea id = "pesan" name = "pesan" class="komen" rows="20" cols="110" placeholder="Laporan/Komentar">{{ $data -> pesan }}</textarea>
                     <div id="info3" class="error"></div>
                     <br>
                 </div>
@@ -42,15 +36,17 @@
                     <input id="file" name="file" type="file" onchange="return cekExt()">
                     <div id="info5" class="error"></div>
                     <br><br>
-                    <br>
-                    <a href="/utama">
+                    <img src= "{{ URL::to ('/') }}/file/{{ $data -> file  }}"><br>
+                    <input id="hidden_file" name="hidden_file" type="hidden" value ="{{ $data -> file }}">
+                    <br><br><br>
+                    <a href="/detail/{{ $data->id }}">
                         <button class="batal" type="button"> Batal </button>
                     </a>
-                    
-                    <button type="submit" class="lapor">Buat LAPOR!</button>
+                    <button type="submit" class="submit">Simpan</button>
                 </form>
-                <br><br><hr><br>
+                <br><br><br><br><hr><br>
             </div>
+</div>
         </div>
  @endsection
 

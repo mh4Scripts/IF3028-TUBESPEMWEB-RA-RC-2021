@@ -81,19 +81,26 @@ a{
 
  .aspek{
      float: left;
-     padding:10px;
+     padding:15px;
  }
 
  .waktu-dtl{
-     padding:10px;
+     padding-right:10px;
+     padding-top:0;
+     margin-top: 0;
      float:left;
-     text-align: left;
  }
 
  .waktu-utm{
-    padding:10px;
+    /* padding:10px; */
     float:right;
     text-align: right;
+ }
+
+ .clear::after{
+    content: "";
+    clear: both;
+    display: table;
  }
 
  .hapus{
@@ -103,13 +110,13 @@ a{
     cursor: pointer;
     overflow: hidden;
     outline: none;
-    padding:10px;
+    padding:20px;
     float:right;
     text-align: right;
  }
 
  .lampiran{
-    padding:10px;
+    /* padding:10px; */
     float:left;
 }
 
@@ -119,11 +126,12 @@ a{
  }
 
  .hapus:hover{
-    font-weight: bold;
+    color:#798e78c9;
  }
 
  .selengkapnya{
-    padding:10px;
+    padding-top: 15px;
+    padding-left: 20px;
     float:right;
     text-align: right;
 }
@@ -167,7 +175,8 @@ option {
     float:right;
     background-color:#798e78;
     border: none;
-    padding: 16px 20px;
+    height: 50px;
+    width: 80px;
     color: white;
     cursor: pointer;
 }
@@ -253,4 +262,81 @@ figure img{
 h2{
     padding:0;
     margin: 0;
+}
+
+.teks{
+    padding-top:10px;
+    padding-bottom: 10px;
+    width:100%;
+    margin:0;
+}
+.edit{
+    background-color: transparent;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    outline: none;
+    padding:20px;
+    float:right;
+    text-align: right;
+    padding-right: 40px;
+
+}
+.edit:hover{
+    color:#798e78c9;
+}
+
+.edit:after{
+    content: url('https://api.iconify.design/clarity/edit-line.svg?color=black&height=12');
+}
+
+.judulnnama h3,h4{
+    float:left;
+    padding-bottom: 0;
+    margin-bottom: 0;
+    padding-top:0;
+    margin-top: 1px;
+}
+
+h4{
+    /* margin-top: 3px; */
+    color: #888;
+    padding:3px;
+    padding-left: 10px;
+}
+
+.error{
+    color:red;
+    /* border: 2px solid red; */
+}
+
+.batal{
+    background-color:#d62d2d;
+    border: none;
+    height: 50px;
+    width: 80px;
+    color: white;
+    cursor: pointer;
+}
+
+.batal:hover{
+    background-color: #bb2626;
+}
+
+.lapor{
+    float:right;
+    background-color:#798e78;
+    border: none;
+    padding: 16px 20px;
+    color: white;
+    cursor: pointer;
+}
+
+.lapor:hover{
+    background-color: #6d7e6c;
+}
+
+a{
+    text-decoration:none;
 }

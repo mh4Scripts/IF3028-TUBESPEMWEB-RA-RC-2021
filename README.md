@@ -111,6 +111,14 @@ php artisan serve
 
 Jika tulisan Laravel development server started telah muncul, buka web browser anda dan masih ke dalam alamat server yang diberikan laravel. Secara default, alamat servernya yaitu 127.0.0.1:8000. Jika muncul tampilan homepage laravel, maka instalasi sukses.
 
+Untuk membuat validasi pada client-side digunakan javascript. Sebelum menghapus, akan ada konfirmasi dari client menggunakan alert. jika client memilih ok, maka data akan dihapus. jika tidak, maka data tidak terhapus. cara membuatnya adalah ketika memencet tombol hapus, program akan menjalankan fungsi js yaitu konfirmasi. Jika pengguna memencet tombol ok, maka program mereferensikan data id ke dalam laporan.controller ke rute delete. pada delete akan dipanggil fungsi destroy dan data akan dihapus berdasarkan id. 
+
+Bagian form pembuatan laporan harus terisi semua. khusus pada komentar diharuskan terdiri dari minimal 20 kata. Melalui javascript, program akan memberi tahu client jika ada bagian yang tidak sesuai dengan ketentuan. ketentuan 20 kata di proses berdasarkan jumlah spasi. Selain itu, file yang diperbolehkan untuk diupload hanya yang berekstensi tertentu. hal ini juga dilakukan oleh javascript menggunakan fungsi onchange() sehingga ketika proses upload client mendapat validasi apakah file valid atau tidak.
+
+Ketika pengguna membuat laporan, program akan mengirim data yang telah diisi menggunakan metode Post. laravel kemudian mengarahkan program ke laporan.controller dan menjalankan fungsi store. Dalam fungsi ini data-data akan dikirim ke database melalui folder models file laporan.php. file ini lah yang menjembatani program dengan database melalui migration.
+
+untuk penginstalan client harus memiliki composer versi terbaru, dan telah menginstal laravel versi 8. download seluruh folder dari github ini, letakkan folder kedalam folder yang telah terinstall laravel. Hidupkan xampp. pada cmd ketikkan "php artisan migrate:fresh. kemudian, pada folder public terdapat file lapor.sql. import file ini kedalam xampp. jalankan laravel dan buka http://127.0.0.1:8000/utama pada browser. aplikasi siap digunakan.
+
 ### Knowledge
 Untuk meringankan beban tugas ini, ada berberapa keyword yang bisa anda cari untuk menyelesaikan tugas ini.
 - CSS: margin, padding, header tag, font-size, text-align, float, clear, border, color, div, span, placeholder, 

@@ -15,19 +15,30 @@
             <div class="laporan">
                 Laporan/komentar terakhir<br>
                 <hr>
-                <p>I inadvertently went to See's Candy last week (I was in the mall looking for phone repair), and as it turns out, See's Candy now charges a dollar -- a full dollar -- for even the simplest of their wee confection offerings. I bought two chocolate lollipops and two chocolate-caramel-almond things. The total cost was four-something. I mean, the candies were tasty and all, but let's be real: A Snickers bar is fifty cents. After this dollar-per-candy revelation, I may not find myself wandering dreamily back into a See's Candy any time soon.</p>
+                @foreach($data as $item)
+                <div class="clear">
+                    <div class="judulnnama">
+                        <h3>{{ $item->judul }}</h3>
+                        <h4>Diposting oleh {{ $item->nama }}</h4>
+                    </div>
+                </div>
+                
+                <p>{{ $item->pesan }}</p>
+                <div class="clear">
                 <div class="lampiran">
-                    lampiran: gambar.jpg
+                    <p>
+                        lampiran: {{ $item -> file }} 
+                    </p>
                 </div>
                 <div class="selengkapnya">
-                    <a href="/detail">Lihat Selengkapnya &nbsp;</a>
+                    <a href="/detail/{{ $item -> id }}">Lihat Selengkapnya &nbsp;</a>
                 </div>
                 <div class="waktu-utm">
-                    Waktu: 04-01-2021
+                    <p>Waktu: {{ $item->created_at->format('d/m/Y H:i') }}</p>
                 </div>
-                
-                <br><br><hr><br>
-                
+                </div>
+                <hr><br>
+                @endforeach
             </div>
         </div>
-@endsection
+@endsection 

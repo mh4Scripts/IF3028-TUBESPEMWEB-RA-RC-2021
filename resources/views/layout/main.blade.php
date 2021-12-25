@@ -3,6 +3,7 @@
     <head>
         <link rel="stylesheet" href="/Css/fix.css">
         <title>Lapor</title>
+        <script type="text/javascript" src="/js/main.js"></script>
     </head>
     <body>    
         @yield('container')
@@ -17,4 +18,6 @@
         © Copyright 2021 Tubes. Pengweb.
     </p>
 </footer>
+
+        
 </html>
