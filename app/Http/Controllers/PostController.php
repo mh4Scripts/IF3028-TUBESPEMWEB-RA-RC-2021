@@ -55,11 +55,16 @@ class PostController extends Controller
 
     // Menghapus laporan lama
     // TODO: Hapus lampiran
-    public function delete(Request $request) {
-        $status = Post::where('id', $request->id)->first()->delete();
-        // Alihkan ke halaman utama bila berhasil
-        if ($status) return redirect()->route('/',Post::all());
-        // Return false bila gagal
-        else return false;
+    public function delete($id) {
+        $post =Post::where('id',$id)->first();
+        //File::delete('lampiran/'.$data->lampiran);
+
+        if ($post != null) {
+            $post->delete();
+            return redirect()->route('/')->with(['message'=> 'Berhasil Dihapus!!']);
+        }
+    
+        return redirect()->route('/')->with(['message'=> 'ID Salah!!']);
+
     }
 }
