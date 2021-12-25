@@ -10,7 +10,7 @@ di program studi teknik informatika ITERA.
 
 ### Anggota Tim :cyclone:
 Muhammad Aldito Rizki 119140170 <br>
-Dhia Fahmi Ghufron  <br>
+Dhia Fahmi Ghufron 119140216  <br>
 Ahmad Aldi Setiawan 119140090 <br>
 
 ### Petunjuk Pengerjaan :umbrella:
