@@ -14,5 +14,21 @@ class Home extends CI_Controller
 		$this->load->view('home/index',$data);
 	}
 
-	
+	public function tambah(){
+		
+		//validasi form
+		$this->form_validation->set_rules('isi', 'Isi', 'required|min_length[250]');
+		if($this->form_validation->run() == FALSE){
+			$this->load->view('tambah/index');
+		}else{
+			$this->Lapor_model->tambah();
+			echo "
+				<script>
+					alert('berhasil menambah data');
+					document.location.href='../';
+				</script>
+				";
+		}
+		
+	}
 }
