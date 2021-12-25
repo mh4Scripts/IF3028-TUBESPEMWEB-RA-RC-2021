@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<!--Tampilan Utama dari Website LAPOR-->
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>LAPOR</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <header>
+      <a>SIMPLE LAPOR</a>
+    </header>
+
+    <script>
+      function cari(keyword){
+        const ajax = new XMLHttpReqest();
+        ajax.onload = function(){
+          
+        }
+      }
+
+      function buttonClick() {
+        getProducts(document.getElementById("keyword").value);
+    }
+    </script>
+
+
+<table>
+    <tr><input type="text"   id="keyword"></input>
+    <button  onlick="buttonclick()">cari</button>
+    </tr>
+
+
+</table>
+
+
+
+    <center>
+      <p>
+        Buat Laporan/Komentar
+        <a href="formbuat.html">
+          <img src = "https://www.kibrispdr.org/dwn/1/gambar-icon-hapus-edit-tambah.jpg" alt="addLaporan" style="width:15px;height:15px">
+        </a>
+      </p>
+    </center>
+    <br>
+    <hr>
+    <p>Laporan/Komentar Terakhir</p>
+    <hr>
+    <p align="justify">
+      Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+    </p>
+    <p>
+      Lampiran : Gambar.jpg
+    </p>
+
+    <hr>
+    <p align="justify">
+      Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+    </p>
+    <p>
+      Lampiran : Gambar.docs
+    </p>    
+  </body>
+
+</html>
