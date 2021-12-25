@@ -21,6 +21,6 @@ Route::get('/search', function () {
     return view('search');
 });
 
-Route::get('/search', function () {
+Route::get('/tentang', function () {
     return view('tentanglapor');
 });
