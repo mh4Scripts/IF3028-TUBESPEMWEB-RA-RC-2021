@@ -26,8 +26,8 @@ Route::get('/laporan/{id}', [PostController::class, 'show'])->name('laporan');
 
 Route::post('/tambah', [PostController::class, 'create'])->name('tambah');
 
-Route::post('/perbarui', [PostController::class, 'renew'])->name('perbarui');
+Route::post('/perbarui/{id}', [PostController::class, 'renew'])->name('perbarui');
 
-Route::post('/ubah/{id}', [PostController::class, 'update'])->name('ubah');
+Route::post('/ubah', [PostController::class, 'update'])->name('ubah');
 
 Route::post('/hapus', [PostController::class, 'delete'])->name('delete');
