@@ -10,7 +10,7 @@
 
             <div class="laporan-footer">
             <p class="footer-item">Aspek : <span>{{ $post->aspek }}</span></p>
-                <p class="footer-item">waktu : <span>{{ $post->waktu }}</span></p>
+                <p class="footer-item">Waktu : <span>{{ $post->waktu }}</span></p>
             </div>
         </div>
         <hr>
