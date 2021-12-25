@@ -99,7 +99,32 @@ Validasi **wajib** dilakukan pada *client-side*, dengan menggunakan **javascript
 Pengguna dapat mencari laporan/komentar dengan melakukan search ke `isi laporan/komentar`.
 
 ### Penjelasan Teknis
+### Penjelasan Teknis
 `Silakan isi bagian ini dengan penjelasan anda, sesuai Petunjuk Pengerjaan di atas.`
+1. Instalasi Framework
+	- Download file Codeigniter dari www.codeigniter.com, kemudian extract file tersebut
+	- Pindahkan seluruh hasil extract ke dalam folder web pada direktori server. Misal jika menggunakan server apache pada XAMPP, lokasi web ada di folder htdocs pada folder instalasi XAMPP.
+	- Atur konfigurasi CodeIgniter pada folder config.
+	
+2. Koneksi database
+	- Import file SQL yang dilampirkan pada repository ini dengan nama database lapor.
+	- Buka file database.php pada folder config.
+	- Atur nama database, username, password dan konfigurasi lain.
+	- Jika konfigurasi benar, database telah terkoneksi.
+	
+3. Validasi pada client side
+	- File javascript mengambil elemen form dan setiap field input dari HTML berdasarkan id.
+	- Elemen form ditambahkan event listener submit
+	- Setiap kali form disubmit, event listener akan melakukan aksi berikut:
+		a. Memastikan isi dari field laporan dan aspek tidak kosong. Jika isi field tersebut kosong, akan muncul alert "Tidak boleh ada kolom yang kosong".
+		b. Menghitung jumlah kata dari isi laporan. Jika jumlah kata kurang dari 20, akan muncul alert "Jumlah kata dalam laporan minimal 20".
+		c. Mengecek apakah ada file yang diinput. Jika tidak ada file yang diinput, akan muncul alert "Harap pilih file lampiran".
+		
+4. Menginput Laporan
+	- Pengguna menekan tombol LAPOR
+	- Setelah submit form, akan diarahkan ke fungsi input() di dalam controller Laporan.php
+	- Pada fungsi input(), beberapa variabel menyimpan data yang dikirimkan dengan method post. Kemudian akan mengatur konfigurasi upload_path, file_types, dan file_name, kemudian file upload akan dipindahkan dan diubah dengan konfigurasi tersebut. Setelah itu, data yang disimpan dalam variabel tadi akan dikirimkan de dalam method input_laporan() dalam model post_model.php.
+	- Pada fungsi input_laporan() dalam model post_model.php, data yang dikirimkan dari controller akan diinsert ke dalam database menggunakan CodeIgniter query builder.
 
 ### Knowledge
 Untuk meringankan beban tugas ini, ada berberapa keyword yang bisa anda cari untuk menyelesaikan tugas ini.
