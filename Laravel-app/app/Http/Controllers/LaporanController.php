@@ -20,4 +20,17 @@ class LaporanController extends Controller
         //     echo "<br>";
         // }
     }
+    public function store(){
+        //$customers = Customer::all();
+        // $customers = ["John", "K", "J"];
+        $laporan = DB::select('select * from laporans');
+
+        return view('internals.customers', [
+            'customers' => $laporan,
+        ]);
+        // foreach ($customers as $user) {
+        //     echo $user->name;
+        //     echo "<br>";
+        // }
+    }
 }
