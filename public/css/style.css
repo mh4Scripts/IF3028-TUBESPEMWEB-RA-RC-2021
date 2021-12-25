@@ -194,7 +194,7 @@ img {
   border: none;
   font-family: "Times New Roman", Times, serif;
   font-size: 1rem;
-  margin-left: auto;
+  margin-left: 0px;
   position: relative;
   padding-right: 1rem;
 }
@@ -218,7 +218,7 @@ img {
 }
 
 .container-buatLaporan p {
-  border-bottom: 1px solid black;
+  border-bottom: 2px solid black;
 }
 
 .container-buatLaporan form {
