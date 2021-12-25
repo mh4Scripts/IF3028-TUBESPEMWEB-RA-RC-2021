@@ -1,0 +1,8 @@
+Nama :	1. Andaru Putri Salsabila (119140158)
+	2. Reza Kusuma Andya Nugraha (119140001)
+	3. Teo Rasyid (14117182)
+
+Cara Instalasi :
+1. Copy folder web ke dalam direktori server
+2. Import file .sql
+3. Buka web di web browser dengan cara memasukan http://localhost/IF3028-TUBESPEMWEB-RA-RC-2021
