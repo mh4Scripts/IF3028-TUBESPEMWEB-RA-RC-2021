@@ -23,7 +23,7 @@
 				<?php echo form_open_multipart('dashboard/tambah_aksi'); ?>
 					<table style="margin:20px auto;">
 						<tr>
-							<td><textarea style="padding:15px" cols="110" rows="13" type="text" name="isi" placeholder="Laporan/Komentar" required=""></textarea></td>
+							<td><textarea style="padding:15px" cols="110" rows="13" type="text" id="isi" name="isi" placeholder="Laporan/Komentar" required=""></textarea></td>
 						</tr>
 						<tr>
 							<td><br>
@@ -44,7 +44,7 @@
 							</td>
 						</tr>
 						<tr>
-							<td><br><input type="submit" value="Buat LAPOR!"></td>
+							<td><br><input type="submit" onClick="return validasi()" value="Buat LAPOR!"></td>
 						</tr>
 					</table>
 					<hr style="margin-bottom:4%;">
@@ -53,6 +53,28 @@
 		</div>
 	</div>
 	
+<script type="text/javascript">
+function wordCount(text) {
+  totalCount = 0;
+  words = text.split(' ')
+  words.forEach(function(word) {
+    if (word.length > 0) {
+      totalCount++;
+    }
+  })
+  
+  return totalCount;
+}
+
+window.validasi = function() {
+ textarea = document.getElementById('isi');
+ words = wordCount(textarea.value);
+ if(words < 20) {
+   alert('Jumlah kata minimal 20');
+   return false;
+ }
+}
+</script>
 
 </body>
 </html>
