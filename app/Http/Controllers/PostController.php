@@ -12,7 +12,7 @@ class PostController extends Controller
     public function index()
     {
         $posts = Post::latest()->get();
-        return view('home_page',compact('posts'));
+        return view('home_page', compact('posts'));
     }
 
     public function create()
@@ -20,9 +20,9 @@ class PostController extends Controller
         return view('form_page');
     }
 
-    public function store (Request $request)
+    public function store(Request $request)
     {
-        $this->validate($request,[
+        $this->validate($request, [
             'judul' => 'required',
             'pelapor' => 'required',
             'laporan' => 'required',
@@ -37,14 +37,13 @@ class PostController extends Controller
             'fileupload' => $request->fileupload
         ]);
 
-        if($posts){
+        if ($posts) {
             return redirect()
                 ->route('home_page')
                 ->with([
                     'success' => 'Laporan anda telah terkirim dengan sukses'
                 ]);
-        }
-        else {
+        } else {
             return redirect()
                 ->back()
                 ->withInput()
@@ -68,7 +67,7 @@ class PostController extends Controller
 
     public function update(Request $request, $id)
     {
-        $this->validate($request,[
+        $this->validate($request, [
             'judul' => 'required',
             'pelapor' => 'required',
             'laporan' => 'required',
@@ -100,5 +99,19 @@ class PostController extends Controller
                     'error' => 'Terjadi suatu masalah, silakan coba kembali'
                 ]);
         }
+    }
+
+    public function search_bar()
+    {
+        $post = Post::Latest();
+
+        if (request('search')) {
+            $posts->where('judul', 'like', '%' . request('search') . '%');
+                ->orWhere('pelapor', 'like', '%' . request('search') . '%');
+        }
+
+        return view('home_page', [
+            "posts" => Post::latest()->get()
+        ]);
     }
 }
