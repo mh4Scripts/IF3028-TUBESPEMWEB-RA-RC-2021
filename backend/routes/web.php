@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\LaporanController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,14 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('indeks');
-});
+Route::get('/', [LaporanController::class, 'index']);
+Route::get('/create', [LaporanController::class, 'create']);
+Route::post('/store', [LaporanController::class, 'store']);
 
 Route::get('/search', function () {
     return view('search');
-});
-
-Route::get('/tentang lapor', function () {
-    return view('tentanglapor');
 });
