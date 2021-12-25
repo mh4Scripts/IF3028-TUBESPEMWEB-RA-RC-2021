@@ -59,5 +59,5 @@ class PostController extends Controller
         return view('detail', compact('posts'));
     }
 
-    
+
 }

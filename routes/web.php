@@ -25,3 +25,7 @@ Route::get('/create', [PostController::class, 'create'])->name('create');
 
 #route input data ke database
 Route::post('/store', [PostController::class, 'store'])->name('store');
+
+#route ke detail laporan
+Route::get('/show/{id}', [PostController::class, 'show'])->name('show');
+
