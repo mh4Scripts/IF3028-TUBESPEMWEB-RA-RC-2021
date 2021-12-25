@@ -1,0 +1,148 @@
+body{
+    margin: 0;
+    overflow-x: hidden;
+    font-family: poppins,Arial, Helvetica, sans-serif;
+}
+#link_home{
+    cursor: pointer;
+}
+.container{
+    margin: auto 100px auto 100px;
+    padding: 100px;
+}
+
+.kotak {
+    width: 100%;
+}
+
+.kaca{
+    width: 30px;
+    height: 30px;
+    margin: auto 0 auto 0;
+    padding-right:10px;
+}
+
+.desc{
+    margin: auto 0 auto 0;
+}
+
+.input {
+    padding-left: 20px;
+    width: 40%;
+    height: 40px;
+    border-radius: 10px 0 0 10px;
+    vertical-align: bottom;
+    border: none;
+}
+
+.src {
+    width: 7%;
+    height: 42px;
+    background: transparent;
+    border-radius: 0 10px 10px 0;
+    display: inline-flex;
+    vertical-align: bottom;
+    background-color: #e5e5e5;
+    outline: none;
+    border: none;
+}
+.buat{
+    display: flex;
+    height: 30px;
+    text-align: center;
+    width: fit-content;
+    margin: 20px auto 0px auto;
+}
+
+.nav {
+    position: relative;
+    overflow: hidden;
+    background-color: #C4143B;
+    
+}
+
+.bg{
+    position: absolute;
+}
+
+nav ul{
+    list-style-type: none;
+}
+
+nav ul li{
+    display: inline-block;
+    margin: 8px 56px 16px 8px;
+}
+
+nav ul li a{
+    text-decoration: none;
+    color: #000;
+}
+
+.buatlap{
+    text-decoration: none;
+    font-size: 20px;
+    display: inline-flex;
+    margin: auto 10px auto 0;
+    padding: 8px;
+    color: #000;
+    border-radius: 10px;
+    background-color: #e5e5e5;
+}
+.buatlap:hover{
+    box-shadow: 0 0 4px white;
+}
+.icon-plus{
+    width: 30px;
+}
+.lampiran {
+    float: left;
+    width: 60%;
+}
+input:focus{
+    outline: none;
+}
+.waktu {
+    float: left;
+    width: 20%;
+    text-align: right;
+}
+
+.lihat {
+    float: left;
+    width: 20%;
+    text-align: right;
+    cursor: pointer;
+}
+
+.clearfix {
+    clear: both;
+}
+.test{
+    width: 100vw;
+    height: 793px;
+    position: absolute;
+    left: 0px;
+    top: -50px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.header {
+    position: relative;
+    z-index: 1;
+    margin: 124px auto 64px auto;
+    width: 50%;
+    padding: 10px;
+    color: #000;
+    text-align: center;
+}
+.aboutdesc{
+    width: 50%;
+    justify-content: center;
+    margin: 64px auto 64px auto;
+    text-align: justify;
+    position: relative;
+}
