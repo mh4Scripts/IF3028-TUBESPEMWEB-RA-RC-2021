@@ -54,10 +54,15 @@ class PostController extends Controller
         ]);
 
         // Alihkan ke laporan bila berhasil
-        dump($status->id);
         if ($status) return redirect()->route('laporan',$status->id);
         // Return false bila gagal
         else return false;
+    }
+
+    public function renew(Request $id) {
+        return view('update', [
+            "posts" => Post::find($id)
+        ]);
     }
 
     // Modifikasi laporan yang sudah ada
@@ -70,9 +75,10 @@ class PostController extends Controller
             "lampiran" => $request->lampiran
         ]);
         // Alihkan ke laporan bila berhasil
-        if ($status) return redirect()->route('laporan',$status->id);
+        if ($status) {
+            return redirect()->route('laporan',$status->id);
         // Return false bila gagal
-        else return false;
+        } else return false;
     }
 
     // Menghapus laporan lama

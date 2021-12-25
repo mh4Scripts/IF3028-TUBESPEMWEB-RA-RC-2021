@@ -24,8 +24,10 @@ Route::get('/buat', function() {
 
 Route::get('/laporan/{id}', [PostController::class, 'show'])->name('laporan');
 
-Route::post('/tambah', [PostController::class, 'create']);
+Route::post('/tambah', [PostController::class, 'create'])->name('tambah');
 
-Route::post('/ubah/{id}', [PostController::class, 'update'])->name('ubah');
+Route::post('/perbarui', [PostController::class, 'renew'])->name('perbarui');
 
-Route::get('/hapus/{id}', [PostController::class, 'delete'])->name('delete');
+Route::post('/ubah', [PostController::class, 'update'])->name('ubah');
+
+Route::post('/hapus', [PostController::class, 'delete'])->name('delete');

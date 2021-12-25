@@ -6,7 +6,7 @@
             <a class="laporan-header" href='/laporan/{{ $post->id }}'>{{ $post->judul }}</a>
             <p class="laporan-body">{{ $post->deskripsi }}</p>
 
-            <p class="laporan-lampiran">Lampiran : <a href="linktolampiran">{{ $post->lampiran }}</a> </p>
+            <p class="laporan-lampiran">Lampiran : <a href="/public/{{ $post->lampiran }}">{{ $post->lampiran }}</a> </p>
 
             <div class="laporan-footer">
             <p class="footer-item">Aspek : <span>{{ $post->aspek }}</span></p>
