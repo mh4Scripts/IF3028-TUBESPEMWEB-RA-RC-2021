@@ -20,3 +20,7 @@ Route::post('/store', [LaporanController::class, 'store']);
 Route::get('/search', function () {
     return view('search');
 });
+
+Route::get('/search', function () {
+    return view('tentanglapor');
+});
