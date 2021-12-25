@@ -22,7 +22,7 @@ Route::get('/buat', function() {
 
 Route::get('/laporan/{id}', [PostController::class, 'show'])->name('laporan');
 
-Route::post('/tambah', [PostController::class, 'create'])->name('tambah');
+Route::post('/tambah', [PostController::class, 'create']);
 
 Route::post('/ubah/{id}', [PostController::class, 'update'])->name('ubah');
 

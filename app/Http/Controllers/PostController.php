@@ -25,12 +25,26 @@ class PostController extends Controller
     // Membuat laporan baru
     // TODO: Simpan lampiran
     public function create(Request $request) {
-        $status = Post::create([
-            "judul" => $request->judul,
-            "deskripsi" => $request->deskripsi,
-            "aspek" => $request->aspek,
-            "lampiran" => $request->lampiran
+
+        $request->validate([
+            'judul' => 'required',
+            'deskripsi' => 'required',
+            'aspek' => 'required',
+            'lampiran' => 'required|max:2000|mimes:jpeg,png,jpg,doc,docx,xls,xlsx,ppt,pptx,pdf',
         ]);
+
+        $lampiran = $request->file('lampiran');
+        $new_lampiran = rand().'.'.$lampiran->getClientOriginalExtension();
+
+        $lampiran->move(public_path('lampiran'), $new_lampiran);
+
+        $status = Post::create([
+            'judul' => $request->judul,
+            'deskripsi' => $request->deskripsi,
+            'aspek' => $request->aspek,
+            'lampiran' => $new_lampiran,
+        ]);
+
         // Alihkan ke laporan bila berhasil
         dump($status->id);
         if ($status) return redirect()->route('laporan',$status->id);
