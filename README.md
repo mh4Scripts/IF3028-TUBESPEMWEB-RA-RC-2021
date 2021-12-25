@@ -1,7 +1,7 @@
-Identitas Kelompok:
-Gunawan Sitepu          119140129
-Jaya Megelar Cakrawarty 119140227
-Fathimatul Mahmudzah    119140168
+### Identitas Kelompok:
+Nama :   Gunawan Sitepu          119140129
+         Jaya Megelar Cakrawarty 119140227
+         Fathimatul Mahmudzah    119140168
 
 
 ## Simple `LAPOR` :heavy_exclamation_mark:
@@ -105,32 +105,28 @@ Validasi **wajib** dilakukan pada *client-side*, dengan menggunakan **javascript
 Pengguna dapat mencari laporan/komentar dengan melakukan search ke `isi laporan/komentar`.
 
 ### Penjelasan Teknis
-
-Cara Instalasi CodeIgniter 3:
-
-- Kunjungi codeigniter.com
-- Download codeigniter 3
-- Ekstrak lalu ubah nama folder dengan codigniter masukan folder download/hasil ekstrak tadi ke htdocs
-- Hidupkan xampp
-- Buka aplikasi browser
-- Ketik di link: localhost/codeigneiter
-- Jika muncul tampilan welcome, maka artinya codeigniter siap digunakan
-
+Instalasi CodeIgniter 3:
+- Download codeigniter 3 melalui codeigniter.com
+- Pindahkan file download ke xampp -> htdocs -> codeigniter
+- Aktifkan xampp
+- Akses browser lalui masuk kedalam localhost/codeigneiter
+- Tampilan welcome akan muncul yang menandakan codeigniter siap digunakan
 
 Koneksi Basis Data:
-
-- Buat database di localhost/phpmyadmin
+- Bembuat basis data pada localhost/phpmyadmin 
 - Buat tabel dengan nama yang di inginkan
 - Buat Field yang diperlukan
-- lalu buat 1 buah data sebagai contoh dengan cara menambahkan data secara manual di phpmyadmin
-- dibagian program, pada config->database isi username,password,nama database. pada models, loadkan isi database. pada    controllers, loadkan models dan views untuk menampilkan data. lalu buat tampilan di views.
-
-Validasi form pada client-sid menggunakan javascript:
-
-- Field dari form itu datanya akan divalidasi dengan menggunakan javascript
-- Pada field textarea/isi, data tidak boleh kosong dan miniman kata adalah 20 kata
-- Pada field aspek, data tidak boleh kosong
-- Pada field lampiran, data tidak boleh kosong
+- Buat 1 buah data sebagai contoh, dengan cara menambahkan data secara manual di phpmyadmin
+- Pada direktori appliation -> config -> database, isi username, password, nama database.
+- Pada direktori models, loadkan isi database.
+- Pada controllers, loadkan models dan views untuk menampilkan data.
+- Buat tampilan halaman pada direktoi views.
+  
+Validasi form menggunakan javascript:
+- Dara field divalidasi dengan menggunakan javascript
+- Textarea/isi tidak boleh kosong dan miniman kata adalah 20 kata
+- Aspek data tidak boleh kosong
+- Lampiran data tidak boleh kosong
 
 ### Knowledge
 Untuk meringankan beban tugas ini, ada berberapa keyword yang bisa anda cari untuk menyelesaikan tugas ini.
