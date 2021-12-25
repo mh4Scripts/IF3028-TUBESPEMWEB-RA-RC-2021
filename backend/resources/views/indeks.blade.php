@@ -9,7 +9,7 @@
 <body>
     <ul>
         <li><a href="/tentang lapor">Tentang Lapor</a></li>
-        <li><a href="/search">Cari Aduan</a></li>
+        <li><a href="/search">Cari Laporan</a></li>
         <li><a href="/kontak">Kontak</a></li>
     </ul>
     <center>
