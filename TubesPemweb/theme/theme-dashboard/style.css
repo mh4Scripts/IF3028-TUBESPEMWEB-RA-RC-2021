@@ -1,0 +1,72 @@
+* {
+	padding:  none;
+	margin: none;
+	font-size: none;
+}
+
+body {
+	
+	font-family: Cambria;
+	background-color: ;
+}
+/* Halaman Dashboard */
+
+#box {
+	margin: 0 auto;
+	border: 2px solid; 
+	color: black;
+	width: 80%;
+}
+
+#box-content{
+	width: 80%;
+	margin: 0 auto;
+}
+
+#title h1{
+	margin-top:30px;
+	text-align: center;
+}
+
+#body{
+	display: flex;
+	height: auto;
+	width: auto;
+}
+
+#more a{
+	color: black;
+	text-decoration:none;
+	text-align : center;
+}
+
+
+#search-report form {
+	margin-top: 40px;
+}
+
+#search-report #search{
+	width: 81%;
+	height: 32.5px;
+	padding: 10px;
+}
+
+#search-report #button{
+	width: 15%;
+	height: 57px;
+	background-color: white;
+}
+
+#create-report{
+	text-align: center;
+}
+
+
+#form-content #info-content{
+	margin-top: 30px;
+}
+
+.fa-ellipsis-v {
+	margin-left: 50%;
+	margin-top: -20px;
+}

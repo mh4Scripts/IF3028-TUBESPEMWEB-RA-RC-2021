@@ -9,7 +9,9 @@ di program studi teknik informatika ITERA.
 **Luangkan waktu untuk membaca spesifikasi ini sampai selesai.** :kissing_heart:
 
 ### Anggota Tim :cyclone:
-Project dikerjakan secara **berkelompok** dengan maksimal jumlah anggota adalah 2-3 orang mahasiswa (maksimal 3 orang mahasiswa!).
+1. Joy Ravelo Tarigan (119140037)
+2. Vincentius Yudha R (118140170)
+3. Hasiholan Owen Ambarita (119140173)
 
 ### Petunjuk Pengerjaan :umbrella:
 1. Fork pada repository ini dengan akun github anda.
@@ -99,7 +101,10 @@ Validasi **wajib** dilakukan pada *client-side*, dengan menggunakan **javascript
 Pengguna dapat mencari laporan/komentar dengan melakukan search ke `isi laporan/komentar`.
 
 ### Penjelasan Teknis
-`Silakan isi bagian ini dengan penjelasan anda, sesuai Petunjuk Pengerjaan di atas.`
+Berikut ini cara instalasi program yang telah kami buat :
+1. Download folder tugas, kemudian untuk folder TubesPemweb silahkan disimpan di folder C:/xampp/htdocs/.
+2. Import file database (tubespemweb.sql) ke mysql dengan nama "tubespemweb".
+3. Untuk base_url pada folder application/config/config.php silahkan disesuaikan dengan localhost yang digunakan (untuk localhost yang saya gunakan yaitu http://localhost:8080/TubesPemweb/). Pada base_url biasanya menggunakan "http://localhost/TubesPemweb/" saja.
 
 ### Knowledge
 Untuk meringankan beban tugas ini, ada berberapa keyword yang bisa anda cari untuk menyelesaikan tugas ini.
