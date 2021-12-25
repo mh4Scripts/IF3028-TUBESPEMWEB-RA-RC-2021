@@ -3,7 +3,7 @@
 
 <head>
     <title> </title>
-    <link rel="stylesheet" type="text/css" href="search-style.css" />
+    <link rel="stylesheet" type="text/css" href="css/search-style.css" />
 </head>
 
 <body>
