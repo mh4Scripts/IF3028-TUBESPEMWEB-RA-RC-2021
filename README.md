@@ -99,7 +99,13 @@ Validasi **wajib** dilakukan pada *client-side*, dengan menggunakan **javascript
 Pengguna dapat mencari laporan/komentar dengan melakukan search ke `isi laporan/komentar`.
 
 ### Penjelasan Teknis
-`Silakan isi bagian ini dengan penjelasan anda, sesuai Petunjuk Pengerjaan di atas.`
+Muhammad Fariz Luthfi[119140199]
+Destry Rehulina Br Sitepu[118140022]
+
+1.Install composer terlebih dahulu
+2.Masuk ke folder Lapor
+3.Lalu ketik di cmd/terminal php artisan serve
+4.Aplikasi langsung bisa di jalankan
 
 ### Knowledge
 Untuk meringankan beban tugas ini, ada berberapa keyword yang bisa anda cari untuk menyelesaikan tugas ini.
