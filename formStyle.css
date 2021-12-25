@@ -1,7 +1,3 @@
-*{
-    font-family:sans-serif;
-}
-
 textarea{
     height: 200px;
     width: 700px;
@@ -14,7 +10,8 @@ h1{
 
 div {
     height: max-content;
-    margin: 2px 2px 2px 2px;
+    margin-left: 100px;
+    margin-right: 100px;
 }
 .garis_tepi1 {
     height: max-content;
@@ -31,5 +28,6 @@ input{
 }
 
 button{
+    text-align: left;
     height: 30px;
 }
