@@ -29,3 +29,8 @@ Route::post('/store', [PostController::class, 'store'])->name('store');
 #route ke detail laporan
 Route::get('/show/{id}', [PostController::class, 'show'])->name('show');
 
+#route ke edit laporan
+Route::get('/edit/{id}', [PostController::class, 'edit'])->name('edit');
+
+#route untuk update data
+Route::put('/update/{id}', [PostController::class,'update'])->name('update');
