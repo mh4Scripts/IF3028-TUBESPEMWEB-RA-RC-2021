@@ -21,6 +21,9 @@
                 <option selected value="">Pilih Aspek Pelaporan/Komentar</option>
                 <option value="Pengaduan">Pengaduan</option>
                 <option value="Aspirasi">Aspirasi</option>
+                <option value="Infrastructure">Infrastructure</option>
+                <option value="Kebersihan">Kebersihan</option>
+                <option value="Perkuliahan">Perkuliahan</option>
                 <option value="Permintaan Informasi">Permintaan Informasi</option>
             </select>
 
