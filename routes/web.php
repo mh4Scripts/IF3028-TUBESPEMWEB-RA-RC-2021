@@ -20,3 +20,8 @@ use Illuminate\Session\Store;
 #route untuk tampil di home
 Route::get('/', [PostController::class, 'index'])->name('main');
 
+#route input laporan
+Route::get('/create', [PostController::class, 'create'])->name('create');
+
+#route input data ke database
+Route::post('/store', [PostController::class, 'store'])->name('store');
