@@ -56,7 +56,7 @@
     </div>
     @endforeach
     </div>
-
+<br>
     <script>
         function create() {
             var xhttp = new XMLHttpRequest();
