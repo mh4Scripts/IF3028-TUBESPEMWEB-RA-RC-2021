@@ -116,7 +116,7 @@
                     </div>
 
                     <div class="hapuslaporan">
-                        <a href="">
+                        <a href="{{ route('hapus',$posts->id) }}">
                         Hapus Laporan/Komentar
                     </div>     
 

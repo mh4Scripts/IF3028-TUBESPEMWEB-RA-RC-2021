@@ -101,4 +101,11 @@ class PostController extends Controller
         }
     }
 
+    public function hapus($id)
+    {
+        // $id->delete();
+        Post::where('id', $id)->delete();
+        return redirect('')->with('success', 'Berhasil delete data');
+    }
+
 }

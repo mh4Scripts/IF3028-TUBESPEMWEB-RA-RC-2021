@@ -32,5 +32,8 @@ Route::get('/show/{id}', [PostController::class, 'show'])->name('show');
 #route ke edit laporan
 Route::get('/edit/{id}', [PostController::class, 'edit'])->name('edit');
 
+#route hapus
+Route::get('/hapus/{id}', [PostController::class, 'hapus'])->name('hapus');
+
 #route untuk update data
 Route::put('/update/{id}', [PostController::class,'update'])->name('update');
