@@ -98,7 +98,7 @@ Validasi **wajib** dilakukan pada *client-side*, dengan menggunakan **javascript
 ### Bonus
 Pengguna dapat mencari laporan/komentar dengan melakukan search ke `isi laporan/komentar`.
 
-## Anggota Keompok
+### Anggota Kelompok
 1. Joy Ravelo Tarigan (119140037)
 2. Vincentius Yudha R (118140170)
 3. Hasiholan Owen Ambarita (119140173)
