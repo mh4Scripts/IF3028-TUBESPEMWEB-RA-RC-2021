@@ -12,104 +12,23 @@ Berikut adalah penjelasan tentang Tugas Besar kami,
 1. Disarankan Menggunakan Visual Studio Code
 2. Install terlebih dahulu composer di komputer anda
    - Dapat diunduh dari : https://getcomposer.org/
-3. Silakan commit pada repository anda (hasil fork). Lakukan berberapa commit dengan pesan yang bermakna,
-contoh: fix css, membuat post done, jangan seperti final, benerin dikit, oke deh, update deh dll. 
-Disarankan untuk tidak melakukan commit dengan perubahan yang besar karena akan mempengaruhi 
-penilaian (contoh: hanya melakukan satu commit kemudian dikumpulkan).
-4. Minimal commit sebanyak personil anggota tim dengan masing-masing personil tim melakukan commit sesuai dengan kesepakatan tim, penilaian individu akan dilihat.
-5. Ubah **Penjelasan Teknis** pada bagian bawah readme.md ini dengan menjelaskan bagaimana cara anda:
-   - Instalasi Framework, Koneksi basis data 
-   - Melakukan validasi pada client-side
-   - Melakukan AJAX (mulai dari pengguna melakukan klik pada tombol LAPOR! sampai laporan/komentar terkirim).
-5. Pull request dari repository anda ke repository ini dengan 
-format **NIM** - **Nama Lengkap**. **Waktu terkahir proses pull request adalah 4 hari setelah 
-ujian akhir semester (UAS)**
-6. Data yang dikumpulkan adalah:
-   - Source code aplikasi
-   - Basis data, dan
-   - Cara instalasi aplikasi anda
-7. Penilaian:
-   - Kerjasama tim
-   - Kesesuaian dengan spesifikasi
-   - Pemahaman dalam penggunaan framework, penilaian efisiensi query
-   - Antarmuka aplikasi
-   - Bug free :beetle:
-   
-### Tools :hammer:
-1. Untuk backend, wajib menggunakan PHP framework apapun (Contoh: Codeigniter, Laravel, Slim, Yii dll).
-2. Gunakan MySQL atau basis data relasional lain untuk menyimpan data.
-3. Untuk frontend, gunakan Javascript, HTML dan CSS. **Tidak boleh menggunakan library atau framework CSS atau JS seperti 
-JQuery atau Bootstrap.** CSS sebisa mungkin ada di file yang berbeda (tidak inline styling/embeding styling).
+3. Setelah Composer diinstal, kemudian salin link atau download repositori ini
+4. Silakan lakukan rename folder jika diinginkan
+5. Buat sebuah basis data dengan nama "pemweb_2021"
+6. Kemudian, menggunakan terminal, arahkan ke folder `laravel` yang terdapat dalam repositori ini
+7. Selanjutnya jalankan perintah `mv .env.example .env` pada terminal
+8. Ubah nama DataBase di `.env` menjadi sesuai dengan yang sudah dibuat sebelumnya
+9. Selanjutnya, masih di dalam direktori `laravel` menggunakan terminal jalankan perintah `composer install`
+10. Kemudian perintah `php artisan key:generate`
+11. Kemudian perintah `php artisan migrate`
+12. Kemudian perintah `php artisan db:seed`
+13. Terakhir perintah `php artisan serve`
+14. Selamat menggunakan (disarankan gunakan fitur sejak dari registrasi)
 
-### Spesifikasi Simple LAPOR!
-#### Tampilan :soccer:
-Anda diminta untuk membuat tampilan sedemikian hingga mirip dengan tampilan berikut. Website yang diminta tidak harus 
-responsive. Desain tampilan tidak perlu dibuat indah. Icon dan jenis font tidak harus sama dengan contoh. Warna font, 
-garis pemisah, dan perbedaan ukuran font harus terlihat sesuai contoh. Perhatikan juga tata letak elemen-elemen.
+## Fitur Unggulan
+1. Live Search (menggunakan `JS Fetch API`)
+2. Images Preview Before Update
+3. Tampilkan data berdasarkan aspek tanpa reload (menggunakan `JS Fetch API`)
+4. Validasi Real Time menggunakan `JS Fetch API`
 
-![](tampilan/utama.png)
-- Search bar diletakkan di bagian paling atas dibawah judul.
-- Tombol "cari" berada di sebelah kanan search bar.
-- **Buat LAPOR!** digunakan untuk mengirimkan laporan/komentar baru.
-- Tampilan search bar ini harus tetap ada walaupun anda tidak mengimplementasikan fitur search.
-- Tampilan pertanyaan tidak harus urut berdasarkan "Laporan/Komentar terakhir", 
-namun tulisan "Laporan/komentar Terakhir" ini harus ada.
-
-![](tampilan/buat.png)
-- Tampilan di atas digunakan untuk mengajukan atau mengubah laporan/komentar.
-- Perhatikan label dari field pada form berada di dalam field (tidak di luar)
-- Apek yang dilaporkan ditampilkan dalam bentuk `select`
-
-![](tampilan/detail.png)
-- Bagian ini menampilkan laporan/komentar. Bagian `datetime` harus ada. Tanda `kuote` tidak harus ada
-- Perhatikan label dari field pada form berada di dalam field (tidak di luar)
-
-### List laporan/komentar
-Halaman utama berisi daftar judul pertanyaan, siapa yang bertanya, dan isi pertanyaan. Isi pertanyaan yang terlalu 
-panjang harus dipotong. Silakan definisikan sendiri seberapa panjang agar tetap baik terlihat di layout yang Anda buat.
-
-Pada masing-masing elemen list, terdapat menu untuk mengubah dan menghapus pertanyaan.
-
-View Laporan ditampilkan secara terurut dimulai dari laporan terakhir yang diberikan highlight
-
-### Kirim laporan/komentar `LAPOR!`
-Pengguna dapat mengajukan laporan/komentar. Form yang digunakan memiliki komentar (textarea), 
-data lapiran berupa gambar 
-dan file berekstention `doc, docx, xls, xlsx, ppt, pptx, pdf``. Gunakan HTTP POST.
-
-### Ubah Laporan/komentar
-Pengguna dapat mengubah laporan/komentar yang sudah dibuat. Form yang digunakan memiliki tampilan yang sama dengan 
-form untuk bertanya, namun field-field yang ada sudah terisi. Gunakan HTTP POST untuk menyimpan perubahan.
-
-### Hapus Laporan/komentar
-Pengguna dapat menghapus laporan/komentar yang sudah dibuat. Lakukan konfirmasi penghapusan dengan `javascript`.
-
-### Lihat Laporan/komentar
-Pengguna dapat melihat laporan/komentar. Pada halaman ini terdapat informasi aspek yang dilaporkan.
-(Dosen, Staff, Mahasiswa, Infrastruktur dan Pengajaran ), isi laporan/komentar, waktu pengiriman komentar `datetime` 
-dan file lapiran. 
-
-### Validasi
-Validasi **wajib** dilakukan pada *client-side*, dengan menggunakan **javascript** bukan HTML 5 input type, yaitu:
-- Setiap field pada form tidak boleh kosong.
-- minimal jumlah kata dalam laporan/komentar adalah 20 kata.
-
-### Bonus
-Pengguna dapat mencari laporan/komentar dengan melakukan search ke `isi laporan/komentar`.
-
-### Penjelasan Teknis
-`Silakan isi bagian ini dengan penjelasan anda, sesuai Petunjuk Pengerjaan di atas.`
-
-### Knowledge
-Untuk meringankan beban tugas ini, ada berberapa keyword yang bisa anda cari untuk menyelesaikan tugas ini.
-- CSS: margin, padding, header tag, font-size, text-align, float, clear, border, color, div, span, placeholder, 
-anchor tag.
-- Javascript : XMLHTTPRequest.
-- PHP OOP
-- SQL query: SELECT, INSERT, UPDATE, DELETE, WHERE, operator LIKE.
-
-:telephone: Jika ada pertanyaan silakan tanyakan lewat `Asisten`.
-
-### About :honeybee:
-
-Dosen       : Andre Febrianto, S.Kom., M.Eng., Amirul Iqbal, S.Kom., M.Eng., Muhammad Habib Algifari, S.Kom., M.T.I.
+Dosen : Andre Febrianto, S.Kom., M.Eng., Amirul Iqbal, S.Kom., M.Eng., Muhammad Habib Algifari, S.Kom., M.T.I.
