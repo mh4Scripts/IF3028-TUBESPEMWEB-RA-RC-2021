@@ -3,7 +3,7 @@
 @section("laporan-item")
     @foreach ($posts as $post)
         <div class="laporan-item">
-            <p class="laporan-header"><a href='/laporan/{{ $post->id }}'>{{ $post->judul }}</a></p>
+            <a class="laporan-header" href='/laporan/{{ $post->id }}'>{{ $post->judul }}</a>
             <p class="laporan-body">{{ $post->deskripsi }}</p>
 
             <p class="laporan-lampiran">Lampiran : <a href="linktolampiran">{{ $post->lampiran }}</a> </p>

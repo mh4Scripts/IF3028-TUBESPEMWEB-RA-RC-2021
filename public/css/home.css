@@ -116,6 +116,7 @@ hr {
     overflow: hidden;
     text-overflow: ellipsis;
     max-lines: 2;
+    text-decoration: none;
 }
 
 .laporan-body{
