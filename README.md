@@ -106,7 +106,6 @@ Pengguna dapat mencari laporan/komentar dengan melakukan search ke `isi laporan/
 
 ### Penjelasan Teknis
 
-
 Penjelasan:
 
 
