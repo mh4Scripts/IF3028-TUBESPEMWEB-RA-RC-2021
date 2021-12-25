@@ -9,7 +9,8 @@ di program studi teknik informatika ITERA.
 **Luangkan waktu untuk membaca spesifikasi ini sampai selesai.** :kissing_heart:
 
 ### Anggota Tim :cyclone:
-Project dikerjakan secara **berkelompok** dengan maksimal jumlah anggota adalah 2-3 orang mahasiswa (maksimal 3 orang mahasiswa!).
+1. 119140178 - Hendamia Yohana Sembiring
+2. 119140221 - Muhammad Anwar
 
 ### Petunjuk Pengerjaan :umbrella:
 1. Fork pada repository ini dengan akun github anda.
@@ -99,7 +100,22 @@ Validasi **wajib** dilakukan pada *client-side*, dengan menggunakan **javascript
 Pengguna dapat mencari laporan/komentar dengan melakukan search ke `isi laporan/komentar`.
 
 ### Penjelasan Teknis
-`Silakan isi bagian ini dengan penjelasan anda, sesuai Petunjuk Pengerjaan di atas.`
+Tugas Besar Mata Kuliah Pemrograman Website
+PEMROGRAMAN WEB RA
+
+Cara Instalasi CodeIgniter 3:
+- Kunjungi website codeigniter.com
+- Download codeigniter 3
+- Masukan file yang sudah terdowload ke htdocs -> codeigniter
+- Nyalakan XAMPP
+- Jalankan Web Browser pilihan Anda
+- Ketik pada link dengan url : localhost/codeigniter
+- Jika telah muncul tampilan welcome, maka artinya codeigniter siap digunakan.
+
+Kemudian, buatlah database sebagai penyimpanan data ataupun informasi yang akan diambil dan ditampilkan. Berikut langkah-langkahnya :
+- Terlebih dahulu buka localhost/phpmyadmin
+- Buat tabel dengan nama yang diinginkan.
+- Buat tabel yang menyimpan informasi lapor.
 
 ### Knowledge
 Untuk meringankan beban tugas ini, ada berberapa keyword yang bisa anda cari untuk menyelesaikan tugas ini.
