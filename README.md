@@ -9,7 +9,9 @@ di program studi teknik informatika ITERA.
 **Luangkan waktu untuk membaca spesifikasi ini sampai selesai.** :kissing_heart:
 
 ### Anggota Tim :cyclone:
-Project dikerjakan secara **berkelompok** dengan maksimal jumlah anggota adalah 2-3 orang mahasiswa (maksimal 3 orang mahasiswa!).
+1. Joy Ravelo Tarigan (119140037)
+2. Vincentius Yudha R (118140170)
+3. Hasiholan Owen Ambarita (119140173)
 
 ### Petunjuk Pengerjaan :umbrella:
 1. Fork pada repository ini dengan akun github anda.
@@ -97,11 +99,6 @@ Validasi **wajib** dilakukan pada *client-side*, dengan menggunakan **javascript
 
 ### Bonus
 Pengguna dapat mencari laporan/komentar dengan melakukan search ke `isi laporan/komentar`.
-
-### Anggota Kelompok
-1. Joy Ravelo Tarigan (119140037)
-2. Vincentius Yudha R (118140170)
-3. Hasiholan Owen Ambarita (119140173)
 
 ### Penjelasan Teknis
 Berikut ini cara instalasi program yang telah kami buat :
