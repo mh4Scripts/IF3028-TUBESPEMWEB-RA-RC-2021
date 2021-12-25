@@ -9,6 +9,11 @@ di program studi teknik informatika ITERA.
 **Luangkan waktu untuk membaca spesifikasi ini sampai selesai.** :kissing_heart:
 
 ### Anggota Tim :cyclone:
+
+Akmal Fauzan Suranta (119140203) akmal09
+Auriga Farhan Rizkiadhy (119140153) nadeeee
+Sayyid Muhammad Umar Al Haris(119140190) meepshere
+
 Project dikerjakan secara **berkelompok** dengan maksimal jumlah anggota adalah 2-3 orang mahasiswa (maksimal 3 orang mahasiswa!).
 
 ### Petunjuk Pengerjaan :umbrella:
@@ -99,7 +104,40 @@ Validasi **wajib** dilakukan pada *client-side*, dengan menggunakan **javascript
 Pengguna dapat mencari laporan/komentar dengan melakukan search ke `isi laporan/komentar`.
 
 ### Penjelasan Teknis
-`Silakan isi bagian ini dengan penjelasan anda, sesuai Petunjuk Pengerjaan di atas.`
+
+A. instalasi framework :
+1. install composer php
+2. bukan CMD/terminal dan arahkan folder yang ingin dijadikan project laravel nya 
+3. ketik command 
+   composer create-project --prefer-dist laravel/laravel nama_projectmu
+pada cmd
+4. Tunggu instalasi sampai selesai
+5. ketik command 
+      php artisan serve 
+pada CMD, jika sudah muncul ip address maka framework bisa digunakan
+<br>
+
+Untuk menggunakannya pada framework, file .env disetting terlebih dahulu seperti berikut:
+
+      DB_CONNECTION=sqlite
+      DB_FOREIGN_KEYS=true
+      # DB_CONNECTION=mysql
+      # DB_HOST=127.0.0.1
+      # DB_PORT=3306
+      # DB_DATABASE=laravel
+      # DB_USERNAME=root
+      # DB_PASSWORD=
+          
+hanya memakai yang tidak di comment
+
+migrasi ke database dengan perintah
+
+      php artisan migrate
+
+B. Melakukan validasi pada client-side Validasi menggunakan javascript dengan cara embedded    pada file create dan editLaporan pada folder views. Pada embedded script menggunakan Document Object Model (DOM) untuk mengambil class dan id. Kemudian menggunakan fungsi addEventListener yang akan mentrigger ketika button submit pada form diklik. Javascript akan mengecek value yang terdapat pada tag input dan akan menampilkan pesan error menggunakan innerHTML jika tidak sesuai.
+
+C.Melakukan AJAX pada halaman awal merupakan tampilan awal data yang diambil dari database. ketika pengguna mengklik Buat Laporan/Komentar, button akan trigger javascript dengan fungsi XMLHttpRequest yang akan mengarahkan ke route get /create. Kemudian pengguna diminta untuk memasukkan Laporan/Komentar, Aspek, dan Lampiran. Setelah itu fungsi AJAX fetch semua data yang telah dimasukkan oleh pengguna. Ketika laporan yang dimasukan belum sesuai dengan kriteria dari validasi, maka laporan tidak dapat dikirimkan ke database dan akan menampilkan pesan error melalui innerHTML pada javascript. Jika laporan sudah sesuai dengan kriteria validasi yang telah dibuat sebelumnya, fetch semua data yang ditulis pengguna dapat dikirimkan ke database dan ditampilkan.
+
 
 ### Knowledge
 Untuk meringankan beban tugas ini, ada berberapa keyword yang bisa anda cari untuk menyelesaikan tugas ini.

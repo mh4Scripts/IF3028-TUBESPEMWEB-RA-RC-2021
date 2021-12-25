@@ -1,0 +1,29 @@
+.main-content{
+    position: relative;
+    margin: 0 150px 0 ;
+    /* border: outset 5px black; */
+}
+
+.judulHF{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+.judul.elemen{
+    padding-left: 85%;
+}
+
+#isiLaporan{
+    margin-top: 50px;
+}
+
+
+#lampiran{
+    margin-top: 40px;
+}
+
+#footer{
+    margin-top: 70px;
+}
