@@ -53,7 +53,7 @@
     });
 
     //create javascript listener for search input
-    document.querySelector(".search-input").addEventListener("on", function(e){
+    document.querySelector(".search-input").addEventListener("keyup", function(e){
         //prevent default behaviour
         e.preventDefault();
         if (event.keyCode === 13) {
