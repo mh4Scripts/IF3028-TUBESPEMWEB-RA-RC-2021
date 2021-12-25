@@ -8,7 +8,7 @@
 
 <body>
   <ul>
-    <li><a href="/tentang">Tentang Kami</a></li>
+    <li><a href="/tentang">Tentang Lapor</a></li>
     <li><a href="/laporan">Laporan</a></li>
     <li><a href="/search">Cari Aduan</a></li>
     <li><a href="/kontak">Kontak</a></li>
