@@ -31,3 +31,4 @@ Route::get('/perbarui/{id}', [PostController::class, 'renew'])->name('perbarui')
 Route::post('/ubah', [PostController::class, 'update'])->name('ubah');
 
 Route::post('/hapus', [PostController::class, 'delete'])->name('delete');
+
