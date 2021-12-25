@@ -1,0 +1,10 @@
+Cara Instalasi Aplikasi:
+
+1. Pastikan XAMPP, composer, dan php sudah terinstall pada perangkat anda
+2. Clone Repo https://github.com/Crymlll/IF3028-TUBESPEMWEB-RA-RC-2021
+3. Buat database bernama “lapor” pada phpmyadmin
+4. Untuk membuat tabel pada database, tuliskan Command berikut pada terminal:
+	i) cd laravel
+	ii) php artisan migrate
+5. Untuk membuka web, tuliskan command "php artisan serve"
+6. Klik link yang tergenerate pada terminal atau menggunakan link default, yaitu "http://127.0.0.1:8000/"

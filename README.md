@@ -9,6 +9,12 @@ di program studi teknik informatika ITERA.
 **Luangkan waktu untuk membaca spesifikasi ini sampai selesai.** :kissing_heart:
 
 ### Anggota Tim :cyclone:
+
+   1. Aulia Rahman Zulfi (119140110)
+   2. Fadhillah Azhar Alsani (119140217)
+   3. Fahri Setiawan (119140193)
+
+      
 Project dikerjakan secara **berkelompok** dengan maksimal jumlah anggota adalah 2-3 orang mahasiswa (maksimal 3 orang mahasiswa!).
 
 ### Petunjuk Pengerjaan :umbrella:
@@ -99,7 +105,63 @@ Validasi **wajib** dilakukan pada *client-side*, dengan menggunakan **javascript
 Pengguna dapat mencari laporan/komentar dengan melakukan search ke `isi laporan/komentar`.
 
 ### Penjelasan Teknis
-`Silakan isi bagian ini dengan penjelasan anda, sesuai Petunjuk Pengerjaan di atas.`
+1. Instalasi Framework, Koneksi basis data
+Untuk mengerjakan tugas besar ini, framework yang kami gunakan yaitu Laravel. Laravel merupakan web framework open source dengan konsep MVC (Model View Controller). Untuk menginstall framework ini, terlebih dahulu mengintall software pendukung pada device diantaranya:
+   - <a href="https://getcomposer.org/download/">Composer</a>
+   - <a href="https://www.php.net/downloads">PHP</a>
+
+Untuk menginstall framework laravel dengan nama folder Laravel, pada terminal dapat dimasukkan perintah
+
+      composer create-project laravel/laravel Laravel
+
+Kemudian setelah framework selesai diinstall, maka framework dapat dijalankan atau diedit dengan perintah
+
+      php artisan serve
+
+Aplikasi akan dijalankan pada http://127.0.0.1:8000/ 
+
+Basis data yang digunakan yaitu MySQL. MySQL adalah relational database management system (RDBMS) yang bersifat open source. Sebelum digunakan terlebih dahulu dibutuhkan software pendukung yaitu
+
+   - <a href="https://www.apachefriends.org/index.html">XAMPP</a>
+
+ Untuk menggunakannya pada framework, file **.env** disetting terlebih dahulu seperti berikut:
+
+         DB_CONNECTION=mysql
+         DB_HOST=127.0.0.1
+         DB_PORT=3306
+         DB_DATABASE=lapor
+         DB_USERNAME=root
+         DB_PASSWORD=
+
+Membuat tabel basis data pada framework ini digunakan perintah
+
+      php artisan make:migration create_lapor_table
+
+Setelah template tabel lapor dibuat, kemudian dibuat schema sebagai berikut:
+
+      ID
+      Judul
+      Laporan
+      Aspek
+      Lampiran
+
+Kemudian tabel tersebut dapat di migrasi ke database dengan perintah
+
+      php artisan migrate
+
+Database secara langsung akan terbuat, kemudian untuk menggunakannya pada framework dibuat **model** dengan perintah
+
+      php artisan make:model Lapor
+
+
+2. Melakukan validasi pada client-side
+Validasi menggunakan javascript dengan cara embedded pada file lapor dan edit pada folder **views**. Pada embedded script digunakan Document Object Model (DOM) untuk mengambil id dan class. Kemudian digunakan fungsi addEventListener yang akan trigger ketika button submit pada form diklik. Javascript akan mengecek value yang terdapat pada tag input dan akan menampilkan pesan error menggunakan innerHTML. 
+
+
+3. Melakukan AJAX
+Halaman awal merupakan tampilan awal data yang diambil dari database lapor. Pengguna ketika mengklik **Buat Laporan/Komentar**, button akan trigger javascript dengan fungsi XMLHttpRequest yang akan mengarah ke route get /lapor. Kemudian pengguna diminta untuk memasukkan Judul, Laporan/Komentar, Aspek, dan Lampiran. Setelah itu fungsi AJAX fetch semua data yang dimasukkan pengguna. Ketika laporan yang pengguna masukkan belum sesuai dengan kriteria validasi, maka laporan tidak dapat dikirimkan ke database dan akan menampilkan pesan error melalui innerHTML. Jika laporan sudah sesuai kriteria validasi, fetch semua data yang ditulis pengguna dapat dikirimkan ke database.
+      
+
 
 ### Knowledge
 Untuk meringankan beban tugas ini, ada berberapa keyword yang bisa anda cari untuk menyelesaikan tugas ini.

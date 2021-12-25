@@ -1,0 +1,273 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+body,html{
+    font-family: Montserrat;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.nav{
+    margin-bottom: 50px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px;
+    background-color:#e4e3e3;
+    box-shadow: 0 0 10px black;
+}
+
+.logo{
+    padding-left: 35px;
+    cursor: pointer;
+}
+
+.title h1{
+    font-size: 25px;
+}
+
+.navbar{
+    height: 30px;
+    background-color: rgb(145, 0, 0);
+    padding-top: 10px;
+    padding-left: 20px;
+}
+
+hr{
+    border: 1px solid rgb(145, 0, 0);
+}
+
+.navbar ul{
+    float: right;
+    
+}
+.link li{
+    display: inline-block;
+}
+
+.link a{
+    padding: 0 20px;
+    text-decoration: none;
+    color: white;
+    font-weight: 1000;
+}
+
+.nav h1{
+    padding-left: 20px;
+}
+
+.container{
+    padding-left: 5%;
+    padding-right: 5%;
+}
+.container h1{
+    text-align: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.head{
+    text-align: center;
+}
+
+.container a{
+    display: flexbox;
+    flex-direction: row;
+}
+
+.lapor{
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.lapor img{
+    height: 20px;
+    padding-left: 5px;
+}
+
+.lapor table{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.lapor table a{
+    text-decoration: none;
+}
+
+.item{
+    margin-top: 10px;
+}
+
+.container-footer{
+    text-align: center;
+}
+
+.search{
+    margin-bottom: 20px;
+}
+
+.field{
+    width: 87%;
+    padding: 15px 13px;
+    margin: 5px 0;
+    background: transparent;
+}
+
+.btn{
+    padding: 3px 30px 20px 20px;
+    cursor: pointer;
+    border: 0;
+    border-radius: 5px;
+    font-weight: 600;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn th{
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.aspek{
+    padding: 8px 12px;
+    color: black;
+    background-color: #eeeeee;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.form-aspek{
+    margin-bottom: 20px;
+}
+
+.laporbtn{
+    margin-top: 20px;
+    padding: 13px 30px 13px 20px;
+    cursor: pointer;
+    border: 0;
+    border-radius: 2px;
+    font-weight: 600;
+}
+
+.keterangan {
+    display: flex;
+    justify-content: space-between; 
+}
+
+
+
+.selengkapnya {
+    display: flex;
+    align-items:center;
+    gap: 10px;
+    justify-content: space-between;
+}
+
+.selengkapnya a {
+    text-decoration: none;
+    align-items:center;
+    border-radius: 5px;
+}
+
+.group{
+    padding-top: 200px;
+    display: flex;
+    text-align: center;
+    width: auto;
+    justify-content: center;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+
+.group .member{
+    background: #fff;
+    margin: 5px;
+    margin-bottom: 50px;
+    width: 400px;
+    padding: 20px;
+    line-height: 20px;
+    position: relative;
+}
+
+.group .member h3{
+    font-size: 26px;
+    margin-top: 50px;
+}
+
+.group .member p.job{
+    font-size: 16px;
+    font-weight: 1000;
+    text-transform: uppercase;
+    margin: 12px 0px;
+}
+
+.group .member .imge{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    position: absolute;
+    top: -100px;
+    left: 50%;
+    transform: translate(-50%);
+    background-color: #fff;
+}
+
+.group .member .imge img{
+    width: 150px;
+    height: 150px;
+    padding: 10px;
+
+}
+
+.group a{
+    float: left;
+    align-items: center;
+    padding: 0px 20px;
+    transform: translate(50%);
+}
+
+.form-judul{
+    margin-bottom: 20px;
+}
+
+.judul{
+    padding: 15px 13px;
+    margin: 5px 0;
+    width: 46%;
+}
+
+
+textarea{
+    max-width: 100%;
+}
+
+.edit{
+    float: right;
+}
+
+.kalimat{
+    margin-bottom: 20px;   
+}
+
+.pesan{
+    color: red;
+    font-size: small;
+}
+
+@media screen and (max-width: 1500px) {
+    .field{
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .field{
+        width: 70%;
+    }
+}
+
+.hapus{
+    background: transparent;
+    border: 0;
+}
