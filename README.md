@@ -1,3 +1,9 @@
+### Identitas Kelompok:
+- Gunawan Sitepu          119140129
+- Jaya Megelar Cakrawarty 119140227
+- Fathimatul Mahmudzah    119140168
+
+
 ## Simple `LAPOR` :heavy_exclamation_mark:
 Anda mengetahui aplikasi `lapor` yang dibuat oleh pemerintah republik indonesia? jika tidak silahkan kunjungi 
 http://lapor.go.id, maka anda akan mendapatkan laman seperti gambar di bawah
@@ -99,7 +105,28 @@ Validasi **wajib** dilakukan pada *client-side*, dengan menggunakan **javascript
 Pengguna dapat mencari laporan/komentar dengan melakukan search ke `isi laporan/komentar`.
 
 ### Penjelasan Teknis
-`Silakan isi bagian ini dengan penjelasan anda, sesuai Petunjuk Pengerjaan di atas.`
+Instalasi CodeIgniter 3:
+- Download codeigniter 3 melalui codeigniter.com
+- Pindahkan file download ke xampp -> htdocs -> codeigniter
+- Aktifkan xampp
+- Akses browser lalui masuk kedalam localhost/codeigneiter
+- Tampilan welcome akan muncul yang menandakan codeigniter siap digunakan
+
+Koneksi Basis Data:
+- Bembuat basis data pada localhost/phpmyadmin 
+- Buat tabel dengan nama yang di inginkan
+- Buat Field yang diperlukan
+- Buat 1 buah data sebagai contoh, dengan cara menambahkan data secara manual di phpmyadmin
+- Pada direktori appliation -> config -> database, isi username, password, nama database.
+- Pada direktori models, loadkan isi database.
+- Pada controllers, loadkan models dan views untuk menampilkan data.
+- Buat tampilan halaman pada direktoi views.
+  
+Validasi form menggunakan javascript:
+- Dara field divalidasi dengan menggunakan javascript
+- Textarea/isi tidak boleh kosong dan miniman kata adalah 20 kata
+- Aspek data tidak boleh kosong
+- Lampiran data tidak boleh kosong
 
 ### Knowledge
 Untuk meringankan beban tugas ini, ada berberapa keyword yang bisa anda cari untuk menyelesaikan tugas ini.
