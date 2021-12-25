@@ -2,6 +2,7 @@
 
 anggota 
 fajari bagas imami (118140121)
+muhamad falli alfarisi (118140135)
 
 
 ## cara penginstallan
