@@ -12,6 +12,10 @@ class PostController extends Controller
     public function index()
     {
         $posts = Post::latest()->get();
+        if (request('search')) {
+            $posts->where('judul', 'like', '%' . request('search') . '%')
+                ->orWhere('pelapor', 'like', '%' . request('search') . '%');
+        }
         return view('home_page', compact('posts'));
     }
 
@@ -101,17 +105,25 @@ class PostController extends Controller
         }
     }
 
-    public function search_bar()
+    public function hapus($id)
     {
-        $post = Post::Latest();
+        Post::hapus($post->id)->firstorFail();
 
-        if (request('search')) {
-            $posts->where('judul', 'like', '%' . request('search') . '%');
-                ->orWhere('pelapor', 'like', '%' . request('search') . '%');
-        }
 
-        return view('home_page', [
-            "posts" => Post::latest()->get()
-        ]);
+        return redirect()->route('index')->with('success', 'Laporan Telah Dihapus');
     }
+
+    // public function search_bar()
+    // {
+    //     $post = Post::Latest();
+
+    //     if (request('search')) {
+    //         $posts->where('judul', 'like', '%' . request('search') . '%')
+    //             ->orWhere('pelapor', 'like', '%' . request('search') . '%');
+    //     }
+
+    //     return view('home_page', [
+    //         "posts" => Post::latest()->get()
+    //     ]);
+    // }
 }

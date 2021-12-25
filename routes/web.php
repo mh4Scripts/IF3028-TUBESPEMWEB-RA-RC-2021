@@ -32,4 +32,10 @@ Route::get('/show/{id}', [PostController::class, 'show'])->name('show');
 Route::get('/edit/{id}', [PostController::class, 'edit'])->name('edit');
 
 #route untuk mengupdate perubahan data
-Route::put('/update/{id}', [PostController::class,'update'])->name('update');
+Route::put('/update/{id}', [PostController::class, 'update'])->name('update');
+
+// #route untuk searching data
+Route::get('/search', [PostController::class, 'search'])->name('search');
+
+#route untuk hapus laporan
+Route::get('/hapus/{id}', [PostController::class, 'hapus'])->name('hapus');
