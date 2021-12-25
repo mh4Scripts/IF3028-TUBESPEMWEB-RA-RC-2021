@@ -71,6 +71,9 @@ Route::post('/laporan-baru',                'App\Http\Controllers\LaporControlle
 Route::get ('/laporan-baru/{slugy}',        'App\Http\Controllers\LaporController@checkslug'        )->middleware('auth');
 
 
+Route::get ('/carikeyword/{keyword}',       'App\Http\Controllers\LaporController@livesearch'        );
+
+
 
 
 

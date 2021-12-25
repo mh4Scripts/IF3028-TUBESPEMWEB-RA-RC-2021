@@ -16,10 +16,53 @@
     {{-- SEARCH BAR --}}
     <section class="search-bar">
         <form class="search-input" action="" method="post">
-            <input  class="input-text" type="text" name="SearchKeyword" id="SearchKeyword" placeholder="Cari laporan ...">
-            <button class="submit-btn" type="submit" name="SearchButton">
+            @csrf
+            <input  class="input-text" type="text" name="Keyword" id="Keyword" onkeyup="searchData()" placeholder="Cari laporan ...">
+            <button class="submit-btn" type="submit" name="Search">
                 <img src="media/icons/magnifying_glass.png" alt="">
             </button>
+            <div class="live-search-result-container" id="LSRC">
+                {{-- <div class="result">
+                    <a href="">
+                        <h3>Aku adalah anak gembala, gemar bertarung di luas samudera. Siapakah aku ini Tuhan?</h3>
+                    </a>
+                </div>
+                <div class="result">
+                    <a href="">
+                        <h3>Aku adalah anak gembala, gemar bertarung di luas samudera. Siapakah aku ini Tuhan?</h3>
+                    </a>
+                </div>
+                <div class="result">
+                    <a href="">
+                        <h3>Aku adalah anak gembala, gemar bertarung di luas samudera. Siapakah aku ini Tuhan?</h3>
+                    </a>
+                </div>
+                <div class="result">
+                    <a href="">
+                        <h3>Aku adalah anak gembala, gemar bertarung di luas samudera. Siapakah aku ini Tuhan?</h3>
+                    </a>
+                </div>
+                <div class="result">
+                    <a href="">
+                        <h3>Aku adalah anak gembala, gemar bertarung di luas samudera. Siapakah aku ini Tuhan?</h3>
+                    </a>
+                </div>
+                <div class="result">
+                    <a href="">
+                        <h3>Aku adalah anak gembala, gemar bertarung di luas samudera. Siapakah aku ini Tuhan?</h3>
+                    </a>
+                </div>
+                <div class="result">
+                    <a href="">
+                        <h3>Aku adalah anak gembala, gemar bertarung di luas samudera. Siapakah aku ini Tuhan?</h3>
+                    </a>
+                </div>
+                <div class="result">
+                    <a href="">
+                        <h3>Aku adalah anak gembala, gemar bertarung di luas samudera. Siapakah aku ini Tuhan?</h3>
+                    </a>
+                </div> --}}
+            </div>
         </form>
     </section>
 
@@ -176,4 +219,27 @@
         <div class="imageDot-container" id="imageDotContainer">
         </div>
     </div>
+@endsection
+
+@section('additional-script')
+    <script type="text/javascript">
+        async function searchData(){
+            let SKeyword        = document.getElementById("Keyword");
+            let ResultContainer = document.getElementById("LSRC");
+
+            let Keyword = SKeyword.value;
+            if (Keyword == ""){
+                Keyword = "!@#$%^&&*(&)";
+            }
+            let URL         = 'carikeyword/' + Keyword;
+            let ResResult   = await fetch(URL, { method : 'get' });
+            let Result      = await ResResult.json();
+            
+            console.log(Result);
+            ResultContainer.innerHTML = "";
+            for (let i=0; i<Result.length; i++){
+                ResultContainer.innerHTML += "<div class=\"result\"><a href=\"detail-laporan\\"+Result[i]['slugy']+"\"><h3>"+Result[i]['title']+"</h3></a></div>"
+            }
+        }
+    </script>
 @endsection

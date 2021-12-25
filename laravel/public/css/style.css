@@ -219,7 +219,7 @@ header{
     width                   : 100%;
     top                     : 0;
     transition              : all 0.4s linear;
-    z-index                 : 2;
+    z-index                 : 3;
 }
 .nav-header{
     width                   : 88%;
@@ -507,6 +507,7 @@ footer{
 .search-bar{
     width                   : 100%;
     margin-bottom           : 25px;
+    position                : relative;
 }
 .search-bar .search-input{
     width                   : 80%;
@@ -524,6 +525,33 @@ footer{
     width                   : 32px;
     transform               : rotate(-45deg);
 }
+.live-search-result-container{
+    position                : absolute;
+    top                     : 100%;
+    width                   : 99.6%;
+    z-index                 : 2;
+    background-color        : #FAFAFA;
+    padding                 : 0 10px;
+    border-radius           : 0 0 0.5rem 0.5rem;
+}
+.result{
+    padding                 : 10px;
+    border-top              : solid 2px #ACACAC;
+}
+.result a{
+    text-decoration         : none;
+    color                   : #424242;
+}
+.result a h3 {
+    font-size               : 18px !important;
+    font-weight             : 400 !important;
+}
+.result a h3:hover{
+    color                   : #B41E1E;
+    text-decoration         : underline;
+    font-weight             : 600;
+}
+
 
 /* ------------------------------------ */
 /* -------- CREATE NEW REPORT --------- */

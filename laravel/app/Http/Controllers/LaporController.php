@@ -34,7 +34,8 @@ class LaporController extends Controller
     }
 
 
-    public function show(){
+    public function show()
+    {
         $all_report = Report::with(['user' , 'attachment'    ])->latest()->get();
         return view('templates/show',[
             "title"         => "Semua Laporan",
@@ -43,7 +44,8 @@ class LaporController extends Controller
     }
 
 
-    public function showAspect($aspect){
+    public function showAspect($aspect)
+    {
         if ($aspect == "semua"){
             $reports = Report::with(['user' , 'attachment'    ])->latest()->get();
         }else{
@@ -161,6 +163,13 @@ class LaporController extends Controller
         }
         Report::destroy($report->id);
         return redirect('/')->with('successDelete', 'Laporan berhasil dihapus!');
+    }
+
+    public function livesearch($keyword){
+        
+        $results = Report::with(['user', 'attachment'])->where('title', 'LIKE', '%'.$keyword.'%')->get();
+        return Response::json($results);
+        
     }
 
     public function about(){
