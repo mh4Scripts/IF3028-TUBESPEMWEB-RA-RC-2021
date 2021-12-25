@@ -1,7 +1,7 @@
 ### Identitas Kelompok:
-Nama :   Gunawan Sitepu          119140129
-         Jaya Megelar Cakrawarty 119140227
-         Fathimatul Mahmudzah    119140168
+- Gunawan Sitepu          119140129
+- Jaya Megelar Cakrawarty 119140227
+- Fathimatul Mahmudzah    119140168
 
 
 ## Simple `LAPOR` :heavy_exclamation_mark:
