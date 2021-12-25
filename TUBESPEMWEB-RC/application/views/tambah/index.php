@@ -17,7 +17,7 @@
    echo validation_errors(); 
    endif;
 	?>
-   <?php echo form_open_multipart('index.php/Tampilandepan/tambah'); ?>
+   <?php echo form_open_multipart('index.php/utama/tambah'); ?>
 	    <textarea rows="16" cols="136" style="width: 800px;" name="isi" placeholder="Laporan/Keluhan"></textarea><br \>
 		<select name="aspek">
 			<option value="Dosen">Dosen</option>

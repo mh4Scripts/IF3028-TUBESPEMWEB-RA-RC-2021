@@ -23,7 +23,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = 'localhost\IF3028-TUBESPEMWEB-RA-RC-2021\TUBESPEMWEBRB';
+$config['base_url'] = 'http://localhost/IF3028-TUBESPEMWEB-RA-RC-2021/TUBESPEMWEB-RC';
 
 /*
 |--------------------------------------------------------------------------
@@ -35,7 +35,7 @@ $config['base_url'] = 'localhost\IF3028-TUBESPEMWEB-RA-RC-2021\TUBESPEMWEBRB';
 | variable so that it is blank.
 |
 */
-$config['index_page'] = 'index.php';
+$config['index_page'] = '';
 
 /*
 |--------------------------------------------------------------------------

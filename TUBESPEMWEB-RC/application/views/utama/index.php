@@ -13,16 +13,16 @@
 	<form action="" method="post">
 		<input type="text" name="cari" id="cari" placeholder="Cari kata">
 	</form>
-	<a href="<?php echo base_url() ?>index.php/Home/tambah" ><h3>Buat Laporan / Keluhan +</h3></a>
+	<a href="<?php echo base_url() ?>index.php/utama/tambah" ><h3>Buat Laporan / Keluhan +</h3></a>
 	<h4>Laporan / Keluhan terakhir</h4>
 	<hr />
 	<div id="keluhan">
 	<ul>
-	<?php foreach ($lapor as $value){ ?> <!--$lapor didapet dari controller home -->
+	<?php foreach ($lapor as $value){ ?> <!--$lapor didapet dari controller utama -->
 		<li>
 			<h4 style="margin-bottom: 20px;"><?php echo $value["isi"]; ?></h4>
 			<h4 class="lampiran">Lampiran : <?php echo $value["file"]; ?></h4>
-			<a href="<?php echo base_url() ?>index.php/Home/detail/<?php echo $value["id"] ?>"><h4 class="detail">selengkapnya>></h4></a>
+			<a href="<?php echo base_url() ?>index.php/utama/detail/<?php echo $value["id"] ?>"><h4 class="detail">selengkapnya>></h4></a>
 			<h4 class="waktu" style="margin-right: 10px;">Tanggal : <?php echo $value["tanggal"]; ?></h4>
 			<div style="clear: both"></div>
 		</li>
@@ -31,7 +31,7 @@
 	</ul>
 	</div>
 </div>
-<input id="alamat" value="<?php echo base_url() ?>index.php/Tampilandepan/Pencarian/" hidden>
+<input id="alamat" value="<?php echo base_url() ?>index.php/utama/Pencarian/" hidden>
 <script src="<?php echo base_url() ?>/aset/ajax.js"></script>
 </body>
 </html>

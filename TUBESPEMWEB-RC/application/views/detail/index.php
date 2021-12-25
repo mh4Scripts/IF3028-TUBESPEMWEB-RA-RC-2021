@@ -30,8 +30,8 @@
 			<?php } ?>
 
 			<div style="clear: both"></div>
-			<a href="<?php echo base_url() ?>index.php/Home/delete/<?php echo $lapor["id"]?>" onclick="return confirm('Apakah yakin ingin dihapus?');"><h4 class="hapus"> | Hapus keluhan</h4></a>
-			<a href="<?php echo base_url() ?>index.php/Home/detail2/<?php echo $lapor["id"]?>" ><h4 class="ubah">Ubah keluhan |</h4></a>
+			<a href="<?php echo base_url() ?>index.php/utama/delete/<?php echo $lapor["id"]?>" onclick="return confirm('Apakah yakin ingin dihapus?');"><h4 class="hapus"> | Hapus keluhan</h4></a>
+			<a href="<?php echo base_url() ?>index.php/utama/detail2/<?php echo $lapor["id"]?>" ><h4 class="ubah">Ubah keluhan |</h4></a>
 			<h4 class="waktudetail" style="margin-right: 30px;">Waktu : <?php echo $lapor["tanggal"]; ?></h4>
 			<h4 class="aspek">Aspek : <?php echo $lapor["aspek"]; ?></h4>
 			<div style="clear: both"></div>

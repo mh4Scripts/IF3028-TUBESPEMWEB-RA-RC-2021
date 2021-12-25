@@ -17,7 +17,7 @@
    echo validation_errors(); 
    endif;
 	?>
-   <?php echo form_open_multipart('index.php/Tampilandepan/ubah/'.$lapor["id"]); ?>
+   <?php echo form_open_multipart('index.php/utama/ubah/'.$lapor["id"]); ?>
 	    <textarea rows="16" cols="136" style="width: 800px;" name="isi" placeholder="Isi Laporan"><?php echo $lapor["isi"]; ?></textarea><br \>
 		<select name="aspek">
 			<?php foreach ($aspek as $i) { ?>
