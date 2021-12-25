@@ -1,5 +1,6 @@
 @extends("layouts.input_raw")
 
+
 @section("main")
     <form action="/tambah" method="post" enctype="multipart/form-data">
 
