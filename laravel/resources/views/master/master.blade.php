@@ -121,7 +121,7 @@
                     <div class="profile-menu">
                         <div onclick="ProfileFunction()" class="profile-menu-btn">{{ auth()->user()->uname }}</div>
                         <div id="profileMenu" class="profile-menu-content">
-                            <a target="_blank" href="">Profil</a>
+                            <a href="{{ route('pardonme') }}">Profil</a>
                             <form action="{{ route('logout') }}" method="POST">
                                 @csrf
                                 <button type="submit">Logout</button>
@@ -191,7 +191,7 @@
             <div class="footer-links">
                 <a href="{{ route('home') }}">BERANDA</a>
                 <a href="{{ route('about') }}">TENTANG KAMI</a>
-                <a href="">HUBUNGI KAMI</a>
+                <a href="{{ route('pardonme') }}">HUBUNGI KAMI</a>
             </div>
             <h4>Copyright 2021. <span><a class="copyright" href="http://if.itera.ac.id" target="_blank">Teknik Informatika ITERA.</a></span>  Hak cipta dilindungi Undang-Undang.</h4>
         </footer>

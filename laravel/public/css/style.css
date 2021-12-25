@@ -543,8 +543,8 @@ footer{
     color                   : #424242;
 }
 .result a h3 {
-    font-size               : 18px !important;
-    font-weight             : 400 !important;
+    font-size               : 18px;
+    font-weight             : 400;
 }
 .result a h3:hover{
     color                   : #B41E1E;

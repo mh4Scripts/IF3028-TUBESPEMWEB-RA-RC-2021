@@ -88,6 +88,7 @@ Route::get ('/carikeyword/{keyword}',       'App\Http\Controllers\LaporControlle
 // -------------------------------------------------------------------------------------------------------------------------------
 // |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 Route::get ('/about-lapor',                 'App\Http\Controllers\LaporController@about'            )->name('about');
+Route::get ('/pardon-me',                   'App\Http\Controllers\LaporController@pardonme'         )->name('pardonme');
 
 
 

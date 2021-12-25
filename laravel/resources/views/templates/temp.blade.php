@@ -1,1 +1,0 @@
-{{ ($something === "somehow") ? 'action1' : 'action2' }}

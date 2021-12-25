@@ -169,12 +169,18 @@ class LaporController extends Controller
         
         $results = Report::with(['user', 'attachment'])->where('title', 'LIKE', '%'.$keyword.'%')->get();
         return Response::json($results);
-        
+
     }
 
     public function about(){
         return view('templates/about',[
             "title"         => "Tentang LAPOR!!",
+        ]);
+    }
+
+    public function pardonme(){
+        return view('templates/pardon_me',[
+            "title"         => "Maaf...",
         ]);
     }
 
