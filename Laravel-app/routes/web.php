@@ -13,9 +13,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
-Route::get('customers', 'App\Http\Controllers\LaporanController@list');
-Route::post('customers', 'App\Http\Controllers\LaporanController@store');
+
+Route::get('/', [App\Http\Controllers\LaporanController::class,'index']);
+Route::get('/create', [App\Http\Controllers\LaporanController::class, 'create'])->name('create');
+Route::post('/create', [App\Http\Controllers\LaporanController::class,'store']);

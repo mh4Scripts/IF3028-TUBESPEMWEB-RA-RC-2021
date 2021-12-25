@@ -7,30 +7,43 @@ use Illuminate\Support\Facades\DB;
 use App\Models\Laporan;
 class LaporanController extends Controller
 {
-    public function list(){
-        //$customers = Customer::all();
-        // $customers = ["John", "K", "J"];
-        $laporan = DB::select('select * from laporans');
 
-        return view('internals.customers', [
-            'customers' => $laporan,
-        ]);
-        // foreach ($customers as $user) {
-        //     echo $user->name;
-        //     echo "<br>";
-        // }
+    public function create(){
+        return view('create');
     }
-    public function store(){
-        //$customers = Customer::all();
-        // $customers = ["John", "K", "J"];
-        $laporan = DB::select('select * from laporans');
+    
+    public function index(){
+        //
+        $data = Laporan::latest()->simplepaginate(5);
+        $id_latest = Laporan::latest()->first();
+        $id = $id_latest->id;
 
-        return view('internals.customers', [
-            'customers' => $laporan,
+        return view('Home', compact('data','id'));
+    }
+
+    public function store(Request $request){
+        $data = request()->validate([
+            'laporan' => 'required',
+            'aspek' => 'required',
+            'lampiran' => 'required|max:2000|mimes:jpeg,png,jpg,doc,docx,xls,xlsx,ppt,pptx,pdf',
         ]);
-        // foreach ($customers as $user) {
-        //     echo $user->name;
-        //     echo "<br>";
-        // }
+
+        $id_latest = Laporan::latest()->first();
+        $id_file = $id_latest->id + 1;
+        $nama_file = "lampiran".$id_file;
+        
+        $lampiran = $request->file('lampiran');
+        $lampiran_db = $nama_file.'.'.$lampiran->getClientOriginalExtension();
+        $lampiran->move(public_path('lampiran'), $lampiran_db);
+
+
+        $laporan = new Laporan();
+        $laporan->laporan = request('laporan');
+        $laporan->aspek = request('aspek');
+        $laporan->lampiran = $lampiran_db;
+        $laporan->save();
+        
+
+        return redirect('/');
     }
 }
