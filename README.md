@@ -1,4 +1,9 @@
 ## Simple `LAPOR` :heavy_exclamation_mark:
+
+Nama anggota: Ilham Nofri Yandra (119140133)
+              Nurul Aulia Larasati (119140008)
+              Nesa Oktavia (119140091)
+
 Anda mengetahui aplikasi `lapor` yang dibuat oleh pemerintah republik indonesia? jika tidak silahkan kunjungi 
 http://lapor.go.id, maka anda akan mendapatkan laman seperti gambar di bawah
 
