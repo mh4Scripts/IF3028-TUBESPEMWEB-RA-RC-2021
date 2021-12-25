@@ -8,10 +8,9 @@
 
 <body>
     <ul>
-        <li><a href="#tentang lapor">Tentang Lapor</a></li>
-        <li><a href="#cari aduan">Cari Aduan</a></li>
-        <li><a href="#kontak">Kontak</a></li>
-        <li><a href="#tentang">Tentang Kami</a></li>
+        <li><a href="/tentang lapor">Tentang Lapor</a></li>
+        <li><a href="/cari aduan">Cari Aduan</a></li>
+        <li><a href="/kontak">Kontak</a></li>
     </ul>
     <center>
         <h1>Buat Laporan</h1>
