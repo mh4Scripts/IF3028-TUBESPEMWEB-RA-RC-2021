@@ -8,7 +8,13 @@ Kali ini kita akan membuat aplikasi web seperti `lapor` untuk mengumpulkan lapor
 di program studi teknik informatika ITERA.
 **Luangkan waktu untuk membaca spesifikasi ini sampai selesai.** :kissing_heart:
 
-### Anggota Tim :cyclone:
+### Anggota Tim :
+
+Anggota Kelompok Pemweb Kelas RA:
+- 119140207 	Kevin Tanuwijaya
+- 119140194	Orville Figo El Islami
+- 119140028	Desi Fitria Yudanto
+
 Project dikerjakan secara **berkelompok** dengan maksimal jumlah anggota adalah 2-3 orang mahasiswa (maksimal 3 orang mahasiswa!).
 
 ### Petunjuk Pengerjaan :umbrella:
@@ -100,10 +106,6 @@ Pengguna dapat mencari laporan/komentar dengan melakukan search ke `isi laporan/
 
 ### Penjelasan Teknis
 
-Anggota Kelompok Pemweb Kelas RA:
-- 119140207 	Kevin Tanuwijaya
-- 119140194	Orville Figo El Islami
-- 119140028	Desi Fitria Yudanto
 
 Penjelasan:
 
