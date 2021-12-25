@@ -15,54 +15,10 @@
 
     {{-- SEARCH BAR --}}
     <section class="search-bar">
-        <form class="search-input" action="" method="post">
+        <form class="search-input" action="" method="">
             @csrf
-            <input  class="input-text" type="text" name="Keyword" id="Keyword" onkeyup="searchData()" placeholder="Cari laporan ...">
-            <button class="submit-btn" type="submit" name="Search">
-                <img src="media/icons/magnifying_glass.png" alt="">
-            </button>
-            <div class="live-search-result-container" id="LSRC">
-                {{-- <div class="result">
-                    <a href="">
-                        <h3>Aku adalah anak gembala, gemar bertarung di luas samudera. Siapakah aku ini Tuhan?</h3>
-                    </a>
-                </div>
-                <div class="result">
-                    <a href="">
-                        <h3>Aku adalah anak gembala, gemar bertarung di luas samudera. Siapakah aku ini Tuhan?</h3>
-                    </a>
-                </div>
-                <div class="result">
-                    <a href="">
-                        <h3>Aku adalah anak gembala, gemar bertarung di luas samudera. Siapakah aku ini Tuhan?</h3>
-                    </a>
-                </div>
-                <div class="result">
-                    <a href="">
-                        <h3>Aku adalah anak gembala, gemar bertarung di luas samudera. Siapakah aku ini Tuhan?</h3>
-                    </a>
-                </div>
-                <div class="result">
-                    <a href="">
-                        <h3>Aku adalah anak gembala, gemar bertarung di luas samudera. Siapakah aku ini Tuhan?</h3>
-                    </a>
-                </div>
-                <div class="result">
-                    <a href="">
-                        <h3>Aku adalah anak gembala, gemar bertarung di luas samudera. Siapakah aku ini Tuhan?</h3>
-                    </a>
-                </div>
-                <div class="result">
-                    <a href="">
-                        <h3>Aku adalah anak gembala, gemar bertarung di luas samudera. Siapakah aku ini Tuhan?</h3>
-                    </a>
-                </div>
-                <div class="result">
-                    <a href="">
-                        <h3>Aku adalah anak gembala, gemar bertarung di luas samudera. Siapakah aku ini Tuhan?</h3>
-                    </a>
-                </div> --}}
-            </div>
+            <input  class="input-text" type="text" name="Keyword" id="Keyword" onkeyup="searchData()" placeholder="Cari laporan ... (ketikkan apa saja)">
+            <div class="live-search-result-container" id="LSRC"></div>
         </form>
     </section>
 
