@@ -1,8 +1,9 @@
 ## Lapor Tugas besar Pemrograman web RC
 
 anggota 
-fajari bagas imami (118140121)
-muhamad falli alfarisi (118140135)
+fajari bagas imami (118140121)<br>
+muhamad falli alfarisi (118140135)<br>
+steven elkan hutauruk (118140149)
 
 
 ## cara penginstallan
