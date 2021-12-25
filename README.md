@@ -107,6 +107,8 @@ Destry Rehulina Br Sitepu[118140022]
 3.Lalu ketik di cmd/terminal php artisan serve
 4.Aplikasi langsung bisa di jalankan
 
+untuk file tubesnya di branch Master pak
+
 ### Knowledge
 Untuk meringankan beban tugas ini, ada berberapa keyword yang bisa anda cari untuk menyelesaikan tugas ini.
 - CSS: margin, padding, header tag, font-size, text-align, float, clear, border, color, div, span, placeholder, 
