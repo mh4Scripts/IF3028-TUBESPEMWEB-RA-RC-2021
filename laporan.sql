@@ -41,7 +41,7 @@ CREATE TABLE `laporan` (
 --
 
 INSERT INTO `laporan` (`id`, `isi`, `aspek`, `lampiran`, `waktu`) VALUES
-(25, 'Banyak di temukan diruang ruang kelas, ada banyak kerusakan seperti pada ac, kursi dan proyektor. Kerusakan tersebut membuat proses belajar mengajar dikelas tidak berjalan dengan lancar. Saya minta untuk hal ini segera diperbaiki agar tidak menggangu pembelajaran berikutnya', 'Infrastruktur', '_Beautiful Feudal Japan_ Sekiro Art.jfif', '2021-12-25 07:12:37'),
+(25, 'Banyak di temukan diruang ruang kelas, ada banyak kerusakan seperti pada ac, kursi, papan tulis dan proyektor. Kerusakan tersebut membuat proses belajar mengajar dikelas tidak berjalan dengan lancar. Saya minta untuk hal ini segera diperbaiki agar tidak menggangu pembelajaran berikutnya', 'Infrastruktur', '_Beautiful Feudal Japan_ Sekiro Art.jfif', '2021-12-25 07:12:37'),
 (26, 'Seringkali dosen melakukan pergantian jadwal secara mendadak tanpa di beritahukan jauh jauh hari, hal ini membuat jadwal yang sudah direncanakan oleh mahasisiwa menjadi berantakan.', 'Dosen', 'wallpaperflare.com_wallpaper.jpg', '2021-12-25 07:12:26');
 
 --
