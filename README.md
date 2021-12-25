@@ -99,7 +99,12 @@ Validasi **wajib** dilakukan pada *client-side*, dengan menggunakan **javascript
 Pengguna dapat mencari laporan/komentar dengan melakukan search ke `isi laporan/komentar`.
 
 ### Penjelasan Teknis
-`Silakan isi bagian ini dengan penjelasan anda, sesuai Petunjuk Pengerjaan di atas.`
+`>Click kanan crud.rar ekstrak here
+>Copy file crud ke htdocs dalam xampp atau www dalam wampp
+>Buat database dengan nama yang anda mau dalam kasus ini saya menggunakan nama "mynotecode"
+>Import table dari sql file dalam file crud
+>Ubah koneksi database di koneksi.php sesuai nama database yang di buat
+> Akses lewat browser.`
 
 ### Knowledge
 Untuk meringankan beban tugas ini, ada berberapa keyword yang bisa anda cari untuk menyelesaikan tugas ini.
