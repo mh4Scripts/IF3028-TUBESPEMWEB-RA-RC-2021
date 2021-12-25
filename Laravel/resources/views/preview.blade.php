@@ -44,30 +44,12 @@
                 <form action="{{ url('delete/'.$data->id) }}" onclick="return confirm('Yakin ingin menghapus Laporan/Komentar?')">
                     @method('delete')
                     @csrf
-                    <button type="submit">Hapus Laporan/Komentar</button>
+                    <button type="submit" class="hapus"><a href="{{ url('delete/'.$data->id) }}">Hapus Laporan/Komentar</a></button>
                 </form>
             </div>
         </div>
         
         <hr>
     </div>
-
-    <script>
-
-        // function destroy(id){
-        //     if(confirm("beneran mau hapus?")){
-        //         $.ajax({
-        //             url:'/delete/'+id,
-        //             type:'DELETE',
-        //             data:{
-        //                 _token : $("input[name=_token]").val()
-        //             },
-        //             success:function(response){
-        //                  $("#id").remove();
-        //             }
-        //         });
-        //     }
-        // }
-    </script>
 </section>
 @endsection

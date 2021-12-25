@@ -19,9 +19,15 @@ class LaporController extends Controller
         $data = Lapor::latest()->simplepaginate(5);
         $title="Home";
         $id_latest = Lapor::latest()->first();
-        $id = $id_latest->id;
 
-        return view('index', compact('data','title','id'));
+        if($id_latest == null){
+            return view('index', compact('data','title'));
+        }else{
+            $id = $id_latest->id;
+
+            return view('index', compact('data','title','id'));
+        }
+        
     }
 
     /**
@@ -61,10 +67,16 @@ class LaporController extends Controller
         );
 
         $lampiran->move(public_path('lampiran'), $new_lampiran);
-        Lapor::create($data_laporan);
+        $savedData = Lapor::create($data_laporan);
 
-        return redirect('/')->with('success', 'data has been created');
+        return response()->json([
+            'success' => 'data berhasil disimpan',
+            'data' => $savedData
+        ]);
+
+        // return redirect('/')->with('success', 'data has been created');
     }
+
 
     /**
      * Display the specified resource.
@@ -98,6 +110,9 @@ class LaporController extends Controller
     }
 
     /**
+     * Aulia Rahman Zulfi
+     * Fadhillah Azhar Alsani
+     * Fahri Setiawan
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request

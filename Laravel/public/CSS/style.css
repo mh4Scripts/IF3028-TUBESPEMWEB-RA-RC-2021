@@ -254,3 +254,20 @@ textarea{
     color: red;
     font-size: small;
 }
+
+@media screen and (max-width: 1500px) {
+    .field{
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .field{
+        width: 70%;
+    }
+}
+
+.hapus{
+    background: transparent;
+    border: 0;
+}

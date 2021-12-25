@@ -1,13 +1,13 @@
-function validasi(){
-
+<script>
     var form = document.getElementById('form')
-            
+
     form.addEventListener('submit', function(e){
         e.preventDefault()
         
         var judul = document.getElementById('judul')
         var laporan = document.getElementById('laporan')
         var aspek = document.getElementById('aspek')
+        var lampiran = document.getElementById('lampiran')
         var pesan = document.getElementsByClassName('pesan')
 
         var err = 0
@@ -37,10 +37,9 @@ function validasi(){
         }
 
         if (err == 0){
-            if(confirm("Yakin ingin membuat laporan/komentar?") == true){
+            if(confirm("Yakin ingin mengubah laporan/komentar?") == true){
                 form.submit();
             }
         }
     })
-
-}
+</script>

@@ -1,7 +1,8 @@
 @extends('layouts.default')
 @section('content')
+
 <section>
-    <div class="container">
+    <div class="container" id="all">
         <div class="container-head">
             <h1 class="head">SIMPLE LAPOR!</h1>
             <form class="search" type="get" action="{{ url('/search') }}">
@@ -23,10 +24,10 @@
                 <table>
                     <tr>
                         <th>
-                            <a href="/lapor">Buat Laporan/Komentar</a>   
+                            <a href="#" onclick="lapor()" >Buat Laporan/Komentar</a>   
                         </th>
                         <th>
-                            <a href="/lapor"><img src="assets/add.png" alt=""> </a>
+                            <a href="#" onclick="lapor()" ><img src="assets/add.png" alt=""> </a>
                         </th>
                     </tr>
                 </table>    
@@ -69,5 +70,13 @@
             </p>
         </div>
     </div>
-</section>       
+
+    @stack('before-script')
+    @include('includes.script')
+    @stack('after-script')
+
+    @stack('before-ajax')
+    @include('includes.ajax')
+    @stack('after-ajax')
+</section>
 @endsection
