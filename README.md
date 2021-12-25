@@ -99,7 +99,19 @@ Validasi **wajib** dilakukan pada *client-side*, dengan menggunakan **javascript
 Pengguna dapat mencari laporan/komentar dengan melakukan search ke `isi laporan/komentar`.
 
 ### Penjelasan Teknis
-`Silakan isi bagian ini dengan penjelasan anda, sesuai Petunjuk Pengerjaan di atas.`
+Pada project ini kami menggunakan framework laravel 8 sebagai backend dan menggunakan HTML, CSS, JavaScript sebagai Frontend dan MySql sebagai database.
+Untuk mejalankan program ini, pertama membuat database dengan nama `lapor`.
+Lalu jalankan perintah `php artisan migrate` untuk migrasi tabel posts.
+Setelah table berhasil dibuat maka program bisa langsung dijalankan dengan menjalankan perintah `php artisan serve`.
+
+Penjelasan:
+HTML dan CSS digunaka untuk membuat tampilan website.
+JavaScript digunakan untuk memvalidasi textarea isi laporan untuk memenuhi spesifikasi tugas yaitu minimal 20 kata untuk isi laporan.
+Lalu framework Laravel 8 digunakan sebagai backend yang berguna untuk melakukan seua proses agar website menjadi dinamis yaitu CRUD.
+
+Anggota Kelompok :
+Dimas Aprilian Sulaiman Putra (118140032)
+Sicilla Putri Aisyah (118140091)
 
 ### Knowledge
 Untuk meringankan beban tugas ini, ada berberapa keyword yang bisa anda cari untuk menyelesaikan tugas ini.
