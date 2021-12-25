@@ -46,4 +46,35 @@ class LaporanController extends Controller
 
         return redirect('/');
     }
+    
+    public function detail($id)
+    {
+        $data = Laporan::find($id);
+        $getEx = $data->lampiran;
+        $ext = substr($getEx, strpos($getEx, ".") + 1);
+        
+        return view('detail', compact('data','ext'));
+    }
+    
+    public function edit($idLaporan){
+        // $dataLaporan = DB::select('SELECT laporan,aspek,lampiran FROM laporans WHERE id={$id_laporan} ');
+        $dataLaporan = Laporan::find($idLaporan);
+        $getEx = $dataLaporan->lampiran;
+        return view('editLaporan', compact('dataLaporan',$dataLaporan));
+    }
+
+    public function update(Request $request, $idLaporan){
+        // $data = request()->validate([
+        //     'laporan' => 'required',
+        //     'aspek' => 'required',
+        //     'lampiran' => 'required|max:2000|mimes:jpeg,png,jpg,doc,docx,xls,xlsx,ppt,pptx,pdf',
+        // ]);
+
+        $laporan = Laporan::find($idLaporan);
+        $laporan->laporan = request('laporan');
+        $laporan->aspek = request('aspek');
+        // $laporan->lampiran = request('lampiran');
+        $laporan->save();
+        return redirect('/');
+    }
 }
