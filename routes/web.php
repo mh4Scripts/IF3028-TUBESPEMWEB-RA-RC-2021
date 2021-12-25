@@ -16,3 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('home'); //Change index page
 });
+
+Route::get('/buat-laporan', function () {
+    return view('input'); 
+});
