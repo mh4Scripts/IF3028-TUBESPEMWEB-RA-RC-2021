@@ -100,7 +100,7 @@ Pengguna dapat mencari laporan/komentar dengan melakukan search ke `isi laporan/
 
 ### Penjelasan Teknis
 
-Anggota Kelompok Kelas Pemweb RA:
+Anggota Kelompok Pemweb Kelas RA:
 - 119140207 	Kevin Tanuwijaya
 - 119140194	Orville Figo El Islami
 - 119140028	Desi Fitria Yudanto
