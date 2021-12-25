@@ -99,7 +99,42 @@ Validasi **wajib** dilakukan pada *client-side*, dengan menggunakan **javascript
 Pengguna dapat mencari laporan/komentar dengan melakukan search ke `isi laporan/komentar`.
 
 ### Penjelasan Teknis
-`Silakan isi bagian ini dengan penjelasan anda, sesuai Petunjuk Pengerjaan di atas.`
+Anggota Kelompok : 
+- Muksin Bagaskara (119140167)
+- Mayang Hermanda Anggraini (1191440197)
+- Cahya Andy Mareza (119140007)
+
+instalasi framework laravel
+1. instal composer
+2. instal laravel melalui composer dengan menggunakan terminal dengan perintah "composer global require laravel/installer"
+3. setelah laravel terinstal, project laravel dapat dibuat dengan perintah "laravel new example-app"
+
+Koneksi database
+pada laravel koneksi database dikonfigurasi pada file ".env" dengan menyesuaikan nama database, nama host, password serta jenis database yang digunakan
+untuk pembuatan table pada databasenya sendiri dapat menggunakan artisan migration. Database yang digunakan adalah SQL.
+
+cara menjalankan
+1. git clone "https://github.com/mbagas/IF3028-TUBESPEMWEB-RA-RC-2021.git"
+2. buat database dengan nama "tubes_pemweb"
+3. buka git bash pada folder tubesweb
+4. ketik pada git bash "composer update"
+5. ketik pada git bash "git checkout main"
+6. ketik pada git bash "php artisan key:generate"
+7. ketik pada git bash "php artisan migrate" untuk memasukan table pada database
+8. ketik pada git bash "php artisan serve" untuk menjalankan server laravel
+9. buka browser dengan url http://127.0.0.1:8000
+
+- untuk melihat route dapat dilakukan pada routes/web.php
+- untuk melihat class dapat dilakukan pada app/http/controllers
+- untuk melihat migrasi dapat dilakukan pada database/migrations
+- untuk melihat model dapat dilakukan pada app/models
+- untuk melihat images, css dan js dapat dilakukan pada public/assets
+- untuk melihat halaman dapat dilakukan pada resource/views
+
+Validasi dengan JS
+- memastikan tidak ada field yang kosong
+- memastikan laporan lebih dari 20 kata
+- jika terdapat field kosong atau laporan kurang dari 20 kata maka akan menampilkan alert beserta pesan
 
 ### Knowledge
 Untuk meringankan beban tugas ini, ada berberapa keyword yang bisa anda cari untuk menyelesaikan tugas ini.
