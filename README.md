@@ -11,6 +11,11 @@ di program studi teknik informatika ITERA.
 ### Anggota Tim :cyclone:
 Project dikerjakan secara **berkelompok** dengan maksimal jumlah anggota adalah 2-3 orang mahasiswa (maksimal 3 orang mahasiswa!).
 
+Anggota Kelompok
+1. Aprilia Purwanto 119140003
+2. Candra Wahyu Firmansyah 119140009
+3. Edinia Rosa Filiana 119140018
+
 ### Petunjuk Pengerjaan :umbrella:
 1. Fork pada repository ini dengan akun github anda.
 2. Silakan commit pada repository anda (hasil fork). Lakukan berberapa commit dengan pesan yang bermakna,
@@ -99,7 +104,39 @@ Validasi **wajib** dilakukan pada *client-side*, dengan menggunakan **javascript
 Pengguna dapat mencari laporan/komentar dengan melakukan search ke `isi laporan/komentar`.
 
 ### Penjelasan Teknis
-`Silakan isi bagian ini dengan penjelasan anda, sesuai Petunjuk Pengerjaan di atas.`
+Framework yang kami gunakan adalah Laravel. Sebelum menginstal laravel, user harus menginstall PHP dan composer terlebih dahulu atau menginstall XAMPP. XAMPP adalah software cross platform yang langsung menyediakan Apache, MariaDB, PHP, dan Perl.
+
+Setelah menginstall XAMPP dan composer, buka cmd dan masuk ke htdocs pada folder XAMPP. Kemudian, ketikkan perintah
+
+composer create-project --prefer-dist laravel/laravel nama_project
+
+Jika perintah berhasil, composer akan melakukan instalasi laravel ke dalam directory yang telah ditentukan. Jika nama directory tidak ada, composer akan membuat directory dengan nama yang dimaksud. Untuk mengecek apakah laravel sudah terinstall dengan baik, masuk kedalam directory proyek melalui cmd. Kemudian, ketikkan perintah:
+
+php artisan serve
+
+Jika tulisan Laravel development server started telah muncul, buka web browser anda dan masih ke dalam alamat server yang diberikan laravel. Secara default, alamat servernya yaitu 127.0.0.1:8000. Jika muncul tampilan homepage laravel, maka instalasi sukses.
+
+Cara menjalankan website :
+1. instal framework Laravel dan composernya
+2. jalankan database local seperti XAMPP
+3. import database yang Bernama lapor.sql
+4. taruh repository ini dalam folder htdocs
+5. jalankan framework Laravel dengan menggunakan command “php artisan serve” melalui command prompt.
+
+Koneksi basis data :
+Pada file .env, ubah data sesuai dengan database yang digunakan pada bagian dibawah ini.
+
+![](gambar-readme/db.jpeg)
+
+Nama database, username, dan password disesuaikan.
+
+Validasi client side
+Validasi client side berguna saat pengisian data laporan oleh pengguna. Pengguna tidak bisa mengirim laporan jika masih ada salah satu field yang kosong ataupun jumlah karakter kata yang dituliskan oleh pengguna kurang dari 20. Validasi ini diatur pada bagian dibawah ini.
+
+![](gambar-readme/validasi.jpeg)
+
+AJAX
+Pengimplementasian ajax diterapkan pada fitur CRUD pada laporan dan fitur pencarian laporan berdasarkan judul laporan yang dicari. Jika ada judul laporan yang sesuai maka pada halaman awal laporan tersebut akan ditampilkan, jika tidak ada maka tidak ada laporan yang dapat ditampilkan.
 
 ### Knowledge
 Untuk meringankan beban tugas ini, ada berberapa keyword yang bisa anda cari untuk menyelesaikan tugas ini.
