@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <title>Tentang Lapor</title>
-    <body background = "bg.jpeg">
+    <body background = "css/bg.jpeg">
 </head>
 
 <body>
