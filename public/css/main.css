@@ -1,0 +1,158 @@
+* 
+{
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+p 
+{
+    font-style: normal;
+    font-weight: normal;
+    font-size: 60px;
+    color: black;
+    text-align: center;
+    margin-bottom: 100px;
+}
+
+body 
+{
+    margin:50px 100px 100px 100px;
+    font-size: medium;
+    background-image: linear-gradient(#dc3b3b, #FFE2E2);
+    min-height: 600px;
+}
+
+.searchbar 
+{
+    max-width: 1300px;
+    margin: auto;
+}
+
+.searchbar input 
+{
+    padding: 26px;
+    font-size: 17px;
+    border: 1px solid black;
+    float: left;
+    width: 80%;
+    background: white;
+}
+
+.searchbar button 
+{
+    float: left;
+    width: 20%;
+    padding: 25px;
+    background: white;
+    color: black;
+    font-size: 17px;
+    border: 1px solid black;
+    border-left: none;
+    cursor: pointer;
+}
+
+.searchbar button:hover {
+    background: rgb(228, 226, 226);
+}
+
+.searchbar::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.buatlaporan {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.buatlaporan a:hover
+{
+    color: rgb(228, 226, 226);
+}
+
+a 
+{
+    text-decoration: none;
+    color: black;
+}
+
+.buatlaporan::after {
+    content:'\271A';
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+    background-color: rgb(247, 247, 247);
+    padding-left: 4px;
+    padding-right: 5px;
+    margin-left: 5px;
+    border-radius: 5px;
+}
+
+.searchbutton img {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+}
+
+hr 
+{
+    margin-top: 20px;
+    margin-bottom: 30px;
+    border: none;
+    height: 1px;
+    color: black;
+    background-color: black;
+}
+
+.daftarlaporan
+{
+    margin-top: 40px;
+    border-radius: 10px;;
+}
+
+.keterangan1 
+{
+    width: 100%;
+    display: table;
+    padding-top: 25px;
+}
+
+.keterangan2 
+{
+    display: table-row;
+}
+
+.lampiran 
+{
+    margin-top : 30px;
+    width: 700px;
+    display: table-cell;
+}
+.waktu 
+{
+    display: table-cell;
+    width: 285px;
+}
+
+.selengkapnya 
+{
+    display: table-cell;
+    float: right;
+}
+
+.selengkapnya a:hover
+{
+    color: white;
+}
+
+.selengkapnya img 
+{
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+}
+
+.selengkapnya img:hover
+{
+    color: white;
+}
