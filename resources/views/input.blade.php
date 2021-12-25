@@ -10,12 +10,12 @@
     <div class="main">
         <p>Buat Laporan/Komentar</p>
         <hr>
-        <form action="/prosesdata" method="post" enctype="multipart/form-data" >
+        <form action="/tambah" method="post" enctype="multipart/form-data" >
             <div class="judul">
             <input type="text" name="judul" id="judul" value="Judul Laporan/Komentar">
             </div>
 
-            <textarea name="komentar" id="komentar">Laporan/Komentar</textarea>
+            <textarea name="deskripsi" id="komentar">Laporan/Komentar</textarea>
 
             <select id="aspek" name="aspek">
                 <option selected value="">Pilih Aspek Pelaporan/Komentar</option>
@@ -27,7 +27,7 @@
                 <option value="Permintaan Informasi">Permintaan Informasi</option>
             </select>
 
-            <input type="file" name="file">
+            <input type="file" name="lampiran">
 
             <div class="tombol">
                 <button onclick="validate();" type="submit">Buat Lapor!</button>

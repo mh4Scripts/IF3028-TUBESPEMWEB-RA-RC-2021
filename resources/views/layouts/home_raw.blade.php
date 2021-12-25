@@ -24,7 +24,7 @@
         </div>
     </div>
     <div class="new-laporan">
-        <a href="/hyperlink-ke-screenbuatlaporan">
+        <a href="/buat">
             Buat laporan baru
         </a>
     </div>

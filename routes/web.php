@@ -16,4 +16,14 @@ use App\Http\Controllers\PostController;
 
 Route::get('/', [PostController::class, 'index']);
 
+Route::get('/buat', function() {
+    return view('input');
+});
+
 Route::get('/laporan/{id}', [PostController::class, 'show']);
+
+Route::post('/tambah', [PostController::class, 'create']);
+
+Route::post('/ubah', [PostController::class, 'update']);
+
+Route::post('/hapus', [PostController::class, 'delete']);

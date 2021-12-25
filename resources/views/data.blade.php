@@ -18,13 +18,13 @@
         @endif
     </div>
 
-    <div class="laporan-footer">
-        <p class="footer-item">Aspek : <span>{{ $posts->aspek }}</span></p>
-        <p class="footer-item">Waktu : <span>{{ $posts->waktu }}</span></p>
-        <div class="laporan-action">
-            <a href="#" class="update-button">Update</a>
-            <a href="#" class="delete-button" onclick="return confirm('Ingin menghapus data ?')">Hapus Laporan</a>
-        </div>
+    <div class="list-nav">
+        <span class="aspek">Waktu: {{ $posts->waktu }}</span>
+        <span>Aspek: {{ $posts->aspek }}</span>
+        <span class="nav1">
+            <a  href="#">Update | </a>
+            <a  href="/list" onclick="return confirm('Ingin menghapus data ?')">Hapus Laporan/Komentar</a>
+        </span>
     </div>
     <hr>
 @endsection
