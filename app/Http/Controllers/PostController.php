@@ -14,6 +14,14 @@ class PostController extends Controller
             "posts" => Post::all()
         ]);
     }
+    
+    public function search($search_text)
+    {
+        return view('home', [
+            "posts" => Post::where('deskripsi', 'LIKE','%'.$search_text.'%')->orWhere('judul', 'LIKE','%'.$search_text.'%')->get()
+        ]);
+    }
+    
 
     // Mencari dan menampilkan suatu laporan
     public function show($id) {
@@ -21,7 +29,7 @@ class PostController extends Controller
             "posts" => Post::find($id)
         ]);
     }
-
+    
     // Membuat laporan baru
     // TODO: Simpan lampiran
     public function create(Request $request) {
@@ -81,4 +89,5 @@ class PostController extends Controller
         return redirect()->route('/')->with(['message'=> 'ID Salah!!']);
 
     }
+
 }

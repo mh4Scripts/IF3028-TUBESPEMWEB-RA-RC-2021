@@ -38,4 +38,35 @@
     </div>
 </div>
 </body>
+
+<script>
+    //create javascript listener for search button
+    document.querySelector(".search-button").addEventListener("click", function(e){
+        //prevent default behaviour
+        e.preventDefault();
+        //get the value of the search input
+        var search = document.querySelector(".search-input").value;
+        //create a new url
+        var url = "/cari/" + search;
+        //redirect to the new url
+        window.location.href = url;
+    });
+
+    //create javascript listener for search input
+    document.querySelector(".search-input").addEventListener("on", function(e){
+        //prevent default behaviour
+        e.preventDefault();
+        if (event.keyCode === 13) {
+        //get the value of the search input
+        var search = document.querySelector(".search-input").value;
+        //create a new url
+        var url = "/cari/" + search;
+        //redirect to the new url
+        window.location.href = url;
+        }
+    });
+
+
+</script>
+
 </html>

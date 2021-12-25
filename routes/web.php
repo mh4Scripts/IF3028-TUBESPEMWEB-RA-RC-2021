@@ -16,6 +16,8 @@ use App\Http\Controllers\PostController;
 
 Route::get('/', [PostController::class, 'index'])->name('/');
 
+Route::get('/cari/{search_text}', [PostController::class, 'search']);
+
 Route::get('/buat', function() {
     return view('input');
 });
