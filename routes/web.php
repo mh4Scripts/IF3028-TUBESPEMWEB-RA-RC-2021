@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\laporanController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,3 +25,9 @@ Route::get('/', function () {
 Route::get('/buat_laporan', function () {
     return view('buat_laporan');
 });
+
+Route::get('/detail',function(){
+    return view('detail');
+});
+
+Route::get('/',[laporanController::class,'index']);

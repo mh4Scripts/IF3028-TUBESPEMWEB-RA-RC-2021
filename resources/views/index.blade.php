@@ -23,6 +23,13 @@
             <br>
             Laporan/Komentar Terakhir
             <hr>
+            @foreach ($data as $item)
+                <br>
+                <p>{{$item['pesan']}}<p>
+                <br>
+                <p>Lampiran: {{$item['lampiran']}}    Waktu: {{$item['waktu']}} <a href="/detail">Lihat Selengkapnya</a><p>
+                <hr>
+            @endforeach
         </div>
     </div>
 </body>
