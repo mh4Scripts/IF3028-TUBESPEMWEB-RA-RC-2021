@@ -19,7 +19,7 @@ class CreatePostsTable extends Migration
             $table->string('pelapor');
             $table->text('laporan');
             $table->string('aspek');
-            $table->binary('fileupload');
+            $table->string('fileupload');
             $table->timestamps();
         });
     }

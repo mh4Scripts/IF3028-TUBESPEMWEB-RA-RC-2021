@@ -27,8 +27,17 @@ class PostController extends Controller
             'pelapor' => 'required',
             'laporan' => 'required',
             'aspek' => 'required',
-            'fileupload' => 'required'
+            'fileupload' => 'required',
+            // 'fileupload' => 'required|max:2000|mimes:jpeg,png,jpg,doc,docx,xls,xlsx,ppt,pptx,pdf'
         ]);
+
+        // $fileupload = $request->file('fileupload');
+        // $new_fileupload = rand() . '.' . $fileupload->getClientOriginalExtension();
+        if ($request->file('fileupload')) {
+            $validatedData['fileupload'] = $request->file('fileupload')->store('post-image');
+            // Post::create($validatedData);
+        }
+
         $posts = Post::create([
             'judul' => $request->judul,
             'pelapor' => $request->pelapor,

@@ -34,8 +34,14 @@ Route::get('/edit/{id}', [PostController::class, 'edit'])->name('edit');
 #route untuk mengupdate perubahan data
 Route::put('/update/{id}', [PostController::class, 'update'])->name('update');
 
-// #route untuk searching data
+# #route untuk searching data
 Route::get('/search', [PostController::class, 'search'])->name('search');
 
 #route untuk hapus laporan
 Route::get('/destroy/{id}', [PostController::class, 'destroy'])->name('destroy');
+
+// #route ambil foto
+// Route::get('/ambil_foto', [PostController::class, 'ambil_foto'])->name('ambil_foto');
+
+// #route tampil foto
+// Route::get('/tampil_foto', [PostController::class, 'tampil_foto'])->name('tampil_foto');
