@@ -51,7 +51,7 @@ class LaporController extends Controller
         }else{
             //UBAH SLUG MENJADI STRING BIASA AGAR DIKENALI KETIKA MEMBANDINGKAN DENGAN ASPEK DI DATABASE
             $aspect = str_replace('-', ' ', $aspect);
-            $reports = Report::with(['user', 'attachment'])->where('aspct' , $aspect)->get();
+            $reports = Report::with(['user', 'attachment'])->where('aspct' , $aspect)->latest()->get();
         }
         
         if ($reports != NULL){
