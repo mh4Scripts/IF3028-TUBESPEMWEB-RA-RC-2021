@@ -1,0 +1,50 @@
+* {
+    font-family: "monaco", monospace;
+}
+
+body {
+    background-color: whitesmoke;
+}
+
+.mainBlock {
+    background-color: white;
+    position: absolute;
+    border: solid 2px;
+    top: 50px;
+    left: 150px;
+    right: 150px;
+    height: auto;
+    width: 1620px;
+    box-shadow: 6px 6px 23px rgba(0, 0, 0, 0.25);
+}
+
+.content {
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    width: 1020px;
+}
+
+.header {
+    height: auto;
+    width: auto;
+    text-align: center;
+}
+
+.fieldCari {
+    position: relative;
+    box-sizing: border-box;
+    width: 890px;
+    height: 30px;
+}
+
+.btn {
+    position: relative;
+    width: 120px;
+    height: 30px;
+}
+
+.linkDetail {
+    position: absolute;
+    left: 1120px;
+}
