@@ -24,14 +24,24 @@
             Laporan/Komentar Terakhir
             <hr>
             @foreach ($data as $item)
+            <br>
+            <p>{{$item['pesan']}}
+            <p>
                 <br>
+<<<<<<< HEAD
                 <p><b>Pengirim: </b>{{$item['pengirim']}}
                 <p><b>Penerima: </b>{{$item['penerima']}}
                 <p>{{$item['pesan']}}<p>
                 <br>
                 <p>Lampiran: {{$item['lampiran']}}    Waktu: {{$item['waktu']}} <a href="/detail?id={{$item['id']}}">Lihat Selengkapnya<img src="{{ ('img/next.png')}}" height="10px"></a><p>
+=======
+            <p>Lampiran: {{$item['lampiran']}}
+            <p>
+            <p>Waktu: {{$item['waktu']}} <a href="/detail" class="linkDetail">Lihat Selengkapnya</a>
+            <p>
+>>>>>>> e479611640f399368f41ef3687ae20f6e4bc379f
                 <hr>
-            @endforeach
+                @endforeach
         </div>
     </div>
 </body>

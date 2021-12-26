@@ -43,3 +43,8 @@ body {
     width: 120px;
     height: 30px;
 }
+
+.linkDetail {
+    position: absolute;
+    left: 1120px;
+}
