@@ -24,12 +24,16 @@
             Laporan/Komentar Terakhir
             <hr>
             @foreach ($data as $item)
+            <br>
+            <p>{{$item['pesan']}}
+            <p>
                 <br>
-                <p>{{$item['pesan']}}<p>
-                <br>
-                <p>Lampiran: {{$item['lampiran']}}    Waktu: {{$item['waktu']}} <a href="/detail">Lihat Selengkapnya</a><p>
+            <p>Lampiran: {{$item['lampiran']}}
+            <p>
+            <p>Waktu: {{$item['waktu']}} <a href="/detail" class="linkDetail">Lihat Selengkapnya</a>
+            <p>
                 <hr>
-            @endforeach
+                @endforeach
         </div>
     </div>
 </body>

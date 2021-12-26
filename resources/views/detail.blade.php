@@ -17,7 +17,7 @@
                 <h2>Liat Detail Laporan Lu Disini Yaa..</h2>
             </div>
             <br>
-            Detal Laporan/Komentar
+            Detail Laporan/Komentar
             <hr><br>
             Lampiran
             <br>
