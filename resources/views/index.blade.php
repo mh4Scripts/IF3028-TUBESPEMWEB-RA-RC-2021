@@ -17,7 +17,7 @@
                 <h2>Aplikasi Web Tempat Ngelaporin Keresahan Lu</h2>
             </div>
             <input type="text" class="fieldCari">
-            <input type="submit" value="Cari" class="btn">
+            <button type="submit"><img src="{{ ('img/cari.png')}}" height="15px"> Cari</button>
             <br><br>
             <a href="/buat_laporan">Buat laporan/komentar +</a>
             <br>
@@ -25,13 +25,14 @@
             <hr>
             @foreach ($data as $item)
                 <br>
+                <p><b>Pengirim: </b>{{$item['pengirim']}}
+                <p><b>Penerima: </b>{{$item['penerima']}}
                 <p>{{$item['pesan']}}<p>
                 <br>
-                <p>Lampiran: {{$item['lampiran']}}    Waktu: {{$item['waktu']}} <a href="/detail">Lihat Selengkapnya</a><p>
+                <p>Lampiran: {{$item['lampiran']}}    Waktu: {{$item['waktu']}} <a href="/detail?id={{$item['id']}}">Lihat Selengkapnya<img src="{{ ('img/next.png')}}" height="10px"></a><p>
                 <hr>
             @endforeach
         </div>
     </div>
 </body>
-
 </html>

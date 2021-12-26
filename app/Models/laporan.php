@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class laporan extends Model
 {
     use HasFactory;
+    protected $data=[
+        "pengirim",
+        "penerima",
+        "pesan",
+        "aspek",
+        "lampiran"
+    ];
 }

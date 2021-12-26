@@ -31,3 +31,5 @@ Route::get('/detail',function(){
 });
 
 Route::get('/',[laporanController::class,'index']);
+Route::post('/tambah', [laporanController::class, 'buatlaporan'])->name('buatlaporan');
+Route::get('/detail',[laporanController::class,'detail']);

@@ -17,13 +17,16 @@
                 <h2>Liat Detail Laporan Lu Disini Yaa..</h2>
             </div>
             <br>
-            Detal Laporan/Komentar
+            Detail Laporan/Komentar
             <hr><br>
-            Lampiran
+            <b>Pengirim: </b>{{$data['pengirim']}}<br>
+            <b>Penerima: </b>{{$data['penerima']}}<br>
+            {{$data['pesan']}}
+            Lampiran: {{$data['lampiran']}}
             <br>
-            Waktu:
+            Waktu: {{$data['waktu']}}
             <br>
-            Aspek:
+            Aspek: {{$data['aspek']}}
             <br>
             <a href="#">Hapus Laporan/Komentar</a>
         </div>
