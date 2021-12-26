@@ -1,3 +1,8 @@
+Nama : Cristian Ari Paulus Kacaribu
+nim  : 14115056
+kelas: RC
+
+
 ## Simple `LAPOR` :heavy_exclamation_mark:
 Anda mengetahui aplikasi `lapor` yang dibuat oleh pemerintah republik indonesia? jika tidak silahkan kunjungi 
 http://lapor.go.id, maka anda akan mendapatkan laman seperti gambar di bawah
