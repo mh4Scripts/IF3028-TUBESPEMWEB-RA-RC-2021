@@ -21,7 +21,7 @@
             <form action="{{ route('storeUpdate', $report->id) }}" class="input-form" method="post">
                 @csrf
                 <div class="row">
-                    <input  class="input-text" type="text" name="title" id="title" value="Sudah 9 Bulan Jaringan Internet Tidak Dipasang" autocomplete="off" value="{{ $report->title }}">
+                    <input  class="input-text" type="text" name="title" id="title" autocomplete="off" value="{{ $report->title }}">
                 </div>
                 <div class="row pos-relative">
                     <textarea class="input-text-area" name="cntnt"   id="cntnt">{{ $report->cntnt }}</textarea>
