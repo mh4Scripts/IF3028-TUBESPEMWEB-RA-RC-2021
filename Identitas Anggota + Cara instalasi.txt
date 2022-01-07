@@ -1,0 +1,13 @@
+Anggota Kelompok
+-Gibran Basyayef 119140187
+-Muhammad Naserudin Rasyid 119140165
+-Muhammad Daffa Massimiliano A 119140139
+
+
+terminal  / cmd  (visual code): 
+1. install composer : composer install
+2. hapus .example pada file .env sehingga menjadi .env
+3. buat database di phpmyadmin dengan nama "laporan".
+4. php artisan migrate
+5. php artisan serve
+6. http://127.0.0.1:8000/products
